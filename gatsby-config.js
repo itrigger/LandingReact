@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
       title: ``,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://vagontrade.ru`
   },
   plugins: ["gatsby-plugin-sass", {
     resolve: 'gatsby-plugin-google-analytics',
@@ -17,7 +17,7 @@ module.exports = {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/images/"
+      "path": "./src/assets/img/"
     },
     __key: "images"
   }, {
@@ -27,5 +27,12 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  },
+    {
+      resolve: 'gatsby-plugin-apollo',
+      options: {
+        uri: 'https://api.vagontrade.ru/graphql'
+      }
+    }
+   ]
 };

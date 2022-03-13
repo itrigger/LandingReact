@@ -1,0 +1,42 @@
+.askblock{
+  padding-top: 150px;
+  padding-bottom: 140px;
+}
+
+.askblock__caption{
+  h1{
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -2px;
+    span{
+      display: block;
+    }
+  }
+  .desc{
+    max-width: 95%;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+  }
+}
+
+.askblock__promo{
+  div{
+    margin-top: 36px;
+    margin-bottom: 67px;
+  }
+}
+
+@media (max-width: 859px) {
+  .askblock{
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+  .askblock__caption .desc{
+    max-width: 100%;
+    font-size: 15px;
+  }
+  .askblock__promo{
+    margin-top: 70px;
+  }
+}

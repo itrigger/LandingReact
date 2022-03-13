@@ -1,0 +1,28 @@
+$base-color: #FFE500;
+$black-color: #000000;
+$darkgray-color: #333;
+$footergray-color: #353535;
+$gray-text-footer-color: #a5a5a5;
+$whatsapp-color: #94DA00;
+
+@import "_parts/_reset";
+@import "_parts/_utils";
+@import "_parts/_animation";
+@import "_parts/_typo";
+@import "_parts/_buttons";
+@import "_parts/_form";
+@import "_parts/_header";
+@import "_parts/_promo";
+@import "_parts/_promoblack";
+@import "_parts/_askblock";
+@import "_parts/_footer";
+@import "modules/_notify";
+@import "modules/_lytebox";
+
+body{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
