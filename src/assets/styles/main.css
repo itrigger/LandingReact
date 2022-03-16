@@ -583,7 +583,7 @@ button.darkgray {
   letter-spacing: 2px;
 }
 button.green {
-  background: #94DA00;
+  background: #48AA6F;
 }
 button.xl {
   padding: 25px 45px;
@@ -646,6 +646,22 @@ input[type=text] {
   padding: 5px 10px;
 }
 input[type=text].error {
+  background: #ec4029;
+  color: #ffffff;
+}
+
+textarea {
+  width: 100%;
+  height: 146px;
+  font-size: 14px;
+  background: #fff;
+  margin-bottom: 15px;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  padding: 10px;
+}
+textarea.error {
   background: #ec4029;
   color: #ffffff;
 }
@@ -894,6 +910,9 @@ input[type=text].error {
   margin-bottom: 60px;
 }
 
+.askblock__promo {
+  cursor: pointer;
+}
 .askblock__promo div {
   margin-top: 36px;
   margin-bottom: 67px;
