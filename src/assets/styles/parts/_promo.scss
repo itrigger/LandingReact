@@ -1,0 +1,115 @@
+.promo{
+	padding-top: 100px;
+	padding-bottom: 75px;
+	margin-top: 100px;
+	overflow: hidden;
+	& + .homeseo{
+		margin-top: 0;
+		border-top: 0;
+	}
+	&.slide1{
+		background-color: $red;
+		.picture{
+			position: relative;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: -300px;
+				background: url("../img/promo1.png") 50px center no-repeat;
+				background-position-x: left;
+				background-size: 1855px 901px;
+				width: 1855px;
+				height: 901px;
+
+			}
+
+		}
+	}
+	&.slide2{
+		background-color: $green;
+		.picture{
+			position: relative;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 15%;
+				top: 50%;
+				transform: translateY(-50%);
+				background: url("../img/promo2.jpg") 50px center no-repeat;
+				background-position-x: left;
+				background-size: 715px 520px;
+				width: 715px;
+				height: 520px;
+
+			}
+
+		}
+	}
+	&.green{
+		background-color: $green;
+	}
+  ul{
+	  margin-left: 15px;
+	  margin-bottom: 35px;
+	  li{
+		  color: #FFFFFF;
+		  list-style: disc;
+		  margin-bottom: 7px;
+	  }
+  }
+	.head{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 60px;
+		line-height: 1.4;
+		color: #fff;
+		span{
+			display: block;
+		}
+		margin-bottom: 30px;
+	}
+	.desc{
+		color: #ffffff;
+		font-size: 18px;
+		margin-bottom: 54px;
+		line-height: 1.5;
+	}
+	.hint{
+		color: #ffffff;
+		font-size: 24px;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		margin-top: 30px;
+	}
+}
+
+@media (max-width: 600px) {
+	.promo{
+		margin-top: 70px;
+		padding-top: 60px;
+		padding-bottom: 90px;
+		.btn{
+			width: 270px;
+		}
+	}
+	.promo .head{
+		font-size: 42px;
+	}
+	.promo .hint{
+		font-size: 18px;
+	}
+	.promo.slide1 .picture:after {
+		left: 60px;
+		bottom: -182px;
+		top: auto;
+		background: url(/static/promo1-603b9aed0032ffee3c2b904155d9b0bc.png) 50px center no-repeat;
+		background-size: contain;
+		width: 845px;
+		height: 501px;
+	}
+}

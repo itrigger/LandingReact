@@ -1,0 +1,41 @@
+<svg xml:space="preserve" viewBox="0 0 100 100" y="0" x="0" xmlns="http://www.w3.org/2000/svg" id="圖層_1" version="1.1"
+     style="height: 100%; width: 100%; " width="200px" height="200px">
+    <g style="transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);" class="ldl-scale">
+        <g class="ldl-ani">
+            <g class="ldl-layer">
+                <g class="ldl-ani"
+                   style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -0.648148s infinite normal forwards running ld-dim;">
+                    <path d="M71.2 15.6H28.8l-2.5 7.6h47.4z" fill="#66503a" style="fill: rgb(55, 57, 71);"></path>
+                </g>
+            </g>
+            <g class="ldl-layer">
+                <g class="ldl-ani"
+                   style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -0.740741s infinite normal forwards running ld-dim;">
+                    <path d="M76 30.3H24l-2.8 8.5h57.6z" fill="#66503a" style="fill: rgb(55, 57, 71);"></path>
+                </g>
+            </g>
+            <g class="ldl-layer">
+                <g class="ldl-ani"
+                   style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -0.833333s infinite normal forwards running ld-dim;">
+                    <path d="M81.6 47.4H18.4L15 57.8h70z" fill="#66503a" style="fill: rgb(55, 57, 71);"></path>
+                </g>
+            </g>
+            <g class="ldl-layer">
+                <g class="ldl-ani"
+                   style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -0.925926s infinite normal forwards running ld-dim;">
+                    <path d="M88.2 67.8H11.8L7.5 81h85z" fill="#66503a" style="fill: rgb(55, 57, 71);"></path>
+                </g>
+            </g>
+            <g class="ldl-layer">
+                <g class="ldl-ani" style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -1.018519s infinite normal forwards running ld-dim;">
+                    <path d="M39.1 10.8h-4.9l-23 78.4H18z" fill="#666" style="fill: rgb(102, 102, 102);"></path>
+                </g>
+            </g>
+            <g class="ldl-layer">
+                <g class="ldl-ani" style="transform-origin: 50px 50px; opacity: 1; animation: 1.111111s linear -1.111111s infinite normal forwards running ld-dim;">
+                    <path d="M82 89.2h6.8l-23-78.4h-4.9z" fill="#666" style="fill: rgb(102, 102, 102);"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

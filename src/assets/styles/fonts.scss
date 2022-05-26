@@ -1,0 +1,56 @@
+@font-face {
+	font-family: 'TTNorms-Regular';
+	src: local('TTNorms-Regular'), local('TTNorms-Regular'), url('../fonts/TTNorms/TTNorms-Regular.woff2') format('woff2'), url('../fonts/TTNorms/TTNorms-Regular.woff') format('woff'), url('../fonts/TTNorms/TTNorms-Regular.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TTNorms-Medium';
+	src: local('TTNorms-Medium'), local('Roboto-ThinItalic'), url('../fonts/TTNorms/TTNorms-Medium.woff2') format('woff2'), url('../fonts/TTNorms/TTNorms-Medium.woff') format('woff'), url('../fonts/TTNorms/TTNorms-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TTNorms-Bold';
+	src: local('TTNorms-Bold'), local('TTNorms-Bold'), url('../fonts/TTNorms/TTNorms-Bold.woff2') format('woff2'), url('../fonts/TTNorms/TTNorms-Bold.woff') format('woff'), url('../fonts/TTNorms/TTNorms-Bold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'TTFirsNeue-Light';
+	src: local('TTFirsNeue-Light'), local('TTFirsNeue-Light'), url('../fonts/TTFirsNeue/TTFirsNeue-Light.woff2') format('woff2'), url('../fonts/TTFirsNeue/TTFirsNeue-Light.woff') format('woff'), url('../fonts/TTFirsNeue/TTFirsNeue-Light.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TTFirsNeue-Regular';
+	src: local('TTFirsNeue-Regular'), local('TTFirsNeue-Regular'), url('../fonts/TTFirsNeue/TTFirsNeue-Regular.woff2') format('woff2'), url('../fonts/TTFirsNeue/TTFirsNeue-Regular.woff') format('woff'), url('../fonts/TTFirsNeue/TTFirsNeue-Regular.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TTFirsNeue-LightItalic';
+	src: local('TTFirsNeue-LightItalic'), local('TTFirsNeue-LightItalic'), url('../fonts/TTFirsNeue/TTFirsNeue-LightItalic.woff2') format('woff2'), url('../fonts/TTFirsNeue/TTFirsNeue-LightItalic.woff') format('woff'), url('../fonts/TTFirsNeue/TTFirsNeue-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'TTFirsNeue-Medium';
+	src: local('TTFirsNeue-Medium'), local('TTFirsNeue-Medium'), url('../fonts/TTFirsNeue/TTFirsNeue-Medium.woff2') format('woff2'), url('../fonts/TTFirsNeue/TTFirsNeue-Medium.woff') format('woff'), url('../fonts/TTFirsNeue/TTFirsNeue-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TTFirsNeue-DemiBold';
+	src: local('TTFirsNeue-DemiBold'), local('TTFirsNeue-DemiBold'), url('../fonts/TTFirsNeue/TTFirsNeue-DemiBold.woff2') format('woff2'), url('../fonts/TTFirsNeue/TTFirsNeue-DemiBold.woff') format('woff'), url('../fonts/TTFirsNeue/TTFirsNeue-DemiBold.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}

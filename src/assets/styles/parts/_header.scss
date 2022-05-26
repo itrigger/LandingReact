@@ -1,0 +1,374 @@
+.header{
+	background: rgba(#1E1F28, .5);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	height: 90px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	.row > div{
+		align-items: center;
+	}
+	&.active{
+		height: 100vh;
+		overflow-y: scroll;
+	}
+}
+.h90{
+	height: 90px;
+}
+
+.logo{
+	width: 171px;
+	height: 52px;
+	display: block;
+}
+
+.top-menu{
+	margin: 0;
+	padding: 0;
+	display: flex;
+	& > li{
+		margin-right: 84px;
+		&.has-child{
+			position: relative;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				right: -20px;
+				top: 5px;
+				background: url("../img/ico-arrow-down.svg") 0 0 no-repeat;
+				width: 12px;
+				height: 7px;
+				transition: .2s all;
+			}
+			div{
+				position: absolute;
+				top: 0;
+				padding-top: 25px;
+				transition: .3s all;
+				opacity: 0;
+				pointer-events: none;
+				left: 50%;
+				transform: translateX(-50%) scale(.9);
+			}
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+		& > a{
+			color: #fff;
+			font-size: 16px;
+			font-family: "TTFirsNeue-Medium", sans-serif;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		ul{
+			border: 1px solid #383838;
+			background: #1E1F28;
+			padding: 30px;
+			li{
+				margin-bottom: 13px;
+				border-bottom: 1px solid #383838;
+				padding-bottom: 13px;
+				&:last-child{
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+				a{
+					color: #fff;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+			}
+		}
+		&:hover{
+			div{
+				transition: .3s all;
+				opacity: 1;
+				pointer-events: all;
+				transform: translateX(-50%) scale(1);
+			}
+			&:after{
+				transform: rotate(180deg);
+				transition: .2s all;
+			}
+		}
+
+			a.active{
+				color: $yellow;
+			}
+
+	}
+}
+.top-cart-link{
+	color: rgba(#fff, .5);
+	font-family: "TTFirsNeue-Medium", sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	&.active{
+		color: $yellow;
+	}
+}
+.top-contacts{
+	justify-content: space-between;
+	width: 100%;
+	a{
+		color: #fff;
+		font-size: 21px;
+		font-family: "TTFirsNeue-DemiBold", sans-serif;
+		font-weight: 700;
+		text-decoration: none;
+	}
+}
+
+.header-bg{
+	padding-top: 90px;
+	margin-top: -90px;
+	color: #fff;
+	.line2{
+		padding-bottom: 60px;
+	}
+}
+
+.hbg1{
+	background: url("../img/header1.jpg") center top no-repeat #000;
+}
+
+.mobile{
+	display: none;
+}
+
+.btn-burger {
+	position: relative;
+	width: 25px;
+	height: 22px;
+	-ms-flex-align: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.btn-burger:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 25px;
+	height: 3px;
+	background: #fff;
+	transition: .3s all;
+}
+
+.btn-burger span {
+	width: 25px;
+	height: 3px;
+	background: #fff;
+	display: block;
+	transition: .3s all;
+}
+
+.btn-burger:after {
+	content: '';
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 20px;
+	height: 3px;
+	background: #fff;
+	transition: .3s all;
+}
+.btn-burger.active:before {
+	transform: rotate(45deg);
+	top: 10px;
+	transition: .3s all;
+}
+.btn-burger.active span {
+	opacity: 0;
+	transition: .3s all;
+}
+.btn-burger.active:after {
+	transform: rotate(-45deg);
+	width: 25px;
+	bottom: 8px;
+	transition: .3s all;
+}
+
+
+.mobile-header-call{
+	display: block;
+}
+
+.mobile-menu{
+	opacity: 0;
+	transform: scale(.9);
+	transition: .3s all;
+	pointer-events: none;
+	z-index: -99;
+	position: absolute;
+	left: 0;
+	right: 0;
+	padding-top: 20px;
+	/*top: 90px;
+	height: 100vh;*/
+}
+
+.mobile-menu-minicart{
+	justify-content: center;
+	border-top: 1px solid rgba(#fff, .15);
+	border-bottom: 1px solid rgba(#fff, .15);
+	padding: 20px 0;
+	margin-bottom: 40px;
+	margin-left: -30px;
+	width: calc(100% + 60px);
+}
+
+.mobile-menu-contacts{
+	.ico{
+		width: 35px;
+		height: 35px;
+		background-size: contain;
+		margin: 0 13px;
+	}
+}
+.mobile-menu-contacts__tel{
+	text-align: center;
+	margin-top: 20px;
+}
+
+.header.active{
+	.mobile-menu{
+		z-index: 9999;
+		pointer-events: all;
+		opacity: 1;
+		transform: scale(1);
+		transition: .3s all;
+	}
+}
+
+.mobile-menu-ul{
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	& > li{
+		text-align: center;
+		margin-bottom: 30px;
+		width: 100%;
+		max-width: 600px;
+		&.has-child{
+			margin-bottom: 20px;
+			& > a, & > button{
+				position: relative;
+				padding: 0;
+				margin: 0;
+				line-height: 1;
+				&:after{
+					content: '';
+					display: block;
+					position: absolute;
+					right: -20px;
+					top: 5px;
+					background: url("../img/ico-arrow-down.svg") 0 0 no-repeat;
+					width: 12px;
+					height: 7px;
+					transition: .2s all;
+				}
+			}
+			div{
+				padding-top: 10px;
+
+			}
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+		& > a, & > button{
+			color: #fff;
+			font-size: 16px;
+			font-family: "TTFirsNeue-Medium", sans-serif;
+			text-transform: uppercase;
+			text-decoration: none;
+		}
+		ul{
+			border: 1px solid #383838;
+			background: #1E1F28;
+			padding: 30px;
+			li{
+				margin-bottom: 13px;
+				border-bottom: 1px solid #383838;
+				padding-bottom: 13px;
+				&:last-child{
+					border-bottom: none;
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+				a{
+					color: #fff;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+			}
+		}
+		&.active{
+			div{
+				transition: .3s all;
+				opacity: 1;
+			}
+			& > button:after{
+				transform: rotate(180deg);
+				transition: .2s all;
+			}
+		}
+
+		a.active{
+			color: $yellow;
+		}
+
+	}
+}
+
+.dropdown-menu {
+	max-height: 0;
+	overflow: hidden;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	transform: scaleY(0);
+	transform-origin: 50% 0%;
+	transition: .3s all ease-out;
+}
+
+.has-child.active .dropdown-menu{
+	max-height: 9999px;
+	display: block;
+	transform: scaleY(1);
+	transition: .3s all ease-in-out;
+}
+
+
+@media (max-width: 600px) {
+	.logo{
+		margin: 0 auto;
+		width: 138px;
+		height: 43px;
+	}
+	.mobile{
+		display: flex;
+	}
+	.page_header_btn{
+		justify-content: flex-start;
+		padding-top: 25px;
+		.btn{
+			width: 100%;
+			max-width: 300px;
+			margin-left: 10px;
+		}
+	}
+	.header-bg .line2{
+		padding-bottom: 45px;
+	}
+}

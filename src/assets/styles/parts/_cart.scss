@@ -1,0 +1,202 @@
+.table-cart{
+	.th{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 1.4;
+		color: rgba(#000, .5);
+		padding: 15px 10px 10px;
+		border: 1px solid #E6E6E6;
+		border-bottom: none;
+		border-right: none;
+		&:last-child{
+			border-right: 1px solid #E6E6E6;
+		}
+	}
+	.td{
+		padding: 55px 10px 27px;
+		vertical-align: top;
+		border: 1px solid #E6E6E6;
+		border-right: none;
+		border-bottom: none;
+		&:first-child{
+			padding-top: 35px;
+		}
+		&:last-child{
+			border-right: 1px solid #E6E6E6;
+		}
+		&.count{
+			padding-top: 52px;
+		}
+		&.img{
+			img{
+				max-width: 70px;
+			}
+		}
+	}
+	.name{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+	.price{
+		white-space: nowrap;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+	.count{
+		input{
+			width: 75px;
+		}
+	}
+	.subtotal{
+		white-space: nowrap;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.total-text{
+		font-family: 'TTFirsNeue-Regular', sans-serif;
+		font-size: 30px;
+		color: rgba(#000, .5);
+		padding-left: 20px;
+	}
+	.total-price{
+		font-family: 'TTFirsNeue-DemiBold', sans-serif;
+		font-size: 30px;
+		line-height: 1.4;
+		padding-right: 20px;
+	}
+}
+.cart_head{
+	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 30px;
+	line-height: 1.4;
+	margin-top: 52px;
+	margin-bottom: 20px;
+}
+
+.cart-form{
+	.cart_head{
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+	.bg-dark{
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+	.bottom{
+		padding-top: 60px;
+	}
+}
+
+.inputCountWrap{
+	display: flex;
+	position: relative;
+	max-width: 75px;
+	margin: 0 auto;
+	.stepper-step{
+		width: 8px;
+		height: 14px;
+		cursor: pointer;
+		top: 5px;
+		position: absolute;
+		&.down{
+			left: 0;
+			background: url("../img/input-arr-left.svg") 0 0 no-repeat;
+			z-index: 2;
+		}
+		&.up{
+			right: 0;
+			background: url("../img/input-arr-right.svg") 0 0 no-repeat;
+			z-index: 2;
+		}
+	}
+	input{
+		text-align: center;
+		max-width: 75px;
+		font-size: 16px;
+		border: none;
+	}
+}
+
+.boss{
+	text-align: center;
+	.title{
+		font-family: "TTNorms-Medium", sans-serif;
+		font-size: 16px;
+		margin-top: 30px;
+	}
+	.name{
+		font-family: "TTFirsNeue-Medium", sans-serif;
+		font-size: 30px;
+		margin-top: 10px;
+		margin-bottom: 40px;
+	}
+	.text{
+		span{
+			display: block;
+		}
+	}
+}
+.table-cart.table-cart-mobile .th{
+	border: none;
+	padding: 0 0 5px;
+	font-size: 10px;
+}
+.table-cart.table-cart-mobile .td{
+	border: none;
+	border-left: 1px solid #E6E6E6;
+	border-right: 1px solid #E6E6E6;
+	padding: 0 20px 20px;
+	&.img{
+		border-top: 1px solid #E6E6E6;
+		border-right: none;
+		padding-top: 20px;
+	}
+	&.del{
+		padding-top: 20px;
+		border-top: 1px solid #E6E6E6;
+		border-left: none;
+		.delete-row{
+			margin: 0 0 0 auto;
+		}
+	}
+	.inputCountWrap{
+		margin: 0;
+	}
+}
+
+@media (max-width: 600px) {
+	.table-cart .td{
+		padding: 0 20px 20px;
+	}
+	.table-cart .total-text{
+		font-size: 24px;
+		padding: 20px 0 0;
+	}
+	.table-cart .total-price{
+		font-size: 24px;
+		padding: 20px 0 0;
+	}
+	.cart-form .bg-dark{
+		padding: 40px 30px;
+		margin-bottom: 140px;
+		.text{
+			span{
+				display: inline;
+			}
+		}
+	}
+}

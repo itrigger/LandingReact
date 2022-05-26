@@ -1,0 +1,58 @@
+.homeseo{
+	margin-top: 145px;
+	.left{
+		border-top: 1px solid rgba(#000, .15);
+		border-left: 1px solid rgba(#000, .15);
+		border-right: 1px solid rgba(#000, .15);
+		padding: 100px 30px 30px;
+	}
+	.right{
+		border-top: 1px solid rgba(#000, .15);
+		border-right: 1px solid rgba(#000, .15);
+		padding-top: 100px;
+		padding-bottom: 95px;
+	}
+	.title{
+		margin-top: 30px;
+		font-size: 14px;
+	}
+	.name{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		font-size: 24px;
+		line-height: 1.4;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.head{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 36px;
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+	.desc{
+		font-size: 16px;
+		line-height: 1.5;
+		p{
+			font-size: inherit;
+			line-height: inherit;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@media (max-width: 600px){
+	.homeseo{
+		margin-top: 40px;
+	}
+	.homeseo .left{
+		padding-top: 60px;
+	}
+	.homeseo .right{
+		padding-top: 60px;
+		padding-bottom: 30px;
+		border-left: 1px solid rgba(#000, .15);
+	}
+}

@@ -1,0 +1,178 @@
+.twoblocks{
+	overflow: hidden;
+	.head{
+		font-family: "TTFirsNeue-DemiBold",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 60px;
+		line-height: 1.4;
+		color: #fff;
+		span{
+			display: block;
+		}
+		margin-bottom: 30px;
+	}
+	.desc{
+		color: #ffffff;
+		font-size: 18px;
+		margin-bottom: 54px;
+		line-height: 1.5;
+	}
+	.hint{
+		color: #ffffff;
+		font-size: 24px;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		margin-top: 30px;
+	}
+
+	.tb-left{
+		position: relative;
+		height: 100%;
+		width: 50%;
+		transition: .3s all;
+		padding-top: 100px;
+		padding-bottom: 45px;
+		background: url("../img/tb1.png") 0 bottom no-repeat;
+		background-position-x: 450px;
+		background-size: 734px 540px;
+
+		& > div{
+			width: 505px;
+		}
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 2000px;
+			background: #AF3738;
+			z-index: -1;
+		}
+		&:hover{
+			transition: .3s all;
+			width: 70%;
+		}
+	}
+	.tb-right{
+		position: relative;
+		height: 100%;
+		width: 50%;
+		transition: .3s all;
+		padding-top: 100px;
+		padding-left: 80px;
+		padding-bottom: 45px;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 550px;
+			bottom: 0;
+			background: url("../img/tb2.png") 0 bottom no-repeat;
+			background-position-x: left;
+			background-size: 792px 669px;
+			width: 792px;
+			height: 669px;
+		}
+		& > div{
+			width: 505px;
+		}
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			height: 100%;
+			width: 2000px;
+			background: #758E72;
+			z-index: -1;
+		}
+		&:hover{
+			transition: .3s all;
+			width: 70%;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.twoblocks_w{
+		flex-direction: column;
+		.btn{
+			width: 270px;
+		}
+	}
+	.twoblocks .desc{
+		margin-bottom: 30px;
+	}
+	.twoblocks .hint{
+		font-size: 18px;
+	}
+	.twoblocks .tb-left{
+		width: 100%;
+		padding-top: 60px;
+		background: none;
+		padding-bottom: 90px;
+	}
+	.twoblocks .tb-left > div{
+		width: auto;
+		position: relative;
+		z-index: 2;
+	}
+	.twoblocks .tb-left:before{
+		right: -30px;
+	}
+	.twoblocks .tb-left:after{
+		content: '';
+		display: block;
+		position: absolute;
+		right: -30px;
+		bottom: 0;
+		width: 240px;
+		height: 370px;
+		background: url("../img/tb1.png") 0 bottom no-repeat;
+		background-size: cover;
+		z-index: 0;
+	}
+	.twoblocks .tb-left:hover{
+		width: auto;
+	}
+
+	.twoblocks .tb-right{
+		width: 100%;
+		padding-left: 0;
+		padding-bottom: 100px;
+	}
+	.twoblocks .tb-right:before{
+		left: -30px;
+	}
+	.twoblocks .tb-right:after{
+		content: '';
+		display: block;
+		position: absolute;
+		left: auto;
+		right: -30px;
+		bottom: 60px;
+		width: 130px;
+		height: 510px;
+		background: url("../img/tb2.png") 0 bottom no-repeat;
+		background-size: cover;
+		z-index: 0;
+	}
+	.twoblocks .tb-right > div{
+		width: auto;
+		position: relative;
+		z-index: 2;
+	}
+	.twoblocks .tb-right:hover{
+		width: auto;
+	}
+
+
+	.twoblocks .head{
+		font-size: 42px;
+	}
+}

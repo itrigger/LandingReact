@@ -1,0 +1,94 @@
+.ico{
+	display: block;
+}
+
+.ico-left{
+	margin-right: 15px;
+}
+
+.ico-tg{
+	width: 25px;
+	height: 25px;
+	background: url("../img/ico-tg.svg") 0 0 no-repeat;
+}
+
+.ico-wt{
+	width: 25px;
+	height: 25px;
+	background: url("../img/ico-wt.svg") 0 0 no-repeat;
+}
+
+.ico-wt-white{
+	width: 21px;
+	height: 21px;
+	background: url("../img/ico-wt-white.svg") 0 0 no-repeat;
+}
+
+.ico-hand{
+	width: 70px;
+	height: 70px;
+	background: url("../img/hand.svg") 0 0 no-repeat;
+}
+
+.ico-del-cart{
+	width: 24px;
+	height: 24px;
+	background: url("../img/ico-del.svg") 0 0 no-repeat;
+}
+
+.ico-tel{
+	width: 23px;
+	height: 23px;
+	background: url("../img/ico-tel.svg") 0 0 no-repeat;
+}
+
+
+@keyframes ld-dim {
+	0% {
+		animation-timing-function: cubic-bezier(0.9647, 0.2413, -0.0705, 0.7911);
+		opacity:0
+	}
+
+	51% {
+		animation-timing-function: cubic-bezier(0.9226, 0.2631, -0.0308, 0.7628);
+		opacity:.9995
+	}
+
+	100% {
+		opacity:0
+	}
+}
+.ldl-scale{
+	transform-origin: 50% 50%; transform: rotate(0deg) scale(0.8, 0.8);
+}
+.ldl-ani1{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -0.648148s infinite normal forwards running ld-dim;
+	path{fill: #66503a;}
+}
+.ldl-ani2{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -0.740741s infinite normal forwards running ld-dim;
+	path{fill: #66503a;}
+}
+.ldl-ani3{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -0.833333s infinite normal forwards running ld-dim;
+	path{fill: #66503a;}
+}
+.ldl-ani4{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -0.925926s infinite normal forwards running ld-dim;
+	path{fill: #66503a;}
+}
+.ldl-ani5{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -1.018519s infinite normal forwards running ld-dim;
+	path{fill: #666;}
+}
+.ldl-ani6{
+	transform-origin: 50px 50px; opacity: 1; animation: 2.111111s linear -1.111111s infinite normal forwards running ld-dim;
+	path{fill: #666;}
+}
+.ldl-main{
+	height: 200px;
+	width: 200px;
+}
+.ld-dim {
+	animation:ld-dim 1s infinite linear
+}

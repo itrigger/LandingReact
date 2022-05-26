@@ -1,0 +1,211 @@
+.megamap{
+	position: relative;
+
+	.form{
+		padding-top: 60px;
+		padding-bottom: 65px;
+		background: #373947;
+		position: relative;
+		.head{
+			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-style: normal;
+			color: #fff;
+			font-size: 36px;
+			line-height: 1.4;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+		}
+		.btn-classic{
+			width: 100%;
+		}
+	}
+	.title{
+		position: absolute;
+		top: 350px;
+		width: 100%;
+		text-align: center;
+	}
+	.head{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 60px;
+		line-height: 1.4;
+	}
+	.desc{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 30px;
+		line-height: 1.4;
+	}
+}
+
+.map{
+	margin-top: -240px;
+	background: #EBF2FF;
+	padding-bottom: 20px;
+	svg{
+		width: 100%;
+		max-width: 100%;
+	}
+}
+
+#map{
+	path.area{
+		&.active{
+			fill: #1D64B7;
+			transition: .2s all;
+		}
+	}
+	.path.back{
+		&.active{
+			fill: #fff;
+			stroke: #373947;
+		}
+	}
+}
+
+.mr-title{
+	margin-bottom: 30px;
+}
+
+.map_result{
+	padding-top: 60px;
+	.desc{
+		font-size: 18px;
+	}
+}
+
+.result-row{
+	border: 1px solid rgba(#000, .15);
+	border-bottom: 0;
+	.img{
+		width: 25%;
+		padding: 30px;
+		img{
+			max-width: 100%;
+		}
+	}
+	.name-w{
+		width: 75%;
+		padding: 30px 30px 30px 0;
+	}
+	.name{
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 24px;
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+	.description{
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	.minirow-w{
+		border-left: 1px solid rgba(#000, .15);
+		border-right: 1px solid rgba(#000, .15);
+	}
+	.minirow{
+		font-size: 14px;
+		.left{
+			width: 50%;
+			opacity: .7;
+			padding-left: 20px;
+			padding-top: 20px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid rgba(#000, .15);
+		}
+		.right{
+			width: 50%;
+			padding: 20px 20px 10px;
+			border-bottom: 1px solid rgba(#000, .4);
+		}
+	}
+	.price_block{
+		padding-top: 30px;
+		padding-right: 30px;
+		padding-bottom: 32px;
+		.price{
+			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-style: normal;
+			text-transform: uppercase;
+			font-size: 24px;
+			line-height: 1.4;
+			margin-bottom: 20px;
+		}
+	}
+}
+.footer-row{
+	border-bottom: 1px solid rgba(#000, .15);
+}
+
+@media (max-width: 600px) {
+	.megamap{
+		.form{
+			padding-bottom: 35px;
+		}
+		.form .head{
+			flex-direction: column;
+			font-size: 30px;
+		}
+		.form-control{
+			width: 100%;
+			max-width: 600px;
+			margin-bottom: 20px;
+		}
+		.head{
+			font-size: 42px;
+		}
+	}
+	.map{
+		display: none;
+	}
+	.result-row{
+		border: 0;
+		& > div{
+			border-left: 1px solid rgba(0, 0, 0, 0.15);
+			border-right: 1px solid rgba(0, 0, 0, 0.15);
+			&:first-child{
+				border-top: 1px solid rgba(0, 0, 0, 0.15);
+			}
+		}
+		.img{
+			flex: 0 0 75px;
+			padding-left: 20px;
+			padding-right: 20px;
+			padding-bottom: 20px;
+		}
+		.name-w{
+			padding-right: 15px;
+			padding-bottom: 20px;
+		}
+		.name{
+			font-size: 18px;
+			margin-bottom: 15px;
+		}
+		.description{
+			font-size: 12px;
+		}
+		.price_block{
+			flex-direction: row;
+			justify-content: space-between;
+			padding-right: 0;
+			align-items: center;
+			.price{
+				padding-left: 20px;
+				font-size: 18px;
+				margin-bottom: 0;
+			}
+		}
+		.btn-classic{
+			height: 50px;
+		}
+		&.footer-row .minirow-w{
+			border-top: 1px solid rgba(0, 0, 0, 0.15);
+			border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+			line-height: 1;
+		}
+	}
+}

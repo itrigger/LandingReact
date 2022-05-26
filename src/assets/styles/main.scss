@@ -1,28 +1,22 @@
-$base-color: #FFE500;
-$black-color: #000000;
-$darkgray-color: #333;
-$footergray-color: #353535;
-$gray-text-footer-color: #a5a5a5;
-$whatsapp-color: #48AA6F;
-
-@import "_parts/_reset";
-@import "_parts/_utils";
-@import "_parts/_animation";
-@import "_parts/_typo";
-@import "_parts/_buttons";
-@import "_parts/_form";
-@import "_parts/_header";
-@import "_parts/_promo";
-@import "_parts/_promoblack";
-@import "_parts/_askblock";
-@import "_parts/_footer";
-@import "modules/_notify";
-@import "modules/_lytebox";
-
-body{
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-}
-* {
-  box-sizing: border-box;
-}
+@import "utils/reset";
+@import "variables";
+@import "utils/utils";
+@import "fonts";
+@import "utils/icons";
+@import "utils/buttons";
+@import "utils/form";
+@import "utils/skeleton";
+@import "modules/lytebox";
+@import "modules/notify";
+@import "base";
+@import "parts/header";
+@import "parts/footer";
+@import "parts/slider";
+@import "parts/home_cats";
+@import "parts/home_twoblocks";
+@import "parts/megamap";
+@import "parts/home_seo";
+@import "parts/services";
+@import "parts/card_result";
+@import "parts/promo";
+@import "parts/cart";

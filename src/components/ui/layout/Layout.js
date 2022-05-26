@@ -1,18 +1,20 @@
-import React from "react"
+import React from "react";
 
-import Header from "./../header/Header"
-import Footer from "./../footer/Footer"
-import '../../../assets/styles/main.scss'
+import Header from "./../header/Header";
+import Footer from "./../footer/Footer";
+import "../../../assets/styles/main.scss";
+import NotifyProvider from "../Notify/NotifyProvider";
 
 const Layout = ({ children }) => {
+  return (
+    <>
+      <NotifyProvider>
+        <Header />
+        {children}
+        <Footer />
+      </NotifyProvider>
+    </>
+  );
+};
 
-    return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
-    )
-}
-
-export default Layout
+export default Layout;

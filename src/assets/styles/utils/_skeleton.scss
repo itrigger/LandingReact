@@ -1,0 +1,19 @@
+.skeleton_rows_image{
+  width: 70px;
+  height: 70px;
+}
+.skeleton_rows_button{
+  width: 185px;
+  height: 60px;
+}
+
+@media (max-width: 600px) {
+  .skeleton_rows_image{
+    width: 35px;
+    height: 35px;
+  }
+  .skeleton_rows_button{
+    width: 161px;
+    height: 50px;
+  }
+}

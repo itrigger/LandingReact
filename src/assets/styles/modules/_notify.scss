@@ -8,7 +8,7 @@
 
 .notification-item {
   box-shadow: 0 0 10px rgba(0,0,0, 0.3);
-  border-radius: 6px;
+  border-radius: 3px;
   overflow: hidden;
   margin-bottom: 20px;
   animation: SlideLeft 0.4s;
@@ -58,4 +58,13 @@
 
 .notification-item.error .bar {
   background-color: red;
+}
+
+@media (max-width: 600px) {
+  .notification-wrapper{
+    width: calc(100% - 20px);
+  }
+  .notification-item{
+    width: 100%;
+  }
 }

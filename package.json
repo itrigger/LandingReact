@@ -40,7 +40,12 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-input-mask": "^2.0.4",
+    "react-loading-skeleton": "^3.1.0",
     "sass": "^1.49.9",
+    "swiper": "^8.1.4",
     "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }

@@ -1,0 +1,235 @@
+.vagon-sale{
+	.head{
+		margin-top: 90px;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		font-size: 60px;
+		line-height: 1.4;
+		margin-bottom: 20px;
+	}
+	.left{
+		padding-top: 35px;
+		padding-bottom: 35px;
+		flex: 0 0 50%;
+		text-align: center;
+	}
+	.right{
+		padding: 35px 40px 35px 50px;
+		flex: 0 0 50%;
+		.name{
+			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-style: normal;
+			text-transform: uppercase;
+			font-size: 30px;
+			line-height: 1.4;
+			margin-bottom: 20px;
+		}
+		.desc{
+			font-size: 16px;
+			line-height: 1.4;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+.vagon-type.empty{
+	.left{
+		height: 100px;
+	}
+}
+
+.service3{
+	.hint{
+		font-size: 24px;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		text-transform: uppercase;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+	ul{
+		margin-left: 40px;
+	}
+	.bold{
+		font-size: 24px;
+		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-style: normal;
+		line-height: 1.4;
+		margin-bottom: 40px;
+	}
+	p{
+		font-size: 18px;
+		margin-bottom: 20px;
+		line-height: 1.4;
+	}
+	.form{
+		padding: 70px 130px 76px;
+	}
+	.swiper-slide{
+		height: 569px;
+		&.s3s1{
+			background: url("../img/service3_1.jpg") 0 0 no-repeat;
+			background-size: cover;
+		}
+		&.s3s2{
+			background: url("../img/service3_1.jpg") 0 0 no-repeat;
+			background-size: cover;
+		}
+		&.s3s3{
+			background: url("../img/service3_1.jpg") 0 0 no-repeat;
+			background-size: cover;
+		}
+		&.s3s4{
+			background: url("../img/service3_2.jpg") 0 0 no-repeat;
+			background-size: cover;
+		}
+	}
+	.spacer{
+		padding: 55px;
+	}
+}
+
+.middle-border-8{
+	position: relative;
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1.5px;
+		height: 100%;
+		left: calc(50% - 0.5px);
+		top: 0;
+		background: #E6E6E6;
+		z-index: -1;
+	}
+}
+
+.middle-border-12{
+	position: relative;
+	&:before{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1px;
+		height: 100%;
+		left: calc(33.333% - 2.5px);
+		top: 0;
+		border-right: 1px solid #E6E6E6;
+		z-index: -1;
+	}
+	&:after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 1px;
+		height: 100%;
+		left: calc(66.666% - 1.5px);
+		top: 0;
+		border-right: 1px solid #E6E6E6;
+		z-index: -1;
+	}
+}
+
+.steps{
+	margin-top: 50px;
+	&>div{
+		padding-bottom: 160px;
+	}
+	.title{
+		font-size: 24px;
+		font-family: "TTFirsNeue-DemiBold",sans-serif;
+		font-style: normal;
+		line-height: 1.4;
+		text-transform: uppercase;
+		margin-top: 27px;
+		margin-bottom: 12px;
+	}
+	.desc{
+		font-size: 16px;
+		line-height: 1.4;
+		max-width: 230px;
+	}
+}
+
+@media (max-width: 600px){
+	.middle-border-8:before{
+		display: none;
+	}
+	.service3 .head2{
+		margin-top: 60px;
+	}
+	.service3 .hint{
+		font-size: 18px;
+	}
+	.service3 .col-8{
+		border-left: 1px solid #E6E6E6;
+	}
+	.service3 .bold{
+		font-size: 18px;
+	}
+	.service3 .swiper-slide{
+		height: 344px;
+	}
+	.service3 .form{
+		padding: 30px;
+	}
+	.steps{
+		flex-direction: column;
+	}
+	.middle-border-12:before,
+	.middle-border-12:after{
+		display: none;
+	}
+	.fcol1,
+	.fcol2,
+	.fcol3
+	{
+		padding: 0;
+	}
+	.service3 form .col-8{
+		border-left: 0;
+	}
+	form .row{
+		padding: 0;
+	}
+	.form .disclaimer{
+		margin-bottom: 30px;
+	}
+	.steps > div{
+		padding-bottom: 30px;
+	}
+	.vagon-sale .head{
+		font-size: 42px;
+	}
+	.vagon-type.empty{
+		display: none;
+	}
+	.vagon-type{
+		flex-direction: column;
+		.left{
+			border-right: none;
+			img{
+				max-width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.vagon-sale .right{
+		padding: 30px;
+		flex: 0 0 100%;
+		.btn{
+			font-size: 14px;
+			width: 100%;
+			max-width: 300px;
+			height: 60px;
+			padding: 0 20px;
+		}
+	}
+	.vagon-sale .right .name{
+		font-size: 24px;
+	}
+	.vagon-sale .right .desc{
+		font-size: 14px;
+	}
+}
