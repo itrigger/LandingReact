@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import NotifyProvider, {
-  useNotification,
-} from "../components/ui/Notify/NotifyProvider";
+import { useNotification } from "../components/ui/Notify/NotifyProvider";
 import { Helmet } from "react-helmet";
 import Layout from "../components/ui/layout/Layout";
 import BossImg from "../assets/img/boss.png";
 import { CartContext } from "../context/CartContext";
 import CartRow from "../components/Table/CartRow";
+import FormCart from "../components/Form/FormCart";
 
 const Cart = () => {
   const [total, setTotal] = useState("0");
@@ -21,9 +20,6 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    typeof window !== "undefined"
-      ? window.addEventListener("resize", updateMedia)
-      : null;
     return () =>
       typeof window !== "undefined"
         ? window.removeEventListener("resize", updateMedia)
@@ -63,9 +59,12 @@ const Cart = () => {
   }, [cartItems]);
 
   useEffect(() => {
-    if (value && value[0].length > 0) {
-      calculateTotal();
+    function EsLintSolve() {
+      if (value && value[0].length > 0) {
+        calculateTotal();
+      }
     }
+    EsLintSolve();
   }, []);
 
   /* Notification */
@@ -96,12 +95,6 @@ const Cart = () => {
         cartItems.map((x) =>
           x.id === id ? { ...exist, quantity: exist.quantity - 1 } : x
         )
-      );
-    } else {
-      handleNewNotification(
-        "ERROR",
-        "Кол-во товара не может быть меньше единицы",
-        "Ошибка"
       );
     }
     calculateTotal();
@@ -149,7 +142,7 @@ const Cart = () => {
 
       <Layout>
         <div className="header-bg hbg1">
-          <div className="row bl-light br-light">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
             <div className="col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
@@ -161,7 +154,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="row bl-light br-light line2">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 xs-col-4">
               <h1>
                 <span className="italic">Оформить</span> заказ
@@ -229,48 +222,7 @@ const Cart = () => {
               </div>
               <div className="col-1 xs-col-0"></div>
             </div>
-            <form action="">
-              <div className="row-8">
-                <div className="col-1 xs-col-0"></div>
-                <div className="col-2 xs-col-8 fcol1">
-                  <span className="input_wrapper">
-                    <input type="text" placeholder="Имя" />
-                  </span>
-                </div>
-                <div className="col-2 xs-col-8 fcol2">
-                  <span className="input_wrapper">
-                    <input type="text" placeholder="Телефон" />
-                  </span>
-                </div>
-                <div className="col-2 xs-col-8 fcol3">
-                  <span className="input_wrapper">
-                    <input type="text" placeholder="Email" />
-                  </span>
-                </div>
-                <div className="col-1 xs-col-0"></div>
-              </div>
-              <div className="row-8">
-                <div className="col-1 xs-col-0"></div>
-                <div className="col-6 xs-col-8">
-                  <input type="text" placeholder="Адрес депо доставки" />
-                </div>
-                <div className="col-1 xs-col-0"></div>
-              </div>
-              <div className="row-8 | bottom">
-                <div className="col-1 xs-col-0"></div>
-                <div className="col-2 xs-col-8">
-                  <input type="submit" value="Оформить заказ" />
-                </div>
-                <div className="col-2 xs-col-0"></div>
-                <div className="col-2 xs-col-8">
-                  <div className="disclaimer">
-                    Нажимая на кнопку, я соглашаюсь с{" "}
-                    <a href="/politic">политикой обработки</a> персональных
-                    данных
-                  </div>
-                </div>
-              </div>
-            </form>
+            <FormCart />
           </div>
           <div className="col-4 xs-col-4 bg-dark bl-light">
             <div className="d_f fd_c ai_c jc_c | boss">

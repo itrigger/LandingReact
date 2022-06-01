@@ -81,6 +81,9 @@
 			.description{
 				font-size: 12px;
 				line-height: 1.4;
+				p{
+					font-size: inherit;
+				}
 			}
 			.minirow-w{
 				padding: 0 20px;

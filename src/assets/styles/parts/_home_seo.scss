@@ -10,7 +10,7 @@
 		border-top: 1px solid rgba(#000, .15);
 		border-right: 1px solid rgba(#000, .15);
 		padding-top: 100px;
-		padding-bottom: 95px;
+		padding-bottom: 20px;
 	}
 	.title{
 		margin-top: 30px;
@@ -40,6 +40,40 @@
 			line-height: inherit;
 			margin-bottom: 30px;
 		}
+	}
+}
+
+@media (min-width: 1440px) and (max-width: 1660px) {
+	.homeseo {
+		margin-top: 125px;
+	}
+	.homeseo .head{
+		font-size: 32px;
+		margin-bottom: 13px;
+	}
+	.homeseo .desc{
+		font-size: 14px;
+	}
+	.homeseo .left{
+		padding-left: 20px;
+	}
+	.homeseo .right{
+		padding-top: 90px;
+		img{
+			width: 230px;
+			height: auto;
+		}
+	}
+	.homeseo .title{
+		font-size: 13px;
+	}
+	.homeseo .name{
+		font-size: 21px;
+		margin-top: 5px;
+	}
+	.btn-wt-green{
+		padding: 15px 28px;
+		font-size: 16px;
 	}
 }
 

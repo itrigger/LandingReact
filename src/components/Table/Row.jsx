@@ -2,7 +2,7 @@ import React from "react";
 
 const Row = ({ data, addToCart }) => {
   return (
-    <div className="row result-row">
+    <div className="row result-row  br bl middle-border-12">
       <div className="d_f col-4 xs-col-4">
         <div className="img">
           <img srcSet={data.image.srcSet} alt="" />

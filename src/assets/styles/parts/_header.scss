@@ -114,7 +114,7 @@
 	}
 }
 .top-contacts{
-	justify-content: space-between;
+	justify-content: flex-end;
 	width: 100%;
 	a{
 		color: #fff;
@@ -122,6 +122,10 @@
 		font-family: "TTFirsNeue-DemiBold", sans-serif;
 		font-weight: 700;
 		text-decoration: none;
+		margin-left: 18px;
+		&:first-child{
+			margin-left: 0;
+		}
 	}
 }
 
@@ -349,8 +353,39 @@
 	transition: .3s all ease-in-out;
 }
 
+@media (min-width: 1440px) and (max-width: 1660px) {
+	.top-menu > li{
+		margin-right: 79px;
+	}
+	.top-cart-link{
+		white-space: nowrap;
+		font-size: 14px;
+	}
+	.header{
+		height: 80px;
+	}
+	.h90{
+		height: 80px;
+	}
+	.logo {
+		width: 141px;
+		height: 46px;
+		display: block;
+	}
+	.top-menu > li > a{
+		font-size: 14px;
+	}
+	.top-contacts a{
+		font-size: 16px;
+		margin-left: 14px;
+	}
+}
+
 
 @media (max-width: 600px) {
+	.header-bg{
+		background-size: cover;
+	}
 	.logo{
 		margin: 0 auto;
 		width: 138px;
@@ -363,9 +398,10 @@
 		justify-content: flex-start;
 		padding-top: 25px;
 		.btn{
-			width: 100%;
+			width: calc(100% - 10px);
 			max-width: 300px;
 			margin-left: 10px;
+			margin-right: 10px;
 		}
 	}
 	.header-bg .line2{

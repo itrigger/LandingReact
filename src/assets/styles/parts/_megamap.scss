@@ -1,11 +1,9 @@
 .megamap{
 	position: relative;
-
 	.form{
-		padding-top: 60px;
-		padding-bottom: 65px;
 		background: #373947;
 		position: relative;
+		z-index: 3;
 		.head{
 			font-family: "TTFirsNeue-Medium",sans-serif;
 			font-style: normal;
@@ -14,10 +12,14 @@
 			line-height: 1.4;
 			text-transform: uppercase;
 			margin-bottom: 30px;
+			padding-top: 60px;
 		}
-		.btn-classic{
+		.row:last-child{
+			padding-bottom: 65px;
+		}
+/*		.btn-classic{
 			width: 100%;
-		}
+		}*/
 	}
 	.title{
 		position: absolute;
@@ -71,7 +73,9 @@
 }
 
 .map_result{
-	padding-top: 60px;
+	.row:first-child{
+		padding-top: 60px;
+	}
 	.desc{
 		font-size: 18px;
 	}
@@ -102,10 +106,6 @@
 	.description{
 		font-size: 14px;
 		line-height: 1.4;
-	}
-	.minirow-w{
-		border-left: 1px solid rgba(#000, .15);
-		border-right: 1px solid rgba(#000, .15);
 	}
 	.minirow{
 		font-size: 14px;
@@ -141,10 +141,64 @@
 	border-bottom: 1px solid rgba(#000, .15);
 }
 
+@media (min-width: 1440px) and (max-width: 1660px) {
+
+	.megamap .form .head{
+		font-size: 32px;
+		padding-top: 50px;
+		margin-bottom: 17px;
+	}
+	.megamap .title{
+		top: 370px;
+	}
+	.megamap .head{
+		font-size: 42px;
+	}
+	.map{
+		margin-top: -310px;
+		margin-bottom: -130px;
+	}
+	.ico-hand{
+		width: 60px;
+		height: 60px;
+		background-size: contain;
+	}
+	.megamap .desc{
+		margin-top: 12px;
+	}
+	.map_result{
+		background: #fff;
+		position: relative;
+
+	}
+	.map_result .row:first-child{
+		padding-top: 40px;
+	}
+	.result-row .img{
+		padding: 25px;
+	}
+	.result-row .name-w{
+		padding: 25px 25px 25px 0;
+	}
+	.result-row .name{
+		font-size: 20px;
+	}
+	.result-row .price_block{
+		padding-top: 25px;
+		padding-right: 25px;
+	}
+	.result-row .description{
+		font-size: 14px;
+		p{
+			font-size: inherit;
+		}
+	}
+}
+
 @media (max-width: 600px) {
 	.megamap{
 		.form{
-			padding-bottom: 35px;
+			padding-bottom: 0;
 		}
 		.form .head{
 			flex-direction: column;
@@ -158,6 +212,9 @@
 		.head{
 			font-size: 42px;
 		}
+	}
+	.fh_r button{
+		margin-left: 0;
 	}
 	.map{
 		display: none;

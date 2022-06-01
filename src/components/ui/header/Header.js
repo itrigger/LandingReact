@@ -37,9 +37,11 @@ export default function Header() {
       <div className="row">
         <div className="d_f ai_c col-0 s-col-0 xs-col-1 | h90">
           <div
+            tabIndex="0"
             role="button"
             className={`d_f btn-burger ${menuActive}`}
             onClick={() => menuBurgerHandler()}
+            onKeyDown={() => menuBurgerHandler()}
           >
             <span></span>
           </div>
@@ -97,12 +99,12 @@ export default function Header() {
             </li>
           </ul>
         </div>
-        <div className="d_f col-2 xs-col-0 | h90">
+        <div className="d_f col-1 xs-col-0 | h90">
           <Link className="top-cart-link" to="/cart" activeClassName="active">
             Ваш заказ (<span>{value && value[0] ? value[0].length : "0"}</span>)
           </Link>
         </div>
-        <div className="d_f col-2 xs-col-0 | h90">
+        <div className="d_f col-3 xs-col-0 | h90">
           <div className="d_f ai_c | top-contacts">
             <a href="/tg">
               <span className="ico ico-tg"></span>

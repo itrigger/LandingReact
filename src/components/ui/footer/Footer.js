@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../../apollo/queries";
 import { Link } from "gatsby";
+import FormFooter from "../../Form/FormFooter";
 
 const Footer = () => {
   const [address, setAddress] = useState("");
@@ -33,35 +34,7 @@ const Footer = () => {
               <div className="head">
                 <span className="italic">Заполните</span> форму
               </div>
-              <form action="">
-                <div className="d_f fd_c">
-                  <span className="input_wrapper">
-                    <input type="text" placeholder="Имя" />
-                  </span>
-                  <span className="input_wrapper">
-                    <input type="text" placeholder="Телефон" />
-                  </span>
-                  <span className="input_wrapper">
-                    <textarea
-                      name=""
-                      id=""
-                      cols="30"
-                      rows="10"
-                      placeholder="Сообщение"
-                    ></textarea>
-                  </span>
-                  <input
-                    type="submit"
-                    className="btn-yellow"
-                    value="Отправить запрос"
-                  />
-                  <div className="disclaimer">
-                    Нажимая на кнопку, я соглашаюсь с{" "}
-                    <a href="/politic">политикой обработки</a> персональных
-                    данных
-                  </div>
-                </div>
-              </form>
+              <FormFooter />
             </div>
           </div>
         </div>
@@ -76,7 +49,7 @@ const Footer = () => {
               <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
             </div>
             <div className="foot-policy">
-              <Link to="/policy">Политика конфиденциальности сайта</Link>
+              <Link to="/politic">Политика конфиденциальности сайта</Link>
             </div>
           </div>
           <div className="col-4 xs-col-4 | col2">

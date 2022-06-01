@@ -4,7 +4,7 @@ const Button = ({ text, color, ico, action }) => {
   return (
     <button className={color} onClick={action ? action : null}>
       {text}
-      {ico ? <img src={ico} /> : null}
+      {ico ? <img src={ico} alt={text} /> : null}
     </button>
   );
 };

@@ -5,10 +5,11 @@
   z-index: 999;
   pointer-events: auto;
   position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  left: -50px;
+  top: -50px;
+  right: -50px;
+  bottom: -50px;
+  padding: 50px;
   background-color: rgba(#000,0.4);
   cursor: pointer;
 }
@@ -20,9 +21,11 @@
 .lytebox-close{
   position: absolute;
   right: 25px;
-  top: 15px;
-  width: 32px;
-  height: 32px;
+  top: 25px;
+  width: 22px;
+  height: 22px;
+  background: url("../img/close.svg") 0 0 no-repeat;
+  z-index: 22;
 }
 .lytebox-inner{
   padding: 25px;
@@ -31,12 +34,38 @@
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  //background-color: $base-color;
   cursor: default;
+  background-color: rgba(#000, .3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #fff;
 }
 
 .lytebox-form{
   padding: 25px;
   width: 100%;
   max-width: 500px;
+}
+
+
+@media (max-width: 600px) {
+  .lytebox-inner{
+    left: 0;
+    transform: translateX(0) translateY(-50%);
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.fade-appear {
+  opacity: 0.01;
+  transform: scale(.9);
+  transition: .2s all;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s all;
 }

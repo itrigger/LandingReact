@@ -45,7 +45,7 @@ const SaleParts = ({ location }) => {
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
-          <div className="row bl-light br-light">
+          <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg">
             <div className="col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
@@ -57,7 +57,7 @@ const SaleParts = ({ location }) => {
               </div>
             </div>
           </div>
-          <div className="row bl-light br-light line2">
+          <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 xs-col-4">
               <h1>
                 <span className="italic">Продажа</span> запчастей

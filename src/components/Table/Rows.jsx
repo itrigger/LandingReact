@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "./Row";
 import Card from "./Card";
 import RowSkeleton from "./RowSkeleton";
+import Form from "../Form/Form";
+import Lytebox from "../ui/Lytebox/Lytebox";
 
 const Rows = ({
   data,
@@ -16,11 +18,15 @@ const Rows = ({
   count,
   addToCart,
 }) => {
-  // if (loading) return <Loader absolute={true}/>
+  const [slide, setSlide] = useState(false);
+  const slideClickHandler = () => {
+    setSlide(true);
+  };
+
   if (loading)
     return (
       <div>
-        <div className="row">
+        <div className="row br bl middle-border-12">
           <div className="col-12 xs-col-4">
             <div className="ta_c | mr-title">
               <div className="desc">по вашему запросу</div>
@@ -48,7 +54,7 @@ const Rows = ({
     <div>
       {data && data.edges && data.edges.length > 0 ? (
         <div>
-          <div className="row">
+          <div className="row br bl middle-border-12">
             <div className="col-12 xs-col-4">
               <div className="ta_c | mr-title">
                 <div className="desc">по вашему запросу</div>
@@ -144,22 +150,33 @@ const Rows = ({
           </div>
         </div>
       ) : (
-        <div className="row">
-          <div className="col-12">
-            <div className="ta_c | mr-title">
-              <div className="desc">К сожалению, по вашему запросу</div>
-              <div className="head">
-                <span className="italic">
-                  {type === 1 ? "запчасти" : "вагоны"}
-                </span>{" "}
-                не найдены
+        <>
+          <div className="row">
+            <div className="col-12">
+              <div className="ta_c | mr-title">
+                <div className="desc">К сожалению, по вашему запросу</div>
+                <div className="head">
+                  <span className="italic">
+                    {type === 1 ? "запчасти" : "вагоны"}
+                  </span>{" "}
+                  не найдены
+                </div>
+                <button
+                  className="btn-classic"
+                  onClick={() => slideClickHandler()}
+                >
+                  <span>Обратиться к менеджеру</span>
+                </button>
               </div>
-              <button className="btn-classic">
-                <span>Обратиться к менеджеру</span>
-              </button>
             </div>
           </div>
-        </div>
+          <Lytebox trigger={slide} setTrigger={setSlide}>
+            <div className="head3">
+              <span className="italic">Быстрый</span> подбор вагона
+            </div>
+            <Form setTrigger={setSlide} />
+          </Lytebox>
+        </>
       )}
     </div>
   );

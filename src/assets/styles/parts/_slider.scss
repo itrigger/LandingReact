@@ -1,99 +1,242 @@
 .slider {
-	position: relative;
-	top: -90px;
-	margin-bottom: -90px;
-	padding-top: 90px;
-	height: 800px;
-	overflow: hidden;
-	.cont{
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-	}
-	.row{
-		position: relative;
-		height: 100%;
-	}
+  position: relative;
+  top: -90px;
+  margin-bottom: -90px;
+  padding-top: 90px;
+  height: 800px;
+  overflow: hidden;
 
-	.big-head{
-		font-family: "TTFirsNeue-Medium",sans-serif;
-		font-style: normal;
-		text-transform: uppercase;
-		font-size: 60px;
-		line-height: 1.4;
-		color: #fff;
-		span{
-			display: block;
-			color: $yellow;
-		}
-		margin-bottom: 30px;
-	}
-	.desc{
-		color: #ffffff;
-		font-size: 18px;
-		margin-bottom: 54px;
-		line-height: 1.5;
-	}
+  .swiper-slide-btn{
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+  .swiper-my-wrapper{
+    height: 100%;
+    max-height: 100vw;
+    // CSS Grid/Flexbox bug size workaround
+    // @see https://github.com/kenwheeler/slick/issues/982
+    min-height: 0;
+    min-width: 0;
+    max-width: 100vw;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    .swiper{
+      width: 100%;
+    }
+  }
+  .cont {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
 
-	.form{
-		background: rgba(#ffffff, .1);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		width: 100%;
-		padding: 40px 77px 25px;
-		color: #ffffff;
-		border: 1px solid #fff;
-		.head{
-			font-size: 30px;
-			line-height: 1.5;
-			color: #fff;
-			font-family: "TTFirsNeue-Medium",sans-serif;
-			font-style: normal;
-			text-transform: uppercase;
-			span{
-				color: $yellow;
-			}
-		}
-		.disclaimer{
-			margin-top: 15px;
-			font-size: 14px;
-			color: rgba(#fff, .5);
-			a{
-				color: inherit;
-			}
-		}
-	}
+  .line1 {
+    position: relative;
+    height: calc(100% - 90px);
+  }
+  .slider_bottom{
+    height: 90px;
+    position: relative;
+  }
+  .my-swiper-pagination-btn{
+    color: #FFFFFF;
+    font-size: 24px;
+    font-family: "TTFirsNeue-Medium", sans-serif;
+    margin-right: 58px;
+    opacity: .5;
+    &.active{
+      opacity: 1;
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+
+  .big-head {
+    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1.4;
+    color: #fff;
+
+    span {
+      display: block;
+      color: $yellow;
+    }
+
+    margin-bottom: 30px;
+  }
+
+  .desc {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 54px;
+    line-height: 1.5;
+    padding-left: 1px;
+  }
+
+  .form {
+    background: rgba(#ffffff, .1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    padding: 40px 77px 25px;
+    color: #ffffff;
+    border: 1px solid #fff;
+
+    .head {
+      font-size: 30px;
+      line-height: 1.5;
+      color: #fff;
+      font-family: "TTFirsNeue-Medium", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+
+      span {
+        color: $yellow;
+      }
+    }
+
+    .disclaimer {
+      margin-top: 15px;
+      font-size: 14px;
+      color: rgba(#fff, .5);
+
+      a {
+        color: inherit;
+      }
+    }
+  }
 
 }
 
+.slider_bottom{
+  .col-4{
+    border-top: 1px solid #fff;
+    color: #FFFFFF;
+  }
+  button.prev{
+    width: 40px;
+    height: 40px;
+    background: url("../img/slider_arrow.svg") 0 0 no-repeat;
+    background-size: contain;
+    transform: rotate(180deg);
+  }
+  button.next{
+    width: 40px;
+    height: 40px;
+    background: url("../img/slider_arrow.svg") 0 0 no-repeat;
+    background-size: contain;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1660px) {
+  .slider {
+    height: 706px;
+    top: -80px;
+    margin-bottom: -80px;
+    padding-top: 60px;
+  }
+  .slider .big-head {
+    font-size: 53px;
+    margin-bottom: 26px;
+    margin-top: 44px;
+  }
+  .slider .desc{
+    font-size: 16px;
+  }
+  .slider .form{
+
+    padding: 38px 65px 36px;
+  }
+  .slider .form .head{
+    font-size: 27px;
+  }
+  .slider .my-swiper-pagination-btn{
+    font-size: 22px;
+    margin-right: 35px;
+  }
+  .slider_bottom button.prev,
+  .slider_bottom button.next{
+    width: 30px;
+    height: 30px;
+  }
+}
+.lytebox-inner{
+  .head3{
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    .italic{
+      color: $yellow;
+    }
+  }
+}
+
 @media (max-width: 600px) {
-	.slider{
-		height: 100vh;
-		.btn{
-			width: calc(100% - 20px);
-			margin-left: 10px;
-			margin-right: 10px;
-			&.yellow{
-				margin-bottom: 20px;
-			}
-		}
-		.cont{
-			img{
-				height: 100vh;
-				position: absolute;
-				left: 120%;
-				transform: translateX(-50%);
-			}
-		}
-	}
-	.slider .big-head{
-		font-size: 42px;
-	}
-	.slider .desc{
-		font-size: 16px;
-		margin-bottom: 30px;
-	}
+  .lytebox-inner{
+    .head3{
+      font-size: 24px;
+    }
+  }
+  .slider {
+    height: auto;
+    .btn {
+      width: calc(100% - 26px);
+      margin-left: 10px;
+      margin-right: 10px;
+      white-space: nowrap;
+
+      &.yellow {
+        margin-bottom: 20px;
+      }
+    }
+
+    .cont {
+      img {
+        //height: 100vh;
+        height: auto;
+        position: absolute;
+        left: 120%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .slider .big-head {
+    font-size: 42px;
+  }
+  .slider .desc {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .slider .my-swiper-pagination-btn{
+    font-size: 16px;
+    margin-right: 28px;
+  }
+  .slider_bottom button.prev,
+  .slider_bottom button.next
+  {
+    width: 25px;
+    height: 25px;
+  }
+  .slider_bottom button.next{
+    margin-left: 40px;
+  }
+  .slider .swiper-my-wrapper{
+    min-height: auto;
+    max-height: none;
+    height: auto;
+  }
+  .slider .line1{
+    height: auto;
+  }
+  .swiper-autoheight, .swiper-autoheight .swiper-slide{
+    padding-bottom: 50px;
+    padding-top: 40px;
+  }
 }
 

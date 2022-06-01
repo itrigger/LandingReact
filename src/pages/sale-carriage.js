@@ -2,12 +2,28 @@ import * as React from "react";
 import Layout from "../components/ui/layout/Layout";
 import { Helmet } from "react-helmet";
 import Seo from "../components/home/Seo/Seo";
-import VagImg from "../assets/img/vag1.png";
-import Vag2Img from "../assets/img/vag2.png";
+import VagPolu from "../assets/img/vag1.png";
+import VagHopper from "../assets/img/vag2.png";
+import VagCisterna from "../assets/img/vag-cisterna.png";
+import VagDumpcar from "../assets/img/vag-dumpcar.png";
+import VagKrytyi from "../assets/img/vag-krytyi.png";
+import VagPlatforma from "../assets/img/vag-platform.png";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { CARRIAGES } from "../utility/constants";
+import { useEffect, useRef, useState } from "react";
+import StickyBox from "react-sticky-box";
+import Form from "../components/Form/Form";
+import Lytebox from "../components/ui/Lytebox/Lytebox";
 
 const SaleCarriage = () => {
+  const [initialCategory, setInitialCategory] = useState(1);
+  const myRef = useRef(null);
+  const myRef2 = useRef(null);
+  const [slide, setSlide] = useState(false);
+  const slideClickHandler = () => {
+    setSlide(true);
+  };
+
   return (
     <div>
       <Helmet>
@@ -41,7 +57,7 @@ const SaleCarriage = () => {
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
-          <div className="row bl-light br-light">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
             <div className="col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
@@ -53,7 +69,7 @@ const SaleCarriage = () => {
               </div>
             </div>
           </div>
-          <div className="row bl-light br-light line2">
+          <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 xs-col-4">
               <h1>
                 <span className="italic">Продажа</span> бу вагонов
@@ -66,12 +82,15 @@ const SaleCarriage = () => {
             </div>
           </div>
         </div>
-        <div className="vagon-sale">
+        <div className="vagon-sale" ref={myRef}>
           <div className="row">
             <div className="col-4 xs-col-4 bl">
-              <div className="head">
-                <span className="italic">Какой тип</span> вагона Вас интересует?
-              </div>
+              <StickyBox offsetTop={90}>
+                <div className="head">
+                  <span className="italic">Какой тип</span> вагона Вас
+                  интересует?
+                </div>
+              </StickyBox>
             </div>
             <div className="col-8 xs-col-4 bl br">
               <div className="vagon-types">
@@ -81,97 +100,120 @@ const SaleCarriage = () => {
                 </div>
                 <div className="d_f | vagon-type">
                   <div className="left br bt">
-                    <img src={VagImg} alt="" />
+                    <img src={VagPolu} alt="" />
                   </div>
                   <div className="right bt">
                     <div className="name">Полувагоны</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа полувагонов любых моделей по всей России.
                     </div>
-                    <button className="btn yellow">
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(25)}
+                    >
                       <span>Показать полувагоны</span>
                     </button>
                   </div>
                 </div>
                 <div className="d_f vagon-type">
                   <div className="left br bt">
-                    <img src={VagImg} alt="" />
+                    <img src={VagKrytyi} alt="" />
                   </div>
                   <div className="right bt">
-                    <div className="name">ХОППЕРЫ</div>
+                    <div className="name">Крытые вагоны</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа крытых вагонов любых моделей по всей России.
                     </div>
-                    <button className="btn yellow">
-                      <span>Показать хопперы</span>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(39)}
+                    >
+                      <span>Показать крытые вагоны</span>
                     </button>
                   </div>
                 </div>
                 <div className="d_f vagon-type">
                   <div className="left br bt">
-                    <img src={Vag2Img} alt="" />
+                    <img src={VagDumpcar} alt="" />
                   </div>
                   <div className="right bt">
-                    <div className="name">ХОППЕРЫ</div>
+                    <div className="name">Думпкары</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа думпкаров любых моделей по всей России
                     </div>
-                    <button className="btn yellow">
-                      <span>Показать хопперы</span>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(41)}
+                    >
+                      <span>Показать думпкары</span>
                     </button>
                   </div>
                 </div>
                 <div className="d_f | vagon-type">
                   <div className="left br bt">
-                    <img src={VagImg} alt="" />
+                    <img src={VagPolu} alt="" />
                   </div>
                   <div className="right bt">
-                    <div className="name">Полувагоны</div>
+                    <div className="name">Грузовые вагоны</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа грузовых вагонов любых моделей по всей России.
                     </div>
-                    <button className="btn yellow">
-                      <span>Показать полувагоны</span>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(36)}
+                    >
+                      <span>Показать грузовые вагоны</span>
                     </button>
                   </div>
                 </div>
                 <div className="d_f | vagon-type">
                   <div className="left br bt">
-                    <img src={Vag2Img} alt="" />
+                    <img src={VagCisterna} alt="" />
                   </div>
                   <div className="right bt">
-                    <div className="name">Полувагоны</div>
+                    <div className="name">Вагоны-цистерны</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа вагонов-цистерн любых моделей по всей России.
                     </div>
-                    <button className="btn yellow">
-                      <span>Показать полувагоны</span>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(40)}
+                    >
+                      <span>Показать вагоны-цистерны</span>
                     </button>
                   </div>
                 </div>
                 <div className="d_f vagon-type">
                   <div className="left br bt">
-                    <img src={VagImg} alt="" />
+                    <img src={VagHopper} alt="" />
                   </div>
                   <div className="right bt">
-                    <div className="name">ХОППЕРЫ</div>
+                    <div className="name">Вагоны-хопперы</div>
                     <div className="desc">
-                      Продажа полувагонов любых моделей по всей России, СНГ и
-                      Прибалтике, описание, характеристики, типы и модели
-                      полувагонов, стоимость полувагонов новых и б/у.
+                      Продажа вагонов-хопперов любых моделей по всей России.
                     </div>
-                    <button className="btn yellow">
-                      <span>Показать хопперы</span>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(37)}
+                    >
+                      <span>Показать вагоны-хопперы</span>
+                    </button>
+                  </div>
+                </div>
+                <div className="d_f vagon-type">
+                  <div className="left br bt">
+                    <img src={VagPlatforma} alt="" />
+                  </div>
+                  <div className="right bt">
+                    <div className="name">Вагоны-платформы</div>
+                    <div className="desc">
+                      Продажа вагонов-платформ любых моделей по всей России.
+                    </div>
+                    <button
+                      className="btn yellow"
+                      onClick={() => setInitialCategory(38)}
+                    >
+                      <span>Показать вагоны-платформы</span>
                     </button>
                   </div>
                 </div>
@@ -179,8 +221,14 @@ const SaleCarriage = () => {
             </div>
           </div>
         </div>
-
-        <RowsWrapper type={2} initialCount={12} dropdown={CARRIAGES} />
+        <div className="anchor" ref={myRef2}>
+          <RowsWrapper
+            type={2}
+            initialCount={12}
+            initialCategory={initialCategory}
+            dropdown={CARRIAGES}
+          />
+        </div>
 
         <div className="promo slide1">
           <div className="row">
@@ -193,7 +241,10 @@ const SaleCarriage = () => {
                 <li>по всей территории России</li>
                 <li>по 100% предоплате</li>
               </ul>
-              <button className="btn yellow">
+              <button
+                className="btn yellow"
+                onClick={() => slideClickHandler()}
+              >
                 <span>Продать вагон</span>
               </button>
               <div className="hint">
@@ -202,6 +253,12 @@ const SaleCarriage = () => {
             </div>
             <div className="col-6 picture"></div>
           </div>
+          <Lytebox trigger={slide} setTrigger={setSlide}>
+            <div className="head3">
+              <span className="italic">Выкуп</span> вагонов
+            </div>
+            <Form setTrigger={setSlide} />
+          </Lytebox>
         </div>
         <Seo />
       </Layout>

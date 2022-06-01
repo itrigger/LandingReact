@@ -5,6 +5,8 @@ html {
 body{
 	font-family: "TTNorms-Regular",sans-serif;
 	padding-top: 90px;
+	//background: url("../img/temp/home.jpg") center top no-repeat;
+	background-size: contain;
 }
 
 *{
@@ -18,6 +20,7 @@ a{
 h1, h2, h3, h4, h5, h6{
 	font-family: "TTFirsNeue-Medium",sans-serif;
 	font-style: normal;
+	line-height: 1.4;
 }
 
 h1{
@@ -38,6 +41,34 @@ h1{
 	text-transform: uppercase;
 	font-size: 36px;
 	line-height: 1.4;
+}
+h2{
+	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-style: normal;
+	text-transform: uppercase;
+	font-size: 36px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+h3{
+	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+
+p{
+	font-size: 18px;
+	line-height: 1.4;
+	margin-bottom: 20px;
+}
+.layout{
+	padding-bottom: 20px;
+}
+.layout p + h2{
+	margin-top: 60px;
 }
 
 ul.content{
@@ -104,7 +135,7 @@ ul.content{
 					display: block;
 					position: absolute;
 					right: -21px;
-					top: -16px;
+					top: 1px;
 					color: rgba(255, 255, 255, 0.5);
 				}
 			}
@@ -115,9 +146,28 @@ ul.content{
 	}
 }
 
+.img404{
+	margin-bottom: 40px;
+}
+.head404{
+	margin-bottom: 30px;
+}
+.desc404{
+	font-size: 24px;
+	margin-bottom: 40px;
+}
+
+@media (min-width: 1440px) and (max-width: 1660px) {
+	h1 {
+		font-size: 54px;
+		text-transform: uppercase;
+	}
+}
+
 @media (max-width: 600px) {
 	h1{
 		font-size: 42px;
+		line-height: 1.4;
 	}
 	.head2{
 		font-size: 48px;
@@ -127,5 +177,14 @@ ul.content{
 	}
 	.breadcrumb ul li a:after{
 		top: 2px;
+	}
+	.img404{
+		width: 100%;
+		margin-top: 40px;
+	}
+	.head404{
+		div{
+			display: inline;
+		}
 	}
 }

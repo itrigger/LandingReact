@@ -1,53 +1,91 @@
 import * as React from "react";
 import { Link } from "gatsby";
-
-// styles
-const pageStyles = {
-  color: "#232129",
-  padding: "96px",
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-};
+import { Helmet } from "react-helmet";
+import Layout from "../components/ui/layout/Layout";
+import img404 from "../assets/img/404.png";
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main style={pageStyles}>
-      <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{" "}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{" "}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === "development" ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          Страница не найдена | Вагон Трейд - Покупка и продажа вагонов. Аренда.
+          Запасные части.
+        </title>
+        <link rel="canonical" href="https://vagontrade.ru" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffe500" />
+        <meta name="msapplication-TileColor" content="#ffe500" />
+        <meta name="theme-color" content="#ffe500" />
+      </Helmet>
+      <Layout>
+        <div className="header-bg hbg1">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
+            <div className="col-12 xs-col-4">
+              <div className="breadcrumb">
+                <ul>
+                  <li>
+                    <Link to="/">Главная</Link>
+                  </li>
+                  <li>404 - Страница не найдена</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
+            <div className="col-8 xs-col-4">
+              <h1>
+                <span className="italic">404</span> страница не найдена
+              </h1>
+            </div>
+            <div className="col-4 xs-col-4 pos_r zi-2 d_f jc_end"></div>
+          </div>
+        </div>
+        <div className="row bl br middle-border-12 middle-border-12-over-bg service3">
+          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 xs-col-0  spacer"></div>
+        </div>
+        <div className="row bl br middle-border-12 middle-border-12-over-bg">
+          <div className="col-12 xs-col-4">
+            <div className="layout ta_c">
+              <img src={img404} alt="Page not found" className="img404" />
+              <h1 className="head404">
+                <span className="italic">Ошибка 404</span>{" "}
+                <div>такой страницы</div> не существует
+              </h1>
+              <Link to="/" className="btn yellow">
+                <span>На главную</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="row bl br middle-border-12 middle-border-12-over-bg service3">
+          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 xs-col-0  spacer"></div>
+        </div>
+      </Layout>
+    </>
   );
 };
 

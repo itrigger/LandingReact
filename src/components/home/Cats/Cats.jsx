@@ -7,14 +7,14 @@ import { Link } from "gatsby";
 const Cats = () => {
   return (
     <div className="home_cats">
-      <div className="row">
+      <div className="row bl br middle-border-12">
         <div className="col-12 xs-col-4">
           <h1>
             <span className="italic">продаём</span> запчасти для вагонов
           </h1>
         </div>
       </div>
-      <div className="row">
+      <div className="row br bl middle-border-12">
         <div className="d_f fd_c jc_c col-4 xs-col-4 | item">
           <div>
             <div className="img ta_c">

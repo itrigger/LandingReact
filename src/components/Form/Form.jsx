@@ -1,31 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Button from "../ui/Button/Button";
-import Whatsapp from "../../assets/img/ico-wt.svg";
-import Spinner from "../../assets/img/rings.svg";
 import axios from "axios";
 import qs from "qs";
 import InputMask from "react-input-mask";
 import { useNotification } from "../ui/Notify/NotifyProvider";
-import { useQuery } from "@apollo/client";
-import { GET_CONTENT } from "../../apollo/queries";
+import { Link } from "gatsby";
+import { CARRIAGES } from "../../utility/constants";
 
 const Form = (props) => {
-  const [telegram, setTelegram] = useState("");
-  const [name, setName] = useState("");
+  const [type, setType] = useState("1");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
-  const [nameError, setNameError] = useState(false);
+  const [typeError, setTypeError] = useState(false);
   const [phoneError, setPhoneError] = useState(false);
 
   const dispatch = useNotification();
-
-  const { data } = useQuery(GET_CONTENT);
-
-  useEffect(() => {
-    if (data) {
-      setTelegram(data.posts.nodes[0].acfcontent.telegram);
-    }
-  }, [data]);
 
   const handleNewNotification = (TYPE, message, title) => {
     dispatch({
@@ -34,121 +22,142 @@ const Form = (props) => {
       title: title,
     });
   };
-  const clickHandler = () => {
-    window.open(telegram);
-  };
 
-  const submitHandler = async () => {
+  const submitHandler = async (target) => {
     setLoading(true);
-    if (!phone.includes("_")) {
-      const data = { username: name, phone: phone };
-      const qsdata = qs.stringify(data);
-      const instance = axios.create({
-        baseURL:
-          "https://api.vagontrade.ru/wp-json/contact-form-7/v1/contact-forms/5/feedback",
-        timeout: 3000,
-        headers: { "content-type": "application/x-www-form-urlencoded" },
-      });
-      await instance
-        .post(
-          "https://api.vagontrade.ru/wp-json/contact-form-7/v1/contact-forms/5/feedback",
-          qsdata
-        )
-        .then(function (response) {
-          setNameError(false);
-          setPhoneError(false);
-          if (response.data.status === "validation_failed") {
-            if (response.data.invalid_fields) {
-              response.data.invalid_fields.map((field) => {
-                if (field.error_id === "-ve-username") {
-                  setNameError(true);
-                  handleNewNotification("ERROR", "Укажите Ваше имя", "Ошибка");
-                  setTimeout(() => setLoading(false), 1000);
-                }
-                if (field.error_id === "-ve-phone") {
-                  setPhoneError(true);
-                  handleNewNotification(
-                    "ERROR",
-                    "Укажите номер телефона",
-                    "Ошибка"
-                  );
-                  setTimeout(() => setLoading(false), 1000);
-                }
-              });
-            }
-          } else {
-            handleNewNotification(
-              "SUCCESS",
-              "Ваше сообщение успешно отправлено!",
-              "Успех"
-            );
-            setName("");
-            setPhone("");
-            setTimeout(() => {
-              setLoading(false);
-            }, 1000);
-            if (props.setTrigger !== undefined) {
-              setTimeout(() => {
-                props.setTrigger(false);
-              }, 1000);
-            }
-          }
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else {
+    target.classList.add("btn-loading");
+
+    const data = { usertype: type, usertel: phone };
+    const qsdata = qs.stringify(data);
+    const instance = axios.create({
+      baseURL:
+        "https://api.vagontrade.ru/wp-json/contact-form-7/v1/contact-forms/1402/feedback",
+      timeout: 3000,
+      headers: { "content-type": "application/x-www-form-urlencoded" },
+    });
+    if (phone.includes("_") || phone === "") {
       handleNewNotification(
         "ERROR",
         "Неправильно указан номер телефона",
         "Ошибка"
       );
       setTimeout(() => setLoading(false), 1000);
+      target.classList.remove("btn-loading");
       setPhoneError(true);
+      return false;
     }
+    if (type === "1") {
+      handleNewNotification("ERROR", "Выберите тип вагона", "Ошибка");
+      setTimeout(() => setLoading(false), 1000);
+      target.classList.remove("btn-loading");
+      setTypeError(true);
+      return false;
+    }
+    await instance
+      .post(
+        "https://api.vagontrade.ru/wp-json/contact-form-7/v1/contact-forms/1402/feedback",
+        qsdata
+      )
+      .then(function (response) {
+        setTypeError(false);
+        setPhoneError(false);
+
+        if (response.data.status === "validation_failed") {
+          if (response.data.invalid_fields) {
+            response.data.invalid_fields.map((field) => {
+              if (field.error_id === "-ve-usertype") {
+                setTypeError(true);
+                handleNewNotification("ERROR", "Укажите тип вагона", "Ошибка");
+                setTimeout(() => setLoading(false), 1000);
+                target.classList.remove("btn-loading");
+              }
+              if (field.error_id === "-ve-usertel") {
+                setPhoneError(true);
+                handleNewNotification(
+                  "ERROR",
+                  "Укажите номер телефона",
+                  "Ошибка"
+                );
+                setTimeout(() => setLoading(false), 1000);
+                target.classList.remove("btn-loading");
+              }
+            });
+          }
+        } else {
+          handleNewNotification(
+            "SUCCESS",
+            "Ваше сообщение успешно отправлено!",
+            "Успех"
+          );
+          setType("");
+          setPhone("");
+          setTimeout(() => {
+            setLoading(false);
+          }, 1000);
+          target.classList.remove("btn-loading");
+          if (props.setTrigger !== undefined) {
+            setTimeout(() => {
+              props.setTrigger(false);
+            }, 1000);
+          }
+        }
+      })
+      .catch(function (error) {
+        handleNewNotification(
+          "ERROR",
+          "Ошибка сервера. Попробуйте еще раз",
+          "Ошибка"
+        );
+        target.classList.remove("btn-loading");
+      });
   };
 
   useEffect(() => {
-    setNameError(false);
-  }, [name]);
+    setTypeError(false);
+  }, [type]);
 
   useEffect(() => {
     setPhoneError(false);
   }, [phone]);
 
   return (
-    <div className="h100">
-      <div className={loading ? "form__wrapper loading" : "form__wrapper"}>
-        <div className="form__header">Оставить заявку</div>
-        <input
-          className={nameError ? "error" : ""}
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Имя"
-        />
+    <div
+      className={loading ? "d_f fd_c dark-form loading" : "d_f fd_c dark-form"}
+    >
+      <span className="input_wrapper">
         <InputMask
           mask="+7 (999) 999-99-99"
           type="text"
           onChange={(e) => setPhone(e.target.value)}
           value={phone}
           className={phoneError ? "error" : ""}
-          placeholder={"Номер телефона"}
+          placeholder={"Ваш телефон"}
         />
-        <div className={"form__btn_w | d_f jc_sb"}>
-          <Button
-            text={"Отправить"}
-            color={"black btn-send"}
-            ico={Spinner}
-            action={submitHandler}
-          />
-          <Button
-            text={"WhatsApp"}
-            color={"green"}
-            ico={Whatsapp}
-            action={clickHandler}
-          />
-        </div>
+      </span>
+      <span className="input_wrapper">
+        <select
+          name=""
+          id=""
+          className={typeError ? "error" : ""}
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        >
+          <option value="1" disabled>
+            Выберите тип вагона
+          </option>
+          {CARRIAGES.map((item) => (
+            <option key={item.id} value={item.name}>
+              {item.name}
+            </option>
+          ))}
+        </select>
+      </span>
+      <button className="btn-classic" onClick={(e) => submitHandler(e.target)}>
+        <span>Отправить заявку</span>
+      </button>
+      <div className="disclaimer black-bg">
+        Нажимая на кнопку, я соглашаюсь с{" "}
+        <Link to="/politic">политикой обработки</Link> персональных данных
       </div>
     </div>
   );

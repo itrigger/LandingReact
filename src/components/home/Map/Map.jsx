@@ -2,7 +2,8 @@ import React from "react";
 
 const Map = () => {
   return (
-    <div className="map">
+    <div className="map pos_r">
+      <div className="row absolute-row middle-border-12 br bl"></div>
       <div className="title">
         <div className="d_f ai_c jc_c | head">
           <span className="ico ico-left ico-hand"></span>{" "}

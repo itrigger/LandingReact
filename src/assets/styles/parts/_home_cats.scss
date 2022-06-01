@@ -1,6 +1,13 @@
 .home_cats{
-	padding-top: 100px;
-	padding-bottom: 75px;
+	position: relative;
+	z-index: 3;
+	background: #fff;
+	.row:first-child{
+		padding-top: 90px;
+	}
+	.row:last-child{
+		padding-bottom: 75px;
+	}
 	h1 {
 		text-align: center;
 		margin-bottom: 66px;
@@ -14,14 +21,34 @@
 	}
 	.name{
 		font-size: 24px;
-		margin-bottom: 15px;
+		margin-bottom: 20px;
 	}
 	.price{
+		color: #494E5D;
 		font-size: 16px;
 		margin-bottom: 25px;
 		font-family: 'TTNorms-Bold', sans-serif;
 	}
+	.btn{
+		min-width: 220px;
+	}
 }
+
+@media (min-width: 1440px) and (max-width: 1660px) {
+	.home_cats .name{
+		font-size: 21px;
+	}
+	.home_cats .img{
+		height: 165px;
+		margin-bottom: 21px;
+		img{
+			height: auto;
+			max-height: 100%;
+
+		}
+	}
+}
+
 
 @media (max-width: 600px) {
 	.home_cats{
@@ -34,6 +61,7 @@
 		}
 		.btn{
 			width: 270px;
+			min-width: auto;
 		}
 		.img{
 			height: auto;

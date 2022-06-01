@@ -41,6 +41,8 @@
     "react-helmet": "^6.1.0",
     "react-input-mask": "^2.0.4",
     "react-loading-skeleton": "^3.1.0",
+    "react-sticky-box": "^1.0.2",
+    "react-transition-group": "^1.2.1",
     "sass": "^1.49.9",
     "swiper": "^8.1.4",
     "uuid": "^8.3.2"

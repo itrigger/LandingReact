@@ -37,7 +37,6 @@ const Notify = (props) => {
 
   React.useEffect(() => {
     if (width === 100) {
-      // Close notification
       handleCloseNotification();
     }
   }, [width]);
@@ -50,6 +49,7 @@ const Notify = (props) => {
     <div
       onMouseEnter={handlePauseTimer}
       onMouseLeave={handleStartTimer}
+      aria-hidden="true"
       className={`notification-item ${
         props.type === "SUCCESS" ? "success" : "error"
       } ${exit ? "exit" : ""}`}

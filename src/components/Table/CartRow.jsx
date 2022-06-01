@@ -30,7 +30,7 @@ const CartRow = ({
         maximumFractionDigits: 0,
       }).format(inputValue * price4)
     );
-  }, [inputValue]);
+  }, [inputValue, price4]);
 
   const stepUpHandler = () => {
     setInputValue(inputValue + 1);
@@ -57,6 +57,7 @@ const CartRow = ({
             <div className="inputCountWrap">
               <button
                 className="stepper-step down"
+                aria-label="Step down"
                 onClick={() => stepDownHandler()}
               ></button>
               <input
@@ -68,11 +69,12 @@ const CartRow = ({
               />
               <button
                 className="stepper-step up"
+                aria-label="Step up"
                 onClick={() => stepUpHandler()}
               ></button>
             </div>
           </div>
-          <div className="col-1 ta_c subtotal | td">{total} ₽</div>
+          <div className="col-1 ta_c subtotal | td">{total}</div>
           <div className="col-1 ta_c del | td">
             <button
               className="d_f jc_c delete-row"
@@ -90,6 +92,7 @@ const CartRow = ({
           <div className="xs-col-2  del | td">
             <button
               className="d_f jc_end delete-row"
+              aria-label="Delete row"
               onClick={() => cartDeleteItem(data.id)}
             >
               <span className="ico ico-del-cart"></span>
@@ -108,6 +111,7 @@ const CartRow = ({
             <div className="inputCountWrap">
               <button
                 className="stepper-step down"
+                aria-label="Step down"
                 onClick={() => stepDownHandler()}
               ></button>
               <input
@@ -119,6 +123,7 @@ const CartRow = ({
               />
               <button
                 className="stepper-step up"
+                aria-label="Step up"
                 onClick={() => stepUpHandler()}
               ></button>
             </div>
