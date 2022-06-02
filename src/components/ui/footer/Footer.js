@@ -3,11 +3,17 @@ import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../../apollo/queries";
 import { Link } from "gatsby";
 import FormFooter from "../../Form/FormFooter";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Footer = () => {
   const [address, setAddress] = useState("");
   const [tel, setTel] = useState("");
   const [telCall, setTelCall] = useState("");
+  const [telWt, setTelWt] = useState("");
+
+  const clickHandler = () => {
+    window.open("https://wa.me/" + telWt);
+  };
 
   const { data } = useQuery(GET_CONTENT);
 
@@ -16,6 +22,7 @@ const Footer = () => {
       setAddress(data.posts.nodes[0].acfcontent.address);
       setTel(data.posts.nodes[0].acfcontent.telFront);
       setTelCall(data.posts.nodes[0].acfcontent.telCall);
+      setTelWt(data.posts.nodes[0].acfcontent.telWt);
     }
   }, [data]);
 
@@ -56,16 +63,21 @@ const Footer = () => {
             <div className="head italic">Услуги</div>
             <ul>
               <li>
-                <Link to="/buy-carriage">Покупка лома</Link>
+                <AnchorLink
+                  to="/buy-carriage#vlom"
+                  title="Вагоны на металлолом"
+                >
+                  Вагоны на металлолом
+                </AnchorLink>
               </li>
               <li>
-                <Link to="/buy-carriage">Продажа б/у вагонов</Link>
+                <Link to="/sale-carriage">Продажа б/у вагонов</Link>
               </li>
               <li>
                 <Link to="/buy-carriage">Покупка б/у вагонов</Link>
               </li>
               <li>
-                <Link to="/buy-carriage">Продажа запчастей</Link>
+                <Link to="/sale-parts">Продажа запчастей</Link>
               </li>
             </ul>
           </div>
@@ -75,10 +87,10 @@ const Footer = () => {
               {tel}
             </a>
             <div className="foot-btn">
-              <a href="https://wt.com/" className="btn-wt">
+              <button onClick={() => clickHandler()} className="btn-wt">
                 <span className="ico ico-left ico-wt"></span>
                 Написать в WhatsApp
-              </a>
+              </button>
             </div>
             <div className="foot-address">{address}</div>
           </div>

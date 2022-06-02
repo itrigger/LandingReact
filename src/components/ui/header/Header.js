@@ -4,13 +4,25 @@ import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../../apollo/queries";
 import { Link } from "gatsby";
 import { CartContext } from "../../../context/CartContext";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import Form from "../../Form/Form";
+import Lytebox from "../Lytebox/Lytebox";
 
 export default function Header() {
   const [tel, setTel] = useState("");
   const [telCall, setTelCall] = useState("");
   const [menuActive, setMenuActive] = useState("");
   const [subMenuActive, setSubMenuActive] = useState("active");
+  const [slide, setSlide] = useState(false);
+  const [telWt, setTelWt] = useState("");
 
+  const wtClickHandler = () => {
+    window.open("https://wa.me/" + telWt);
+  };
+
+  const slideClickHandler = () => {
+    setSlide(true);
+  };
   const value = React.useContext(CartContext);
 
   const { data } = useQuery(GET_CONTENT);
@@ -19,6 +31,7 @@ export default function Header() {
     if (data) {
       setTel(data.posts.nodes[0].acfcontent.telFront);
       setTelCall(data.posts.nodes[0].acfcontent.telCall);
+      setTelWt(data.posts.nodes[0].acfcontent.telWt);
     }
   }, [data]);
 
@@ -35,7 +48,7 @@ export default function Header() {
   return (
     <header id="header" className={`header ${menuActive}`}>
       <div className="row">
-        <div className="d_f ai_c col-0 s-col-0 xs-col-1 | h90">
+        <div className="d_f ai_c col-0 xs-col-1 | h90">
           <div
             tabIndex="0"
             role="button"
@@ -51,7 +64,7 @@ export default function Header() {
             <img src={logo} alt="" className="logo" />
           </Link>
         </div>
-        <div className="d_f jc_end | col-0 s-col-0 xs-col-1 | h90">
+        <div className="d_f jc_end | col-0 xs-col-1 | h90">
           <a className="mobile-header-call" href={"tel:" + telCall}>
             <span className="ico ico-tel"></span>
           </a>
@@ -65,24 +78,33 @@ export default function Header() {
               <div>
                 <ul>
                   <li>
-                    <Link to="/buy-carriage" activeClassName="active">
+                    <AnchorLink
+                      to="/buy-carriage#vlom"
+                      title="Вагоны на металлолом"
+                    >
                       Вагоны на металлолом
-                    </Link>
+                    </AnchorLink>
                   </li>
                   <li>
-                    <Link to="/buy-carriage" activeClassName="active">
+                    <AnchorLink
+                      to="/buy-carriage#vrazdelku"
+                      title="Вагоны в разделку"
+                    >
                       Вагоны в разделку
-                    </Link>
+                    </AnchorLink>
                   </li>
                   <li>
-                    <Link to="/buy-carriage" activeClassName="active">
+                    <AnchorLink
+                      to="/buy-carriage#vrazdelku"
+                      title="Вагоны в разделку"
+                    >
                       Вагоны в работу
-                    </Link>
+                    </AnchorLink>
                   </li>
                   <li>
-                    <Link to="/buy-carriage" activeClassName="active">
+                    <button onClick={() => slideClickHandler()}>
                       Оценить вагон
-                    </Link>
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -109,13 +131,19 @@ export default function Header() {
             <a href="/tg">
               <span className="ico ico-tg"></span>
             </a>
-            <a href="/wt">
+            <button onClick={() => wtClickHandler()}>
               <span className="ico ico-wt"></span>
-            </a>
+            </button>
             <a href={"tel:" + telCall}>{tel}</a>
           </div>
         </div>
       </div>
+      <Lytebox trigger={slide} setTrigger={setSlide}>
+        <div className="head3">
+          <span className="italic">Быстрая</span> оценка вагона
+        </div>
+        <Form setTrigger={setSlide} />
+      </Lytebox>
       <div className={`row | mobile-menu `}>
         <div className="xs-col-4">
           <ul className="d_f ai_c | mobile-menu-ul">

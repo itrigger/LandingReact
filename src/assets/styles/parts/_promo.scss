@@ -88,7 +88,21 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
+	.promo{
+		padding-top: 68px;
+		padding-bottom: 49px;
+	}
+	.promo .head{
+		font-size: 52px;
+		margin-bottom: 15px;
+	}
+	.promo.slide1 .picture:after{
+		top: -360px;
+	}
+}
+
+@media (max-width: 1023px) {
 	.promo{
 		margin-top: 70px;
 		padding-top: 60px;

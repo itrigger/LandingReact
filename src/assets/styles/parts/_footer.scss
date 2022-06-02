@@ -105,6 +105,7 @@
 			}
 			.btn-wt{
 				margin-top: 20px;
+				color: #fff;
 			}
 			.foot-address{
 				color: rgba(#fff, .5);
@@ -143,9 +144,9 @@
 	display: block;
 }
 
-@media (min-width: 1440px) and (max-width: 1660px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
 	.footer .line2 .col3 .phone{
-		font-size: 35px;
+		font-size: 32px;
 	}
 	.footer .line1 .col2{
 		padding-left: 73px;
@@ -211,7 +212,7 @@
 		font-size: 20px;
 		padding: 14px 23px;
 	}
-	.ico-wt{
+	.footer .ico-wt{
 		width: 20px;
 		height: 20px;
 		background-size: contain;
@@ -221,7 +222,7 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
 	.footer .line1 .col1{
 		padding-top: 115px;
 		font-size: 34px;

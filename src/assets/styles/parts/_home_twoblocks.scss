@@ -98,7 +98,7 @@
 	}
 }
 
-@media (min-width: 1440px) and (max-width: 1660px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
 	.twoblocks .tb-left{
 		background-position-x: 280px;
 		background-size: 674px 470px;
@@ -126,7 +126,7 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
 	.twoblocks_w{
 		flex-direction: column;
 		.btn{

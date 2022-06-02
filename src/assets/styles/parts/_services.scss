@@ -1,223 +1,299 @@
-.vagon-sale{
-	.head{
-		margin-top: 90px;
-		font-family: "TTFirsNeue-Medium",sans-serif;
-		font-style: normal;
-		text-transform: uppercase;
-		font-size: 60px;
-		line-height: 1.4;
-		margin-bottom: 20px;
-		position: relative;
-		.scroll_block{
-			position: relative;
-			&.scroll{
-				top: 90px;
-				position: fixed;
-				width: calc(1570px / 12) * 4;
-			}
-		}
+.vagon-sale {
+  .head {
+    margin-top: 90px;
+    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 60px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    position: relative;
 
-	}
-	.left{
-		padding-top: 35px;
-		padding-bottom: 35px;
-		flex: 0 0 50%;
-		text-align: center;
-	}
-	.right{
-		padding: 35px 40px 35px 50px;
-		flex: 0 0 50%;
-		.name{
-			font-family: "TTFirsNeue-Medium",sans-serif;
-			font-style: normal;
-			text-transform: uppercase;
-			font-size: 30px;
-			line-height: 1.4;
-			margin-bottom: 20px;
-		}
-		.desc{
-			font-size: 16px;
-			line-height: 1.4;
-			margin-bottom: 15px;
-		}
-	}
+    .scroll_block {
+      position: relative;
+
+      &.scroll {
+        top: 90px;
+        position: fixed;
+        width: calc(1570px / 12) * 4;
+      }
+    }
+
+  }
+
+  .left {
+    padding-top: 35px;
+    padding-bottom: 35px;
+    flex: 0 0 50%;
+    text-align: center;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .right {
+    padding: 35px 40px 35px 50px;
+    flex: 0 0 50%;
+
+    .name {
+      font-family: "TTFirsNeue-Medium", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      font-size: 30px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+
+    .desc {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+  }
 }
 
-.vagon-type.empty{
-	.left{
-		height: 100px;
-	}
+.vagon-type.empty {
+  .left {
+    height: 100px;
+  }
 }
 
-.service3{
-	.hint{
-		font-size: 24px;
-		font-family: "TTFirsNeue-Medium",sans-serif;
-		font-style: normal;
-		text-transform: uppercase;
-		margin-top: 30px;
-		margin-bottom: 30px;
-	}
-	ul{
-		margin-left: 40px;
-	}
-	.bold{
-		font-size: 24px;
-		font-family: "TTFirsNeue-Medium",sans-serif;
-		font-style: normal;
-		line-height: 1.4;
-		margin-bottom: 40px;
-	}
-	p{
-		font-size: 18px;
-		margin-bottom: 20px;
-		line-height: 1.4;
-	}
-	.form{
-		padding: 70px 130px 76px;
-	}
-	.swiper-slide{
-		height: 569px;
-		&.s3s1{
-			background: url("../img/service3_1.jpg") 0 0 no-repeat;
-			background-size: cover;
-		}
-		&.s3s2{
-			background: url("../img/service3_1.jpg") 0 0 no-repeat;
-			background-size: cover;
-		}
-		&.s3s3{
-			background: url("../img/service3_1.jpg") 0 0 no-repeat;
-			background-size: cover;
-		}
-		&.s3s4{
-			background: url("../img/service3_2.jpg") 0 0 no-repeat;
-			background-size: cover;
-		}
-	}
-	.spacer{
-		padding: 55px;
-	}
+.service3 {
+  .hint {
+    font-size: 24px;
+    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-style: normal;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    margin-left: 40px;
+  }
+
+  .bold {
+    font-size: 24px;
+    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-style: normal;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+  .form {
+    padding: 70px 130px 76px;
+  }
+
+  .swiper-slide {
+    height: 569px;
+
+    &.s3s1 {
+      background: url("../img/service3_1.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+
+    &.s3s2 {
+      background: url("../img/service3_1.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+
+    &.s3s3 {
+      background: url("../img/service3_1.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+
+    &.s3s4 {
+      background: url("../img/service3_2.jpg") 0 0 no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .spacer {
+    padding: 55px;
+  }
 }
 
 
-.steps{
-	margin-top: 50px;
-	&>div{
-		padding-bottom: 160px;
-	}
-	.title{
-		font-size: 24px;
-		font-family: "TTFirsNeue-DemiBold",sans-serif;
-		font-style: normal;
-		line-height: 1.4;
-		text-transform: uppercase;
-		margin-top: 27px;
-		margin-bottom: 12px;
-	}
-	.desc{
-		font-size: 16px;
-		line-height: 1.4;
-		max-width: 230px;
-	}
+.steps {
+  margin-top: 50px;
+
+  & > div {
+    padding-bottom: 160px;
+  }
+
+  .title {
+    font-size: 24px;
+    font-family: "TTFirsNeue-DemiBold", sans-serif;
+    font-style: normal;
+    line-height: 1.4;
+    text-transform: uppercase;
+    margin-top: 27px;
+    margin-bottom: 12px;
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 1.4;
+    max-width: 230px;
+  }
 
 }
 
-@media (max-width: 600px){
-	.middle-border-8:before{
-		display: none;
-	}
-	.service3 .head2{
-		margin-top: 60px;
-	}
-	.service3 .hint{
-		font-size: 18px;
-	}
-	.service3 .col-8{
-		border-left: 1px solid #E6E6E6;
-	}
-	.service3 .bold{
-		font-size: 18px;
-	}
-	.service3 .swiper-slide{
-		height: 344px;
-	}
-	.service3 .form{
-		padding: 30px;
-	}
-	.steps{
-		flex-direction: column;
-	}
-	.middle-border-12:before,
-	.middle-border-12:after{
-		display: none;
-	}
-	.fcol1,
-	.fcol2,
-	.fcol3
-	{
-		padding: 0;
-	}
-	.service3 .form .col-8{
-		border-left: 0;
-	}
-	form .row{
-		padding: 0;
-	}
-	.form .disclaimer{
-		margin-bottom: 30px;
-	}
-	.steps > div{
-		padding-bottom: 30px;
-	}
-	.vagon-sale .head{
-		font-size: 42px;
-	}
-	.vagon-type.empty{
-		display: none;
-	}
-	.vagon-type{
-		flex-direction: column;
-		.left{
-			border-right: none;
-			img{
-				max-width: 100%;
-				height: auto;
-			}
-		}
-	}
-	.vagon-sale .right{
-		padding: 30px;
-		flex: 0 0 100%;
-		.btn{
-			font-size: 14px;
-			width: 100%;
-			max-width: 300px;
-			height: 60px;
-			padding: 0 20px;
-		}
-	}
-	.vagon-sale .right .name{
-		font-size: 24px;
-	}
-	.vagon-sale .right .desc{
-		font-size: 14px;
-	}
-	.step-wrapper{
-		flex-direction: column;
-	}
-	.ico-wrapper{
-		display: flex;
-		margin-bottom: 70px;
-		.img{
-			margin-right: 20px;
-		}
-		.title{
-			margin-top: 17px;
-		}
-		.desc{
-			font-size: 14px;
-		}
+@media (min-width: 1400px) and (max-width: 1660px) {
+  .vagon-sale .head {
+    font-size: 52px;
+  }
+  .vagon-sale .right .name {
+    font-size: 26px;
+    margin-bottom: 15px;
+  }
+  .vagon-sale .right .desc{
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .vagon-sale .left{
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  .service3 .bold{
+    font-size: 22px;
+  }
+  .service3 p{
+    font-size: 16px;
+  }
 
-	}
+  .service3 .hint{
+    font-size: 22px;
+    margin-top: 13px;
+    margin-bottom: 22px;
+  }
+  .service3 .form{
+    padding: 70px 52px 6px 114px;
+  }
+  .form.bg-dark .head3{
+    margin-bottom: 15px;
+  }
+  ul.content li{
+    font-size: 16px;
+  }
+  .service3 ul{
+    margin-bottom: 40px;
+  }
+  .service3 .swiper-slide{
+    height: 506px;
+  }
+  .service3 .form .row{
+    margin: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .middle-border-8:before {
+    display: none;
+  }
+  .service3 .head2 {
+    margin-top: 60px;
+  }
+  .service3 .hint {
+    font-size: 18px;
+  }
+  .service3 .col-8 {
+    border-left: 1px solid #E6E6E6;
+  }
+  .service3 .bold {
+    font-size: 18px;
+  }
+  .service3 .swiper-slide {
+    height: 344px;
+  }
+  .service3 .form {
+    padding: 30px;
+  }
+  .steps {
+    flex-direction: column;
+  }
+  .middle-border-12:before,
+  .middle-border-12:after {
+    display: none;
+  }
+  .fcol1,
+  .fcol2,
+  .fcol3 {
+    padding: 0;
+  }
+  .service3 .form .col-8 {
+    border-left: 0;
+  }
+  form .row {
+    padding: 0;
+  }
+  .form .disclaimer {
+    margin-bottom: 30px;
+  }
+  .steps > div {
+    padding-bottom: 30px;
+  }
+  .vagon-sale .head {
+    font-size: 42px;
+  }
+  .vagon-type.empty {
+    display: none;
+  }
+  .vagon-type {
+    flex-direction: column;
+
+    .left {
+      border-right: none;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .vagon-sale .right {
+    padding: 30px;
+    flex: 0 0 100%;
+
+    .btn {
+      font-size: 14px;
+      width: 100%;
+      max-width: 300px;
+      height: 60px;
+      padding: 0 20px;
+    }
+  }
+  .vagon-sale .right .name {
+    font-size: 24px;
+  }
+  .vagon-sale .right .desc {
+    font-size: 14px;
+  }
+  .step-wrapper {
+    flex-direction: column;
+  }
+  .ico-wrapper {
+    display: flex;
+    margin-bottom: 70px;
+
+    .img {
+      margin-right: 20px;
+    }
+
+    .title {
+      margin-top: 17px;
+    }
+
+    .desc {
+      font-size: 14px;
+    }
+
+  }
 }

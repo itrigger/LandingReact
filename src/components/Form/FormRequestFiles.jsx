@@ -3,6 +3,7 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import InputMask from "react-input-mask";
 import axios from "axios";
 import { Link } from "gatsby";
+import { CARRIAGES } from "../../utility/constants";
 
 const FormRequestFiles = (props) => {
   const [name, setName] = useState("");
@@ -23,10 +24,20 @@ const FormRequestFiles = (props) => {
   const [emailError, setEmailError] = useState(false);
   const [msgError, setMsgError] = useState(false);
   const [fileError, setFileError] = useState(false);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1023);
 
   const fileInput = useRef(null);
 
   const dispatch = useNotification();
+
+  const updateMedia = () => {
+    setDesktop(window.innerWidth > 1023);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateMedia);
+    return () => window.removeEventListener("resize", updateMedia);
+  });
 
   const handleNewNotification = (TYPE, message, title) => {
     dispatch({
@@ -112,6 +123,12 @@ const FormRequestFiles = (props) => {
                 setTimeout(() => setLoading(false), 1000);
                 target.classList.remove("btn-loading");
               }
+              if (field.error_id === "-ve-userfiles") {
+                setFileError(true);
+                handleNewNotification("ERROR", field.message, "Ошибка");
+                setTimeout(() => setLoading(false), 1000);
+                target.classList.remove("btn-loading");
+              }
             });
           }
         } else {
@@ -143,6 +160,7 @@ const FormRequestFiles = (props) => {
         }
       })
       .catch(function (error) {
+        setTimeout(() => setLoading(false), 1000);
         handleNewNotification(
           "ERROR",
           "Данный файл невозможно загрузить",
@@ -230,8 +248,11 @@ const FormRequestFiles = (props) => {
             <option value="1" disabled>
               Тип вагона
             </option>
-            <option value="2">1</option>
-            <option value="3">2</option>
+            {CARRIAGES.map((item) => (
+              <option key={item.id} value={item.name}>
+                {item.name}
+              </option>
+            ))}
           </select>
         </div>
         <div className="col-4 xs-col-4 fcol2">
@@ -258,10 +279,25 @@ const FormRequestFiles = (props) => {
             <option value="1" disabled>
               Состояние вагона
             </option>
-            <option value="2">1</option>
-            <option value="3">2</option>
+            <option value="2">Плохое</option>
+            <option value="3">Среднее</option>
+            <option value="4">Хорошее</option>
+            <option value="5">Новый</option>
           </select>
         </div>
+        {!isDesktop ? (
+          <div className="xs-col-4">
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Текст сообщения"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          </div>
+        ) : null}
       </div>
       <div className="row">
         <div className="col-4 xs-col-4 fcol1">
@@ -278,7 +314,10 @@ const FormRequestFiles = (props) => {
                 ></div>
               </>
             ) : (
-              <div className="ico ico-camera"></div>
+              <>
+                <div className="ico ico-camera"></div>
+                <div>Прикрепите фото</div>
+              </>
             )}
           </label>
           <input
@@ -291,27 +330,37 @@ const FormRequestFiles = (props) => {
             onChange={changeHandler}
             style={{ visibility: "hidden" }}
           />
-          <div className="disclaimer">
-            Нажимая на кнопку, я соглашаюсь с{" "}
-            <Link to="/politic">политикой обработки</Link> персональных данных
-          </div>
+          {isDesktop ? (
+            <div className="disclaimer">
+              Нажимая на кнопку, я соглашаюсь с{" "}
+              <Link to="/politic">политикой обработки</Link> персональных данных
+            </div>
+          ) : null}
         </div>
         <div className="col-8 xs-col-4 fcol3">
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Текст сообщения"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
+          {isDesktop ? (
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Текст сообщения"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+          ) : null}
           <button
             className={loading ? "btn-classic disabled" : "btn-classic"}
             onClick={(e) => submitHandler(e.target)}
           >
             <span>Отправить заявку</span>
           </button>
+          {!isDesktop ? (
+            <div className="disclaimer">
+              Нажимая на кнопку, я соглашаюсь с{" "}
+              <Link to="/politic">политикой обработки</Link> персональных данных
+            </div>
+          ) : null}
         </div>
       </div>
     </div>

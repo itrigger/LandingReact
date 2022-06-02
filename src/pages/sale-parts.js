@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import Layout from "../components/ui/layout/Layout";
 import Seo from "../components/home/Seo/Seo";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { PARTS } from "../utility/constants";
+import Form from "../components/Form/Form";
+import Lytebox from "../components/ui/Lytebox/Lytebox";
 
 const SaleParts = ({ location }) => {
   let selectedDD = [0];
-
+  const [slide, setSlide] = useState(false);
+  const slideClickHandler = () => {
+    setSlide(true);
+  };
   if (location.state && location.state.chooseCatById !== undefined) {
     selectedDD = [location.state.chooseCatById];
   }
@@ -84,7 +89,10 @@ const SaleParts = ({ location }) => {
                 <li>по всей территории России</li>
                 <li>по 100% предоплате</li>
               </ul>
-              <button className="btn yellow">
+              <button
+                className="btn yellow"
+                onClick={() => slideClickHandler()}
+              >
                 <span>Продать вагон</span>
               </button>
               <div className="hint">
@@ -94,6 +102,12 @@ const SaleParts = ({ location }) => {
             <div className="col-6 xs-col-4 picture"></div>
           </div>
         </div>
+        <Lytebox trigger={slide} setTrigger={setSlide}>
+          <div className="head3">
+            <span className="italic">Выкуп</span> вагонов
+          </div>
+          <Form setTrigger={setSlide} />
+        </Lytebox>
         <Seo />
       </Layout>
     </div>

@@ -172,7 +172,11 @@ input::-webkit-inner-spin-button {
 		}
 	}
 }
-
+.form.bg-dark{
+	.btn-classic{
+		width: 100%;
+	}
+}
 .form{
 	.disclaimer{
 		margin-top: 15px;
@@ -218,14 +222,6 @@ input::-webkit-inner-spin-button {
 		transition: .2s all;
 	}
 }
-
-
-@media (max-width: 600px) {
-	select{
-		font-size: 16px;
-	}
-}
-
 .fileReceiver{
 	height: 90px;
 	border: 1px dashed #fff;
@@ -233,6 +229,7 @@ input::-webkit-inner-spin-button {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	flex-direction: column;
 }
 
 .file-preview{
@@ -264,9 +261,15 @@ input::-webkit-inner-spin-button {
 	}
 }
 
-@media (min-width: 1440px) and (max-width: 1660px) {
-	input[type=text], input[type=email], input[type=tel], input[type=password], textarea {
+
+@media (min-width: 1400px) and (max-width: 1660px) {
+	input[type=text], input[type=email], input[type=tel], input[type=password]  {
 		height: 50px;
+		font-size: 15px;
+		margin-bottom: 20px;
+	}
+	textarea{
+		height: 80px;
 		font-size: 15px;
 		margin-bottom: 20px;
 	}
@@ -279,4 +282,22 @@ input::-webkit-inner-spin-button {
 		height: 50px;
 		font-size: 15px;
 	}
+	.form.bg-dark select{
+		font-size: 15px;
+	}
+	.fileReceiver{
+		height: 80px;
+	}
+	.form .disclaimer{
+		margin-top: 9px;
+		font-size: 12px;
+	}
+
 }
+
+@media (max-width: 1023px) {
+	select{
+		font-size: 16px;
+	}
+}
+

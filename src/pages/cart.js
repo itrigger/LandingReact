@@ -6,17 +6,18 @@ import BossImg from "../assets/img/boss.png";
 import { CartContext } from "../context/CartContext";
 import CartRow from "../components/Table/CartRow";
 import FormCart from "../components/Form/FormCart";
+import { Link } from "gatsby";
 
 const Cart = () => {
   const [total, setTotal] = useState("0");
   const [isDesktop, setDesktop] = useState(
-    typeof window !== "undefined" ? window.innerWidth > 600 : null
+    typeof window !== "undefined" ? window.innerWidth > 1023 : null
   );
   const [cartItems, setCartItems] = useContext(CartContext);
   const value = React.useContext(CartContext);
 
   const updateMedia = () => {
-    setDesktop(typeof window !== "undefined" ? window.innerWidth > 600 : null);
+    setDesktop(typeof window !== "undefined" ? window.innerWidth > 1023 : null);
   };
 
   useEffect(() => {
@@ -205,40 +206,44 @@ const Cart = () => {
                 </div>
               </div>
             </div>
+            <div className="row cart-form">
+              <div className="col-8 xs-col-4 form bg-dark">
+                <div className="row-8">
+                  <div className="col-1 xs-col-0"></div>
+                  <div className="col-6 xs-col-8">
+                    <div className="cart_head">Контактные данные</div>
+                  </div>
+                  <div className="col-1 xs-col-0"></div>
+                </div>
+                <FormCart />
+              </div>
+              <div className="col-4 xs-col-4 bg-dark bl-light">
+                <div className="d_f fd_c ai_c jc_c | boss">
+                  <img src={BossImg} width="262" height="262" alt="директор" />
+                  <div className="title">Консультант</div>
+                  <div className="name">Иван Абрамов</div>
+                  <div className="text">
+                    Мы вам перезвоним через 15 минут{" "}
+                    <span>для подтверждения заказа</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </>
         ) : (
-          <div className="row">
+          <div className="row middle-border-12 bl br">
             <div className="col-12 xs-col-4">
               <div className="cart_head">Корзина пуста</div>
+              <Link to="/" className="btn-classic">
+                <span>На главную</span>
+              </Link>
             </div>
           </div>
         )}
-        <div className="row cart-form">
-          <div className="col-8 xs-col-4 form bg-dark">
-            <div className="row-8">
-              <div className="col-1 xs-col-0"></div>
-              <div className="col-6 xs-col-8">
-                <div className="cart_head">Контактные данные</div>
-              </div>
-              <div className="col-1 xs-col-0"></div>
-            </div>
-            <FormCart />
-          </div>
-          <div className="col-4 xs-col-4 bg-dark bl-light">
-            <div className="d_f fd_c ai_c jc_c | boss">
-              <img src={BossImg} width="262" height="262" alt="директор" />
-              <div className="title">Консультант</div>
-              <div className="name">Иван Абрамов</div>
-              <div className="text">
-                Мы вам перезвоним через 15 минут{" "}
-                <span>для подтверждения заказа</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row service3">
-          <div className="col-8 xs-col-0 bl br spacer"></div>
-          <div className="col-4 xs-col-0 br spacer"></div>
+
+        <div className="row service3 middle-border-12 br bl">
+          <div className="col-8 xs-col-0  spacer"></div>
+          <div className="col-4 xs-col-0  spacer"></div>
         </div>
       </Layout>
     </>

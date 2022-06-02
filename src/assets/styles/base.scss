@@ -5,7 +5,7 @@ html {
 body{
 	font-family: "TTNorms-Regular",sans-serif;
 	padding-top: 90px;
-	//background: url("../img/temp/home.jpg") center top no-repeat;
+	//background: url("../img/temp/cart.jpg") center top no-repeat;
 	background-size: contain;
 }
 
@@ -157,14 +157,23 @@ ul.content{
 	margin-bottom: 40px;
 }
 
-@media (min-width: 1440px) and (max-width: 1660px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
 	h1 {
 		font-size: 54px;
 		text-transform: uppercase;
 	}
+	.breadcrumb ul{
+		margin-bottom: 33px;
+	}
+	.head2{
+		font-size: 52px;
+	}
+	.head3{
+		font-size: 32px;
+	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
 	h1{
 		font-size: 42px;
 		line-height: 1.4;

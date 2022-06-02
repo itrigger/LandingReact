@@ -1,13 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SeoImg from "../../../assets/img/boss.png";
+import { useQuery } from "@apollo/client";
+import { GET_CONTENT } from "../../../apollo/queries";
 
 const Seo = () => {
+  const [telWt, setTelWt] = useState("");
+
+  const clickHandler = () => {
+    window.open("https://wa.me/" + telWt);
+  };
+
+  const { data } = useQuery(GET_CONTENT);
+
+  useEffect(() => {
+    if (data) {
+      setTelWt(data.posts.nodes[0].acfcontent.telWt);
+    }
+  }, [data]);
+
   return (
     <div className="homeseo">
       <div className="row">
         <div className="col-8 xs-col-4 | left">
           <div className="head">
-            <span className="italic">СЕО</span> ТЕКСТ О КОМПАНИИ
+            <span className="italic">СЕО</span> ТЕКСТ
           </div>
           <div className="desc">
             <p>
@@ -37,7 +53,7 @@ const Seo = () => {
             <img src={SeoImg} width="262" height="262" alt="директор" />
             <div className="title">Директор</div>
             <div className="name">Иван Абрамов</div>
-            <button className="btn-wt-green">
+            <button onClick={() => clickHandler()} className="btn-wt-green">
               <span className="ico ico-left ico-wt-white"></span>
               Написать в WhatsApp
             </button>

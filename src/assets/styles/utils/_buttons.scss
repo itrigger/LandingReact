@@ -37,7 +37,7 @@
 		height: 100%;
 		left: 0;
 		top: 0;
-		border: 2px solid transparent;
+		border: 1px solid transparent;
 		transform: skew(-15deg);
 		background: #fff;
 		transition: .2s all;
@@ -46,6 +46,7 @@
 		color: #000;
 		&:before{
 			width: 100%;
+			border-width: 2px;
 			transition: .4s all;
 		}
 	}
@@ -131,6 +132,16 @@ button{
 		pointer-events: none;
 		opacity: .4;
 	}
+	&.active{
+		background-color: #373947;
+		color: #FFFFFF;
+		pointer-events: none;
+		&:hover{
+			&:before{
+				width: 0;
+			}
+		}
+	}
 }
 
 .btn-loading {
@@ -192,7 +203,7 @@ button{
 	display: flex;
 	justify-content: center;
 }
-@media (min-width: 1440px) and (max-width: 1660px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
 	.btn-wt{
 		font-size: 22px;
 	}
@@ -206,9 +217,9 @@ button{
 		font-size: 14px;
 	}
 }
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
 	.btn{
-		padding: 38px 20px 32px;
+		padding: 35px 20px 35px;
 		line-height: 1.4;
 	}
 	.btn-classic{

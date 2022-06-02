@@ -61,7 +61,26 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
+
+	.card-result-row .card .price_block{
+		padding: 23px;
+	}
+	.card-result-row .card .name-w .name{
+		font-size: 20px;
+	}
+	.card-result-row .card .description{
+		font-size: 14px;
+		p{
+			font-size: inherit;
+		}
+	}
+	.card-result-row .card .price_block .price{
+		font-size: 20px;
+	}
+}
+
+@media (max-width: 1023px) {
 	.card-result-row{
 		flex-direction: column;
 		.card{

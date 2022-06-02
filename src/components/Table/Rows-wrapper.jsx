@@ -118,14 +118,7 @@ const RowsWrapper = ({
         ...variables,
         categoryIdIn: selectedDD,
       })
-        .then((r) => {
-          //убрать
-          /*handleNewNotification(
-            "SUCCESS",
-            "Данные получены при переходе с другой страницы",
-            "Успешно"
-          );*/
-        })
+        .then((r) => {})
         .catch(function (error) {
           handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
         });
@@ -173,6 +166,7 @@ const RowsWrapper = ({
 
   return (
     <div className="megamap">
+      {map ? <Map /> : null}
       <div className="form form-horizontal">
         <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg">
           <div className="col-12 xs-col-4">
@@ -233,8 +227,6 @@ const RowsWrapper = ({
           </div>
         </div>
       </div>
-
-      {map ? <Map /> : null}
 
       <div className="map_result " ref={map ? myRef : null}>
         {data && data.products ? (

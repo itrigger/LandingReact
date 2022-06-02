@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "../components/ui/layout/Layout";
 import { Helmet } from "react-helmet";
-import { Pagination } from "swiper";
+import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -73,7 +73,7 @@ const BuyCarriage = () => {
           </div>
         </div>
 
-        <div className="row service3 middle-border-12 br bl">
+        <div className="row service3 middle-border-12 br bl" id="vlom">
           <div className="col-4 xs-col-0 spacer"></div>
           <div className="col-4 xs-col-0 spacer"></div>
           <div className="col-4 xs-col-0 spacer"></div>
@@ -119,12 +119,11 @@ const BuyCarriage = () => {
         <div className="row service3">
           <div className="col-4 xs-col-4 bl">
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
+              autoplay={{ delay: 5000 }}
               pagination={{ clickable: true }}
               spaceBetween={0}
               slidesPerView={1}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide className="s3s1"></SwiperSlide>
               <SwiperSlide className="s3s2"></SwiperSlide>
@@ -139,7 +138,7 @@ const BuyCarriage = () => {
           </div>
         </div>
 
-        <div className="row service3">
+        <div className="row service3" id="vrazdelku">
           <div className="col-4 xs-col-0 bl br spacer"></div>
           <div className="col-4 xs-col-0 br spacer"></div>
           <div className="col-4 xs-col-0 br spacer"></div>
@@ -147,7 +146,7 @@ const BuyCarriage = () => {
         <div className="row service3">
           <div className="col-4 xs-col-4 bl br">
             <div className="head2">
-              <span className="italic">Выкуп</span> готовых вагонов!
+              <span className="italic">Выкуп</span> <div>готовых</div> вагонов!
             </div>
             <div className="hint">
               <span className="italic">Уже купили</span> 5990 вагонов
@@ -184,21 +183,20 @@ const BuyCarriage = () => {
         <div className="row service3">
           <div className="col-4 xs-col-4 bl">
             <Swiper
-              modules={[Pagination]}
+              modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
+              autoplay={{ delay: 5000 }}
               spaceBetween={0}
               slidesPerView={1}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide className="s3s4"></SwiperSlide>
               <SwiperSlide className="s3s4"></SwiperSlide>
               <SwiperSlide className="s3s4"></SwiperSlide>
             </Swiper>
           </div>
-          <div className="col-8 xs-col-4 form bg-dark">
+          <div className="col-8 xs-col-4 form bg-dark" id="ocenka">
             <div className="head3">
-              <span className="italic">Отправьте заявку</span> на выкуп лома
+              <span className="italic">Отправьте заявку</span> на выкуп вагона
             </div>
             <FormRequestFiles />
           </div>

@@ -10,7 +10,7 @@ import VagKrytyi from "../assets/img/vag-krytyi.png";
 import VagPlatforma from "../assets/img/vag-platform.png";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { CARRIAGES } from "../utility/constants";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import StickyBox from "react-sticky-box";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";

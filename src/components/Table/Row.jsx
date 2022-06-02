@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const Row = ({ data, addToCart }) => {
+  const [cartItems, setCartItems] = useContext(CartContext);
+
   return (
     <div className="row result-row  br bl middle-border-12">
       <div className="d_f col-4 xs-col-4">
@@ -45,9 +48,17 @@ const Row = ({ data, addToCart }) => {
                 image: data.image.srcSet,
               })
             }
-            className="btn-classic"
+            className={
+              cartItems.find((x) => x.id === data.id)
+                ? "btn-classic active"
+                : "btn-classic"
+            }
           >
-            <span>Заказать</span>
+            <span>
+              {cartItems.find((x) => x.id === data.id)
+                ? "Уже в заказе"
+                : "Заказать"}
+            </span>
           </button>
         </div>
       </div>

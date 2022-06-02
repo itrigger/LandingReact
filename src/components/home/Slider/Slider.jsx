@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Slide from "../../../assets/img/home_image.jpg";
 import { Link } from "gatsby";
 import Form from "../../Form/Form";
-import { Navigation } from "swiper";
+import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Lytebox from "../../ui/Lytebox/Lytebox";
 
@@ -33,9 +33,10 @@ const Slider = () => {
       <div className="row middle-border-12-light middle-border-12-over-bg br-light bl-light | line1">
         <div className="d_f fd_c jc_c col-4 xs-col-4 | swiper-my-wrapper">
           <Swiper
-            modules={[Navigation]}
+            modules={[Navigation, Autoplay]}
             pagination={{ clickable: true }}
             loop={true}
+            autoplay={{ delay: 5000 }}
             spaceBetween={0}
             slidesPerView={1}
             ref={swiperRef}
@@ -75,7 +76,7 @@ const Slider = () => {
               <div className="desc">
                 Всякие разные запчасти новые и бывшие в употреблении
               </div>
-              <Link to="/sale-carriage" className="btn swiper-slide-btn">
+              <Link to="/sale-parts" className="btn swiper-slide-btn">
                 <span>Перейти в раздел</span>
               </Link>
             </SwiperSlide>
@@ -88,7 +89,7 @@ const Slider = () => {
                 работе, полувагоны, крытые, цистерны, платформы, хопперы,
                 думкары
               </div>
-              <Link to="/sale-carriage" className="btn swiper-slide-btn">
+              <Link to="/buy-carriage" className="btn swiper-slide-btn">
                 <span>Перейти в раздел</span>
               </Link>
             </SwiperSlide>

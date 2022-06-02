@@ -8,7 +8,7 @@
 
   .swiper-slide-btn{
     margin-left: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
   .swiper-my-wrapper{
     height: 100%;
@@ -135,7 +135,7 @@
   }
 }
 
-@media (min-width: 1440px) and (max-width: 1660px) {
+@media (min-width: 1400px) and (max-width: 1660px) {
   .slider {
     height: 706px;
     top: -80px;
@@ -171,13 +171,14 @@
   .head3{
     color: #FFFFFF;
     margin-bottom: 25px;
+    padding-right: 30px;
     .italic{
       color: $yellow;
     }
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1023px) {
   .lytebox-inner{
     .head3{
       font-size: 24px;
