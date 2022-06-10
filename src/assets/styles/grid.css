@@ -80,6 +80,7 @@
     position: relative;
   }
 
+
   .middle-border-12:before, .middle-border-12-light:before {
     left: 33.3333333333%;
   }
@@ -213,16 +214,6 @@
 }
 /*media 481-768*/
 @media (max-width: 575px) {
-  .row {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    max-width: 100%;
-    grid-gap: 0;
-    padding: 0;
-    margin: 0 auto;
-    position: relative;
-  }
-
   .mobile {
     display: flex !important;
   }

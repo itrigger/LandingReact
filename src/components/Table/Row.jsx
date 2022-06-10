@@ -6,7 +6,7 @@ const Row = ({ data, addToCart }) => {
 
   return (
     <div className="row result-row  br bl middle-border-12">
-      <div className="d_f col-4 xs-col-4">
+      <div className="d_f col-4 m-col-4 xs-col-4">
         <div className="img">
           <img srcSet={data.image.srcSet} alt="" />
         </div>
@@ -18,7 +18,7 @@ const Row = ({ data, addToCart }) => {
           ></div>
         </div>
       </div>
-      <div className="col-4 xs-col-4 | minirow-w">
+      <div className="col-4 m-col-4 xs-col-4 | minirow-w">
         <div className="d_f | minirow">
           <div className="left">Наличие</div>
           <div className="right">
@@ -36,7 +36,7 @@ const Row = ({ data, addToCart }) => {
           <div className="right">{data.productsKP.mestonahozhdenie}</div>
         </div>
       </div>
-      <div className="d_f fd_c ai_end col-4 xs-col-4 | price_block">
+      <div className="d_f fd_c ai_end col-4 m-col-4 xs-col-4 | price_block">
         <div className="price">{data.price}</div>
         <div className="btn-w">
           <button

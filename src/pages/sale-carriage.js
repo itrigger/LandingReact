@@ -51,14 +51,14 @@ const SaleCarriage = () => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffe500" />
-        <meta name="msapplication-TileColor" content="#ffe500" />
-        <meta name="theme-color" content="#ffe500" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F5DF4D" />
+        <meta name="msapplication-TileColor" content="#F5DF4D" />
+        <meta name="theme-color" content="#F5DF4D" />
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
           <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
-            <div className="col-12 xs-col-4">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
                   <li>
@@ -70,21 +70,21 @@ const SaleCarriage = () => {
             </div>
           </div>
           <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
-            <div className="col-8 xs-col-4">
+            <div className="col-8 m-col-8 xs-col-4">
               <h1>
                 <span className="italic">Продажа</span> бу вагонов
               </h1>
             </div>
-            <div className="col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
-              <a href="/price" className="btn yellow">
+            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
+              {/* <a href="/price" className="btn yellow">
                 <span>Скачать прайс-лист</span>
-              </a>
+              </a>*/}
             </div>
           </div>
         </div>
         <div className="vagon-sale" ref={myRef}>
           <div className="row">
-            <div className="col-4 xs-col-4 bl">
+            <div className="col-4 m-col-4 xs-col-4 bl">
               <StickyBox offsetTop={90}>
                 <div className="head">
                   <span className="italic">Какой тип</span> вагона Вас
@@ -92,7 +92,7 @@ const SaleCarriage = () => {
                 </div>
               </StickyBox>
             </div>
-            <div className="col-8 xs-col-4 bl br">
+            <div className="col-8 m-col-8 xs-col-4 bl br">
               <div className="vagon-types">
                 <div className="d_f | vagon-type empty">
                   <div className="left br bt"></div>
@@ -232,7 +232,7 @@ const SaleCarriage = () => {
 
         <div className="promo slide1">
           <div className="row">
-            <div className="col-6 xs-col-4 zi-2">
+            <div className="col-6 m-col-8 xs-col-4 zi-2">
               <div className="head">
                 <span className="italic">Выкуп</span> вагонов дорого!
               </div>
@@ -251,7 +251,7 @@ const SaleCarriage = () => {
                 <span className="italic">Уже продано</span> 1310 вагонов
               </div>
             </div>
-            <div className="col-6 picture"></div>
+            <div className="col-6 m-col-4 picture"></div>
           </div>
           <Lytebox trigger={slide} setTrigger={setSlide}>
             <div className="head3">

@@ -18,7 +18,7 @@ const Card = ({ data, addToCart }) => {
           ></div>
         </div>
       </div>
-      <div className="col-4 | minirow-w">
+      <div className="col-4 m-col-4 | minirow-w">
         <div className="d_f | minirow">
           <div className="left">Наличие</div>
           <div className="right">
@@ -36,7 +36,7 @@ const Card = ({ data, addToCart }) => {
           <div className="right">{data.productsKP.mestonahozhdenie}</div>
         </div>
       </div>
-      <div className="col-4 d_f jc_sb ai_c | price_block">
+      <div className="col-4 m-col-4 d_f jc_sb ai_c | price_block">
         <div className="price">{data.price}</div>
         <div className="btn-w">
           <button

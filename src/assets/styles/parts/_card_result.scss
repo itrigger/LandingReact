@@ -80,6 +80,41 @@
 	}
 }
 
+@media (min-width: 1024px) and (max-width: 1399px) {
+	.card{
+		position: relative;
+	}
+	.card-result-row .card:nth-child(3n+2){
+		border-left: none;
+		border-right:none;
+	}
+	.card-result-row .card .name-w .name {
+		font-size: 20px;
+	}
+	.card-result-row .card .minirow .left{
+		padding-left: 10px;
+	}
+	.card-result-row .card .minirow .right{
+		padding-right: 20px;
+	}
+	.card-result-row .card .price_block{
+		flex-direction: column;
+		align-items: flex-start;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+	}
+	.card-result-row .card .price_block .price{
+		margin-bottom: 10px;
+	}
+	.card-result-row .card .img{
+		height: 328px;
+	}
+	.card-result-row .card{
+		padding-bottom: 150px;
+	}
+}
+
 @media (max-width: 1023px) {
 	.card-result-row{
 		flex-direction: column;

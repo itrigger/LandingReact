@@ -26,6 +26,7 @@
 		top: 350px;
 		width: 100%;
 		text-align: center;
+		pointer-events: none;
 	}
 	.head{
 		font-family: "TTFirsNeue-Medium",sans-serif;
@@ -57,6 +58,10 @@
 	path.area{
 		&.active{
 			fill: #1D64B7;
+			transition: .2s all;
+		}
+		&:hover{
+			fill: #63a1e8;
 			transition: .2s all;
 		}
 	}
@@ -141,6 +146,91 @@
 	border-bottom: 1px solid rgba(#000, .15);
 }
 
+.popup_inner{
+	background-color: #FFFFFF;
+	font-size: 16px;
+	padding: 40px;
+	.head3{
+		color: #000000;
+	}
+}
+
+.search_item{
+	margin-bottom: 35px;
+	.name{
+		font-size: 16px;
+		text-transform: uppercase;
+		font-family: 'TTFirsNeue-DemiBold',sans-serif;
+		margin-bottom: 15px;
+		padding-right: 10px;
+	}
+	.description{
+		font-family: 'TTNorms-Bold', sans-serif;
+		font-size: 16px;
+		margin-bottom: 25px;
+		ul{
+			margin-top: 10px;
+		}
+		li{
+			font-family: 'TTNorms-Regular', sans-serif;
+			font-size: 16px;
+			margin-top: 5px;
+		}
+	}
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+.popupbox{
+	background: #fff;
+	width: 300px;
+	position: absolute;
+	padding: 20px;
+	opacity: 0;
+	visibility: hidden;
+	transition: .2s all;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+		transition: .2s all;
+		z-index: 22;
+	}
+	.btn-classic{
+		height: 40px;
+		padding: 0 30px;
+		font-size: 12px;
+	}
+	.close{
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 15px;
+		height: 15px;
+		background: url("../img/close-dark.svg") 0 0 no-repeat;
+		background-size: contain;
+		z-index: 22;
+	}
+}
+
+
+@media (min-width: 1024px) and (max-width: 1399px){
+	.result-row .img{
+		padding: 30px 10px;
+	}
+	.result-row .name{
+		font-size: 20px;
+		margin-bottom: 15px;
+	}
+	.result-row .price_block{
+		padding-right: 10px;
+	}
+	.map{
+		display: none;
+	}
+}
+
+
 @media (min-width: 1400px) and (max-width: 1660px) {
 
 	.megamap .form .head{
@@ -196,6 +286,10 @@
 }
 
 @media (max-width: 1023px) {
+	.popup_inner{
+		font-size: 14px;
+		padding: 25px;
+	}
 	.megamap{
 		.form{
 			padding-bottom: 0;

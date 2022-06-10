@@ -30,13 +30,13 @@ const Footer = () => {
     <div className="footer">
       <div className="line1">
         <div className="row">
-          <div className="col-4 xs-col-4 | col1">
+          <div className="col-4 m-col-4 xs-col-4 | col1">
             <span className="italic">Не нашли то, что искали</span>
           </div>
-          <div className="col-4 xs-col-4 | col2">
-            Свяжитесь с нами и мы постараемся помочь
+          <div className="col-4 m-col-4 xs-col-4 | col2">
+            Свяжитесь с&nbsp;нами и мы постараемся помочь
           </div>
-          <div className="col-4 xs-col-4 | col3">
+          <div className="col-4 m-col-4 xs-col-4 | col3">
             <div className="form">
               <div className="head">
                 <span className="italic">Заполните</span> форму
@@ -48,7 +48,7 @@ const Footer = () => {
       </div>
       <div className="line2">
         <div className="row">
-          <div className="col-4 xs-col-4 | col1">
+          <div className="col-4 m-col-4 xs-col-4 | col1">
             <div className="foot-logo"></div>
             <div className="foot-text">
               Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
@@ -59,7 +59,7 @@ const Footer = () => {
               <Link to="/politic">Политика конфиденциальности сайта</Link>
             </div>
           </div>
-          <div className="col-4 xs-col-4 | col2">
+          <div className="col-4 m-col-4 xs-col-4 | col2">
             <div className="head italic">Услуги</div>
             <ul>
               <li>
@@ -81,7 +81,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="col-4 xs-col-4 | col3">
+          <div className="col-4 m-col-4 xs-col-4 | col3">
             <div className="head italic">Контакты</div>
             <a href={"tel:" + telCall} className="phone">
               {tel}

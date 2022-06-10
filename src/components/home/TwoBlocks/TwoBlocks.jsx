@@ -5,7 +5,7 @@ const TwoBlocks = () => {
   return (
     <div className="twoblocks">
       <div className="row">
-        <div className="d_f col-12 xs-col-4 | twoblocks_w">
+        <div className="d_f col-12 m-col-12 xs-col-4 | twoblocks_w">
           <div className="tb-left">
             <div>
               <div className="head">

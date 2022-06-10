@@ -41,14 +41,14 @@ const BuyCarriage = () => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffe500" />
-        <meta name="msapplication-TileColor" content="#ffe500" />
-        <meta name="theme-color" content="#ffe500" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F5DF4D" />
+        <meta name="msapplication-TileColor" content="#F5DF4D" />
+        <meta name="theme-color" content="#F5DF4D" />
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
           <div className="row middle-border-12-light middle-border-12-over-bg bl-light br-light">
-            <div className="col-12 xs-col-4">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
                   <li>
@@ -60,12 +60,12 @@ const BuyCarriage = () => {
             </div>
           </div>
           <div className="row middle-border-12-light middle-border-12-over-bg  bl-light br-light line2">
-            <div className="col-8 xs-col-4">
+            <div className="col-8 m-col-8 xs-col-4">
               <h1>
                 <span className="italic">Скупка</span> б/у вагонов
               </h1>
             </div>
-            <div className="col-4 xs-col-4 pos_r zi-2 d_f jc_end | page_header_btn">
+            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end | page_header_btn">
               {/*<button className="btn yellow">
                 <span>Оценить вагон</span>
               </button>*/}
@@ -74,12 +74,12 @@ const BuyCarriage = () => {
         </div>
 
         <div className="row service3 middle-border-12 br bl" id="vlom">
-          <div className="col-4 xs-col-0 spacer"></div>
-          <div className="col-4 xs-col-0 spacer"></div>
-          <div className="col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
         </div>
         <div className="row service3 middle-border-12 br bl">
-          <div className="col-4 xs-col-4">
+          <div className="col-4 m-col-4 xs-col-4">
             <div className="head2">
               <span className="italic">Выкуп</span> лома вагонов дорого!
             </div>
@@ -92,7 +92,7 @@ const BuyCarriage = () => {
               <li>по 100% предоплате</li>
             </ul>
           </div>
-          <div className="col-8 xs-col-4 ">
+          <div className="col-8 m-col-8 xs-col-4 ">
             <div className="bold">
               Выкуп вагонов — разумное решение для обновления подвижного
               состава. Вам не придется платить за утилизацию – мы заплатим за
@@ -117,7 +117,7 @@ const BuyCarriage = () => {
           </div>
         </div>
         <div className="row service3">
-          <div className="col-4 xs-col-4 bl">
+          <div className="col-4 m-col-0 xs-col-4 bl">
             <Swiper
               modules={[Pagination, Autoplay]}
               autoplay={{ delay: 5000 }}
@@ -130,7 +130,7 @@ const BuyCarriage = () => {
               <SwiperSlide className="s3s3"></SwiperSlide>
             </Swiper>
           </div>
-          <div className="col-8 xs-col-4 form bg-dark">
+          <div className="col-8 m-col-12 xs-col-4 form bg-dark">
             <div className="head3">
               <span className="italic">Отправьте заявку</span> на выкуп лома
             </div>
@@ -139,12 +139,12 @@ const BuyCarriage = () => {
         </div>
 
         <div className="row service3" id="vrazdelku">
-          <div className="col-4 xs-col-0 bl br spacer"></div>
-          <div className="col-4 xs-col-0 br spacer"></div>
-          <div className="col-4 xs-col-0 br spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 bl br spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 br spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 br spacer"></div>
         </div>
         <div className="row service3">
-          <div className="col-4 xs-col-4 bl br">
+          <div className="col-4 m-col-4 xs-col-4 bl br">
             <div className="head2">
               <span className="italic">Выкуп</span> <div>готовых</div> вагонов!
             </div>
@@ -157,7 +157,7 @@ const BuyCarriage = () => {
               <li>по 100% предоплате</li>
             </ul>
           </div>
-          <div className="col-8 xs-col-4 middle-border-8 br">
+          <div className="col-8 m-col-8 xs-col-4 middle-border-8 br">
             <div className="bold">
               Выкуп вагонов — разумное решение для обновления подвижного
               состава. Вам не придется платить за утилизацию – мы заплатим за
@@ -181,7 +181,7 @@ const BuyCarriage = () => {
           </div>
         </div>
         <div className="row service3">
-          <div className="col-4 xs-col-4 bl">
+          <div className="col-4 m-col-0 xs-col-4 bl">
             <Swiper
               modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
@@ -194,7 +194,7 @@ const BuyCarriage = () => {
               <SwiperSlide className="s3s4"></SwiperSlide>
             </Swiper>
           </div>
-          <div className="col-8 xs-col-4 form bg-dark" id="ocenka">
+          <div className="col-8 m-col-12 xs-col-4 form bg-dark" id="ocenka">
             <div className="head3">
               <span className="italic">Отправьте заявку</span> на выкуп вагона
             </div>
@@ -202,12 +202,12 @@ const BuyCarriage = () => {
           </div>
         </div>
         <div className="row service3 bl br middle-border-12">
-          <div className="col-4 xs-col-0 spacer"></div>
-          <div className="col-4 xs-col-0 spacer"></div>
-          <div className="col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0 spacer"></div>
         </div>
         <div className="row service3 bl br middle-border-12">
-          <div className="col-12 xs-col-4">
+          <div className="col-12 m-col-12 xs-col-4">
             <div className="head2">
               <div className="italic">Процедура</div>
               выкупа вагонов

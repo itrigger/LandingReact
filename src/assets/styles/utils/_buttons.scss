@@ -217,6 +217,19 @@ button{
 		font-size: 14px;
 	}
 }
+@media (min-width: 1024px) and (max-width: 1399px){
+	.btn{
+		height: 50px;
+		padding: 0 50px;
+		font-size: 14px;
+	}
+	.btn-classic, .paginator.next_prev li button{
+		padding: 0 50px;
+		height: 50px;
+		font-size: 14px;
+	}
+}
+
 @media (max-width: 1023px) {
 	.btn{
 		padding: 35px 20px 35px;

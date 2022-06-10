@@ -9,12 +9,21 @@ import Lytebox from "../components/ui/Lytebox/Lytebox";
 
 const SaleParts = ({ location }) => {
   let selectedDD = [0];
+  let selectedDDJD = null;
+  let actived = false;
   const [slide, setSlide] = useState(false);
   const slideClickHandler = () => {
     setSlide(true);
   };
   if (location.state && location.state.chooseCatById !== undefined) {
     selectedDD = [location.state.chooseCatById];
+  }
+  if (location.state && location.state.jd !== undefined) {
+    selectedDDJD = [location.state.jd];
+  }
+
+  if (location && location.pathname === "/sale-parts") {
+    actived = true;
   }
 
   return (
@@ -44,14 +53,14 @@ const SaleParts = ({ location }) => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffe500" />
-        <meta name="msapplication-TileColor" content="#ffe500" />
-        <meta name="theme-color" content="#ffe500" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F5DF4D" />
+        <meta name="msapplication-TileColor" content="#F5DF4D" />
+        <meta name="theme-color" content="#F5DF4D" />
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
           <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg">
-            <div className="col-12 xs-col-4">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
                   <li>
@@ -63,24 +72,30 @@ const SaleParts = ({ location }) => {
             </div>
           </div>
           <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
-            <div className="col-8 xs-col-4">
+            <div className="col-8 m-col-8 xs-col-4">
               <h1>
                 <span className="italic">Продажа</span> запчастей
               </h1>
             </div>
-            <div className="col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
-              <a href="/price" className="btn yellow">
+            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
+              {/*<a href="/price" className="btn yellow">
                 <span>Скачать прайс-лист</span>
-              </a>
+              </a>*/}
             </div>
           </div>
         </div>
 
-        <RowsWrapper type={1} dropdown={PARTS} selectedDD={selectedDD} />
+        <RowsWrapper
+          type={1}
+          dropdown={PARTS}
+          selectedDD={selectedDD}
+          selectedDDJD={selectedDDJD}
+          actived={actived}
+        />
 
         <div className="promo slide1">
           <div className="row">
-            <div className="col-6 xs-col-4 zi-2">
+            <div className="col-6 m-col-6 xs-col-4 zi-2">
               <div className="head">
                 <span className="italic">Выкуп</span> вагонов дорого!
               </div>
@@ -99,7 +114,7 @@ const SaleParts = ({ location }) => {
                 <span className="italic">Уже продано</span> 1310 вагонов
               </div>
             </div>
-            <div className="col-6 xs-col-4 picture"></div>
+            <div className="col-6 m-col-6 xs-col-4 picture"></div>
           </div>
         </div>
         <Lytebox trigger={slide} setTrigger={setSlide}>

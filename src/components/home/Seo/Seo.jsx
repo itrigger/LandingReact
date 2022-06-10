@@ -21,7 +21,7 @@ const Seo = () => {
   return (
     <div className="homeseo">
       <div className="row">
-        <div className="col-8 xs-col-4 | left">
+        <div className="col-8 m-col-8 xs-col-4 | left">
           <div className="head">
             <span className="italic">СЕО</span> ТЕКСТ
           </div>
@@ -48,7 +48,7 @@ const Seo = () => {
             </p>
           </div>
         </div>
-        <div className="col-4 xs-col-4 | right">
+        <div className="col-4 m-col-4 xs-col-4 | right">
           <div className="d_f fd_c ai_c jc_c">
             <img src={SeoImg} width="262" height="262" alt="директор" />
             <div className="title">Директор</div>

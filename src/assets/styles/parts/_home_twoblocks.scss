@@ -125,6 +125,33 @@
 		font-size: 19px;
 	}
 }
+@media (min-width: 1024px) and (max-width: 1399px){
+	.twoblocks .head{
+		font-size: 50px;
+	}
+	.twoblocks .tb-left > div,
+	.twoblocks .tb-right > div
+	{
+		width: 100%;
+	}
+	.twoblocks .tb-left:hover,
+	.twoblocks .tb-right:hover
+	{
+		width: 50%;
+	}
+	.twoblocks .tb-left{
+		background-position-x: 260px;
+		padding-top: 50px;
+	}
+	.twoblocks .tb-right{
+		padding-top: 50px;
+	}
+	.twoblocks .tb-right:after{
+		left: 360px;
+		z-index: -1;
+	}
+}
+
 
 @media (max-width: 1023px) {
 	.twoblocks_w{

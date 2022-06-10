@@ -43,6 +43,15 @@
 	}
 }
 
+@media (min-width: 1024px) and (max-width: 1399px) {
+	.homeseo .left, .homeseo .right {
+		padding-top: 40px;
+	}
+	.homeseo{
+		margin-top: 100px;
+	}
+}
+
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.homeseo {
 		margin-top: 125px;

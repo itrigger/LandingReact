@@ -27,7 +27,7 @@ const Rows = ({
     return (
       <div>
         <div className="row br bl middle-border-12">
-          <div className="col-12 xs-col-4">
+          <div className="col-12 m-col-12 xs-col-4">
             <div className="ta_c | mr-title">
               <div className="desc">по вашему запросу</div>
               <div className="head">
@@ -55,7 +55,7 @@ const Rows = ({
       {data && data.edges && data.edges.length > 0 ? (
         <div>
           <div className="row br bl middle-border-12">
-            <div className="col-12 xs-col-4">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="ta_c | mr-title">
                 <div className="desc">по вашему запросу</div>
                 <div className="head">
@@ -73,7 +73,7 @@ const Rows = ({
               return <Row key={node.id} data={node} addToCart={addToCart} />;
             })
           ) : (
-            <div className="row d_f bl br card-result-row">
+            <div className="row d_f middle-border-12 bl br card-result-row">
               {data.edges.map((edge) => {
                 const { node } = edge;
                 return <Card key={node.id} data={node} addToCart={addToCart} />;
@@ -82,9 +82,9 @@ const Rows = ({
           )}
 
           <div className="row result-row footer-row">
-            <div className="col-4 xs-col-0"></div>
+            <div className="col-4 m-col-4 xs-col-0"></div>
 
-            <div className="col-4 xs-col-4 | minirow-w">
+            <div className="col-4 m-col-4 xs-col-4 | minirow-w">
               <div className="paginator next_prev">
                 <ul className="d_f jc_sb">
                   {data.pageInfo.hasPreviousPage ? (
@@ -146,7 +146,7 @@ const Rows = ({
                 </ul>
               </div>
             </div>
-            <div className="col-4 xs-col-0"></div>
+            <div className="col-4 m-col-4 xs-col-0"></div>
           </div>
         </div>
       ) : (

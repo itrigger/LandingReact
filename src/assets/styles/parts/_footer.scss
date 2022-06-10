@@ -222,6 +222,89 @@
 	}
 }
 
+@media (min-width: 1024px) and (max-width: 1399px){
+	.footer .line2 .col3 .phone{
+		font-size: 25px;
+	}
+	.footer .line1 .col2{
+		padding-left: 30px;
+		padding-right: 30px;
+		font-size: 26px;
+		padding-top: 173px;
+	}
+	.footer .line2 .col1{
+		padding-left: 20px;
+		padding-bottom: 185px;
+	}
+	.foot-logo{
+		width: 217px;
+		height: 66px;
+	}
+	.footer .line2 .col1 .foot-text .copy{
+		margin-top: 14px;
+	}
+	.footer .line2 .col1 .foot-text{
+		font-size: 14px;
+		padding-right: 10px;
+	}
+	.footer .line1 .col3{
+		padding: 55px 30px 35px;
+	}
+	.footer .line2 .col2{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.footer .line2 .col1 .foot-policy{
+		font-size: 22px;
+		margin-top: 73px;
+	}
+	.footer .line2 .col2 ul li a, .footer .line2 .col2 ul li button{
+		font-size: 20px;
+	}
+	.footer .line2 .col2 .head, .footer .line2 .col3 .head{
+		font-size: 25px;
+		margin-bottom: 50px;
+	}
+	.footer .line2 .col3 .btn-wt{
+		margin-top: 12px;
+	}
+	.footer .line1 .col1{
+		padding-top: 170px;
+		font-size: 40px;
+	}
+
+	.footer .line1 .col3 .head{
+		font-size: 24px;
+		margin-bottom: 9px;
+	}
+	.footer .line2 .col3{
+		padding-left: 30px;
+	}
+	.footer .form{
+		input[type=text]{
+			margin-bottom: 15px;
+		}
+		textarea{
+			height: 80px;
+		}
+	}
+	.btn-wt{
+		font-size: 14px;
+		padding: 14px 15px;
+	}
+	.footer .ico-wt{
+		width: 20px;
+		height: 20px;
+		background-size: contain;
+	}
+	.footer .line2 .col3 .foot-address{
+		font-size: 20px;
+	}
+	.footer .line2 .col1 .foot-policy a{
+		font-size: 14px;
+	}
+}
+
 @media (max-width: 1023px) {
 	.footer .line1 .col1{
 		padding-top: 115px;

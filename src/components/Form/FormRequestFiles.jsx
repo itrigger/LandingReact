@@ -6,6 +6,7 @@ import { Link } from "gatsby";
 import { CARRIAGES } from "../../utility/constants";
 
 const FormRequestFiles = (props) => {
+  const isBrowser = () => typeof window !== "undefined";
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -24,19 +25,22 @@ const FormRequestFiles = (props) => {
   const [emailError, setEmailError] = useState(false);
   const [msgError, setMsgError] = useState(false);
   const [fileError, setFileError] = useState(false);
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1023);
+  const [isDesktop, setDesktop] = useState(
+    isBrowser() && window.innerWidth > 1023
+  );
 
   const fileInput = useRef(null);
 
   const dispatch = useNotification();
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1023);
+    setDesktop(isBrowser() && window.innerWidth > 1023);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
+    isBrowser() && window.addEventListener("resize", updateMedia);
+    return () =>
+      isBrowser() && window.removeEventListener("resize", updateMedia);
   });
 
   const handleNewNotification = (TYPE, message, title) => {
@@ -202,7 +206,7 @@ const FormRequestFiles = (props) => {
   return (
     <div>
       <div className="row">
-        <div className="col-4 xs-col-4 fcol1">
+        <div className="col-4 m-col-4 xs-col-4 fcol1">
           <span className="input_wrapper">
             <input
               type="text"
@@ -213,7 +217,7 @@ const FormRequestFiles = (props) => {
             />
           </span>
         </div>
-        <div className="col-4 xs-col-4 fcol2">
+        <div className="col-4 m-col-4 xs-col-4 fcol2">
           <span className="input_wrapper">
             <InputMask
               mask="+7 (999) 999-99-99"
@@ -225,7 +229,7 @@ const FormRequestFiles = (props) => {
             />
           </span>
         </div>
-        <div className="col-4 xs-col-4 fcol3">
+        <div className="col-4 m-col-4 xs-col-4 fcol3">
           <span className="input_wrapper">
             <input
               type="text"
@@ -238,7 +242,7 @@ const FormRequestFiles = (props) => {
         </div>
       </div>
       <div className="row">
-        <div className="col-4 xs-col-4 fcol1">
+        <div className="col-4 m-col-4 xs-col-4 fcol1">
           <select
             name=""
             id=""
@@ -255,7 +259,7 @@ const FormRequestFiles = (props) => {
             ))}
           </select>
         </div>
-        <div className="col-4 xs-col-4 fcol2">
+        <div className="col-4 m-col-4 xs-col-4 fcol2">
           <select
             name=""
             id=""
@@ -269,7 +273,7 @@ const FormRequestFiles = (props) => {
             <option value="3">2</option>
           </select>
         </div>
-        <div className="col-4 xs-col-4 fcol3">
+        <div className="col-4 m-col-4 xs-col-4 fcol3">
           <select
             name=""
             id=""
@@ -300,9 +304,9 @@ const FormRequestFiles = (props) => {
         ) : null}
       </div>
       <div className="row">
-        <div className="col-4 xs-col-4 fcol1">
+        <div className="col-4 m-col-4 xs-col-4 fcol1">
           <label onClick={handleLabelClick} className="fileReceiver">
-            {isFilePicked ? (
+            {isFilePicked && selectedFile ? (
               <>
                 <div
                   className="file-preview"
@@ -337,7 +341,7 @@ const FormRequestFiles = (props) => {
             </div>
           ) : null}
         </div>
-        <div className="col-8 xs-col-4 fcol3">
+        <div className="col-8 m-col-8 xs-col-4 fcol3">
           {isDesktop ? (
             <textarea
               name=""

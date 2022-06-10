@@ -7,19 +7,23 @@ const CartRow = ({
   cartMinus,
   cartDeleteItem,
 }) => {
+  const isBrowser = () => typeof window !== "undefined";
   const [inputValue, setInputValue] = useState(data.quantity);
   const [total, setTotal] = useState("0");
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1023);
+  const [isDesktop, setDesktop] = useState(
+    isBrowser() && window.innerWidth > 1023
+  );
 
   let price4 = parseInt(data.price.replace("₽", "").replace(/ /g, ""));
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1023);
+    setDesktop(isBrowser() && window.innerWidth > 1023);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateMedia);
-    return () => window.removeEventListener("resize", updateMedia);
+    isBrowser() && window.addEventListener("resize", updateMedia);
+    return () =>
+      isBrowser() && window.removeEventListener("resize", updateMedia);
   });
 
   useEffect(() => {
@@ -46,14 +50,12 @@ const CartRow = ({
     <>
       {isDesktop ? (
         <div className="row | table-cart">
-          <div className="col-2 ta_c img | td">
+          <div className="col-2 m-col-2 ta_c img | td">
             <img srcSet={data.image} alt={data.name} />
           </div>
-          <div className="col-6 name | td">
-            {data.name} - {data.id}
-          </div>
-          <div className="col-1 ta_c price | td">{data.price}</div>
-          <div className="col-1 ta_c count | td">
+          <div className="col-6 m-col-4 name | td">{data.name}</div>
+          <div className="col-1 m-col-2  ta_c price | td">{data.price}</div>
+          <div className="col-1 m-col-1 ta_c count | td">
             <div className="inputCountWrap">
               <button
                 className="stepper-step down"
@@ -74,8 +76,8 @@ const CartRow = ({
               ></button>
             </div>
           </div>
-          <div className="col-1 ta_c subtotal | td">{total}</div>
-          <div className="col-1 ta_c del | td">
+          <div className="col-1 m-col-2  ta_c subtotal | td">{total}</div>
+          <div className="col-1 m-col-1 ta_c del | td">
             <button
               className="d_f jc_c delete-row"
               onClick={() => cartDeleteItem(data.id)}

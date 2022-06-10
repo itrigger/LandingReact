@@ -7,12 +7,17 @@
 	position: fixed;
 	top: 0;
 	z-index: 999;
+	transition: .2s background-color;
 	.row > div{
 		align-items: center;
 	}
 	&.active{
 		height: 100vh;
 		overflow-y: scroll;
+	}
+	&.scrolled{
+		transition: .2s background-color;
+		background-color: #373947;
 	}
 }
 .h90{
@@ -143,6 +148,7 @@
 
 .hbg1{
 	background: url("../img/header1.jpg") center top no-repeat #000;
+	background-size: cover;
 }
 
 .mobile{
@@ -313,8 +319,15 @@
 					margin-bottom: 0;
 					padding-bottom: 0;
 				}
-				a{
+				a, button{
 					color: #fff;
+					text-decoration: none;
+					white-space: nowrap;
+				}
+				button{
+					color: #fff;
+					font-size: 16px;
+					font-family: "TTFirsNeue-Medium", sans-serif;
 					text-decoration: none;
 					white-space: nowrap;
 				}
@@ -391,6 +404,12 @@
 	.top-contacts a{
 		font-size: 16px;
 		margin-left: 14px;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 1399px){
+	.logo{
+		margin: 0 auto;
 	}
 }
 

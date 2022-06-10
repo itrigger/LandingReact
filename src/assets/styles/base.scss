@@ -157,6 +157,18 @@ ul.content{
 	margin-bottom: 40px;
 }
 
+@media (min-width: 1024px) and (max-width: 1399px){
+	.head2{
+		font-size: 50px;
+	}
+	h1{
+		font-size: 50px;
+	}
+	p{
+		font-size: 14px;
+	}
+}
+
 @media (min-width: 1400px) and (max-width: 1660px) {
 	h1 {
 		font-size: 54px;

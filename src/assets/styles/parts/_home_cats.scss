@@ -33,6 +33,21 @@
 		min-width: 220px;
 	}
 }
+@media (min-width: 1024px) and (max-width: 1399px){
+	.home_cats h1{
+		font-size: 50px;
+	}
+	.home_cats .img{
+
+			img{
+				max-width: 220px;
+				height: auto;
+
+			}
+
+	}
+}
+
 
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.home_cats .name{
@@ -41,11 +56,7 @@
 	.home_cats .img{
 		height: 165px;
 		margin-bottom: 21px;
-		img{
-			height: auto;
-			max-height: 100%;
 
-		}
 	}
 }
 

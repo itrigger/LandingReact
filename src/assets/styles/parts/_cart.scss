@@ -241,6 +241,31 @@
 	}
 }
 
+@media (min-width: 1024px) and (max-width: 1399px) {
+	.inputCountWrap {
+		max-width: 60px;
+	}
+	.table-cart .count input{
+		width: 60px;
+	}
+	.inputCountWrap input{
+		max-width: 60px;
+	}
+	.cart-form .bottom{
+		padding-top: 30px;
+	}
+	.cart-form .form .disclaimer{
+		margin-top: 2px;
+		margin-left: 15px;
+	}
+	.boss .name{
+		margin-bottom: 20px;
+	}
+	.cart-form .bg-dark{
+		padding-bottom: 60px;
+	}
+}
+
 @media (max-width: 1023px) {
 	.table-cart .td{
 		padding: 0 20px 20px;

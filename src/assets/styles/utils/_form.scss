@@ -4,6 +4,7 @@ input[type=tel],
 input[type=password],
 textarea
 {
+	font-family: "TTNorms-Regular",sans-serif;
 	background: transparent;
 	border: 1px solid transparent;
 	border-bottom: 1px solid #fff;
@@ -258,6 +259,19 @@ input::-webkit-inner-spin-button {
 			bottom: 0;
 			background: url("../img/cross.svg") center center rgba(0,0,0,.5) no-repeat;
 		}
+	}
+}
+@media (min-width: 1024px) and (max-width: 1399px){
+	input[type=text], input[type=email], input[type=tel], input[type=password], textarea{
+		height: 50px;
+		font-size: 16px;
+	}
+	textarea{
+		height: 90px;
+	}
+	select{
+		height: 50px;
+		font-size: 16px;
 	}
 }
 

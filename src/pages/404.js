@@ -33,14 +33,14 @@ const NotFoundPage = () => {
           href="/favicon-16x16.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffe500" />
-        <meta name="msapplication-TileColor" content="#ffe500" />
-        <meta name="theme-color" content="#ffe500" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F5DF4D" />
+        <meta name="msapplication-TileColor" content="#F5DF4D" />
+        <meta name="theme-color" content="#F5DF4D" />
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
           <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
-            <div className="col-12 xs-col-4">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
                   <li>
@@ -52,21 +52,21 @@ const NotFoundPage = () => {
             </div>
           </div>
           <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
-            <div className="col-8 xs-col-4">
+            <div className="col-8 m-col-8 xs-col-4">
               <h1>
                 <span className="italic">404</span> страница не найдена
               </h1>
             </div>
-            <div className="col-4 xs-col-4 pos_r zi-2 d_f jc_end"></div>
+            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end"></div>
           </div>
         </div>
         <div className="row bl br middle-border-12 middle-border-12-over-bg service3">
-          <div className="col-4 xs-col-0  spacer"></div>
-          <div className="col-4 xs-col-0  spacer"></div>
-          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
         </div>
         <div className="row bl br middle-border-12 middle-border-12-over-bg">
-          <div className="col-12 xs-col-4">
+          <div className="col-12 m-col-12 xs-col-4">
             <div className="layout ta_c">
               <img src={img404} alt="Page not found" className="img404" />
               <h1 className="head404">
@@ -80,9 +80,9 @@ const NotFoundPage = () => {
           </div>
         </div>
         <div className="row bl br middle-border-12 middle-border-12-over-bg service3">
-          <div className="col-4 xs-col-0  spacer"></div>
-          <div className="col-4 xs-col-0  spacer"></div>
-          <div className="col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
+          <div className="col-4 m-col-4 xs-col-0  spacer"></div>
         </div>
       </Layout>
     </>

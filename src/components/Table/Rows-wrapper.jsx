@@ -1,13 +1,7 @@
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import Rows from "./Rows";
 import { useNotification } from "../ui/Notify/NotifyProvider";
-import { useLazyQuery } from "@apollo/client";
+import { useApolloClient, useLazyQuery } from "@apollo/client";
 import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
 import Map from "../home/Map/Map";
@@ -28,19 +22,23 @@ const RowsWrapper = ({
   initialCategory = 1,
   dropdown,
   selectedDD = [0],
+  selectedDDJD = null,
+  actived = false,
 }) => {
   let text = "";
   let text2 = "";
   // type = 1 - PARTS, type = 2 - CARRIAGES
-  //const [filterTypeCategory, setFilterTypeCategory] = useState(selectedDD);
   const [filterTypeCategory, setFilterTypeCategory] = useState(
     type === 2 && initialCategory > 1 ? initialCategory : selectedDD
   );
-  const [filterTypeArea, setFilterTypeArea] = useState("");
+  const [filterTypeArea, setFilterTypeArea] = useState(selectedDDJD);
   const [count, setCount] = useState(initialCount);
   const [cartItems, setCartItems] = useContext(CartContext);
 
   const dispatch = useNotification();
+
+  console.log(selectedDDJD);
+  console.log(selectedDD);
 
   useEffect(() => {
     if (initialCategory !== 1) {
@@ -77,7 +75,7 @@ const RowsWrapper = ({
       : setFilterTypeCategory([parseInt(value)]);
   };
   const selectAreaHandler = (value) => {
-    value === "0" ? setFilterTypeArea(null) : setFilterTypeArea(value);
+    value === "0" ? setFilterTypeArea("0") : setFilterTypeArea(value);
   };
 
   const variables = {
@@ -91,7 +89,10 @@ const RowsWrapper = ({
         : type === 1
         ? PARTS_IDS
         : CARRIAGES_IDS,
-    tagIn: filterTypeArea !== "" ? filterTypeArea : null,
+    tagIn:
+      filterTypeArea !== "" && filterTypeArea !== "0" && filterTypeArea !== null
+        ? filterTypeArea.toString()
+        : null,
   };
   const [getProducts, { data, error, loading, fetchMore }] = useLazyQuery(
     type === 1 ? GET_ALL_PARTS : GET_ALL_CARRIAGES,
@@ -113,10 +114,13 @@ const RowsWrapper = ({
   };
 
   useEffect(() => {
+    console.log("effect");
+    console.log(filterTypeArea);
     if (selectedDD[0] !== 0) {
       getProducts({
         ...variables,
-        categoryIdIn: selectedDD,
+        categoryIdIn: filterTypeCategory,
+        tagIn: null,
       })
         .then((r) => {})
         .catch(function (error) {
@@ -126,19 +130,39 @@ const RowsWrapper = ({
   }, [selectedDD]);
 
   useEffect(() => {
-    //console.log(variables.categoryIdIn)
-    getProducts({
-      ...variables,
-      categoryIdIn: [29, 32, 33],
-    })
-      .then((r) => {
-        //убрать
-        //handleNewNotification("SUCCESS", "Данные получены единожды", "Успешно");
+    console.log("effect");
+    console.log(filterTypeArea);
+    if (selectedDDJD !== "0") {
+      getProducts({
+        ...variables,
+        categoryIdIn: PARTS_IDS,
+        tagIn: filterTypeArea,
       })
-      .catch(function (error) {
-        // handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
-      });
-  }, []);
+        .then((r) => {})
+        .catch(function (error) {
+          handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
+        });
+    }
+  }, [selectedDDJD]);
+
+  /*  useEffect(() => {
+    if (actived) {
+      getProducts({
+        ...variables,
+        categoryIdIn: [29, 32, 33],
+        tagIn:
+          filterTypeArea !== "" &&
+          filterTypeArea !== "0" &&
+          filterTypeArea !== null
+            ? filterTypeArea.toString()
+            : null,
+      })
+        .then((r) => {})
+        .catch(function (error) {
+          console.log(error);
+        });
+    }
+  }, [actived]);*/
 
   if (error) {
     handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
@@ -169,7 +193,7 @@ const RowsWrapper = ({
       {map ? <Map /> : null}
       <div className="form form-horizontal">
         <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg">
-          <div className="col-12 xs-col-4">
+          <div className="col-12 m-col-12 xs-col-4">
             <div
               dangerouslySetInnerHTML={{ __html: text }}
               className="head"
@@ -180,7 +204,25 @@ const RowsWrapper = ({
           className="row middle-border-12-light br-light bl-light middle-border-12-over-bg"
           ref={map ? null : myRef}
         >
-          <div className="col-4 xs-col-4 | fh_l">
+          <div className="col-4 m-col-4 xs-col-4 | fh_l">
+            <select
+              className="form-control"
+              value={filterTypeArea !== null ? filterTypeArea.toString() : "0"}
+              onChange={(e) => selectAreaHandler(e.target.value)}
+            >
+              <option hidden disabled>
+                Выберите железную дорогу
+              </option>
+              <option value="0">Все железные дороги</option>
+              {JDS.map((item) => (
+                <option value={item.slug} key={item.slug}>
+                  {" "}
+                  {item.name}{" "}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="col-4 m-col-4 xs-col-4 | fh_c">
             <select
               className="form-control"
               value={filterTypeCategory.toString()}
@@ -199,25 +241,7 @@ const RowsWrapper = ({
                 : null}
             </select>
           </div>
-          <div className="col-4 xs-col-4 | fh_c">
-            <select
-              className="form-control"
-              value={filterTypeArea}
-              onChange={(e) => selectAreaHandler(e.target.value)}
-            >
-              <option hidden disabled>
-                Выберите железную дорогу
-              </option>
-              <option value="0">Все железные дороги</option>
-              {JDS.map((item) => (
-                <option value={item} key={item}>
-                  {" "}
-                  {item}{" "}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="col-4 xs-col-4 | fh_r">
+          <div className="col-4 m-col-4 xs-col-4 | fh_r">
             <button
               className="btn-classic form-control ld-ext-right"
               onClick={(e) => filterClickHandler(e.target)}
@@ -244,25 +268,32 @@ const RowsWrapper = ({
             addToCart={addToCart}
           />
         ) : (
-          <div>
-            <div className="row br bl middle-border-12">
-              <div className="col-12 xs-col-4">
-                <div className="ta_c | mr-title">
-                  <div className="desc">по вашему запросу</div>
-                  <div className="head">
-                    идёт поиск
-                    <span className="italic">
-                      {type === 1 ? "запчастей" : "вагонов"}
-                    </span>
+          ""
+        )}
+        {loading ? (
+          <>
+            <div>
+              <div className="row br bl middle-border-12">
+                <div className="col-12 m-col-12 xs-col-4">
+                  <div className="ta_c | mr-title">
+                    <div className="desc">по вашему запросу</div>
+                    <div className="head">
+                      идёт поиск
+                      <span className="italic">
+                        {type === 1 ? "запчастей" : "вагонов"}
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
 
-            {Array.apply(0, Array(count)).map(function (x, i) {
-              return <RowSkeleton key={i} />;
-            })}
-          </div>
+              {Array.apply(0, Array(count)).map(function (x, i) {
+                return <RowSkeleton key={i} />;
+              })}
+            </div>
+          </>
+        ) : (
+          ""
         )}
       </div>
     </div>

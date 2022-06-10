@@ -8,14 +8,14 @@ const Cats = () => {
   return (
     <div className="home_cats">
       <div className="row bl br middle-border-12">
-        <div className="col-12 xs-col-4">
+        <div className="col-12 m-col-12 xs-col-4">
           <h1>
             <span className="italic">продаём</span> запчасти для вагонов
           </h1>
         </div>
       </div>
       <div className="row br bl middle-border-12">
-        <div className="d_f fd_c jc_c col-4 xs-col-4 | item">
+        <div className="d_f fd_c jc_c col-4 m-col-4 xs-col-4 | item">
           <div>
             <div className="img ta_c">
               <img src={Cat1} width="281px" height="185px" alt="" />
@@ -33,7 +33,7 @@ const Cats = () => {
             </div>
           </div>
         </div>
-        <div className="d_f fd_c jc_c col-4 xs-col-4 | item">
+        <div className="d_f fd_c jc_c col-4  m-col-4 xs-col-4 | item">
           <div>
             <div className="img ta_c">
               <img src={Cat2} width="318px" height="159px" alt="" />
@@ -51,7 +51,7 @@ const Cats = () => {
             </div>
           </div>
         </div>
-        <div className="d_f fd_c jc_c col-4 xs-col-4 | item">
+        <div className="d_f fd_c jc_c col-4 m-col-4 xs-col-4 | item">
           <div>
             <div className="img ta_c">
               <img src={Cat3} width="396px" height="125px" alt="" />

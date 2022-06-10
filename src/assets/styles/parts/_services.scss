@@ -146,6 +146,36 @@
 
 }
 
+@media (min-width: 1024px) and (max-width: 1399px){
+  .service3 .form{
+    padding: 40px 40px 46px;
+  }
+  .service3 .bold{
+    font-size: 20px;
+  }
+  .service3 p{
+    font-size: 16px;
+    &:last-child{
+      margin-bottom: 60px;
+    }
+  }
+  .service3 .head2{
+    font-size: 44px;
+  }
+  .service3 .hint{
+    font-size: 18px;
+  }
+  .service3 ul{
+    margin-left: 20px;
+  }
+  ul.content li{
+    font-size: 16px;
+  }
+  .service3 .spacer{
+    padding: 40px;
+  }
+}
+
 @media (min-width: 1400px) and (max-width: 1660px) {
   .vagon-sale .head {
     font-size: 52px;
@@ -191,6 +221,34 @@
   }
   .service3 .form .row{
     margin: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px){
+  .steps .title{
+    font-size: 20px;
+  }
+  .steps .desc{
+    font-size: 14px;
+    padding-right: 10px;
+  }
+  .vagon-sale .head{
+    font-size: 42px;
+    margin-top: 60px;
+  }
+  .vagon-type.empty .left{
+    height: 60px;
+  }
+  .vagon-sale .right{
+    padding: 35px 30px 35px 30px;
+  }
+  .vagon-sale  .btn {
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 20px 20px;
+    line-height: 1.3;
   }
 }
 

@@ -157,8 +157,8 @@ const FormCart = (props) => {
   return (
     <>
       <div className="row-8">
-        <div className="col-1 xs-col-0"></div>
-        <div className="col-2 xs-col-8 fcol1">
+        <div className="col-1 m-col-1 xs-col-0"></div>
+        <div className="col-2 m-col-2 xs-col-8 fcol1">
           <span className="input_wrapper">
             <input
               className={nameError ? "error" : ""}
@@ -169,7 +169,7 @@ const FormCart = (props) => {
             />
           </span>
         </div>
-        <div className="col-2 xs-col-8 fcol2">
+        <div className="col-2 m-col-2 xs-col-8 fcol2">
           <span className="input_wrapper">
             <InputMask
               mask="+7 (999) 999-99-99"
@@ -181,7 +181,7 @@ const FormCart = (props) => {
             />
           </span>
         </div>
-        <div className="col-2 xs-col-8 fcol3">
+        <div className="col-2 m-col-2 xs-col-8 fcol3">
           <span className="input_wrapper">
             <input
               type="text"
@@ -192,11 +192,11 @@ const FormCart = (props) => {
             />
           </span>
         </div>
-        <div className="col-1 xs-col-0"></div>
+        <div className="col-1 m-col-1 xs-col-0"></div>
       </div>
       <div className="row-8">
-        <div className="col-1 xs-col-0"></div>
-        <div className="col-6 xs-col-8">
+        <div className="col-1 m-col-1 xs-col-0"></div>
+        <div className="col-6 m-col-6 xs-col-8">
           <input
             type="text"
             placeholder="Адрес депо доставки"
@@ -208,8 +208,8 @@ const FormCart = (props) => {
         <div className="col-1 xs-col-0"></div>
       </div>
       <div className="row-8 | bottom">
-        <div className="col-1 xs-col-0"></div>
-        <div className="col-2 xs-col-8">
+        <div className="col-1 m-col-1 xs-col-0"></div>
+        <div className="col-2 m-col-3 xs-col-8">
           <button
             className="btn-classic"
             onClick={(e) => submitHandler(e.target)}
@@ -217,8 +217,8 @@ const FormCart = (props) => {
             <span>Оформить заказ</span>
           </button>
         </div>
-        <div className="col-2 xs-col-0"></div>
-        <div className="col-2 xs-col-8">
+        <div className="col-2 m-col-0 xs-col-0"></div>
+        <div className="col-2 m-col-3 xs-col-8">
           <div className="disclaimer">
             Нажимая на кнопку, я соглашаюсь с{" "}
             <Link to="/politic">политикой обработки</Link> персональных данных

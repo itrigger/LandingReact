@@ -88,6 +88,20 @@
 	}
 }
 
+@media (min-width: 1024px) and (max-width: 1399px) {
+	.promo{
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.promo.slide1 .picture:after{
+		left: -247px;
+		top: -215px;
+		background-size: contain;
+		width: 1585px;
+		height: 771px;
+	}
+}
+
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.promo{
 		padding-top: 68px;
