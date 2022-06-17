@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Lytebox from "../../ui/Lytebox/Lytebox";
 import { JDS } from "../../../utility/constants";
-import { useApolloClient } from "@apollo/client";
+import { gql, useApolloClient, useLazyQuery } from "@apollo/client";
 import { navigate } from "gatsby";
 
 const Map = () => {
@@ -33,7 +33,41 @@ const Map = () => {
     setPopupActive(false);
   };
 
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+  const GET_TOTAL = gql`
+    query GetAllPartsCount($tagIn: [String]) {
+      products(where: { categoryIdIn: [29, 32, 33], tagIn: $tagIn }) {
+        pageInfo {
+          total
+        }
+      }
+    }
+  `;
+  const [getTotal, { loading, error, data, refetch }] = useLazyQuery(
+    GET_TOTAL,
+    {
+      notifyOnNetworkStatusChange: true,
+      fetchPolicy: "network-only",
+      nextFetchPolicy: "network-only",
+    }
+  );
+  if (loading) return null;
+  if (error) console.log(error);
+
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+  /***********/
+
   const clickHandler = (event) => {
+    console.log("click");
     if (event.target.dataset.road !== undefined) {
       arrayJD = event.target.dataset.road.split(",");
       setClickedArray(arrayJD);
@@ -45,6 +79,14 @@ const Map = () => {
         ? setCurCoordTop(event.offsetY)
         : setCurCoordTop(event.offsetY);
       setPopupActive(true);
+      console.log("arrayJD");
+      let mySlug = JDS.filter(
+        (abbr) => abbr.slugEng === arrayJD[0].toString()
+      )[0].slug;
+      console.log(mySlug);
+      getTotal({
+        variables: { tagIn: mySlug },
+      });
     }
   };
 
@@ -54,6 +96,7 @@ const Map = () => {
   };
 
   //https://www.expresstk.ru/karty-zheleznyh-dorog
+
   return (
     <>
       <div
@@ -77,6 +120,7 @@ const Map = () => {
               >
                 <span>Найти запчасти</span>
               </button>
+              {data?.products && <h5>{data.products.pageInfo.total} </h5>}
             </div>
           ))}
       </div>

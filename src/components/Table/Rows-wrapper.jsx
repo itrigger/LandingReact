@@ -37,8 +37,8 @@ const RowsWrapper = ({
 
   const dispatch = useNotification();
 
-  console.log(selectedDDJD);
-  console.log(selectedDD);
+  /*  console.log(selectedDDJD);
+  console.log(selectedDD);*/
 
   useEffect(() => {
     if (initialCategory !== 1) {
@@ -114,8 +114,8 @@ const RowsWrapper = ({
   };
 
   useEffect(() => {
-    console.log("effect");
-    console.log(filterTypeArea);
+    //console.log("effect");
+    //console.log(filterTypeArea);
     if (selectedDD[0] !== 0) {
       getProducts({
         ...variables,
@@ -130,8 +130,8 @@ const RowsWrapper = ({
   }, [selectedDD]);
 
   useEffect(() => {
-    console.log("effect");
-    console.log(filterTypeArea);
+    //console.log("effect");
+    //console.log(filterTypeArea);
     if (selectedDDJD !== "0") {
       getProducts({
         ...variables,
