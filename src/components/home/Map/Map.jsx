@@ -12,9 +12,9 @@ const Map = () => {
   const [curCoordTop, setCurCoordTop] = useState(0);
   const [popupActive, setPopupActive] = useState(false);
 
-  const client = useApolloClient();
-
   const mapRef = useRef();
+
+  let arrayJD = [];
 
   useEffect(() => {
     function temp() {
@@ -23,11 +23,33 @@ const Map = () => {
         mapRef.current.removeEventListener("click", clickHandler);
       };
     }
-
     temp();
-  }, []);
+  }, [popupActive]);
 
-  let arrayJD = [];
+  const clickHandler = (event) => {
+    if (event.target.dataset.road !== undefined) {
+      arrayJD = event.target.dataset.road.split(",");
+      setClickedArray(arrayJD);
+      setCurrentJD(arrayJD);
+      event.offsetX + 300 > window.innerWidth
+        ? setCurCoordLeft(event.offsetX - 300)
+        : setCurCoordLeft(event.offsetX);
+      event.offsetY < 300
+        ? setCurCoordTop(event.offsetY)
+        : setCurCoordTop(event.offsetY);
+      setPopupActive(true);
+      let mySlug = [];
+      arrayJD.forEach((item, i) => {
+        mySlug.push(
+          JDS.filter((abbr) => abbr.slugEng === arrayJD[i].toString())[0].slug
+        );
+      });
+      getTotal({
+        variables: { tagIn: mySlug },
+      });
+      //попробовать в цикле запустить запрос с разными слагами
+    }
+  };
 
   const closePopupHandler = () => {
     setPopupActive(false);
@@ -56,7 +78,7 @@ const Map = () => {
       nextFetchPolicy: "network-only",
     }
   );
-  if (loading) return null;
+
   if (error) console.log(error);
 
   /***********/
@@ -66,30 +88,6 @@ const Map = () => {
   /***********/
   /***********/
 
-  const clickHandler = (event) => {
-    console.log("click");
-    if (event.target.dataset.road !== undefined) {
-      arrayJD = event.target.dataset.road.split(",");
-      setClickedArray(arrayJD);
-      setCurrentJD(arrayJD);
-      event.offsetX + 300 > window.innerWidth
-        ? setCurCoordLeft(event.offsetX - 300)
-        : setCurCoordLeft(event.offsetX);
-      event.offsetY < 300
-        ? setCurCoordTop(event.offsetY)
-        : setCurCoordTop(event.offsetY);
-      setPopupActive(true);
-      console.log("arrayJD");
-      let mySlug = JDS.filter(
-        (abbr) => abbr.slugEng === arrayJD[0].toString()
-      )[0].slug;
-      console.log(mySlug);
-      getTotal({
-        variables: { tagIn: mySlug },
-      });
-    }
-  };
-
   const showBtnHandler = (jd2) => {
     let jd = jd2.toString();
     navigate("/sale-parts", { state: { jd } });
@@ -98,7 +96,7 @@ const Map = () => {
   //https://www.expresstk.ru/karty-zheleznyh-dorog
 
   return (
-    <>
+    <div className="megamap">
       <div
         className={popupActive ? "popupbox active" : "popupbox"}
         style={{ left: curCoordLeft, top: curCoordTop }}
@@ -111,7 +109,7 @@ const Map = () => {
                 {JDS.filter((abbr) => abbr.slugEng === item)[0].name}
               </div>
               <button
-                className="btn-classic"
+                className="btn-classic btn-mini"
                 onClick={() =>
                   showBtnHandler(
                     JDS.filter((abbr) => abbr.slugEng === item)[0].slug
@@ -120,11 +118,12 @@ const Map = () => {
               >
                 <span>Найти запчасти</span>
               </button>
+              {loading ? <>Ищем...</> : <></>}
               {data?.products && <h5>{data.products.pageInfo.total} </h5>}
             </div>
           ))}
       </div>
-      <Lytebox
+      {/*<Lytebox
         trigger={slide}
         setTrigger={setSlide}
         nopadding={true}
@@ -150,7 +149,7 @@ const Map = () => {
               </div>
             ))}
         </div>
-      </Lytebox>
+      </Lytebox>*/}
       <div className="map pos_r">
         <div className="row absolute-row middle-border-12 br bl"></div>
         <div className="title">
@@ -3180,8 +3179,8 @@ const Map = () => {
           />
         </svg>
       </div>
-    </>
+    </div>
   );
 };
-
-export default Map;
+export const MemoizedMovie = React.memo(Map);
+//export default Map;

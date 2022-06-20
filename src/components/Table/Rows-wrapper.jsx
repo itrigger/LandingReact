@@ -4,7 +4,7 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import { useApolloClient, useLazyQuery } from "@apollo/client";
 import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
-import Map from "../home/Map/Map";
+import Map, { MemoizedMovie } from "../home/Map/Map";
 import { CARRIAGES_IDS, JDS, PARTS_IDS } from "../../utility/constants";
 import { CartContext } from "../../context/CartContext";
 import RowSkeleton from "./RowSkeleton";
@@ -190,7 +190,7 @@ const RowsWrapper = ({
 
   return (
     <div className="megamap">
-      {map ? <Map /> : null}
+      {/*{map ? <MemoizedMovie /> : null}*/}
       <div className="form form-horizontal">
         <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg">
           <div className="col-12 m-col-12 xs-col-4">

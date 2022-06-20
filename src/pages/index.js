@@ -7,6 +7,7 @@ import Cats from "../components/home/Cats/Cats";
 import Seo from "../components/home/Seo/Seo";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { PARTS } from "../utility/constants";
+import Map, { MemoizedMovie } from "../components/home/Map/Map";
 
 const IndexPage = () => {
   return (
@@ -43,6 +44,7 @@ const IndexPage = () => {
         <Slider />
         <TwoBlocks />
         <Cats />
+        <MemoizedMovie />
         <RowsWrapper type={1} map={true} dropdown={PARTS} />
         <Seo />
       </Layout>
