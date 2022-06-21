@@ -156,13 +156,40 @@
 }
 
 .search_item{
-	margin-bottom: 35px;
+	min-width: 300px;
+	margin-right: 30px;
+	&:last-child{
+		margin-right: 0;
+	}
+	.code{
+		font-size: 14px;
+		color: #959698;
+		margin-bottom: 10px;
+	}
 	.name{
 		font-size: 16px;
 		text-transform: uppercase;
 		font-family: 'TTFirsNeue-DemiBold',sans-serif;
-		margin-bottom: 15px;
+		margin-bottom: 5px;
 		padding-right: 10px;
+	}
+	.city{
+		font-size: 16px;
+		color: #373947;
+		margin-bottom: 25px;
+		padding-left: 20px;
+		position: relative;
+		&:before{
+			display: block;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 3px;
+			width: 12px;
+			height: 12px;
+			background: #FFF100;
+			border-radius: 50%;
+		}
 	}
 	.description{
 		font-family: 'TTNorms-Bold', sans-serif;
@@ -182,14 +209,38 @@
 	}
 }
 
+.res_head{
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: "TTNorms-Bold", sans-serif;
+}
+.catItem{
+	font-size: 16px;
+	line-height: 1.5;
+	span{
+		font-family: "TTNorms-Bold", sans-serif;
+		&.green{
+			color: #1CB82C;
+		}
+	}
+}
+.react-loading-skeleton.catItem{
+
+	display: block;
+}
 .popupbox{
 	background: #fff;
-	width: 300px;
-	position: absolute;
-	padding: 20px;
+	width: auto;
+	position: fixed;
+	padding: 40px;
 	opacity: 0;
 	visibility: hidden;
 	transition: .2s all;
+	display: flex;
+	left: 50%;
+	top: 50%;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	transform: translateX(-50%) translateY(-50%);
 	&.active{
 		opacity: 1;
 		visibility: visible;
@@ -200,6 +251,8 @@
 		height: 30px;
 		padding: 0 20px;
 		font-size: 11px;
+		margin-top: 20px;
+		width: 100%;
 	}
 	.close{
 		position: absolute;
@@ -213,8 +266,15 @@
 	}
 }
 
+.homemap .mapwrapper{
+	display: block;
+}
+.homemap .rowswrapper{
+	display: none;
+}
 
 @media (min-width: 1024px) and (max-width: 1399px){
+
 	.result-row .img{
 		padding: 30px 10px;
 	}
@@ -286,6 +346,12 @@
 }
 
 @media (max-width: 1023px) {
+	.homemap .mapwrapper{
+		display: none;
+	}
+	.homemap .rowswrapper{
+		display: block;
+	}
 	.popup_inner{
 		font-size: 14px;
 		padding: 25px;

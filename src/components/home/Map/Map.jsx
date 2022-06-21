@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import Lytebox from "../../ui/Lytebox/Lytebox";
 import { JDS } from "../../../utility/constants";
-import { gql, useApolloClient, useLazyQuery } from "@apollo/client";
 import { navigate } from "gatsby";
+import PopupItem from "./PopupItem";
 
 const Map = () => {
   const [currentJD, setCurrentJD] = useState("");
-  const [slide, setSlide] = useState(false);
   const [clickedArray, setClickedArray] = useState([]);
-  const [curCoordLeft, setCurCoordLeft] = useState(0);
-  const [curCoordTop, setCurCoordTop] = useState(0);
   const [popupActive, setPopupActive] = useState(false);
 
   const mapRef = useRef();
@@ -31,62 +27,14 @@ const Map = () => {
       arrayJD = event.target.dataset.road.split(",");
       setClickedArray(arrayJD);
       setCurrentJD(arrayJD);
-      event.offsetX + 300 > window.innerWidth
-        ? setCurCoordLeft(event.offsetX - 300)
-        : setCurCoordLeft(event.offsetX);
-      event.offsetY < 300
-        ? setCurCoordTop(event.offsetY)
-        : setCurCoordTop(event.offsetY);
       setPopupActive(true);
-      let mySlug = [];
-      arrayJD.forEach((item, i) => {
-        mySlug.push(
-          JDS.filter((abbr) => abbr.slugEng === arrayJD[i].toString())[0].slug
-        );
-      });
-      getTotal({
-        variables: { tagIn: mySlug },
-      });
-      //попробовать в цикле запустить запрос с разными слагами
     }
   };
 
   const closePopupHandler = () => {
     setPopupActive(false);
+    setCurrentJD("");
   };
-
-  /***********/
-  /***********/
-  /***********/
-  /***********/
-  /***********/
-  /***********/
-  const GET_TOTAL = gql`
-    query GetAllPartsCount($tagIn: [String]) {
-      products(where: { categoryIdIn: [29, 32, 33], tagIn: $tagIn }) {
-        pageInfo {
-          total
-        }
-      }
-    }
-  `;
-  const [getTotal, { loading, error, data, refetch }] = useLazyQuery(
-    GET_TOTAL,
-    {
-      notifyOnNetworkStatusChange: true,
-      fetchPolicy: "network-only",
-      nextFetchPolicy: "network-only",
-    }
-  );
-
-  if (error) console.log(error);
-
-  /***********/
-  /***********/
-  /***********/
-  /***********/
-  /***********/
-  /***********/
 
   const showBtnHandler = (jd2) => {
     let jd = jd2.toString();
@@ -95,61 +43,44 @@ const Map = () => {
 
   //https://www.expresstk.ru/karty-zheleznyh-dorog
 
+  /*const handleScroll = () => {
+    const position = window.scrollY;
+    const parTop = mapRef.current.parentElement.parentElement.offsetTop - 200;
+    const parBot =
+      mapRef.current.parentElement.parentElement.offsetTop +
+      mapRef.current.clientHeight -
+      300;
+
+    if (position < parTop || position > parBot) {
+      setPopupActive(false);
+      setCurrentJD("");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);*/
+
   return (
-    <div className="megamap">
-      <div
-        className={popupActive ? "popupbox active" : "popupbox"}
-        style={{ left: curCoordLeft, top: curCoordTop }}
-      >
+    <div className="megamap mapwrapper">
+      <div className={popupActive ? "popupbox active" : "popupbox"}>
         <button className="close" onClick={() => closePopupHandler()}></button>
         {clickedArray &&
           clickedArray.map((item, i) => (
-            <div className={"search_item"} key={item}>
-              <div className="name">
-                {JDS.filter((abbr) => abbr.slugEng === item)[0].name}
-              </div>
-              <button
-                className="btn-classic btn-mini"
-                onClick={() =>
-                  showBtnHandler(
-                    JDS.filter((abbr) => abbr.slugEng === item)[0].slug
-                  )
-                }
-              >
-                <span>Найти запчасти</span>
-              </button>
-              {loading ? <>Ищем...</> : <></>}
-              {data?.products && <h5>{data.products.pageInfo.total} </h5>}
-            </div>
+            <PopupItem
+              key={i}
+              name={JDS.filter((abbr) => abbr.slugEng === item)[0].name}
+              code={JDS.filter((abbr) => abbr.slugEng === item)[0].code}
+              city={JDS.filter((abbr) => abbr.slugEng === item)[0].city}
+              showBtnHandler={showBtnHandler}
+              slug={JDS.filter((abbr) => abbr.slugEng === item)[0].slug}
+            />
           ))}
       </div>
-      {/*<Lytebox
-        trigger={slide}
-        setTrigger={setSlide}
-        nopadding={true}
-        light={true}
-      >
-        <div className="popup_inner ">
-          {clickedArray &&
-            clickedArray.map((item, i) => (
-              <div className={"search_item"} key={item}>
-                <div className="name">
-                  {JDS.filter((abbr) => abbr.slugEng === item)[0].name}
-                </div>
-                <button
-                  className="btn-classic"
-                  onClick={() =>
-                    showBtnHandler(
-                      JDS.filter((abbr) => abbr.slugEng === item)[0].slug
-                    )
-                  }
-                >
-                  <span>Показать</span>
-                </button>
-              </div>
-            ))}
-        </div>
-      </Lytebox>*/}
       <div className="map pos_r">
         <div className="row absolute-row middle-border-12 br bl"></div>
         <div className="title">
@@ -157,7 +88,7 @@ const Map = () => {
             <span className="ico ico-left ico-hand"></span>{" "}
             <span className="italic">ПОИСК запчасти</span>&nbsp;по Ж/Д ДОРОГе
           </div>
-          <div className="desc">Выделите вашу станцию</div>
+          <div className="desc">Выделите вашу область</div>
         </div>
         <svg
           id="map"
@@ -3182,5 +3113,5 @@ const Map = () => {
     </div>
   );
 };
-export const MemoizedMovie = React.memo(Map);
+export const MemoizedMap = React.memo(Map);
 //export default Map;

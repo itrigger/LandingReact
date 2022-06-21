@@ -3458,14 +3458,41 @@ ul.content li {
 }
 
 .search_item {
-  margin-bottom: 35px;
+  min-width: 300px;
+  margin-right: 30px;
+}
+.search_item:last-child {
+  margin-right: 0;
+}
+.search_item .code {
+  font-size: 14px;
+  color: #959698;
+  margin-bottom: 10px;
 }
 .search_item .name {
   font-size: 16px;
   text-transform: uppercase;
   font-family: "TTFirsNeue-DemiBold", sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   padding-right: 10px;
+}
+.search_item .city {
+  font-size: 16px;
+  color: #373947;
+  margin-bottom: 25px;
+  padding-left: 20px;
+  position: relative;
+}
+.search_item .city:before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 12px;
+  height: 12px;
+  background: #FFF100;
+  border-radius: 50%;
 }
 .search_item .description {
   font-family: "TTNorms-Bold", sans-serif;
@@ -3484,14 +3511,40 @@ ul.content li {
   margin-bottom: 0;
 }
 
+.res_head {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "TTNorms-Bold", sans-serif;
+}
+
+.catItem {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.catItem span {
+  font-family: "TTNorms-Bold", sans-serif;
+}
+.catItem span.green {
+  color: #1CB82C;
+}
+
+.react-loading-skeleton.catItem {
+  display: block;
+}
+
 .popupbox {
   background: #fff;
-  width: 300px;
-  position: absolute;
-  padding: 20px;
+  width: auto;
+  position: fixed;
+  padding: 40px;
   opacity: 0;
   visibility: hidden;
   transition: 0.2s all;
+  display: flex;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transform: translateX(-50%) translateY(-50%);
 }
 .popupbox.active {
   opacity: 1;
@@ -3503,6 +3556,8 @@ ul.content li {
   height: 30px;
   padding: 0 20px;
   font-size: 11px;
+  margin-top: 20px;
+  width: 100%;
 }
 .popupbox .close {
   position: absolute;
@@ -3513,6 +3568,14 @@ ul.content li {
   background: url("../img/close-dark.svg") 0 0 no-repeat;
   background-size: contain;
   z-index: 22;
+}
+
+.homemap .mapwrapper {
+  display: block;
+}
+
+.homemap .rowswrapper {
+  display: none;
 }
 
 @media (min-width: 1024px) and (max-width: 1399px) {
@@ -3597,6 +3660,14 @@ ul.content li {
   }
 }
 @media (max-width: 1023px) {
+  .homemap .mapwrapper {
+    display: none;
+  }
+
+  .homemap .rowswrapper {
+    display: block;
+  }
+
   .popup_inner {
     font-size: 14px;
     padding: 25px;
@@ -3674,7 +3745,10 @@ ul.content li {
   }
 }
 .homeseo {
-  margin-top: 145px;
+  margin-top: -5px;
+  background: #fff;
+  padding-top: 125px;
+  position: relative;
 }
 .homeseo .left {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
@@ -3729,7 +3803,7 @@ ul.content li {
 }
 @media (min-width: 1400px) and (max-width: 1660px) {
   .homeseo {
-    margin-top: 125px;
+    margin-top: -125px;
   }
 
   .homeseo .head {

@@ -1,5 +1,8 @@
 .homeseo{
-	margin-top: 145px;
+	margin-top: -5px;
+	background: #fff;
+	padding-top: 125px;
+	position: relative;
 	.left{
 		border-top: 1px solid rgba(#000, .15);
 		border-left: 1px solid rgba(#000, .15);
@@ -54,7 +57,7 @@
 
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.homeseo {
-		margin-top: 125px;
+		margin-top: -125px;
 	}
 	.homeseo .head{
 		font-size: 32px;

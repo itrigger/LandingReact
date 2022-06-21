@@ -4,7 +4,7 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import { useApolloClient, useLazyQuery } from "@apollo/client";
 import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
-import Map, { MemoizedMovie } from "../home/Map/Map";
+import Map, { MemoizedMap } from "../home/Map/Map";
 import { CARRIAGES_IDS, JDS, PARTS_IDS } from "../../utility/constants";
 import { CartContext } from "../../context/CartContext";
 import RowSkeleton from "./RowSkeleton";
@@ -189,8 +189,7 @@ const RowsWrapper = ({
   };
 
   return (
-    <div className="megamap">
-      {/*{map ? <MemoizedMovie /> : null}*/}
+    <div className="megamap rowswrapper">
       <div className="form form-horizontal">
         <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg">
           <div className="col-12 m-col-12 xs-col-4">
@@ -202,7 +201,7 @@ const RowsWrapper = ({
         </div>
         <div
           className="row middle-border-12-light br-light bl-light middle-border-12-over-bg"
-          ref={map ? null : myRef}
+          ref={myRef}
         >
           <div className="col-4 m-col-4 xs-col-4 | fh_l">
             <select
@@ -252,7 +251,7 @@ const RowsWrapper = ({
         </div>
       </div>
 
-      <div className="map_result " ref={map ? myRef : null}>
+      <div className="map_result ">
         {data && data.products ? (
           <Rows
             error={error}

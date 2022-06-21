@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "../components/ui/layout/Layout";
 import { Helmet } from "react-helmet";
 import Slider from "../components/home/Slider/Slider";
@@ -7,9 +7,22 @@ import Cats from "../components/home/Cats/Cats";
 import Seo from "../components/home/Seo/Seo";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { PARTS } from "../utility/constants";
-import Map, { MemoizedMovie } from "../components/home/Map/Map";
+import { MemoizedMap } from "../components/home/Map/Map";
 
 const IndexPage = () => {
+  const [isDesktop, setDesktop] = useState(
+    typeof window !== "undefined" ? window.innerWidth > 1023 : null
+  );
+  const updateMedia = () => {
+    setDesktop(typeof window !== "undefined" ? window.innerWidth > 1023 : null);
+  };
+  useEffect(() => {
+    return () =>
+      typeof window !== "undefined"
+        ? window.removeEventListener("resize", updateMedia)
+        : null;
+  });
+
   return (
     <div>
       <Helmet>
@@ -44,8 +57,11 @@ const IndexPage = () => {
         <Slider />
         <TwoBlocks />
         <Cats />
-        <MemoizedMovie />
-        <RowsWrapper type={1} map={true} dropdown={PARTS} />
+        <div className="homemap">
+          <MemoizedMap />
+
+          <RowsWrapper type={1} dropdown={PARTS} />
+        </div>
         <Seo />
       </Layout>
     </div>
