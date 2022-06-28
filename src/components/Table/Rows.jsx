@@ -152,7 +152,7 @@ const Rows = ({
       ) : (
         <>
           <div className="row">
-            <div className="col-12">
+            <div className="col-12 m-col-12 xs-col-4">
               <div className="ta_c | mr-title">
                 <div className="desc">К сожалению, по вашему запросу</div>
                 <div className="head">

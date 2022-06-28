@@ -59,6 +59,15 @@
   }
 }
 
+.service-home{
+  margin-top: -80px;
+  background: #fff;
+  padding-top: 80px;
+  position: relative;
+  .steps > div{
+    padding-bottom: 25px;
+  }
+}
 .service3 {
   .hint {
     font-size: 24px;
@@ -136,6 +145,9 @@
     text-transform: uppercase;
     margin-top: 27px;
     margin-bottom: 12px;
+    span{
+      display: block;
+    }
   }
 
   .desc {
@@ -144,6 +156,11 @@
     max-width: 230px;
   }
 
+}
+@media (min-width: 1660px) {
+  .service-home{
+    margin-top: 0;
+  }
 }
 
 @media (min-width: 1024px) and (max-width: 1399px){
@@ -353,5 +370,27 @@
       font-size: 14px;
     }
 
+  }
+}
+
+
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+ .service-home{
+    margin-top: -180px;
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1660px) {
+  .service-home{
+    margin-top: -80px;
+  }
+
+}
+
+@media (max-width: 600px){
+  .service-home{
+    margin-top: 40px;
+    padding-top: 0;
   }
 }

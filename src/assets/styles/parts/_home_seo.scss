@@ -1,17 +1,40 @@
+.testimonials{
+	margin-top: 80px;
+	padding-top: 80px;
+	padding-bottom: 30px;
+}
+.testimonials-ul{
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: 0 !important;
+	justify-content: center;
+	li{
+		margin-right: 2%;
+		margin-left: 2%;
+		text-transform: uppercase;
+
+		margin-bottom: 40px;
+		cursor: pointer;
+		span{
+			border-bottom: 1px dotted #000;
+		}
+	}
+}
+
 .homeseo{
-	margin-top: -5px;
-	background: #fff;
-	padding-top: 125px;
+
 	position: relative;
 	.left{
-		border-top: 1px solid rgba(#000, .15);
-		border-left: 1px solid rgba(#000, .15);
-		border-right: 1px solid rgba(#000, .15);
+		border-top: 1px solid rgba(230, 230, 230, 0.5);
+		border-left: 1px solid rgba(230, 230, 230, 0.5);
+		border-right: 1px solid rgba(230, 230, 230, 0.5);
 		padding: 100px 30px 30px;
 	}
 	.right{
-		border-top: 1px solid rgba(#000, .15);
-		border-right: 1px solid rgba(#000, .15);
+		border-top: 1px solid rgba(230, 230, 230, 0.5);
+		border-right: 1px solid rgba(230, 230, 230, 0.5);
 		padding-top: 100px;
 		padding-bottom: 60px;
 	}
@@ -50,15 +73,9 @@
 	.homeseo .left, .homeseo .right {
 		padding-top: 40px;
 	}
-	.homeseo{
-		margin-top: 100px;
-	}
 }
 
 @media (min-width: 1400px) and (max-width: 1660px) {
-	.homeseo {
-		margin-top: -125px;
-	}
 	.homeseo .head{
 		font-size: 32px;
 		margin-bottom: 13px;
@@ -90,9 +107,6 @@
 }
 
 @media (max-width: 600px){
-	.homeseo{
-		margin-top: 40px;
-	}
 	.homeseo .left{
 		padding-top: 60px;
 	}
@@ -100,5 +114,8 @@
 		padding-top: 60px;
 		padding-bottom: 30px;
 		border-left: 1px solid rgba(#000, .15);
+	}
+	.testimonials-ul{
+		flex-direction: column;
 	}
 }

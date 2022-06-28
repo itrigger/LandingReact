@@ -26,9 +26,9 @@ const Lytebox = (props) => {
         onClick={(e) => closeFadeHandler(e)}
       >
         <div
-          className={
-            props.nopadding ? "lytebox-inner nopadding" : "lytebox-inner"
-          }
+          className={`lytebox-inner ${props.nopadding ? "nopadding" : ""} ${
+            props.extraClass ? props.extraClass : ""
+          }`}
         >
           <Button
             color={props.light ? "lytebox-close black" : "lytebox-close"}

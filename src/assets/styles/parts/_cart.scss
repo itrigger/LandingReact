@@ -41,6 +41,15 @@
 		text-transform: uppercase;
 		font-size: 16px;
 		line-height: 1.4;
+		.description{
+			text-transform: none;
+			font-size: 12px;
+			font-family: "TTNorms-Regular", sans-serif;
+			flex-wrap: wrap;
+			div{
+				margin-right: 20px;
+			}
+		}
 	}
 	.price{
 		white-space: nowrap;
@@ -177,6 +186,22 @@
 		margin: 0;
 	}
 }
+.max-msg{
+	text-align: center;
+	width: 100%;
+	color: $red;
+	position: absolute;
+	bottom: -15px;
+	font-size: 10px;
+	transition: .2s all;
+	visibility: hidden;
+	opacity: 0;
+	&.active{
+		transition: .2s all;
+		visibility: visible;
+		opacity: 1;
+	}
+}
 
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.cart-form{
@@ -286,5 +311,9 @@
 				display: inline;
 			}
 		}
+	}
+	.max-msg{
+		bottom: 5px;
+		left: 80px;
 	}
 }

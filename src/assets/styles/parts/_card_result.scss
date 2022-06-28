@@ -108,7 +108,12 @@
 		margin-bottom: 10px;
 	}
 	.card-result-row .card .img{
-		height: 328px;
+		height: 298px;
+		margin-bottom: 30px;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 	.card-result-row .card{
 		padding-bottom: 150px;

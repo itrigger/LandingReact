@@ -65,6 +65,7 @@ const Cart = () => {
         calculateTotal();
       }
     }
+
     EsLintSolve();
   }, []);
 

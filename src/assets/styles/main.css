@@ -1467,6 +1467,21 @@ input::-webkit-inner-spin-button {
   background-size: contain;
 }
 
+.lytebox-imgWrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+.lytebox-caption {
+  padding: 10px;
+  background: #000;
+  color: #FFFFFF;
+}
+.lytebox-caption a {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
 .lytebox-inner {
   padding: 25px;
   max-width: 500px;
@@ -1483,7 +1498,6 @@ input::-webkit-inner-spin-button {
 .lytebox-inner.nopadding {
   padding: 0;
 }
-
 .lytebox-form {
   padding: 25px;
   width: 100%;
@@ -2188,7 +2202,7 @@ ul.content li {
   }
 
   .top-menu > li {
-    margin-right: 79px;
+    margin-right: 69px;
   }
 
   .top-cart-link {
@@ -2263,6 +2277,13 @@ ul.content li {
     padding-bottom: 45px;
   }
 }
+.foot-version {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 9px;
+}
+
 .footer {
   color: #fff;
   position: relative;
@@ -3218,6 +3239,10 @@ ul.content li {
     left: 360px;
     z-index: -1;
   }
+
+  .twoblocks .desc {
+    max-width: 80%;
+  }
 }
 @media (max-width: 1023px) {
   .twoblocks_w {
@@ -3430,6 +3455,9 @@ ul.content li {
   padding: 20px 20px 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
 }
+.result-row .minirow:last-child {
+  margin-bottom: 30px;
+}
 .result-row .price_block {
   padding-top: 30px;
   padding-right: 30px;
@@ -3475,6 +3503,7 @@ ul.content li {
   font-family: "TTFirsNeue-DemiBold", sans-serif;
   margin-bottom: 5px;
   padding-right: 10px;
+  white-space: nowrap;
 }
 .search_item .city {
   font-size: 16px;
@@ -3552,12 +3581,13 @@ ul.content li {
   transition: 0.2s all;
   z-index: 22;
 }
-.popupbox .btn-classic, .popupbox .paginator.next_prev li button, .paginator.next_prev li .popupbox button {
-  height: 30px;
+.popupbox .btn-classic, .popupbox .paginator.next_prev li button, .paginator.next_prev li .popupbox button, .popupbox .btn-wt-green {
+  height: 40px;
   padding: 0 20px;
   font-size: 11px;
   margin-top: 20px;
   width: 100%;
+  text-transform: uppercase;
 }
 .popupbox .close {
   position: absolute;
@@ -3590,10 +3620,6 @@ ul.content li {
 
   .result-row .price_block {
     padding-right: 10px;
-  }
-
-  .map {
-    display: none;
   }
 }
 @media (min-width: 1400px) and (max-width: 1660px) {
@@ -3744,21 +3770,43 @@ ul.content li {
     line-height: 1;
   }
 }
+.testimonials {
+  margin-top: 80px;
+  padding-top: 80px;
+  padding-bottom: 30px;
+}
+
+.testimonials-ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 0 !important;
+  justify-content: center;
+}
+.testimonials-ul li {
+  margin-right: 2%;
+  margin-left: 2%;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+.testimonials-ul li span {
+  border-bottom: 1px dotted #000;
+}
+
 .homeseo {
-  margin-top: -5px;
-  background: #fff;
-  padding-top: 125px;
   position: relative;
 }
 .homeseo .left {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  border-left: 1px solid rgba(0, 0, 0, 0.15);
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(230, 230, 230, 0.5);
+  border-left: 1px solid rgba(230, 230, 230, 0.5);
+  border-right: 1px solid rgba(230, 230, 230, 0.5);
   padding: 100px 30px 30px;
 }
 .homeseo .right {
-  border-top: 1px solid rgba(0, 0, 0, 0.15);
-  border-right: 1px solid rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(230, 230, 230, 0.5);
+  border-right: 1px solid rgba(230, 230, 230, 0.5);
   padding-top: 100px;
   padding-bottom: 60px;
 }
@@ -3796,16 +3844,8 @@ ul.content li {
   .homeseo .left, .homeseo .right {
     padding-top: 40px;
   }
-
-  .homeseo {
-    margin-top: 100px;
-  }
 }
 @media (min-width: 1400px) and (max-width: 1660px) {
-  .homeseo {
-    margin-top: -125px;
-  }
-
   .homeseo .head {
     font-size: 32px;
     margin-bottom: 13px;
@@ -3842,10 +3882,6 @@ ul.content li {
   }
 }
 @media (max-width: 600px) {
-  .homeseo {
-    margin-top: 40px;
-  }
-
   .homeseo .left {
     padding-top: 60px;
   }
@@ -3854,6 +3890,10 @@ ul.content li {
     padding-top: 60px;
     padding-bottom: 30px;
     border-left: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .testimonials-ul {
+    flex-direction: column;
   }
 }
 .vagon-sale .head {
@@ -3904,6 +3944,16 @@ ul.content li {
 
 .vagon-type.empty .left {
   height: 100px;
+}
+
+.service-home {
+  margin-top: -80px;
+  background: #fff;
+  padding-top: 80px;
+  position: relative;
+}
+.service-home .steps > div {
+  padding-bottom: 25px;
 }
 
 .service3 .hint {
@@ -3970,12 +4020,20 @@ ul.content li {
   margin-top: 27px;
   margin-bottom: 12px;
 }
+.steps .title span {
+  display: block;
+}
 .steps .desc {
   font-size: 16px;
   line-height: 1.4;
   max-width: 230px;
 }
 
+@media (min-width: 1660px) {
+  .service-home {
+    margin-top: 0;
+  }
+}
 @media (min-width: 1024px) and (max-width: 1399px) {
   .service3 .form {
     padding: 40px 40px 46px;
@@ -4219,6 +4277,22 @@ ul.content li {
     font-size: 14px;
   }
 }
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .service-home {
+    margin-top: -180px;
+  }
+}
+@media (min-width: 1400px) and (max-width: 1660px) {
+  .service-home {
+    margin-top: -80px;
+  }
+}
+@media (max-width: 600px) {
+  .service-home {
+    margin-top: 40px;
+    padding-top: 0;
+  }
+}
 .card-result-row {
   flex-wrap: wrap;
   display: flex;
@@ -4335,7 +4409,12 @@ ul.content li {
   }
 
   .card-result-row .card .img {
-    height: 328px;
+    height: 298px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .card-result-row .card {
@@ -4576,6 +4655,15 @@ ul.content li {
   font-size: 16px;
   line-height: 1.4;
 }
+.table-cart .name .description {
+  text-transform: none;
+  font-size: 12px;
+  font-family: "TTNorms-Regular", sans-serif;
+  flex-wrap: wrap;
+}
+.table-cart .name .description div {
+  margin-right: 20px;
+}
 .table-cart .price {
   white-space: nowrap;
   font-family: "TTFirsNeue-Medium", sans-serif;
@@ -4707,6 +4795,23 @@ ul.content li {
   margin: 0;
 }
 
+.max-msg {
+  text-align: center;
+  width: 100%;
+  color: #AF3738;
+  position: absolute;
+  bottom: -15px;
+  font-size: 10px;
+  transition: 0.2s all;
+  visibility: hidden;
+  opacity: 0;
+}
+.max-msg.active {
+  transition: 0.2s all;
+  visibility: visible;
+  opacity: 1;
+}
+
 @media (min-width: 1400px) and (max-width: 1660px) {
   .cart-form .form .disclaimer {
     margin-top: 0;
@@ -4828,6 +4933,11 @@ ul.content li {
   }
   .cart-form .bg-dark .text span {
     display: inline;
+  }
+
+  .max-msg {
+    bottom: 5px;
+    left: 80px;
   }
 }
 

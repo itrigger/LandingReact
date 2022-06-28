@@ -10,6 +10,8 @@ const CartRow = ({
   const isBrowser = () => typeof window !== "undefined";
   const [inputValue, setInputValue] = useState(data.quantity);
   const [total, setTotal] = useState("0");
+  const [quantityMax, setQuantityMax] = useState(data.stock ? data.stock : 1);
+  const [maxErr, setMaxErr] = useState(false);
   const [isDesktop, setDesktop] = useState(
     isBrowser() && window.innerWidth > 1023
   );
@@ -37,11 +39,16 @@ const CartRow = ({
   }, [inputValue, price4]);
 
   const stepUpHandler = () => {
-    setInputValue(inputValue + 1);
-    cartPlus(data.id);
+    if (inputValue >= quantityMax) {
+      setMaxErr(true);
+    } else {
+      setInputValue(inputValue + 1);
+      cartPlus(data.id);
+    }
   };
 
   const stepDownHandler = () => {
+    setMaxErr(false);
     inputValue > 1 ? setInputValue(inputValue - 1) : setInputValue(1);
     cartMinus(data.id);
   };
@@ -51,10 +58,24 @@ const CartRow = ({
       {isDesktop ? (
         <div className="row | table-cart">
           <div className="col-2 m-col-2 ta_c img | td">
-            <img srcSet={data.image} alt={data.name} />
+            <img srcSet={data.image ? data.image : ""} alt={data.name} />
           </div>
-          <div className="col-6 m-col-4 name | td">{data.name}</div>
-          <div className="col-1 m-col-2  ta_c price | td">{data.price}</div>
+          <div className="col-6 m-col-4 name | td">
+            {data.name}
+            <div className="description d_f">
+              {data.year ? <div>Год выпуска: {data.year}</div> : ""}
+              {data.location ? <div>Местонахождение: {data.location}</div> : ""}
+              {data.telezhka ? <div>Тип оси: {data.telezhka}</div> : ""}
+              {data.tolshhinaOboda ? (
+                <div>Толщина обода: {data.tolshhinaOboda}</div>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <div className="col-1 m-col-2  ta_c price | td">
+            {data.price ? data.price : "---"}
+          </div>
           <div className="col-1 m-col-1 ta_c count | td">
             <div className="inputCountWrap">
               <button
@@ -74,6 +95,9 @@ const CartRow = ({
                 aria-label="Step up"
                 onClick={() => stepUpHandler()}
               ></button>
+              <div className={maxErr ? "max-msg active" : "max-msg"}>
+                В наличии: {quantityMax}
+              </div>
             </div>
           </div>
           <div className="col-1 m-col-2  ta_c subtotal | td">{total}</div>
@@ -89,7 +113,7 @@ const CartRow = ({
       ) : (
         <div className="row | table-cart table-cart-mobile">
           <div className="xs-col-2 img | td">
-            <img srcSet={data.image} alt={data.name} />
+            <img srcSet={data.image ? data.image : ""} alt={data.name} />
           </div>
           <div className="xs-col-2  del | td">
             <button
@@ -106,7 +130,7 @@ const CartRow = ({
           </div>
           <div className="xs-col-4  price | td">
             <div className="th">Цена</div>
-            {data.price}
+            {data.price ? data.price : "---"}
           </div>
           <div className="xs-col-4  count | td">
             <div className="th">Кол-во</div>
@@ -128,6 +152,9 @@ const CartRow = ({
                 aria-label="Step up"
                 onClick={() => stepUpHandler()}
               ></button>
+              <div className={maxErr ? "max-msg active" : "max-msg"}>
+                В наличии: {quantityMax}
+              </div>
             </div>
           </div>
           <div className="xs-col-4  subtotal | td">

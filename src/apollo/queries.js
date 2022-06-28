@@ -18,6 +18,24 @@ export const GET_CONTENT = gql`
   }
 `;
 
+export const GET_TESTIMONIALS = gql`
+  query getTestimonialsQuery {
+    posts(where: { categoryId: 60 }) {
+      nodes {
+        title
+        testimonials {
+          imagelink {
+            sourceUrl
+          }
+          pdf {
+            mediaItemUrl
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GET_ALL_PARTS = gql`
 query GetAllParts($categoryIdIn: [Int] = [${PARTS_IDS}], $tagIn: [String], $after: String, $before: String, $first: Int, $last: Int) {
   products(
