@@ -279,7 +279,7 @@ const RowsWrapper = ({
                     <div className="head">
                       идёт поиск
                       <span className="italic">
-                        {type === 1 ? "запчастей" : "вагонов"}
+                        {type === 1 ? " запчастей" : " вагонов"}
                       </span>
                     </div>
                   </div>

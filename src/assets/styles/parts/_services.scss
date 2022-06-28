@@ -315,8 +315,11 @@
   .steps > div {
     padding-bottom: 30px;
   }
+  .steps .title{
+    font-size: 20px;
+  }
   .vagon-sale .head {
-    font-size: 42px;
+    font-size: 36px;
   }
   .vagon-type.empty {
     display: none;
@@ -370,6 +373,11 @@
       font-size: 14px;
     }
 
+  }
+  .service-home{
+    .head2{
+      font-size: 36px;
+    }
   }
 }
 

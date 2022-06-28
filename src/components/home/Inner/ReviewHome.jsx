@@ -51,8 +51,9 @@ const ReviewHome = () => {
             {loading
               ? "загрузка отзывов"
               : data
-              ? data.posts.nodes.map((item) => (
+              ? data.posts.nodes.map((item, i) => (
                   <li
+                    key={i}
                     onClick={() =>
                       clickHandler(
                         item.testimonials.imagelink.sourceUrl,

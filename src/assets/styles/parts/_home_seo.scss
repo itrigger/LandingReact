@@ -106,6 +106,14 @@
 	}
 }
 
+@media (max-width: 1023px){
+	.testimonials{
+		margin-top: 0;
+		padding-top: 10px;
+		padding-bottom: 0;
+	}
+}
+
 @media (max-width: 600px){
 	.homeseo .left{
 		padding-top: 60px;
@@ -113,7 +121,7 @@
 	.homeseo .right{
 		padding-top: 60px;
 		padding-bottom: 30px;
-		border-left: 1px solid rgba(#000, .15);
+		border-left: 1px solid rgba(230, 230, 230, 0.5);
 	}
 	.testimonials-ul{
 		flex-direction: column;

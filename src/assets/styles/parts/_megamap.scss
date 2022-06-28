@@ -372,7 +372,7 @@
 			margin-bottom: 20px;
 		}
 		.head{
-			font-size: 42px;
+			font-size: 36px;
 		}
 	}
 	.fh_r button{
@@ -383,6 +383,7 @@
 	}
 	.result-row{
 		border: 0;
+		padding-top: 0;
 		& > div{
 			border-left: 1px solid rgba(0, 0, 0, 0.15);
 			border-right: 1px solid rgba(0, 0, 0, 0.15);
@@ -406,6 +407,9 @@
 		}
 		.description{
 			font-size: 12px;
+			p{
+				margin-bottom: 0;
+			}
 		}
 		.price_block{
 			flex-direction: row;
