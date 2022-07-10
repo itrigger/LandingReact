@@ -2,7 +2,8 @@
   transition: .2s all;
   opacity: 1;
   transform: translateY(0%);
-  z-index: 999;
+  z-index: 999999;
+  text-align: center;
   pointer-events: auto;
   position: fixed;
   left: -50px;
@@ -12,6 +13,36 @@
   padding: 50px;
   background-color: rgba(#000,0.7);
   cursor: pointer;
+  width: auto;
+  &:before {
+    content: "";
+    display: inline-block;
+    font-size: 0;
+    height: 100%;
+    vertical-align: middle;
+    width: 0;
+  }
+}
+.lytebox-inner{
+  display: inline-block;
+  margin: 0;
+  max-width: 100%;
+  overflow: auto;
+  vertical-align: middle;
+  padding: 55px;
+  position: relative;
+  top: 0;
+  cursor: default;
+  background-color: rgba(#000, .3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #fff;
+  &.nopadding{
+    padding: 0;
+  }
+  &.image{
+
+  }
 }
 .lytebox-opened{
   transition: .2s all;
@@ -33,9 +64,12 @@
   }
 }
 .lytebox-imgWrapper{
+
   img{
-    max-width: 100%;
+    //max-width: 100%;
+    max-height: calc(100vh - 40px);
     height: auto;
+    max-width: 100%;
   }
 }
 .lytebox-caption{
@@ -47,25 +81,7 @@
     text-decoration: underline;
   }
 }
-.lytebox-inner{
-  padding: 25px;
-  max-width: 500px;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  cursor: default;
-  background-color: rgba(#000, .3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid #fff;
-  &.nopadding{
-    padding: 0;
-  }
-  &.image{
 
-  }
-}
 
 .lytebox-form{
   padding: 25px;
@@ -77,7 +93,7 @@
 @media (max-width: 1023px) {
   .lytebox-inner{
     left: 0;
-    transform: translateX(0) translateY(-50%);
+    padding: 25px;
     width: calc(100% - 40px);
     margin-left: auto;
     margin-right: auto;

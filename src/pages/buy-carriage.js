@@ -6,10 +6,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import Ico1 from "../assets/img/step1.svg";
-import Ico2 from "../assets/img/step2.svg";
-import Ico3 from "../assets/img/step3.svg";
-import Ico4 from "../assets/img/step4.svg";
 import { Link } from "gatsby";
 import FormRequestFiles from "../components/Form/FormRequestFiles";
 import Prems from "../components/home/Inner/Prems";
@@ -95,11 +91,14 @@ const BuyCarriage = () => {
           </div>
           <div className="col-8 m-col-8 xs-col-4 ">
             <div className="bold">
-              Выкуп вагонов — разумное решение для обновления подвижного
-              состава. Вам не придется платить за утилизацию – мы заплатим за
-              возможность забрать списанные вагоны. Обеспечиваем оперативный
-              выезд сотрудника для оценки технического состояния оборудования и
-              оформления договорной документации на месте.
+              Каким образом происходит сдача на металлолом?
+              <br />
+              Специалисты делают все необходимое для того, чтобы избавить вас от
+              ненужных трат времени и сил. Профессионалы самостоятельно
+              демонтируют вагоны и доставляют лом на пункты приёма. Для
+              получения прибыли, вам необходимо: предъявить при сдаче лома
+              документ, подтверждающий личность; дождаться экспертного
+              заключения; получить средства.
             </div>
 
             <p>
@@ -118,7 +117,7 @@ const BuyCarriage = () => {
           </div>
         </div>
         <div className="row service3">
-          <div className="col-4 m-col-0 xs-col-4 bl">
+          <div className="col-4 m-col-0 xs-col-4 oh bl">
             <Swiper
               modules={[Pagination, Autoplay]}
               autoplay={{ delay: 5000 }}
@@ -135,7 +134,7 @@ const BuyCarriage = () => {
             <div className="head3">
               <span className="italic">Отправьте заявку</span> на выкуп лома
             </div>
-            <FormRequestFiles />
+            <FormRequestFiles formc={"form1"} />
           </div>
         </div>
 
@@ -182,7 +181,7 @@ const BuyCarriage = () => {
           </div>
         </div>
         <div className="row service3">
-          <div className="col-4 m-col-0 xs-col-4 bl">
+          <div className="col-4 m-col-0 xs-col-4 oh bl">
             <Swiper
               modules={[Pagination, Autoplay]}
               pagination={{ clickable: true }}
@@ -191,15 +190,15 @@ const BuyCarriage = () => {
               slidesPerView={1}
             >
               <SwiperSlide className="s3s4"></SwiperSlide>
-              <SwiperSlide className="s3s4"></SwiperSlide>
-              <SwiperSlide className="s3s4"></SwiperSlide>
+              <SwiperSlide className="s3s5"></SwiperSlide>
+              <SwiperSlide className="s3s6"></SwiperSlide>
             </Swiper>
           </div>
           <div className="col-8 m-col-12 xs-col-4 form bg-dark" id="ocenka">
             <div className="head3">
               <span className="italic">Отправьте заявку</span> на выкуп вагона
             </div>
-            <FormRequestFiles />
+            <FormRequestFiles formc={"form2"} />
           </div>
         </div>
         <div className="row service3 bl br middle-border-12">

@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { GET_TESTIMONIALS } from "../../../apollo/queries";
-import Form from "../../Form/Form";
 import Lytebox from "../../ui/Lytebox/Lytebox";
 import { Link } from "gatsby";
 
@@ -28,7 +27,7 @@ const ReviewHome = () => {
         extraClass={"image"}
       >
         <div className="lytebox-imgWrapper">
-          <img src={curImg} />
+          <img src={curImg} alt="testimonial" />
         </div>
         {curPDF !== null ? (
           <div className="lytebox-caption">
@@ -68,6 +67,11 @@ const ReviewHome = () => {
                 ))
               : ""}
           </ul>
+          <div className="ta_c">
+            <Link className="btn yellow" to="/testimonials">
+              <span>Все отзывы</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

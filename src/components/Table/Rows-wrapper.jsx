@@ -18,7 +18,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
 const RowsWrapper = ({
   type = 1,
   map = false,
-  initialCount = 10,
+  initialCount = 200,
   initialCategory = 1,
   dropdown,
   selectedDD = [0],
@@ -60,7 +60,7 @@ const RowsWrapper = ({
   };
 
   if (type === 1) {
-    text = "<span class='italic'>быстрый фильтр</span> запчастей";
+    text = "<span class='italic'>быстрый фильтр</span> поиска запчастей";
     text2 = "Найти запчасть";
   } else {
     text = "<span class='italic'>Продажа</span> бу вагонов";
@@ -114,8 +114,6 @@ const RowsWrapper = ({
   };
 
   useEffect(() => {
-    //console.log("effect");
-    //console.log(filterTypeArea);
     if (selectedDD[0] !== 0) {
       getProducts({
         ...variables,
@@ -130,8 +128,6 @@ const RowsWrapper = ({
   }, [selectedDD]);
 
   useEffect(() => {
-    //console.log("effect");
-    //console.log(filterTypeArea);
     if (selectedDDJD !== "0") {
       getProducts({
         ...variables,
@@ -144,25 +140,6 @@ const RowsWrapper = ({
         });
     }
   }, [selectedDDJD]);
-
-  /*  useEffect(() => {
-    if (actived) {
-      getProducts({
-        ...variables,
-        categoryIdIn: [29, 32, 33],
-        tagIn:
-          filterTypeArea !== "" &&
-          filterTypeArea !== "0" &&
-          filterTypeArea !== null
-            ? filterTypeArea.toString()
-            : null,
-      })
-        .then((r) => {})
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  }, [actived]);*/
 
   if (error) {
     handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
@@ -206,10 +183,10 @@ const RowsWrapper = ({
           <div className="col-4 m-col-4 xs-col-4 | fh_l">
             <select
               className="form-control"
-              value={filterTypeArea !== null ? filterTypeArea.toString() : "0"}
+              value={filterTypeArea !== null ? filterTypeArea.toString() : "-1"}
               onChange={(e) => selectAreaHandler(e.target.value)}
             >
-              <option hidden disabled>
+              <option value={"-1"} hidden disabled>
                 Выберите железную дорогу
               </option>
               <option value="0">Все железные дороги</option>
@@ -227,7 +204,7 @@ const RowsWrapper = ({
               value={filterTypeCategory.toString()}
               onChange={(e) => selectCategoryHandler(e.target.value)}
             >
-              <option hidden disabled>
+              <option hidden disabled value="-1">
                 Выберите категорию
               </option>
               <option value="0">Все категории</option>

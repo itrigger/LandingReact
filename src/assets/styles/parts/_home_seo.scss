@@ -107,10 +107,14 @@
 }
 
 @media (max-width: 1023px){
+	.layout .testimonials{
+		padding-top: 50px;
+		padding-bottom: 0;
+	}
 	.testimonials{
 		margin-top: 0;
 		padding-top: 10px;
-		padding-bottom: 0;
+		padding-bottom: 50px;
 	}
 }
 
@@ -124,6 +128,6 @@
 		border-left: 1px solid rgba(230, 230, 230, 0.5);
 	}
 	.testimonials-ul{
-		flex-direction: column;
+
 	}
 }

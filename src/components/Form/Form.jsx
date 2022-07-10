@@ -4,10 +4,9 @@ import qs from "qs";
 import InputMask from "react-input-mask";
 import { useNotification } from "../ui/Notify/NotifyProvider";
 import { Link } from "gatsby";
-import { CARRIAGES } from "../../utility/constants";
 
 const Form = (props) => {
-  const [type, setType] = useState("1");
+  const [type, setType] = useState("");
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [typeError, setTypeError] = useState(false);
@@ -135,22 +134,13 @@ const Form = (props) => {
         />
       </span>
       <span className="input_wrapper">
-        <select
-          name=""
-          id=""
-          className={typeError ? "error" : ""}
+        <input
+          type="text"
           value={type}
+          placeholder={"Сообщение"}
+          className={typeError ? "error" : ""}
           onChange={(e) => setType(e.target.value)}
-        >
-          <option value="1" disabled>
-            Выберите тип вагона
-          </option>
-          {CARRIAGES.map((item) => (
-            <option key={item.id} value={item.name}>
-              {item.name}
-            </option>
-          ))}
-        </select>
+        />
       </span>
       <button className="btn-classic" onClick={(e) => submitHandler(e.target)}>
         <span>Отправить заявку</span>

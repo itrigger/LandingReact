@@ -8,14 +8,15 @@ import Seo from "../components/home/Seo/Seo";
 import RowsWrapper from "../components/Table/Rows-wrapper";
 import { PARTS } from "../utility/constants";
 import { MemoizedMap } from "../components/home/Map/Map";
-import Prems from "../components/home/Inner/Prems";
 import Prems3 from "../components/home/Inner/Prems3";
 import ReviewHome from "../components/home/Inner/ReviewHome";
+import { CartContext } from "../context/CartContext";
 
 const IndexPage = () => {
   const [isDesktop, setDesktop] = useState(
     typeof window !== "undefined" ? window.innerWidth > 1023 : null
   );
+
   const updateMedia = () => {
     setDesktop(typeof window !== "undefined" ? window.innerWidth > 1023 : null);
   };
@@ -62,7 +63,6 @@ const IndexPage = () => {
         <Cats />
         <div className="homemap">
           <MemoizedMap />
-
           <RowsWrapper type={1} dropdown={PARTS} />
         </div>
         <Prems3 />

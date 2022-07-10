@@ -92,9 +92,9 @@ select{
 }
 
 input[type=number] {
-	-moz-appearance: textfield;
 	-webkit-appearance: none;
 	appearance: none;
+	-moz-appearance: textfield;
 	background: transparent;
 	border: 1px solid transparent;
 	border-bottom: 1px solid #fff;
@@ -298,6 +298,7 @@ input::-webkit-inner-spin-button {
 	}
 	.form.bg-dark select{
 		font-size: 15px;
+		height: 50px;
 	}
 	.fileReceiver{
 		height: 80px;

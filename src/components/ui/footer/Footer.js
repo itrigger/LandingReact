@@ -4,6 +4,7 @@ import { GET_CONTENT } from "../../../apollo/queries";
 import { Link } from "gatsby";
 import FormFooter from "../../Form/FormFooter";
 import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { CartContext } from "../../../context/CartContext";
 
 const Footer = () => {
   const [address, setAddress] = useState("");
@@ -14,6 +15,8 @@ const Footer = () => {
   const clickHandler = () => {
     window.open("https://wa.me/" + telWt);
   };
+
+  const value = React.useContext(CartContext);
 
   const { data } = useQuery(GET_CONTENT);
 
@@ -93,10 +96,17 @@ const Footer = () => {
               </button>
             </div>
             <div className="foot-address">{address}</div>
-            <div className="foot-version">Версия 1.0</div>
+            <div className="foot-version">Версия 1.8</div>
           </div>
         </div>
       </div>
+      {value && value[0] !== undefined && value[0].length > 0 ? (
+        <div className="fixed_block">
+          <Link to="/cart">
+            Оформить заказ <span>{value[0].length}</span>
+          </Link>
+        </div>
+      ) : null}
     </div>
   );
 };

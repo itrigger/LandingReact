@@ -12,7 +12,7 @@ const FormRequestFiles = (props) => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [vagonType, setVagonType] = useState("1");
-  const [vagonModel, setVagonModel] = useState("1");
+  const [vagonModel, setVagonModel] = useState("");
   const [vagonState, setVagonState] = useState("1");
   //temp
   const [selectedFile, setSelectedFile] = useState();
@@ -260,7 +260,7 @@ const FormRequestFiles = (props) => {
           </select>
         </div>
         <div className="col-4 m-col-4 xs-col-4 fcol2">
-          <select
+          {/*<select
             name=""
             id=""
             value={vagonModel}
@@ -271,7 +271,13 @@ const FormRequestFiles = (props) => {
             </option>
             <option value="2">1</option>
             <option value="3">2</option>
-          </select>
+          </select>*/}
+          <input
+            type="text"
+            placeholder="Модель вагона"
+            value={vagonModel}
+            onChange={(e) => setVagonModel(e.target.value)}
+          />
         </div>
         <div className="col-4 m-col-4 xs-col-4 fcol3">
           <select
@@ -283,10 +289,16 @@ const FormRequestFiles = (props) => {
             <option value="1" disabled>
               Состояние вагона
             </option>
-            <option value="2">Плохое</option>
-            <option value="3">Среднее</option>
-            <option value="4">Хорошее</option>
-            <option value="5">Новый</option>
+            <option value="2">
+              {props.formc === "form1"
+                ? "В разделку"
+                : "С неоконченным сроком службы"}
+            </option>
+            <option value="3">
+              {props.formc === "form1"
+                ? "В работу"
+                : "С оконченным сроком службы"}
+            </option>
           </select>
         </div>
         {!isDesktop ? (
@@ -307,16 +319,14 @@ const FormRequestFiles = (props) => {
         <div className="col-4 m-col-4 xs-col-4 fcol1">
           <label onClick={handleLabelClick} className="fileReceiver">
             {isFilePicked && selectedFile ? (
-              <>
-                <div
-                  className="file-preview"
-                  onClick={deleteImageHandler}
-                  style={{
-                    backgroundImage:
-                      "url(" + URL.createObjectURL(selectedFile) + ")",
-                  }}
-                ></div>
-              </>
+              <div
+                className="file-preview"
+                onClick={deleteImageHandler}
+                style={{
+                  backgroundImage:
+                    "url(" + URL.createObjectURL(selectedFile) + ")",
+                }}
+              ></div>
             ) : (
               <>
                 <div className="ico ico-camera"></div>

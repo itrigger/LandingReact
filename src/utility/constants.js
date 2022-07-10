@@ -135,9 +135,10 @@ export const CARRIAGES = [
   { name: "Вагоны-цистерны", id: 40 },
   { name: "Вагоны-хопперы", id: 37 },
   { name: "Вагоны-платформы", id: 38 },
+  { name: "Вагоны сопровождения", id: 63 },
 ];
 
-export const CARRIAGES_IDS = [25, 36, 37, 38, 39, 40, 41];
+export const CARRIAGES_IDS = [25, 36, 37, 38, 39, 40, 41, 63];
 
 export const PARTS = [
   { name: "Колесные пары", id: 29 },
@@ -150,5 +151,4 @@ export const PARTS_IDS = [29, 32, 33];
 /****/
 /* ToDO
 1. Если не установлена фотка, то ошибка
-2. Регулировать кол-во в корзине
 * */

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slide from "../../../assets/img/home_image.jpg";
 import videomp4 from "../../../assets/video/video2.mp4";
 import videoogv from "../../../assets/video/video2.ogv";

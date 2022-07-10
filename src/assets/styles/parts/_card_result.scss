@@ -121,6 +121,41 @@
 }
 
 @media (max-width: 1023px) {
+	.card-mobile{
+		display: flex;
+		flex-direction: column;
+		.left{
+			width: 50%;
+		}
+		.right{
+			width: 50%;
+		}
+		.description p{
+			font-size: inherit;
+			margin-bottom: 0;
+		}
+	}
+	.result-table .card-mobile td{
+		border-right: 1px solid #E6E6E6;
+	}
+	.result-row-2 .price_block .price{
+		margin-bottom: 0;
+	}
+	.card-title{
+
+		border-bottom: none;
+		border-right: none;
+		color: rgba(0,0,0,.5);
+		font-family: TTFirsNeue-Medium,sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		line-height: 1.4;
+
+		text-transform: uppercase;
+	}
+	.result-table thead{
+		display: none;
+	}
 	.card-result-row{
 		flex-direction: column;
 		.card{

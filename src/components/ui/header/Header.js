@@ -12,7 +12,7 @@ export default function Header() {
   const [tel, setTel] = useState("");
   const [telCall, setTelCall] = useState("");
   const [menuActive, setMenuActive] = useState("");
-  const [subMenuActive, setSubMenuActive] = useState("active");
+  const [subMenuActive, setSubMenuActive] = useState("");
   const [slide, setSlide] = useState(false);
   const [telWt, setTelWt] = useState("");
 
@@ -104,21 +104,21 @@ export default function Header() {
                         to="/buy-carriage#vlom"
                         title="Вагоны на металлолом"
                       >
-                        Вагоны на металлолом
+                        Вагоны в разделку (в лом)
                       </AnchorLink>
                     </li>
-                    <li>
+                    {/*                <li>
                       <AnchorLink
                         to="/buy-carriage#vrazdelku"
                         title="Вагоны в разделку"
                       >
                         Вагоны в разделку
                       </AnchorLink>
-                    </li>
+                    </li>*/}
                     <li>
                       <AnchorLink
                         to="/buy-carriage#vrazdelku"
-                        title="Вагоны в разделку"
+                        title="Вагоны в работу"
                       >
                         Вагоны в работу
                       </AnchorLink>
@@ -172,17 +172,15 @@ export default function Header() {
                 <div className="dropdown-menu">
                   <ul>
                     <li>
-                      <Link to="/buy-carriage" activeClassName="active">
-                        Вагоны на металлолом
+                      <Link to="/buy-carriage#vlom" activeClassName="active">
+                        Вагоны в разделку (в лом)
                       </Link>
                     </li>
                     <li>
-                      <Link to="/buy-carriage" activeClassName="active">
-                        Вагоны в разделку
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/buy-carriage" activeClassName="active">
+                      <Link
+                        to="/buy-carriage#vrazdelku"
+                        activeClassName="active"
+                      >
                         Вагоны в работу
                       </Link>
                     </li>

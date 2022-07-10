@@ -94,6 +94,9 @@
 	line-height: 1.4;
 	margin-top: 52px;
 	margin-bottom: 20px;
+	& + .btn-classic{
+		margin-bottom: 40px;
+	}
 }
 
 .cart-form{

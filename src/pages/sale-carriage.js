@@ -82,10 +82,10 @@ const SaleCarriage = () => {
             </div>
           </div>
         </div>
-        <div className="vagon-sale" ref={myRef}>
+        {/*<div className="vagon-sale" ref={myRef}>
           <div className="row">
             <div className="col-4 m-col-4 xs-col-4 bl">
-              <StickyBox offsetTop={90}>
+              <StickyBox offsetTop={120}>
                 <div className="head">
                   <span className="italic">Какой тип</span> вагона Вас
                   интересует?
@@ -220,7 +220,7 @@ const SaleCarriage = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>*/}
         <div className="anchor" ref={myRef2}>
           <RowsWrapper
             type={2}

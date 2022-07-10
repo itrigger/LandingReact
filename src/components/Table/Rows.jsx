@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Row from "./Row";
 import Card from "./Card";
 import RowSkeleton from "./RowSkeleton";
 import Form from "../Form/Form";
 import Lytebox from "../ui/Lytebox/Lytebox";
+import { useQuery } from "@apollo/client";
+import { GET_CONTENT } from "../../apollo/queries";
 
 const Rows = ({
   data,
@@ -19,6 +21,20 @@ const Rows = ({
   addToCart,
 }) => {
   const [slide, setSlide] = useState(false);
+  const [telWt, setTelWt] = useState("");
+
+  const wtClickHandler = () => {
+    window.open("https://wa.me/" + telWt);
+  };
+
+  const { data: data2 } = useQuery(GET_CONTENT);
+
+  useEffect(() => {
+    if (data2) {
+      setTelWt(data2.posts.nodes[0].acfcontent.telWt);
+    }
+  }, [data2]);
+
   const slideClickHandler = () => {
     setSlide(true);
   };
@@ -57,30 +73,71 @@ const Rows = ({
           <div className="row br bl middle-border-12">
             <div className="col-12 m-col-12 xs-col-4">
               <div className="ta_c | mr-title">
-                <div className="desc">по вашему запросу</div>
                 <div className="head">
                   <span className="italic">
                     {type === 1 ? "запчасти" : "вагоны"}
                   </span>{" "}
-                  найдены
+                  в наличии
                 </div>
               </div>
             </div>
           </div>
-          {type === 1 ? (
-            data.edges.map((edge) => {
-              const { node } = edge;
-              return <Row key={node.id} data={node} addToCart={addToCart} />;
-            })
-          ) : (
-            <div className="row d_f middle-border-12 bl br card-result-row">
-              {data.edges.map((edge) => {
-                const { node } = edge;
-                return <Card key={node.id} data={node} addToCart={addToCart} />;
-              })}
+          <div className="row">
+            <div className="col-12 s-col-12 xs-col-4">
+              <table className={"result-table"}>
+                <thead>
+                  {type === 1 ? (
+                    <tr>
+                      <th>Наименование</th>
+                      <th className={"ta_c"}>Г.в.</th>
+                      <th className={"ta_c"}>Толщ. обода</th>
+                      <th className={"ta_c"}>Тип оси</th>
+                      <th className={"ta_c"}>Состояние</th>
+                      <th className={"ta_c"}>Станция</th>
+                      <th className={"ta_c"}>Дорога</th>
+                      <th className={"ta_c"}>Цена</th>
+                      <th className={"ta_c"}></th>
+                    </tr>
+                  ) : (
+                    <tr>
+                      <th>Наименование</th>
+                      <th className={"ta_c"}>Модель</th>
+                      <th className={"ta_c"}>Кол-во</th>
+                      <th className={"ta_c"}>Г.в.</th>
+                      <th className={"ta_c"}>Местонахождение</th>
+                      <th className={"ta_c"}>Состояние</th>
+                      <th className={"ta_c"}>Цена</th>
+                      <th className={"ta_c"}></th>
+                    </tr>
+                  )}
+                </thead>
+                <tbody>
+                  {type === 1
+                    ? data.edges.map((edge) => {
+                        const { node } = edge;
+                        return (
+                          <Row
+                            key={node.id}
+                            data={node}
+                            addToCart={addToCart}
+                          />
+                        );
+                      })
+                    : data.edges.map((edge) => {
+                        const { node } = edge;
+                        return (
+                          <Card
+                            key={node.id}
+                            data={node}
+                            addToCart={addToCart}
+                            wtClickHandler={wtClickHandler}
+                          />
+                        );
+                      })}
+                </tbody>
+              </table>
             </div>
-          )}
-
+          </div>
           <div className="row result-row footer-row">
             <div className="col-4 m-col-4 xs-col-0"></div>
 
@@ -161,6 +218,10 @@ const Rows = ({
                   </span>{" "}
                   не найдены
                 </div>
+                <div className="desc">
+                  Возможно, мы не успели их еще добавить в базу.
+                  <div>свяжитесь с нами и мы постараемся вам помочь</div>
+                </div>
                 <button
                   className="btn-classic"
                   onClick={() => slideClickHandler()}
@@ -172,7 +233,8 @@ const Rows = ({
           </div>
           <Lytebox trigger={slide} setTrigger={setSlide}>
             <div className="head3">
-              <span className="italic">Быстрый</span> подбор вагона
+              <span className="italic">Быстрый</span> подбор{" "}
+              {type === 1 ? "запчастей" : "вагона"}
             </div>
             <Form setTrigger={setSlide} />
           </Lytebox>
