@@ -177,8 +177,7 @@ const Cart = () => {
             </div>
             {isDesktop ? (
               <div className="row | table-cart">
-                <div className="col-2 m-col-2 ta_c | th">фото</div>
-                <div className="col-6 m-col-4 | th">наименование</div>
+                <div className="col-8 m-col-4 | th">наименование</div>
                 <div className="col-1 m-col-2 ta_c | th">цена</div>
                 <div className="col-1 m-col-1 ta_c | th">кол-во</div>
                 <div className="col-1 m-col-2 ta_c | th">стоимость</div>
@@ -198,8 +197,7 @@ const Cart = () => {
             ))}
 
             <div className="row | table-cart">
-              <div className="col-2 m-col-2 xs-col-0 ta_c img | td"></div>
-              <div className="col-6 m-col-4 xs-col-0 name | td"></div>
+              <div className="col-8 m-col-4 xs-col-0 name | td"></div>
               <div className="col-4 m-col-6 xs-col-4 ta_c price | td">
                 <div className="d_f jc_sb">
                   <div className="total-text">Итого:</div>

@@ -227,6 +227,7 @@ const SaleCarriage = () => {
             initialCount={12}
             initialCategory={initialCategory}
             dropdown={CARRIAGES}
+            nofilter={true}
           />
         </div>
 

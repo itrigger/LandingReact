@@ -201,7 +201,7 @@ const BuyCarriage = () => {
             <FormRequestFiles formc={"form2"} />
           </div>
         </div>
-        <div className="row service3 bl br middle-border-12">
+        <div className="row service3 bl br ">
           <div className="col-4 m-col-4 xs-col-0 spacer"></div>
           <div className="col-4 m-col-4 xs-col-0 spacer"></div>
           <div className="col-4 m-col-4 xs-col-0 spacer"></div>

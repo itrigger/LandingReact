@@ -95,7 +95,7 @@ const Rows = ({
                       <th className={"ta_c"}>Состояние</th>
                       <th className={"ta_c"}>Станция</th>
                       <th className={"ta_c"}>Дорога</th>
-                      <th className={"ta_c"}>Цена</th>
+                      <th className={"ta_c"}>Цена с НДС</th>
                       <th className={"ta_c"}></th>
                     </tr>
                   ) : (
@@ -106,7 +106,7 @@ const Rows = ({
                       <th className={"ta_c"}>Г.в.</th>
                       <th className={"ta_c"}>Местонахождение</th>
                       <th className={"ta_c"}>Состояние</th>
-                      <th className={"ta_c"}>Цена</th>
+                      <th className={"ta_c"}>Цена с НДС</th>
                       <th className={"ta_c"}></th>
                     </tr>
                   )}

@@ -24,6 +24,8 @@ const RowsWrapper = ({
   selectedDD = [0],
   selectedDDJD = null,
   actived = false,
+  nofilter = false,
+  mini = false,
 }) => {
   let text = "";
   let text2 = "";
@@ -38,7 +40,7 @@ const RowsWrapper = ({
   const dispatch = useNotification();
 
   /*  console.log(selectedDDJD);
-  console.log(selectedDD);*/
+    console.log(selectedDD);*/
 
   useEffect(() => {
     if (initialCategory !== 1) {
@@ -167,66 +169,126 @@ const RowsWrapper = ({
 
   return (
     <div className="megamap rowswrapper">
-      <div className="form form-horizontal">
-        <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg">
-          <div className="col-12 m-col-12 xs-col-4">
-            <div
-              dangerouslySetInnerHTML={{ __html: text }}
-              className="head"
-            ></div>
-          </div>
-        </div>
+      {!nofilter ? (
         <div
-          className="row middle-border-12-light br-light bl-light middle-border-12-over-bg"
-          ref={myRef}
+          className={
+            mini ? "form form-horizontal only-fields" : "form form-horizontal"
+          }
         >
-          <div className="col-4 m-col-4 xs-col-4 | fh_l">
-            <select
-              className="form-control"
-              value={filterTypeArea !== null ? filterTypeArea.toString() : "-1"}
-              onChange={(e) => selectAreaHandler(e.target.value)}
-            >
-              <option value={"-1"} hidden disabled>
-                Выберите железную дорогу
-              </option>
-              <option value="0">Все железные дороги</option>
-              {JDS.map((item) => (
-                <option value={item.slug} key={item.slug}>
-                  {" "}
-                  {item.name}{" "}
-                </option>
-              ))}
-            </select>
+          <div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg only-fields-hidden">
+            <div className="col-12 m-col-12 xs-col-4">
+              <div
+                dangerouslySetInnerHTML={{ __html: text }}
+                className="head"
+              ></div>
+            </div>
           </div>
-          <div className="col-4 m-col-4 xs-col-4 | fh_c">
-            <select
-              className="form-control"
-              value={filterTypeCategory.toString()}
-              onChange={(e) => selectCategoryHandler(e.target.value)}
-            >
-              <option hidden disabled value="-1">
-                Выберите категорию
-              </option>
-              <option value="0">Все категории</option>
-              {dropdown
-                ? dropdown.map((item) => (
-                    <option value={item.id} key={item.id}>
-                      {item.name}
+          <div
+            className="row middle-border-12-light br-light bl-light middle-border-12-over-bg"
+            ref={myRef}
+          >
+            {mini ? (
+              <div className={"mini-filter"}>
+                <select
+                  className="form-control"
+                  value={
+                    filterTypeArea !== null ? filterTypeArea.toString() : "-1"
+                  }
+                  onChange={(e) => selectAreaHandler(e.target.value)}
+                >
+                  <option value={"-1"} hidden disabled>
+                    Выберите железную дорогу
+                  </option>
+                  <option value="0">Все железные дороги</option>
+                  {JDS.map((item) => (
+                    <option value={item.slug} key={item.slug}>
+                      {" "}
+                      {item.name}{" "}
                     </option>
-                  ))
-                : null}
-            </select>
-          </div>
-          <div className="col-4 m-col-4 xs-col-4 | fh_r">
-            <button
-              className="btn-classic form-control ld-ext-right"
-              onClick={(e) => filterClickHandler(e.target)}
-            >
-              <span dangerouslySetInnerHTML={{ __html: text2 }}></span>
-            </button>
+                  ))}
+                </select>
+              </div>
+            ) : (
+              <div className="col-4 m-col-4 xs-col-4 | fh_l">
+                <select
+                  className="form-control"
+                  value={
+                    filterTypeArea !== null ? filterTypeArea.toString() : "-1"
+                  }
+                  onChange={(e) => selectAreaHandler(e.target.value)}
+                >
+                  <option value={"-1"} hidden disabled>
+                    Выберите железную дорогу
+                  </option>
+                  <option value="0">Все железные дороги</option>
+                  {JDS.map((item) => (
+                    <option value={item.slug} key={item.slug}>
+                      {" "}
+                      {item.name}{" "}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+            {mini ? (
+              <div className={"mini-filter"}>
+                <select
+                  className="form-control"
+                  value={filterTypeCategory.toString()}
+                  onChange={(e) => selectCategoryHandler(e.target.value)}
+                >
+                  <option hidden disabled value="-1">
+                    Выберите категорию
+                  </option>
+                  <option value="0">Все категории</option>
+                  {dropdown
+                    ? dropdown.map((item) => (
+                        <option value={item.id} key={item.id}>
+                          {item.name}
+                        </option>
+                      ))
+                    : null}
+                </select>
+              </div>
+            ) : (
+              <div className="col-4 m-col-4 xs-col-4 | fh_c">
+                <select
+                  className="form-control"
+                  value={filterTypeCategory.toString()}
+                  onChange={(e) => selectCategoryHandler(e.target.value)}
+                >
+                  <option hidden disabled value="-1">
+                    Выберите категорию
+                  </option>
+                  <option value="0">Все категории</option>
+                  {dropdown
+                    ? dropdown.map((item) => (
+                        <option value={item.id} key={item.id}>
+                          {item.name}
+                        </option>
+                      ))
+                    : null}
+                </select>
+              </div>
+            )}
+
+            {mini ? (
+              <></>
+            ) : (
+              <div className="col-4 m-col-4 xs-col-4 | fh_r">
+                <button
+                  className="btn-classic form-control ld-ext-right"
+                  onClick={(e) => filterClickHandler(e.target)}
+                >
+                  <span dangerouslySetInnerHTML={{ __html: text2 }}></span>
+                </button>
+              </div>
+            )}
           </div>
         </div>
-      </div>
+      ) : (
+        <></>
+      )}
 
       <div className="map_result ">
         {data && data.products ? (

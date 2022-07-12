@@ -67,11 +67,11 @@ const ReviewHome = () => {
                 ))
               : ""}
           </ul>
-          <div className="ta_c">
+          {/* <div className="ta_c">
             <Link className="btn yellow" to="/testimonials">
               <span>Все отзывы</span>
             </Link>
-          </div>
+          </div>*/}
         </div>
       </div>
     </div>

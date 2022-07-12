@@ -107,14 +107,6 @@ export default function Header() {
                         Вагоны в разделку (в лом)
                       </AnchorLink>
                     </li>
-                    {/*                <li>
-                      <AnchorLink
-                        to="/buy-carriage#vrazdelku"
-                        title="Вагоны в разделку"
-                      >
-                        Вагоны в разделку
-                      </AnchorLink>
-                    </li>*/}
                     <li>
                       <AnchorLink
                         to="/buy-carriage#vrazdelku"
@@ -144,7 +136,15 @@ export default function Header() {
             </ul>
           </div>
           <div className="d_f col-1 m-col-0 xs-col-0 | h90">
-            <Link className="top-cart-link" to="/cart" activeClassName="active">
+            <Link
+              className={
+                value && value[0] && value[0].length > 0
+                  ? "top-cart-link active"
+                  : "top-cart-link"
+              }
+              to="/cart"
+              activeClassName="active"
+            >
               Ваш заказ (
               <span>{value && value[0] ? value[0].length : "0"}</span>)
             </Link>

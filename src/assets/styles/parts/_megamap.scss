@@ -165,18 +165,14 @@
 	}
 	.name-w{
 		padding-left: 10px;
-
 	}
 	.name{
-		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-family: "TTNorms-Regular", sans-serif;
 		font-style: normal;
-		text-transform: uppercase;
-		font-size: 14px;
 		line-height: 1.4;
 		margin-bottom: 5px;
 	}
 	.description{
-
 		line-height: 1.4;
 		p{
 			font-size: inherit;
@@ -186,7 +182,7 @@
 
 	.price_block{
 		.price{
-			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-family: "TTNorms-Medium", sans-serif;
 			font-style: normal;
 			text-transform: uppercase;
 			font-size: 18px;
@@ -242,6 +238,16 @@
 	}
 	.year{
 		min-width: 110px;
+	}
+	.description{
+		p{
+			font-size: inherit;
+			margin-bottom: 0;
+		}
+	}
+	.price{
+		font-family: "TTNorms-Medium", sans-serif;
+		white-space: nowrap;
 	}
 }
 

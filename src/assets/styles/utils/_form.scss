@@ -76,6 +76,34 @@ select{
 	}
 }
 
+.megamap .form.only-fields{
+	background: transparent;
+
+}
+.megamap .form.only-fields .row:last-child{
+	padding-bottom: 0;
+}
+
+.only-fields{
+	padding-top: 20px;
+	.only-fields-hidden{
+		display: none;
+	}
+	.fh_r{
+		display: none;
+	}
+}
+
+.mini-filter{
+	width: 300px;
+	select{
+		border: 1px solid #E6E6E6;
+		height: 40px;
+		font-size: 14px;
+		background-position-y: 12px;
+	}
+}
+
 .fh_l{
 
 }

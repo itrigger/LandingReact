@@ -74,10 +74,15 @@ const Footer = () => {
                 </AnchorLink>
               </li>
               <li>
-                <Link to="/sale-carriage">Продажа б/у вагонов</Link>
+                <AnchorLink
+                  to="/buy-carriage#vrazdelku"
+                  title="Вагоны на металлолом"
+                >
+                  Вагоны в разделку
+                </AnchorLink>
               </li>
               <li>
-                <Link to="/buy-carriage">Покупка б/у вагонов</Link>
+                <Link to="/sale-carriage">Продажа б/у вагонов</Link>
               </li>
               <li>
                 <Link to="/sale-parts">Продажа запчастей</Link>
@@ -96,7 +101,7 @@ const Footer = () => {
               </button>
             </div>
             <div className="foot-address">{address}</div>
-            <div className="foot-version">Версия 1.8</div>
+            <div className="foot-version">Версия 1.9</div>
           </div>
         </div>
       </div>

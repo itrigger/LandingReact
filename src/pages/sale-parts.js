@@ -31,7 +31,7 @@ const SaleParts = ({ location }) => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Продажа запасный частей | Вагон Трейд - Покупка и продажа вагонов.
+          Продажа запасных частей | Вагон Трейд - Покупка и продажа вагонов.
           Аренда. Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
@@ -91,6 +91,8 @@ const SaleParts = ({ location }) => {
           selectedDD={selectedDD}
           selectedDDJD={selectedDDJD}
           actived={actived}
+          nofilter={false}
+          mini={true}
         />
 
         <div className="promo slide1">

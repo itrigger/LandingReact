@@ -57,10 +57,7 @@ const CartRow = ({
     <>
       {isDesktop ? (
         <div className="row | table-cart">
-          <div className="col-2 m-col-2 ta_c img | td">
-            <img srcSet={data.image ? data.image : ""} alt={data.name} />
-          </div>
-          <div className="col-6 m-col-4 name | td">
+          <div className="col-8 m-col-4 name | td">
             {data.name}
             <div className="description d_f">
               {data.year ? <div>Год выпуска: {data.year}</div> : ""}
@@ -112,10 +109,9 @@ const CartRow = ({
         </div>
       ) : (
         <div className="row | table-cart table-cart-mobile">
-          <div className="xs-col-2 img | td">
-            <img srcSet={data.image ? data.image : ""} alt={data.name} />
-          </div>
-          <div className="xs-col-2  del | td">
+          <div className="xs-col-4 name | td">
+            <div className="th">Наименование</div>
+            {data.name}
             <button
               className="d_f jc_end delete-row"
               aria-label="Delete row"
@@ -123,10 +119,6 @@ const CartRow = ({
             >
               <span className="ico ico-del-cart"></span>
             </button>
-          </div>
-          <div className="xs-col-4 name | td">
-            <div className="th">Наименование</div>
-            {data.name}
           </div>
           <div className="xs-col-4  price | td">
             <div className="th">Цена</div>
