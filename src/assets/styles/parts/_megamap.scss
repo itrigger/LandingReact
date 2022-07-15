@@ -4,6 +4,7 @@
 		background: #373947;
 		position: relative;
 		z-index: 3;
+
 		.head{
 			font-family: "TTFirsNeue-Medium",sans-serif;
 			font-style: normal;
@@ -11,11 +12,15 @@
 			font-size: 36px;
 			line-height: 1.4;
 			text-transform: uppercase;
-			margin-bottom: 30px;
-			padding-top: 60px;
+
+			margin-right: 20px;
+
+		}
+		.mini_filter_w{
+			margin-top: 20px;
 		}
 		.row:last-child{
-			padding-bottom: 65px;
+
 		}
 /*		.btn-classic{
 			width: 100%;
@@ -43,7 +48,10 @@
 		line-height: 1.4;
 	}
 }
-
+.mini_filter_w{
+	align-items: center;
+	padding-bottom: 20px;
+}
 .map{
 	margin-top: -240px;
 	background: #EBF2FF;
@@ -403,8 +411,8 @@
 
 	.megamap .form .head{
 		font-size: 32px;
-		padding-top: 50px;
-		margin-bottom: 17px;
+
+		margin-bottom: 0;
 	}
 	.megamap .title{
 		top: 370px;
@@ -467,6 +475,7 @@
 	.megamap{
 		.form{
 			padding-bottom: 0;
+			padding-top: 0;
 		}
 		.form .head{
 			flex-direction: column;
@@ -479,6 +488,11 @@
 		}
 		.head{
 			font-size: 36px;
+		}
+		.mini_filter_w{
+			&>div{
+				width: 100%;
+			}
 		}
 	}
 	.fh_r button{
@@ -536,5 +550,8 @@
 			border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 			line-height: 1;
 		}
+	}
+	.only-fields + .map_result .row:first-child{
+		padding-top: 10px;
 	}
 }

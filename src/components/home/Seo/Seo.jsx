@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SeoImg from "../../../assets/img/boss.png";
+import SeoImg2 from "../../../assets/img/boss2.png";
+import SeoImg3 from "../../../assets/img/boss3.png";
 import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../../apollo/queries";
 
@@ -21,7 +23,49 @@ const Seo = () => {
   return (
     <div className="homeseo">
       <div className="row">
-        <div className="col-8 m-col-8 xs-col-4 | left">
+        <div className="col-12 m-col-12 xs-col-4 bl br bt | left">
+          <div className="head">
+            <span className="italic">Наши</span> менеджеры
+          </div>
+        </div>
+        <div className="col-12 m-col-12 xs-col-4 d_f br bl | right">
+          <div className="d_f fd_c ai_c jc_c">
+            <img src={SeoImg} width="262" height="262" alt="директор" />
+            <div className="title">Менеджер по продажам вагонов</div>
+            <div className="name">Ясинский Александр</div>
+            <button onClick={() => clickHandler()} className="btn-wt-green">
+              <span className="ico ico-left ico-wt-white"></span>
+              Написать в WhatsApp
+            </button>
+          </div>
+          <div className="d_f fd_c ai_c jc_c">
+            <img src={SeoImg2} width="262" height="262" alt="директор" />
+            <div className="title">Менеджер по продажам запчастей</div>
+            <div className="name">Овчинников Михаил</div>
+            <a
+              href={"https://wa.me/79636064252"}
+              target={"_blank"}
+              className="btn-wt-green"
+            >
+              <span className="ico ico-left ico-wt-white"></span>
+              Написать в WhatsApp
+            </a>
+          </div>
+          <div className="d_f fd_c ai_c jc_c">
+            <img src={SeoImg3} width="262" height="262" alt="директор" />
+            <div className="title">Менеджер по продажам вагонов</div>
+            <div className="name">Омаров Азамат</div>
+            <a
+              href={"https://wa.me/79293644312"}
+              target={"_blank"}
+              className="btn-wt-green"
+            >
+              <span className="ico ico-left ico-wt-white"></span>
+              Написать в WhatsApp
+            </a>
+          </div>
+        </div>
+        <div className="col-12 m-col-12 xs-col-4 | left">
           <div className="head">
             <span className="italic">Продажа</span> вагонов
           </div>
@@ -52,17 +96,6 @@ const Seo = () => {
               в данный момент, то Вы узнаете первым о его появлении, или же мы
               предложим альтернативный вариант.
             </p>
-          </div>
-        </div>
-        <div className="col-4 m-col-4 xs-col-4 | right">
-          <div className="d_f fd_c ai_c jc_c">
-            <img src={SeoImg} width="262" height="262" alt="директор" />
-            <div className="title">Директор</div>
-            <div className="name">Иван Абрамов</div>
-            <button onClick={() => clickHandler()} className="btn-wt-green">
-              <span className="ico ico-left ico-wt-white"></span>
-              Написать в WhatsApp
-            </button>
           </div>
         </div>
       </div>

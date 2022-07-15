@@ -11,6 +11,7 @@ import Lytebox from "../Lytebox/Lytebox";
 export default function Header() {
   const [tel, setTel] = useState("");
   const [telCall, setTelCall] = useState("");
+  const [telega, setTelega] = useState("");
   const [menuActive, setMenuActive] = useState("");
   const [subMenuActive, setSubMenuActive] = useState("");
   const [slide, setSlide] = useState(false);
@@ -47,6 +48,7 @@ export default function Header() {
       setTel(data.posts.nodes[0].acfcontent.telFront);
       setTelCall(data.posts.nodes[0].acfcontent.telCall);
       setTelWt(data.posts.nodes[0].acfcontent.telWt);
+      setTelega(data.posts.nodes[0].acfcontent.telega);
     }
   }, [data]);
 
@@ -137,21 +139,19 @@ export default function Header() {
           </div>
           <div className="d_f col-1 m-col-0 xs-col-0 | h90">
             <Link
-              className={
-                value && value[0] && value[0].length > 0
-                  ? "top-cart-link active"
-                  : "top-cart-link"
-              }
               to="/cart"
+              className={"top-cart-link"}
               activeClassName="active"
             >
-              Ваш заказ (
-              <span>{value && value[0] ? value[0].length : "0"}</span>)
+              Ваш заказ
+              {value && value[0] && value[0].length > 0 ? (
+                <span className={"active"}>{value[0].length}</span>
+              ) : null}
             </Link>
           </div>
           <div className="d_f col-3 m-col-0 xs-col-0 | h90">
             <div className="d_f ai_c | top-contacts">
-              <a href="/tg">
+              <a href={telega} target="_blank">
                 <span className="ico ico-tg"></span>
               </a>
               <button onClick={() => wtClickHandler()}>
@@ -209,8 +209,10 @@ export default function Header() {
                 to="/cart"
                 activeClassName="active"
               >
-                Ваш заказ (
-                <span>{value && value[0] ? value[0].length : "0"}</span>)
+                Ваш заказ{" "}
+                {value && value[0] && value[0].length > 0 ? (
+                  <span className={"active"}>{value[0].length}</span>
+                ) : null}
               </Link>
             </div>
             <div className="d_f mobile-menu-contacts">

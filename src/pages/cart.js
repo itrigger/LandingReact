@@ -119,26 +119,9 @@ const Cart = () => {
           части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
+        <link rel="icon" href="/icons/icon.svg" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#F5DF4D" />
-        <meta name="msapplication-TileColor" content="#F5DF4D" />
         <meta name="theme-color" content="#F5DF4D" />
       </Helmet>
 
@@ -219,8 +202,8 @@ const Cart = () => {
               <div className="col-4 m-col-4 xs-col-4 bg-dark bl-light">
                 <div className="d_f fd_c ai_c jc_c | boss">
                   <img src={BossImg} width="262" height="262" alt="директор" />
-                  <div className="title">Консультант</div>
-                  <div className="name">Иван Абрамов</div>
+                  <div className="title">Менеджер</div>
+                  <div className="name">Ясинский Александр</div>
                   <div className="text">
                     Мы вам перезвоним через 15 минут{" "}
                     <span>для подтверждения заказа</span>

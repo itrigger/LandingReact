@@ -30,13 +30,12 @@
 		border-top: 1px solid rgba(230, 230, 230, 0.5);
 		border-left: 1px solid rgba(230, 230, 230, 0.5);
 		border-right: 1px solid rgba(230, 230, 230, 0.5);
-		padding: 100px 30px 30px;
+		padding: 30px 30px 30px;
 	}
 	.right{
-		border-top: 1px solid rgba(230, 230, 230, 0.5);
-		border-right: 1px solid rgba(230, 230, 230, 0.5);
-		padding-top: 100px;
+		padding-top: 0;
 		padding-bottom: 60px;
+		justify-content: space-around;
 	}
 	.title{
 		margin-top: 30px;
@@ -87,7 +86,7 @@
 		padding-left: 20px;
 	}
 	.homeseo .right{
-		padding-top: 90px;
+		padding-top: 0px;
 		img{
 			width: 230px;
 			height: auto;
@@ -115,6 +114,12 @@
 		margin-top: 0;
 		padding-top: 10px;
 		padding-bottom: 50px;
+	}
+	.homeseo .right{
+		flex-direction: column;
+		&>div{
+			margin-bottom: 50px;
+		}
 	}
 }
 
