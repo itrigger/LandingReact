@@ -35,35 +35,35 @@ const PopupItem = ({ name, showBtnHandler, slug, code, city }) => {
 
   if (error) console.log(error);
   return (
-    <div className={"search_item"}>
-      <div className="code">КОД {code}</div>
-      <div className="name">{name}</div>
-      {/*<div className="city">ТУ в {city}</div>*/}
-      <div className="res_head">Найдено на всех станциях</div>
-      {PARTS.map((item, i) => (
-        <PopupItemCat key={i} id={item.id} slug={slug} name={item.name} />
-      ))}
-      {data?.products ? (
-        data.products.pageInfo.total > 0 ? (
-          <button
-            className="btn-classic btn-mini"
-            onClick={() => showBtnHandler(slug)}
-          >
-            <span>Показать</span>
-          </button>
+      <div className={"search_item"}>
+        <div className="code">КОД {code}</div>
+        <div className="name">{name}</div>
+        {/*<div className="city">ТУ в {city}</div>*/}
+        <div className="res_head">Найдено на всех станциях</div>
+        {PARTS.map((item, i) => (
+            <PopupItemCat key={i} id={item.id} slug={slug} name={item.name} />
+        ))}
+        {data?.products ? (
+            data.products.pageInfo.total > 0 ? (
+                <button
+                    className="btn-classic btn-mini"
+                    onClick={() => showBtnHandler(slug)}
+                >
+                  <span>Показать</span>
+                </button>
+            ) : (
+                <button
+                    onClick={() => clickHandler()}
+                    className="btn-wt-green btn-mini"
+                >
+                  <span className="ico ico-left ico-wt-white"></span>
+                  Запросить у менеджера
+                </button>
+            )
         ) : (
-          <button
-            onClick={() => clickHandler()}
-            className="btn-wt-green btn-mini"
-          >
-            <span className="ico ico-left ico-wt-white"></span>
-            Запросить у менеджера
-          </button>
-        )
-      ) : (
-        ""
-      )}
-    </div>
+            ""
+        )}
+      </div>
   );
 };
 

@@ -7,7 +7,7 @@ import Ico4 from "../../../assets/img/step4.svg";
 const Prems = () => {
   return (
     <div>
-      <div className="row service3 bl br ">
+      <div className="row service3 bl br middle-border-12">
         <div className="col-12 m-col-12 xs-col-4">
           <div className="head2">
             <div className="italic">Процедура</div>
