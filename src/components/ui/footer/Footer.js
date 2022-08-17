@@ -101,7 +101,7 @@ const Footer = () => {
               </button>
             </div>
             <div className="foot-address">{address}</div>
-            <div className="foot-version">Версия 1.9</div>
+            <div className="foot-version">Версия 1.13</div>
           </div>
         </div>
       </div>

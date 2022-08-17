@@ -287,7 +287,7 @@
 		font-size: 16px;
 		text-transform: uppercase;
 		font-family: 'TTFirsNeue-DemiBold',sans-serif;
-		margin-bottom: 5px;
+		margin-bottom: 25px;
 		padding-right: 10px;
 		white-space: nowrap;
 	}
@@ -462,6 +462,17 @@
 }
 
 @media (max-width: 1023px) {
+	.twocol{
+		display: flex;
+		align-items: center;
+		.width50{
+			flex: 0 0 50%;
+		}
+	}
+	.price_block{
+		display: flex;
+		padding-top: 10px !important;
+	}
 	.homemap .mapwrapper{
 		display: none;
 	}

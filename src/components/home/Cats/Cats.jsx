@@ -21,7 +21,7 @@ const Cats = () => {
               <img src={Cat1} width="281px" height="185px" alt="" />
             </div>
             <div className="name ta_c">Колесные пары</div>
-            <div className="price ta_c">от 150 000 ₽</div>
+            <div className="price ta_c">от 140 000 ₽</div>
             <div className="ta_c">
               <Link
                 to={"/sale-parts"}
@@ -38,8 +38,8 @@ const Cats = () => {
             <div className="img ta_c">
               <img src={Cat2} width="318px" height="159px" alt="" />
             </div>
-            <div className="name ta_c">Боковые опоры</div>
-            <div className="price ta_c">от 150.000₽</div>
+            <div className="name ta_c">Боковые рамы</div>
+            <div className="price ta_c">от 35.000₽</div>
             <div className="ta_c">
               <Link
                 to={"/sale-parts"}
@@ -57,7 +57,7 @@ const Cats = () => {
               <img src={Cat3} width="396px" height="125px" alt="" />
             </div>
             <div className="name ta_c">Надрессорные балки</div>
-            <div className="price ta_c">от 150.000₽</div>
+            <div className="price ta_c">от 30.000₽</div>
             <div className="ta_c">
               <Link
                 to={"/sale-parts"}

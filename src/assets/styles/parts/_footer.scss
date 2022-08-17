@@ -7,6 +7,7 @@
 .footer {
 	color: #fff;
 	position: relative;
+	font-family: "TTFirsNeue-Regular",sans-serif;
 	.line1{
 		background: #373947;
 		.col1{
@@ -38,6 +39,7 @@
 			.disclaimer{
 				margin-top: 15px;
 				font-size: 14px;
+				line-height: 1.4;
 				color: rgba(#fff, .5);
 				a{
 					color: inherit;
@@ -60,7 +62,7 @@
 			padding-top: 55px;
 			padding-left: 30px;
 			border-left: 1px solid rgba(#fff, .1);
-			padding-bottom: 274px;
+			padding-bottom: 354px;
 			.foot-text{
 				margin-top: 27px;
 				font-size: 16px;
@@ -71,8 +73,8 @@
 				}
 			}
 			.foot-policy{
-				margin-top: 113px;
-				font-size: 24px;
+				margin-top: 40px;
+				font-size: 16px;
 				a{
 					color: rgba(#fff, .5);
 					text-decoration: none;
@@ -88,7 +90,7 @@
 			padding-top: 55px;
 			ul{
 				li{
-					margin-bottom: 25px;
+					margin-bottom: 15px;
 					a, button{
 						color: #fff;
 						text-decoration: none;
@@ -107,7 +109,7 @@
 			}
 			.phone{
 				text-transform: uppercase;
-				font-size: 41px;
+				font-size: 30px;
 				line-height: 1.5;
 				font-family: "TTFirsNeue-Medium",sans-serif;
 			}
@@ -116,9 +118,9 @@
 				color: #fff;
 			}
 			.foot-address{
-				color: rgba(#fff, .5);
+				color: rgba(#fff, 1);
 				font-size: 24px;
-				margin-top: 35px;
+				margin-top: 25px;
 				font-family: "TTFirsNeue-Medium",sans-serif;
 				line-height: 1.4;
 			}
@@ -130,7 +132,13 @@
 				line-height: 1.5;
 				color: rgba(#fff, .5);
 				font-family: "TTFirsNeue-Regular",sans-serif;
-				margin-bottom: 66px;
+				margin-bottom: 50px;
+				margin-top: 15px;
+			}
+		}
+		.col3 {
+			.head {
+				margin-bottom: 35px;
 			}
 		}
 	}
@@ -156,7 +164,7 @@
 
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.footer .line2 .col3 .phone{
-		font-size: 32px;
+		font-size: 30px;
 	}
 	.footer .line1 .col2{
 		padding-left: 73px;
@@ -175,7 +183,7 @@
 		margin-top: 14px;
 	}
 	.footer .line2 .col1 .foot-text{
-		font-size: 14px;
+		font-size: 16px;
 		padding-right: 10px;
 	}
 	.footer .line1 .col3{
@@ -185,18 +193,23 @@
 		padding-left: 76px;
 	}
 	.footer .line2 .col1 .foot-policy{
-		font-size: 22px;
-		margin-top: 73px;
+		font-size: 16px;
+		margin-top: 38px;
 	}
 	.footer .line2 .col2 ul li a, .footer .line2 .col2 ul li button{
-		font-size: 23px;
+		font-size: 24px;
 	}
 	.footer .line2 .col2 .head, .footer .line2 .col3 .head{
-		font-size: 25px;
-		margin-bottom: 50px;
+		margin-top: 10px;
+		font-size: 30px;
+		margin-bottom: 43px;
+	}
+	.footer .line2 .col2 ul li{
+		margin-bottom: 15px;
 	}
 	.footer .line2 .col3 .btn-wt{
 		margin-top: 12px;
+		font-size: 18px;
 	}
 	.footer .line1 .col1{
 		padding-top: 170px;
@@ -228,7 +241,11 @@
 		background-size: contain;
 	}
 	.footer .line2 .col3 .foot-address{
-		font-size: 20px;
+		font-size: 24px;
+		color: #fff;
+	}
+	.footer .line2 .col3 .head{
+		margin-bottom: 30px;
 	}
 }
 

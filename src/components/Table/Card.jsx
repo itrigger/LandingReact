@@ -162,54 +162,56 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
             ></div>
           </td>
 
-          <td className="| price_block">
-            <div className="price">
-              {data.price
-                ? data.price !== "999 999₽"
-                  ? data.price
-                  : "Договорная"
-                : "---"}
+          <td className="| price_block twocol">
+            <div className="width50">
+              <div className="price">
+                {data.price
+                  ? data.price !== "999 999₽"
+                    ? data.price
+                    : "Договорная"
+                  : "---"}
+              </div>
             </div>
-          </td>
-          <td>
-            <div className="btn-w">
-              {data.price && data.price === "999 999₽" ? (
-                <button
-                  className={"btn-wt-green"}
-                  onClick={() => wtClickHandler()}
-                >
-                  <span className="ico ico-left ico-wt-white"></span>Уточнить
-                </button>
-              ) : (
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: data.id,
-                      price: data.price,
-                      name: data.name,
-                      image: data.image.srcSet,
-                      stock: data.stockQuantity,
-                      year: data.productsKP.godVypuska
-                        ? data.productsKP.godVypuska
-                        : null,
-                      location: data.productsKP.mestonahozhdenie
-                        ? data.productsKP.mestonahozhdenie
-                        : null,
-                    })
-                  }
-                  className={
-                    cartItems.find((x) => x.id === data.id)
-                      ? "btn-classic active"
-                      : "btn-classic"
-                  }
-                >
-                  <span>
-                    {cartItems.find((x) => x.id === data.id)
-                      ? "Уже в заказе"
-                      : "Заказать"}
-                  </span>
-                </button>
-              )}
+            <div className="width50">
+              <div className="btn-w">
+                {data.price && data.price === "999 999₽" ? (
+                  <button
+                    className={"btn-wt-green"}
+                    onClick={() => wtClickHandler()}
+                  >
+                    <span className="ico ico-left ico-wt-white"></span>Уточнить
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      addToCart({
+                        id: data.id,
+                        price: data.price,
+                        name: data.name,
+                        image: data.image.srcSet,
+                        stock: data.stockQuantity,
+                        year: data.productsKP.godVypuska
+                          ? data.productsKP.godVypuska
+                          : null,
+                        location: data.productsKP.mestonahozhdenie
+                          ? data.productsKP.mestonahozhdenie
+                          : null,
+                      })
+                    }
+                    className={
+                      cartItems.find((x) => x.id === data.id)
+                        ? "btn-classic active"
+                        : "btn-classic"
+                    }
+                  >
+                    <span>
+                      {cartItems.find((x) => x.id === data.id)
+                        ? "Уже в заказе"
+                        : "Заказать"}
+                    </span>
+                  </button>
+                )}
+              </div>
             </div>
           </td>
         </tr>

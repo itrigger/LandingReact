@@ -38,7 +38,7 @@ const PopupItem = ({ name, showBtnHandler, slug, code, city }) => {
     <div className={"search_item"}>
       <div className="code">КОД {code}</div>
       <div className="name">{name}</div>
-      <div className="city">ТУ в {city}</div>
+      {/*<div className="city">ТУ в {city}</div>*/}
       <div className="res_head">Найдено на всех станциях</div>
       {PARTS.map((item, i) => (
         <PopupItemCat key={i} id={item.id} slug={slug} name={item.name} />

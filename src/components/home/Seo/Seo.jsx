@@ -33,10 +33,14 @@ const Seo = () => {
             <img src={SeoImg} width="262" height="262" alt="директор" />
             <div className="title">Менеджер по продажам вагонов</div>
             <div className="name">Ясинский Александр</div>
-            <button onClick={() => clickHandler()} className="btn-wt-green">
+            <a
+              href={"https://wa.me/89236711483"}
+              target={"_blank"}
+              className="btn-wt-green"
+            >
               <span className="ico ico-left ico-wt-white"></span>
               Написать в WhatsApp
-            </button>
+            </a>
           </div>
           <div className="d_f fd_c ai_c jc_c">
             <img src={SeoImg2} width="262" height="262" alt="директор" />
@@ -53,7 +57,7 @@ const Seo = () => {
           </div>
           <div className="d_f fd_c ai_c jc_c">
             <img src={SeoImg3} width="262" height="262" alt="директор" />
-            <div className="title">Менеджер по продажам вагонов</div>
+            <div className="title">Руководитель отдела по продажам вагонов</div>
             <div className="name">Омаров Азамат</div>
             <a
               href={"https://wa.me/79293644312"}

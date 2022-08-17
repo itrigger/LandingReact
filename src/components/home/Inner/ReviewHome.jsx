@@ -3,6 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_TESTIMONIALS } from "../../../apollo/queries";
 import Lytebox from "../../ui/Lytebox/Lytebox";
 import { Link } from "gatsby";
+import Spinner from "../../../assets/img/spinner.svg";
 
 const ReviewHome = () => {
   const [curImg, setCurImg] = useState("");
@@ -47,6 +48,15 @@ const ReviewHome = () => {
         </div>
         <div className="col-12 m-col-12 xs-col-4">
           <ul className="testimonials-ul">
+            {!data ? (
+              <div className="row br bl middle-border-12">
+                <div className="col-12 m-col-12 xs-col-4">
+                  <div className="ta_c | mr-title">
+                    <img src={Spinner} alt="loader" />
+                  </div>
+                </div>
+              </div>
+            ) : null}
             {loading
               ? "загрузка отзывов"
               : data

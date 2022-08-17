@@ -117,11 +117,20 @@ const Row = ({ data, addToCart }) => {
             <div className="name">{data.name}</div>
           </td>
           {data.productsKP.godVypuska ? (
-            <td className="">
-              <div className="card-title">Год выпуска</div>
-              {data.productsKP.godVypuska}
+            <td className="twocol">
+              <div className="width50">
+                <div className="card-title">Год выпуска</div>
+                {data.productsKP.godVypuska}
+              </div>
+              {data.productTags ? (
+                <div className="width50">
+                  <div className="card-title">Дорога</div>
+                  <div className="right">{data.productTags.nodes[0].name}</div>
+                </div>
+              ) : null}
             </td>
           ) : null}
+
           {data.productsKP.tolshhinaOboda ? (
             <td>
               <div className="card-title">Толщина обода</div>
@@ -148,51 +157,48 @@ const Row = ({ data, addToCart }) => {
               <div className="right">{data.productsKP.mestonahozhdenie}</div>
             </td>
           ) : null}
-          {data.productTags ? (
-            <td className="">
-              <div className="card-title">Дорога</div>
-              <div className="right">{data.productTags.nodes[0].name}</div>
-            </td>
-          ) : null}
-          <td className=" price_block ">
-            <div className="price">{data.price ? data.price : "---"}</div>
-          </td>
-          <td>
-            <div className="btn-w">
-              <button
-                onClick={() =>
-                  addToCart({
-                    id: data.id,
-                    price: data.price,
-                    name: data.name,
-                    image: data.image.srcSet,
-                    stock: data.stockQuantity,
-                    year: data.productsKP.godVypuska
-                      ? data.productsKP.godVypuska
-                      : null,
-                    location: data.productsKP.mestonahozhdenie
-                      ? data.productsKP.mestonahozhdenie
-                      : null,
-                    telezhka: data.productsKP.telezhka
-                      ? data.productsKP.telezhka
-                      : null,
-                    tolshhinaOboda: data.productsKP.tolshhinaOboda
-                      ? data.productsKP.tolshhinaOboda
-                      : null,
-                  })
-                }
-                className={
-                  cartItems.find((x) => x.id === data.id)
-                    ? "btn-classic active"
-                    : "btn-classic"
-                }
-              >
-                <span>
-                  {cartItems.find((x) => x.id === data.id)
-                    ? "В корзине"
-                    : "Заказать"}
-                </span>
-              </button>
+
+          <td className=" price_block twocol">
+            <div className="width50">
+              <div className="price">{data.price ? data.price : "---"}</div>
+            </div>
+            <div className="width50">
+              <div className="btn-w">
+                <button
+                  onClick={() =>
+                    addToCart({
+                      id: data.id,
+                      price: data.price,
+                      name: data.name,
+                      image: data.image.srcSet,
+                      stock: data.stockQuantity,
+                      year: data.productsKP.godVypuska
+                        ? data.productsKP.godVypuska
+                        : null,
+                      location: data.productsKP.mestonahozhdenie
+                        ? data.productsKP.mestonahozhdenie
+                        : null,
+                      telezhka: data.productsKP.telezhka
+                        ? data.productsKP.telezhka
+                        : null,
+                      tolshhinaOboda: data.productsKP.tolshhinaOboda
+                        ? data.productsKP.tolshhinaOboda
+                        : null,
+                    })
+                  }
+                  className={
+                    cartItems.find((x) => x.id === data.id)
+                      ? "btn-classic active"
+                      : "btn-classic"
+                  }
+                >
+                  <span>
+                    {cartItems.find((x) => x.id === data.id)
+                      ? "В корзине"
+                      : "Заказать"}
+                  </span>
+                </button>
+              </div>
             </div>
           </td>
         </tr>

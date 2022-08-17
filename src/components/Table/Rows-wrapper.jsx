@@ -4,7 +4,7 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import { useApolloClient, useLazyQuery } from "@apollo/client";
 import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
-import Map, { MemoizedMap } from "../home/Map/Map";
+import Spinner from "../../assets/img/spinner.svg";
 import { CARRIAGES_IDS, JDS, PARTS_IDS } from "../../utility/constants";
 import { CartContext } from "../../context/CartContext";
 import RowSkeleton from "./RowSkeleton";
@@ -39,9 +39,6 @@ const RowsWrapper = ({
   const [cartItems, setCartItems] = useContext(CartContext);
 
   const dispatch = useNotification();
-
-  /*  console.log(selectedDDJD);
-    console.log(selectedDD);*/
 
   useEffect(() => {
     if (initialCategory !== 1) {
@@ -172,26 +169,6 @@ const RowsWrapper = ({
     <div className="megamap rowswrapper">
       {!nofilter ? (
         <div className={mini ? "form form-horizontal" : "form form-horizontal"}>
-          {/*<div className="row middle-border-12-light br-light bl-light middle-border-12-over-bg only-fields-hidden">
-            <div className="col-12 m-col-12 xs-col-4">
-              <div
-                dangerouslySetInnerHTML={{ __html: text }}
-                className="head"
-              ></div>
-            </div>
-          </div>*/}
-          {/*<div className="row ">
-            <div className="col-12 m-col-12 xs-col-4">
-              <div className="ta_c | mr-title">
-                <div className="head" style={{ color: "black" }}>
-                  <span className="italic">
-                    {type === 1 ? "запчасти" : "вагоны"}
-                  </span>{" "}
-                  в наличии
-                </div>
-              </div>
-            </div>
-          </div>*/}
           <div
             className="row middle-border-12-light br-light bl-light middle-border-12-over-bg"
             ref={myRef}
@@ -309,6 +286,15 @@ const RowsWrapper = ({
       )}
 
       <div className="map_result ">
+        {!data && !loading ? (
+          <div className="row br bl middle-border-12">
+            <div className="col-12 m-col-12 xs-col-4">
+              <div className="ta_c | mr-title">
+                <img src={Spinner} alt="loader" />
+              </div>
+            </div>
+          </div>
+        ) : null}
         {data && data.products ? (
           <Rows
             error={error}
@@ -342,10 +328,15 @@ const RowsWrapper = ({
                   </div>
                 </div>
               </div>
-
-              {Array.apply(0, Array(count)).map(function (x, i) {
-                return <RowSkeleton key={i} />;
-              })}
+              <div className="row">
+                <div className="col-12 s-col-12 xs-col-4">
+                  <table className={"result-table"}>
+                    {Array.apply(0, Array(count)).map(function (x, i) {
+                      return <RowSkeleton key={i} />;
+                    })}
+                  </table>
+                </div>
+              </div>
             </div>
           </>
         ) : (

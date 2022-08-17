@@ -34,6 +34,9 @@ export default function Header() {
   const wtClickHandler = () => {
     window.open("https://wa.me/" + telWt);
   };
+  const tgClickHandler = () => {
+    window.open(telega);
+  };
 
   const slideClickHandler = () => {
     setSlide(true);
@@ -137,10 +140,14 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <div className="d_f col-1 m-col-0 xs-col-0 | h90">
+          <div className="d_f col-1 m-col-0 xs-col-0 | h90 | top-cart-link-w">
             <Link
               to="/cart"
-              className={"top-cart-link"}
+              className={
+                value && value[0] && value[0].length > 0
+                  ? "top-cart-link notempty"
+                  : "top-cart-link"
+              }
               activeClassName="active"
             >
               Ваш заказ
@@ -151,9 +158,9 @@ export default function Header() {
           </div>
           <div className="d_f col-3 m-col-0 xs-col-0 | h90">
             <div className="d_f ai_c | top-contacts">
-              <a href={telega} target="_blank">
+              <button onClick={() => tgClickHandler()}>
                 <span className="ico ico-tg"></span>
-              </a>
+              </button>
               <button onClick={() => wtClickHandler()}>
                 <span className="ico ico-wt"></span>
               </button>
@@ -218,12 +225,12 @@ export default function Header() {
             <div className="d_f mobile-menu-contacts">
               <div className="d_f fd_c ai_c | top-contacts">
                 <div className={"d_f"}>
-                  <a href="/tg">
+                  <button onClick={() => tgClickHandler()}>
                     <span className="ico ico-tg"></span>
-                  </a>
-                  <a href="/wt">
+                  </button>
+                  <button onClick={() => wtClickHandler()}>
                     <span className="ico ico-wt"></span>
-                  </a>
+                  </button>
                 </div>
                 <div className="mobile-menu-contacts__tel">
                   <a href={"tel:" + telCall}>{tel}</a>
