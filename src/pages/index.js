@@ -10,6 +10,7 @@ import { PARTS } from "../utility/constants";
 import { MemoizedMap } from "../components/home/Map/Map";
 import Prems3 from "../components/home/Inner/Prems3";
 import ReviewHome from "../components/home/Inner/ReviewHome";
+import PremsParts from "../components/home/Inner/PremsParts";
 
 const IndexPage = () => {
   const [isDesktop, setDesktop] = useState(
@@ -42,14 +43,26 @@ const IndexPage = () => {
       <Layout>
         <Slider />
         <TwoBlocks />
-        <Cats />
+        {/*<Cats />*/}
+
         <div className="homemap">
           <MemoizedMap />
           <RowsWrapper type={1} limit={10} dropdown={PARTS} />
         </div>
-        <Prems3 />
+        <div className="service-home">
+          <PremsParts />
+        </div>
         <ReviewHome />
-        <Seo />
+        <div className="homeseo">
+          <div className="row">
+            <div className="col-12 m-col-12 xs-col-4 bl br bt | left">
+              <div className="head">
+                <span className="italic">Наша</span> команда
+              </div>
+            </div>
+            <Seo man1 man2 man3 man4 man5 count="5" />
+          </div>
+        </div>
       </Layout>
     </div>
   );

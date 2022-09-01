@@ -82,13 +82,14 @@ const Map = () => {
           ))}
       </div>
       <div className="map pos_r">
-        <div className="row absolute-row middle-border-12 br bl"></div>
+        <div className="row absolute-row "></div>
         <div className="title">
           <div className="d_f ai_c jc_c | head">
             <span className="ico ico-left ico-hand"></span>{" "}
-            <span className="italic">ПОИСК запчасти</span>&nbsp;по Ж/Д ДОРОГе
+            <span className="italic">ПОИСК запчастей</span>&nbsp;по
+            местонахождению
           </div>
-          <div className="desc">Выделите вашу область</div>
+          <div className="desc">Выделите необходимую дорогу</div>
         </div>
         <svg
           id="map"

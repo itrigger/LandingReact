@@ -79,6 +79,7 @@ const Rows = ({
                   </span>{" "}
                   в наличии
                 </div>
+                {type !== 1 && <p>из собственного парка</p>}
               </div>
             </div>
           </div>
@@ -100,10 +101,10 @@ const Rows = ({
                     </tr>
                   ) : (
                     <tr>
-                      <th>Наименование</th>
+                      <th>Тип</th>
                       <th className={"ta_c"}>Модель</th>
                       <th className={"ta_c"}>Кол-во</th>
-                      <th className={"ta_c"}>Г.в.</th>
+                      <th className={"ta_c"}>Г. изг.</th>
                       <th className={"ta_c"}>Местонахождение</th>
                       <th className={"ta_c"}>Состояние</th>
                       <th className={"ta_c"}>Цена с НДС</th>
@@ -120,6 +121,7 @@ const Rows = ({
                             key={node.id}
                             data={node}
                             addToCart={addToCart}
+                            wtClickHandler={wtClickHandler}
                           />
                         );
                       })

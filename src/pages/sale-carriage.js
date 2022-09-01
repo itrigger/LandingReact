@@ -14,6 +14,7 @@ import { useRef, useState } from "react";
 import StickyBox from "react-sticky-box";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
+import PremsParts from "../components/home/Inner/PremsParts";
 
 const SaleCarriage = () => {
   const [initialCategory, setInitialCategory] = useState(1);
@@ -47,7 +48,7 @@ const SaleCarriage = () => {
                   <li>
                     <a href="/">Главная</a>
                   </li>
-                  <li>Продажа б/у вагонов</li>
+                  <li>Продажа вагонов</li>
                 </ul>
               </div>
             </div>
@@ -55,7 +56,7 @@ const SaleCarriage = () => {
           <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 m-col-8 xs-col-4">
               <h1>
-                <span className="italic">Продажа</span> бу вагонов
+                <span className="italic">Продажа</span> вагонов
               </h1>
             </div>
             <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
@@ -218,9 +219,11 @@ const SaleCarriage = () => {
           <div className="row">
             <div className="col-6 m-col-8 xs-col-4 zi-2">
               <div className="head">
-                <span className="italic">Выкуп</span> вагонов дорого!
+                <span className="italic">Выкуп</span> вагонов дороже рынка на
+                10-20%
               </div>
               <ul>
+                <li>В любом состоянии</li>
                 <li>Выкуп по договору</li>
                 <li>по всей территории России и странам СНГ</li>
                 <li>по 100% предоплате</li>
@@ -244,7 +247,16 @@ const SaleCarriage = () => {
             <Form setTrigger={setSlide} />
           </Lytebox>
         </div>
-        <Seo />
+        <div className="homeseo">
+          <div className="row">
+            <div className="col-12 m-col-12 xs-col-4 bl br bt | left">
+              <div className="head">
+                <span className="italic">Наша</span> команда
+              </div>
+            </div>
+            <Seo man1 man2 man4 man5 count="4" />
+          </div>
+        </div>
       </Layout>
     </div>
   );

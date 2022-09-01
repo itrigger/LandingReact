@@ -1,5 +1,13 @@
+.twoblocks_yellowbg{
+	background: $yellow;
+}
+.mobile_img_wrapper{
+	display: none;
+}
 .twoblocks{
 	overflow: hidden;
+	position: relative;
+	z-index: 12;
 	.head{
 		font-family: "TTFirsNeue-DemiBold",sans-serif;
 		font-style: normal;
@@ -7,6 +15,8 @@
 		font-size: 60px;
 		line-height: 1.4;
 		color: #fff;
+		position: relative;
+		z-index: 3;
 		span{
 			display: block;
 		}
@@ -17,6 +27,11 @@
 		font-size: 18px;
 		margin-bottom: 54px;
 		line-height: 1.5;
+		position: relative;
+		z-index: 4;
+		span{
+			display: block;
+		}
 	}
 	.hint{
 		color: #ffffff;
@@ -25,8 +40,51 @@
 		font-style: normal;
 		text-transform: uppercase;
 		margin-top: 30px;
+		position: relative;
+		z-index: 5;
 	}
-
+	.btn{
+		position: relative;
+		z-index: 6;
+	}
+	.tb_top{
+		position: relative;
+		padding-top: 68px;
+		padding-bottom: 51px;
+		width: 100%;
+		.head, .desc, .hint{
+			color: #000;
+		}
+		.desc{
+			margin-bottom: 38px;
+		}
+		.hint{
+			margin-top: 0;
+		}
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 5px;
+			background: url("../img/tb_top_img.png") 0 bottom no-repeat;
+			background-position: 0 0;
+			background-size: contain !important;
+			width: 694px;
+			height: 322px;
+			transition: .3s all;
+		}
+		&:hover{
+			&:after{
+				right: -30px;
+			}
+		}
+	}
+	.tb_top_right{
+		max-width: 430px;
+		margin-left: 70px;
+		margin-top: 8px;
+	}
 	.tb-left{
 		position: relative;
 		height: 100%;
@@ -34,9 +92,9 @@
 		transition: .3s all;
 		padding-top: 100px;
 		padding-bottom: 45px;
-		background: url("../img/tb1.png") 0 bottom no-repeat;
-		background-position-x: 450px;
-		background-size: 734px 540px;
+		background: url("../img/promo1reverse.png") 0 bottom no-repeat;
+		background-position-x: 370px;
+		background-size: 927px 450px;
 
 		& > div{
 			width: 505px;
@@ -54,7 +112,7 @@
 		}
 		&:hover{
 			transition: .3s all;
-			background-position-x: 470px;
+			background-position-x: 420px;
 			//width: 70%;
 		}
 	}
@@ -70,13 +128,13 @@
 			content: '';
 			display: block;
 			position: absolute;
-			left: 550px;
-			bottom: 0;
-			background: url("../img/tb2.png") 0 bottom no-repeat;
-			background-position-x: left;
-			background-size: 792px 669px;
-			width: 792px;
-			height: 669px;
+			left: 480px;
+			bottom: 10px;
+			background: url("../img/cat1.png") 0 bottom no-repeat;
+			background-position-x: 0;
+			background-size: contain !important;
+			width: 422px;
+			height: 278px;
 			transition: .3s all;
 		}
 		& > div{
@@ -95,7 +153,7 @@
 		}
 		&:hover{
 			&:after{
-				left: 570px;
+				left: 510px;
 				transition: .3s all;
 			}
 		}
@@ -104,25 +162,30 @@
 
 @media (min-width: 1400px) and (max-width: 1660px) {
 	.twoblocks .tb-left{
-		background-position-x: 280px;
-		background-size: 674px 470px;
+		background-position-x: 320px;
+		background-size: 762px 370px;
 		&:hover{
 			transition: .3s all;
-			background-position-x: 300px;
-			//width: 70%;
+			background-position-x: 340px;
 		}
 	}
 	.twoblocks .tb-right:after{
 		background-size: 742px 609px;
-		left: 480px;
+		left: 420px;
 	}
 	.twoblocks .tb-right{
 		&:hover{
 			&:after{
-				left: 500px;
+				left: 440px;
 				transition: .3s all;
 			}
 		}
+	}
+	.twoblocks .tb_top:after{
+		width: 500px;
+		height: 231px;
+		right: -20px;
+		bottom: 25px;
 	}
 	.twoblocks .head{
 		font-size: 52px;
@@ -145,6 +208,11 @@
 @media (min-width: 1024px) and (max-width: 1399px){
 	.twoblocks .head{
 		font-size: 50px;
+	}
+	.twoblocks .desc{
+		span{
+			display: inline;
+		}
 	}
 	.twoblocks .tb-left > div,
 	.twoblocks .tb-right > div
@@ -179,13 +247,46 @@
 			}
 		}
 	}
+	.twoblocks .tb_top:after{
+		right: -460px;
+		bottom: 25px;
+	}
+	.twoblocks .tb_top:hover:after{
+		right: -480px;
+	}
 	.twoblocks .desc{
-		max-width: 80%;
+		max-width: 70%;
+	}
+	.twoblocks .hint{
+		font-size: 21px;
 	}
 }
 
-
+.hint22{
+	display: none;
+}
 @media (max-width: 1023px) {
+	.twoblocks .tb_top{
+		flex-direction: column;
+		.hint{
+			display: none;
+		}
+		.hint22{
+			display: block;
+			margin-top: 30px;
+		}
+	}
+	.twoblocks .tb_top:after{
+		right: auto;
+		left: 45%;
+		width: 895px;
+		height: 400px;
+		bottom: 95px;
+	}
+	.twoblocks .tb_top_right{
+		margin-left: 0;
+		margin-top: 0;
+	}
 	.twoblocks_w{
 		flex-direction: column;
 		.btn{
@@ -194,6 +295,10 @@
 	}
 	.twoblocks .desc{
 		margin-bottom: 30px;
+		max-width: 220px;
+		span{
+			display: inline;
+		}
 	}
 	.twoblocks .hint{
 		font-size: 18px;
@@ -202,7 +307,8 @@
 		width: 100%;
 		padding-top: 60px;
 		background: none;
-		padding-bottom: 90px;
+		padding-bottom: 80px;
+
 	}
 	.twoblocks .tb-left > div{
 		width: auto;
@@ -216,22 +322,22 @@
 		content: '';
 		display: block;
 		position: absolute;
-		right: -30px;
-		bottom: 0;
-		width: 240px;
+		right: auto;
+		left: 40%;
+		bottom: 127px;
+		width: 639px;
 		height: 370px;
-		background: url("../img/tb1.png") 0 bottom no-repeat;
-		background-size: cover;
 		z-index: 0;
+		background: url("../img/promo1reverse.png") 0 bottom no-repeat;
+		background-size: contain;
 	}
-	.twoblocks .tb-left:hover{
-		width: auto;
+	.twoblocks .tb_top{
+		padding-bottom: 80px;
 	}
-
 	.twoblocks .tb-right{
 		width: 100%;
 		padding-left: 0;
-		padding-bottom: 100px;
+		padding-bottom: 80px;
 		padding-top: 60px;
 	}
 	.twoblocks .tb-right:before{
@@ -241,19 +347,18 @@
 		content: '';
 		display: block;
 		position: absolute;
-		left: auto;
-		right: -30px;
-		bottom: 60px;
-		width: 130px;
+		left: 40%;
+		right: auto;
+		bottom: 157px;
+		width: 442px;
 		height: 510px;
-		background: url("../img/tb2.png") 0 bottom no-repeat;
 		background-size: cover;
 		z-index: 0;
 	}
 	.twoblocks .tb-right{
 		&:hover{
 			&:after{
-				left: auto;
+				left: 40%;
 				transition: .3s all;
 			}
 		}
@@ -267,17 +372,45 @@
 		width: auto;
 	}
 
-
 	.twoblocks .head{
 		font-size: 42px;
 	}
 }
 
 @media (max-width: 600px) {
+	.twoblocks .tb-right .mobile_img_wrapper
+	{
+		margin-bottom: 0;}
+	.twoblocks .tb-left .mobile_img_wrapper{
+		margin-bottom: 10px;
+	}
 	.twoblocks .tb-right .desc{
-		max-width: 220px;
+		max-width: 100%;
+	}
+	.twoblocks .desc{
+		max-width: 100%;
 	}
 	.twoblocks .tb-left .desc{
-		max-width: 90%;
+		max-width: 100%;
+	}
+	.twoblocks .tb_top:after{
+		display: none;
+	}
+	.twoblocks .tb-left:after{
+		display: none;
+	}
+	.twoblocks .tb-right:after{
+		display: none;
+	}
+	.mobile_img_wrapper{
+		display: block;
+		margin-bottom: 20px;
+		img{
+			width: 100%;
+			max-width: 310px;
+		}
+	}
+	.twoblocks .head{
+		margin-bottom: 10px;
 	}
 }

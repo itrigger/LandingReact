@@ -34,63 +34,30 @@ const Footer = () => {
       <div className="line1">
         <div className="row">
           <div className="col-4 m-col-4 xs-col-4 | col1">
-            <span className="italic">Не нашли то, что искали</span>
-          </div>
-          <div className="col-4 m-col-4 xs-col-4 | col2">
-            Свяжитесь с&nbsp;нами и мы постараемся помочь
-          </div>
-          <div className="col-4 m-col-4 xs-col-4 | col3">
-            <div className="form">
-              <div className="head">
-                <span className="italic">Заполните</span> форму
-              </div>
-              <FormFooter />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="line2">
-        <div className="row">
-          <div className="col-4 m-col-4 xs-col-4 | col1">
             <div className="foot-logo"></div>
-            <div className="foot-text">
-              Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
-              железнодорожных вагонов.
-              <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
-            </div>
-            <div className="foot-policy">
-              <Link to="/politic">Политика конфиденциальности сайта</Link>
-            </div>
-          </div>
-          <div className="col-4 m-col-4 xs-col-4 | col2">
-            <div className="head italic">Услуги</div>
             <ul>
               <li>
-                <AnchorLink
-                  to="/buy-carriage#vlom"
-                  title="Вагоны на металлолом"
-                >
-                  Вагоны на металлолом
+                <AnchorLink to="/buy-carriage" title="Скупка вагонов">
+                  Скупка вагонов
                 </AnchorLink>
               </li>
               <li>
-                <AnchorLink
-                  to="/buy-carriage#vrazdelku"
-                  title="Вагоны на металлолом"
-                >
-                  Вагоны в разделку
-                </AnchorLink>
-              </li>
-              <li>
-                <Link to="/sale-carriage">Продажа б/у вагонов</Link>
+                <Link to="/sale-carriage">Продажа вагонов</Link>
               </li>
               <li>
                 <Link to="/sale-parts">Продажа запчастей</Link>
               </li>
             </ul>
+            <div className="foot-text">
+              Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
+              железнодорожных вагонов.
+              <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
+            </div>
           </div>
-          <div className="col-4 m-col-4 xs-col-4 | col3">
-            <div className="head italic">Контакты</div>
+          <div className="col-4 m-col-4 xs-col-4 | col2">
+            <div className="head ">
+              <div className="italic"> Контакты</div>
+            </div>
             <a href={"tel:" + telCall} className="phone">
               {tel}
             </a>
@@ -101,7 +68,35 @@ const Footer = () => {
               </button>
             </div>
             <div className="foot-address">{address}</div>
-            <div className="foot-version">Версия 1.13</div>
+          </div>
+          <div className="col-4 m-col-4 xs-col-4 | col3">
+            <div className="form">
+              <div className="head">
+                <span className="italic">Свяжитесь</span> с нами
+              </div>
+              <FormFooter />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="line2">
+        <div className="row">
+          <div className="col-4 m-col-4 xs-col-4 | col1">
+            {/*  <div className="foot-text">
+              Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
+              железнодорожных вагонов.
+              <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
+            </div>
+            <div className="foot-policy">
+              <Link to="/politic">Политика конфиденциальности сайта</Link>
+            </div>*/}
+          </div>
+          <div className="col-4 m-col-4 xs-col-4 | col2">
+            {/*<div className="head italic">Услуги</div>*/}
+          </div>
+          <div className="col-4 m-col-4 xs-col-4 | col3">
+            {" "}
+            <div className="foot-version">Версия 1.16</div>
           </div>
         </div>
       </div>

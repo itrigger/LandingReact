@@ -15,7 +15,7 @@ const Notify = (props) => {
         clearInterval(id);
         return prev;
       });
-    }, 20);
+    }, 5); //тут регулируем время показа
 
     setIntervalID(id);
   };

@@ -1,14 +1,16 @@
 .megamap{
 	position: relative;
 	.form{
-		background: #373947;
+		//background: #373947;
+		background: $yellow;
 		position: relative;
 		z-index: 3;
 
 		.head{
 			font-family: "TTFirsNeue-Medium",sans-serif;
 			font-style: normal;
-			color: #fff;
+			//color: #fff;
+			color: #000;
 			font-size: 36px;
 			line-height: 1.4;
 			text-transform: uppercase;
@@ -28,7 +30,7 @@
 	}
 	.title{
 		position: absolute;
-		top: 350px;
+		top: 310px;
 		width: 100%;
 		text-align: center;
 		pointer-events: none;
@@ -404,6 +406,13 @@
 	.result-row .price_block{
 		padding-right: 10px;
 	}
+	.megamap .title{
+		top: 260px;
+	}
+	.megamap .head{
+		flex-direction: column;
+		font-size: 45px;
+	}
 }
 
 
@@ -415,7 +424,7 @@
 		margin-bottom: 0;
 	}
 	.megamap .title{
-		top: 370px;
+		top: 340px;
 	}
 	.megamap .head{
 		font-size: 42px;
@@ -564,5 +573,103 @@
 	}
 	.only-fields + .map_result .row:first-child{
 		padding-top: 10px;
+	}
+	.card-mobile {
+		display: flex;
+		flex-direction:column
+	}
+
+	.card-mobile .left, .card-mobile .right {
+		width:50%
+	}
+
+	.card-mobile .description p {
+		font-size: inherit;
+		margin-bottom:0
+	}
+
+	.result-table .card-mobile td {
+		border-right:1px solid #e6e6e6
+	}
+
+	.result-row-2 .price_block .price {
+		margin-bottom:0
+	}
+
+	.card-title {
+		border-bottom: none;
+		border-right: none;
+		color: rgba(0, 0, 0, .5);
+		font-family: TTFirsNeue-Medium, sans-serif;
+		font-size: 12px;
+		font-style: normal;
+		line-height: 1.4;
+		text-transform:uppercase
+	}
+
+	.result-table thead {
+		display:none
+	}
+
+	.card-result-row {
+		flex-direction:column
+	}
+
+	.card-result-row .card {
+		border: 1px solid #e6e6e6;
+		margin-bottom: -1px;
+		width:100%
+	}
+
+	.card-result-row .card .img {
+		padding:20px
+	}
+
+	.card-result-row .card .name-w {
+		padding:0 20px
+	}
+
+	.card-result-row .card .name-w .name {
+		font-size: 16px;
+		margin-bottom:10px
+	}
+
+	.card-result-row .card .description {
+		font-size: 12px;
+		line-height:1.4
+	}
+
+	.card-result-row .card .description p {
+		font-size:inherit
+	}
+
+	.card-result-row .card .minirow-w {
+		padding:0 20px
+	}
+
+	.card-result-row .card .minirow {
+		font-size:10px
+	}
+
+	.card-result-row .card .minirow .left {
+		padding-left: 15px;
+		padding-top:15px
+	}
+
+	.card-result-row .card .minirow .right {
+		padding:15px 15px 10px
+	}
+
+	.card-result-row .card .price_block {
+		padding:20px
+	}
+
+	.card-result-row .card .price_block .price {
+		font-size:16px
+	}
+
+	.card-result-row .card .btn-w .btn-classic, .card-result-row .card .btn-w .paginator.next_prev li button, .paginator.next_prev li .card-result-row .card .btn-w button {
+		font-size: 11px;
+		height:40px
 	}
 }

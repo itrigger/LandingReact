@@ -59,6 +59,10 @@
   }
 }
 
+.premparts{
+  padding-top: 30px;
+}
+
 .service-home{
   margin-top: -80px;
   background: #fff;
@@ -69,6 +73,9 @@
   }
 }
 .service3 {
+  .head2{
+    margin-bottom: 30px;
+  }
   .hint {
     font-size: 24px;
     font-family: "TTFirsNeue-Medium", sans-serif;
@@ -101,7 +108,7 @@
   }
 
   .swiper-slide {
-    height: 589px;
+    height: 476px;
 
     &.s3s1 {
       background: url("../img/service3_1.jpg") 0 0 no-repeat;
@@ -144,7 +151,11 @@
   & > div {
     padding-bottom: 160px;
   }
-
+  &.long-6{
+    & > div{
+      width: calc(100% / 6);
+    }
+  }
   .title {
     font-size: 24px;
     font-family: "TTFirsNeue-DemiBold", sans-serif;
@@ -172,6 +183,15 @@
 }
 
 @media (min-width: 1024px) and (max-width: 1399px){
+  .steps.long-6{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10%;
+    & > div{
+      width: 20%;
+      padding-bottom: 80px;
+    }
+  }
   .service3 .form{
     padding: 40px 40px 46px;
   }
@@ -242,7 +262,7 @@
     margin-bottom: 40px;
   }
   .service3 .swiper-slide{
-    height: 506px;
+    height: 426px;
   }
   .service3 .form .row{
     margin: 0;
@@ -385,6 +405,13 @@
   .service-home{
     .head2{
       font-size: 36px;
+    }
+  }
+  .premparts{
+    padding-top: 30px;
+    border: none;
+    .head2{
+
     }
   }
 }

@@ -98,35 +98,10 @@ export default function Header() {
           </div>
           <div className="d_f col-6 m-col-0 xs-col-0 | h90">
             <ul className="d_f ai_c | top-menu">
-              <li className="has-child">
+              <li>
                 <Link to="/buy-carriage" activeClassName="active">
                   Скупка вагонов
                 </Link>
-                <div>
-                  <ul>
-                    <li>
-                      <AnchorLink
-                        to="/buy-carriage#vlom"
-                        title="Вагоны на металлолом"
-                      >
-                        Вагоны в разделку (в лом)
-                      </AnchorLink>
-                    </li>
-                    <li>
-                      <AnchorLink
-                        to="/buy-carriage#vrazdelku"
-                        title="Вагоны в работу"
-                      >
-                        Вагоны в работу
-                      </AnchorLink>
-                    </li>
-                    <li>
-                      <button onClick={() => slideClickHandler()}>
-                        Оценить вагон
-                      </button>
-                    </li>
-                  </ul>
-                </div>
               </li>
               <li>
                 <Link to="/sale-carriage" activeClassName="active">
@@ -172,32 +147,10 @@ export default function Header() {
         <div className={`row | mobile-menu `}>
           <div className="m-col-12 xs-col-4">
             <ul className="d_f ai_c | mobile-menu-ul">
-              <li className={`has-child ${subMenuActive}`}>
-                <button onClick={() => subMenuClickHandler()}>
+              <li className={`${subMenuActive}`}>
+                <Link to="/buy-carriage" activeClassName="active">
                   Скупка вагонов
-                </button>
-                <div className="dropdown-menu">
-                  <ul>
-                    <li>
-                      <Link to="/buy-carriage#vlom" activeClassName="active">
-                        Вагоны в разделку (в лом)
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/buy-carriage#vrazdelku"
-                        activeClassName="active"
-                      >
-                        Вагоны в работу
-                      </Link>
-                    </li>
-                    <li>
-                      <button onClick={() => slideClickHandler()}>
-                        Оценить вагон
-                      </button>
-                    </li>
-                  </ul>
-                </div>
+                </Link>
               </li>
               <li>
                 <Link to="/sale-carriage" activeClassName="active">

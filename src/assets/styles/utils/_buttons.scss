@@ -64,6 +64,42 @@
 			border: 0;
 		}
 	}
+	&.black{
+		color: #000;
+		border: 0;
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border: 2px solid #000;
+			transform: skew(-15deg);
+		}
+		&:before{
+			content: '';
+			display: block;
+			position: absolute;
+			width: 0%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border: 1px solid transparent;
+			transform: skew(-15deg);
+			background: #000;
+			transition: .2s all;
+		}
+		&:hover{
+			color: #fff;
+			&:before{
+				width: 100%;
+				border-width: 2px;
+				transition: .4s all;
+			}
+		}
+	}
 	&.btn-green{
 		color: #FFF;
 		border: 0;
@@ -135,11 +171,17 @@ button{
 	&.active{
 		background-color: #373947;
 		color: #FFFFFF;
-		pointer-events: none;
 		&:hover{
 			&:before{
 				width: 0;
 			}
+		}
+	}
+	&.black{
+		background: #000;
+		color: #FFF;
+		&:before{
+			background: #2f2f2f;
 		}
 	}
 }

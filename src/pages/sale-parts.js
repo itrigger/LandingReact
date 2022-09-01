@@ -6,6 +6,7 @@ import RowsWrapper from "../components/Table/Rows-wrapper";
 import { PARTS } from "../utility/constants";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
+import PremsParts from "../components/home/Inner/PremsParts";
 
 const SaleParts = ({ location }) => {
   let selectedDD = [0];
@@ -32,7 +33,7 @@ const SaleParts = ({ location }) => {
         <meta charSet="utf-8" />
         <title>
           Продажа запасных частей | Вагон Трейд - Покупка и продажа вагонов.
-          Аренда. Запасные части.
+          Аренда.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />
@@ -81,38 +82,48 @@ const SaleParts = ({ location }) => {
           nofilter={false}
           mini={true}
         />
-
-        <div className="promo slide1">
-          <div className="row">
-            <div className="col-6 m-col-6 xs-col-4 zi-2">
-              <div className="head">
-                <span className="italic">Выкуп</span> вагонов дорого!
-              </div>
-              <ul>
-                <li>Выкуп по договору</li>
-                <li>по всей территории России и странам СНГ</li>
-                <li>по 100% предоплате</li>
-              </ul>
-              <button
-                className="btn yellow"
-                onClick={() => slideClickHandler()}
-              >
-                <span>Продать вагон</span>
-              </button>
-              <div className="hint">
-                <span className="italic">Уже продано</span> 1310 вагонов
-              </div>
-            </div>
-            <div className="col-6 m-col-6 xs-col-4 picture"></div>
-          </div>
-        </div>
         <Lytebox trigger={slide} setTrigger={setSlide}>
           <div className="head3">
             <span className="italic">Выкуп</span> вагонов
           </div>
           <Form setTrigger={setSlide} />
         </Lytebox>
-        <Seo />
+        <PremsParts />
+        <div className="homeseo saleparts_page">
+          <div className="row">
+            <div className="col-4 m-col-4 xs-col-4 bl  | left">
+              <div className="head">
+                <span className="italic">Остались</span> вопросы?
+              </div>
+              <Seo man3 />
+            </div>
+
+            <div className="col-8 m-col-8 xs-col-4 | rightside">
+              <div className="promo promo-cutted slide1">
+                <div className="picture"></div>
+                <div className="head">
+                  <span className="italic">Выкуп</span> вагонов дороже рынка на
+                  10-20%
+                </div>
+                <ul>
+                  <li>В любом состоянии</li>
+                  <li>Выкуп по договору</li>
+                  <li>по всей территории России и странам СНГ</li>
+                  <li>по 100% предоплате</li>
+                </ul>
+                <button
+                  className="btn yellow"
+                  onClick={() => slideClickHandler()}
+                >
+                  <span>Продать вагон</span>
+                </button>
+                <div className="hint">
+                  <span className="italic">Уже продано</span> 3260 вагонов
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </Layout>
     </div>
   );

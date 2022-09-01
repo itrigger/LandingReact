@@ -12,6 +12,7 @@ import Lytebox from "../../ui/Lytebox/Lytebox";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import FormFooter from "../../Form/FormFooter";
+import FormSlider from "../../Form/FormSlider";
 
 const Slider = () => {
   const swiperRef = React.useRef(null);
@@ -92,12 +93,10 @@ const Slider = () => {
           >
             <SwiperSlide>
               <div className="head big-head">
-                <span className="italic">Продажа</span> б/у вагонов
+                <span className="italic">Продаем</span> вагоны
               </div>
               <div className="desc">
-                Вагоны с истекшим сроком службы для работы на подъездные пути,
-                вагоны с остаточным сроком службы, полувагоны, крытые, цистерны,
-                платформы, хопперы, думкары
+                Широкий выбор. Выгодные условия сделки.
               </div>
               <button
                 className="btn yellow mobile"
@@ -111,10 +110,10 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="head big-head">
-                <span className="italic">Продажа</span> запчастей
+                <span className="italic">Поставляем</span> запчасти
               </div>
               <div className="desc">
-                Реализуем новые запчасти и бывшие в употреблении
+                Поставка литья, тележек и колесных пар по всей сети
               </div>
               <button
                 className="btn yellow mobile"
@@ -128,12 +127,10 @@ const Slider = () => {
             </SwiperSlide>
             <SwiperSlide>
               <div className="head big-head">
-                <span className="italic">Скупаем</span> вагоны в лом
+                <span className="italic">Скупаем</span> вагоны &nbsp;
+                <i className="smaller">в любом состоянии</i>
               </div>
-              <div className="desc">
-                Вагоны с запретом на курсирование, исключенные из базы АБД ПВ,
-                после схода
-              </div>
+              <div className="desc">На 10% выше рыночной стоимости</div>
               <button
                 className="btn yellow mobile"
                 onClick={() => slideClickHandler2()}
@@ -150,9 +147,9 @@ const Slider = () => {
         <div className="d_f ai_c col-4 m-col-6 xs-col-0">
           <div className="form">
             <div className="head">
-              <span className="italic">быстрый</span> подбор вагонов
+              <span className="italic">Оцените</span> ваши вагоны за 10 минут
             </div>
-            <Form />
+            <FormSlider />
           </div>
         </div>
       </div>

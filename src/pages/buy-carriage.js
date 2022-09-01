@@ -9,6 +9,7 @@ import "swiper/css/pagination";
 import { Link } from "gatsby";
 import FormRequestFiles from "../components/Form/FormRequestFiles";
 import Prems from "../components/home/Inner/Prems";
+import FormSlider from "../components/Form/FormSlider";
 
 const BuyCarriage = () => {
   return (
@@ -34,7 +35,7 @@ const BuyCarriage = () => {
                   <li>
                     <Link to="/">Главная</Link>
                   </li>
-                  <li>Скупка б/у вагонов</li>
+                  <li>Скупка вагонов</li>
                 </ul>
               </div>
             </div>
@@ -42,7 +43,7 @@ const BuyCarriage = () => {
           <div className="row middle-border-12-light middle-border-12-over-bg  bl-light br-light line2">
             <div className="col-8 m-col-8 xs-col-4">
               <h1>
-                <span className="italic">Скупка</span> б/у вагонов
+                <span className="italic">Скупка</span> вагонов
               </h1>
             </div>
             <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end | page_header_btn">
@@ -61,45 +62,40 @@ const BuyCarriage = () => {
         <div className="row service3 middle-border-12 br bl">
           <div className="col-4 m-col-4 xs-col-4">
             <div className="head2">
-              <span className="italic">Выкуп</span> лома вагонов дорого!
+              <span className="italic">Выкуп вагонов</span> по ценам выше рынка!
             </div>
-            <div className="hint">
-              <span className="italic">Уже купили</span> 5990 тонн ЛОМА
-            </div>
+
             <ul className="content">
-              <li>Выкуп по договору</li>
-              <li>по всей территории России</li>
-              <li>по 100% предоплате</li>
+              <li>Предоплата 100%</li>
+              <li>Самовывоз</li>
+              <li>Лицензии на лом</li>
             </ul>
           </div>
           <div className="col-8 m-col-8 xs-col-4 ">
             <div className="bold">
-              Каким образом происходит сдача на металлолом?
+              Выкупаем железнодорожный подвижной состав в любом состоянии, в т.
+              ч.
+              <br />- на металлолом (с учетом стоимости зап.частей)
+              <br />- для работы на подъездных путях (без выхода на пути общего
+              пользования)
+              <br />- для дальнейшей работы (вагоны с неоконченным сроком
+              службы).
               <br />
-              Специалисты делают все необходимое для того, чтобы избавить вас от
-              ненужных трат времени и сил. Профессионалы самостоятельно
-              демонтируют вагоны и доставляют лом на пункты приёма. Для
-              получения прибыли, вам необходимо: предъявить при сдаче лома
-              документ, подтверждающий личность; дождаться экспертного
-              заключения; получить средства.
+              Расчет стоимости вагонов производится специалистами компании в
+              кратчайшие сроки и зависит от многих нюансов, включая остаточный
+              срок службы, модель вагонов, состояние, тару, запасные части.
             </div>
 
             <p>
-              Выкупаем все типы грузовых жд вагонов: полувагоны, крытые вагоны,
-              платформы, думпкары, хопперы, цистерны, рефрижераторы.
-            </p>
-            <p>
-              Выкупаем вагоны в любом состоянии, исправные подержанные вагоны,
-              ремонтопригодные вагоны, требующие обслуживания, старый и
-              неисправный транспорт с истекшим сроком службы. Выкупим вагоны с
-              неисправными деталями, серьезными дефектами, уникальной
-              конструкцией. Вызовите специалиста для технической экспертизы
-              прямо сейчас, чтобы получить бесплатную комплексную оценку
-              стоимости ваших вагонов и заключить договор на выкуп.
+              Разделку подвижного состава осуществляем в собственных пунктах на
+              Южно-Уральской (ст. Варгаши), Московской (ст. Яничкино),
+              Юго-Восточной (ст. Рыжково), Северо-Кавказской ж.д. (ст. Батайск)
+              и Западно-Сибирской ж.д. (ст. Чемской), что обеспечивает высокий
+              темп работы и честный вес.
             </p>
           </div>
         </div>
-        <div className="row service3">
+        {/*<div className="row service3">
           <div className="col-4 m-col-0 xs-col-4 oh bl">
             <Swiper
               modules={[Pagination, Autoplay]}
@@ -119,9 +115,9 @@ const BuyCarriage = () => {
             </div>
             <FormRequestFiles formc={"form1"} />
           </div>
-        </div>
+        </div>*/}
 
-        <div className="row service3" id="vrazdelku">
+        {/*<div className="row service3" id="vrazdelku">
           <div className="col-4 m-col-4 xs-col-0 bl br spacer"></div>
           <div className="col-4 m-col-4 xs-col-0 br spacer"></div>
           <div className="col-4 m-col-4 xs-col-0 br spacer"></div>
@@ -162,7 +158,7 @@ const BuyCarriage = () => {
               стоимости ваших вагонов и заключить договор на выкуп.
             </p>
           </div>
-        </div>
+        </div>*/}
         <div className="row service3">
           <div className="col-4 m-col-0 xs-col-4 oh bl">
             <Swiper
@@ -178,10 +174,14 @@ const BuyCarriage = () => {
             </Swiper>
           </div>
           <div className="col-8 m-col-12 xs-col-4 form bg-dark" id="ocenka">
-            <div className="head3">
+            {/*<div className="head3">
               <span className="italic">Отправьте заявку</span> на выкуп вагона
+            </div>*/}
+            <div className="head3">
+              <span className="italic">Оцените</span> ваши вагоны за 10 минут
             </div>
-            <FormRequestFiles formc={"form2"} />
+            <FormSlider />
+            {/*<FormRequestFiles formc={"form2"} />*/}
           </div>
         </div>
         <div className="row service3 bl br ">
@@ -189,7 +189,7 @@ const BuyCarriage = () => {
           <div className="col-4 m-col-4 xs-col-0 spacer"></div>
           <div className="col-4 m-col-4 xs-col-0 spacer"></div>
         </div>
-        <Prems />
+        <Prems cl="long-6" />
       </Layout>
     </div>
   );

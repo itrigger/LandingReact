@@ -87,7 +87,11 @@
       display: block;
       color: $yellow;
     }
-
+    i.smaller{
+      font-style: normal;
+      font-size: 50%;
+      display: block;
+    }
     margin-bottom: 30px;
   }
 
@@ -207,7 +211,7 @@
   }
   .slider .form {
 
-    padding: 38px 65px 36px;
+    padding: 38px 60px 36px;
   }
   .slider .form .head {
     font-size: 27px;
@@ -224,6 +228,7 @@
 }
 
 .lytebox-inner {
+  border: 5px solid #000;
   .head3 {
     color: #FFFFFF;
     margin-bottom: 25px;

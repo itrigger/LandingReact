@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Rows from "./Rows";
 import { useNotification } from "../ui/Notify/NotifyProvider";
-import { useApolloClient, useLazyQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
 import Spinner from "../../assets/img/spinner.svg";
@@ -38,6 +38,21 @@ const RowsWrapper = ({
   const [count, setCount] = useState(initialCount);
   const [cartItems, setCartItems] = useContext(CartContext);
 
+  const isBrowser = () => typeof window !== "undefined";
+  const [isDesktop, setDesktop] = useState(
+    isBrowser() && window.innerWidth > 1023
+  );
+
+  const updateMedia = () => {
+    setDesktop(isBrowser() && window.innerWidth > 1023);
+  };
+
+  useEffect(() => {
+    isBrowser() && window.addEventListener("resize", updateMedia);
+    return () =>
+      isBrowser() && window.removeEventListener("resize", updateMedia);
+  });
+
   const dispatch = useNotification();
 
   useEffect(() => {
@@ -60,10 +75,10 @@ const RowsWrapper = ({
   };
 
   if (type === 1) {
-    text = "<span class='italic'>сортировать по</span>";
+    text = "<span class='italic'>выберите дорогу</span>";
     text2 = "Найти запчасть";
   } else {
-    text = "<span class='italic'>Продажа</span> бу вагонов";
+    text = "<span class='italic'>Продажа</span> вагонов";
     text2 = "Найти вагон";
   }
 
@@ -267,11 +282,24 @@ const RowsWrapper = ({
               )}
 
               {mini ? (
-                <></>
+                <>
+                  {!isDesktop && (
+                    <div className="col-4 m-col-4 xs-col-4 | fh_r">
+                      <button
+                        className="btn-classic black form-control ld-ext-right"
+                        onClick={(e) => filterClickHandler(e.target)}
+                      >
+                        <span
+                          dangerouslySetInnerHTML={{ __html: text2 }}
+                        ></span>
+                      </button>
+                    </div>
+                  )}
+                </>
               ) : (
                 <div className="col-4 m-col-4 xs-col-4 | fh_r">
                   <button
-                    className="btn-classic form-control ld-ext-right"
+                    className="btn-classic black form-control ld-ext-right"
                     onClick={(e) => filterClickHandler(e.target)}
                   >
                     <span dangerouslySetInnerHTML={{ __html: text2 }}></span>
@@ -331,9 +359,11 @@ const RowsWrapper = ({
               <div className="row">
                 <div className="col-12 s-col-12 xs-col-4">
                   <table className={"result-table"}>
-                    {Array.apply(0, Array(count)).map(function (x, i) {
-                      return <RowSkeleton key={i} />;
-                    })}
+                    <tbody>
+                      {Array.apply(0, Array(count)).map(function (x, i) {
+                        return <RowSkeleton key={i} />;
+                      })}
+                    </tbody>
                   </table>
                 </div>
               </div>

@@ -16,7 +16,7 @@
 				display: block;
 				position: absolute;
 				left: 0;
-				top: -300px;
+				bottom: -190px;
 				background: url("../img/promo1.png") 50px center no-repeat;
 				background-position-x: left;
 				background-size: 1855px 901px;
@@ -87,7 +87,43 @@
 		margin-top: 30px;
 	}
 }
+.homeseo.saleparts_page{
+	overflow: hidden;
+	.left{
+		.br, .bl{
+			border: none;
+		}
 
+	}
+
+}
+.promo.promo-cutted{
+	margin-top: 0;
+	padding-left: 60px;
+	--widthA: calc(100vw - 1570px);
+	width: calc(var(--widthA) / 2 + 1570px / 12 * 8);
+	padding-right: calc(var(--widthA) / 2);
+	padding-top: 40px;
+	&>div{
+		position: relative;
+	}
+	&.slide1 .picture:after{
+		transform: rotateY(180deg);
+		width: 805px;
+		height: 461px;
+		background-size: contain;
+		left: 440px;
+		bottom: -540px;
+	}
+	.head span{
+		display: inline;
+	}
+}
+@media (min-width: 1920px) {
+	.promo.promo-cutted.slide1 .picture::after{
+		left: 60%;
+	}
+}
 @media (min-width: 1024px) and (max-width: 1399px) {
 	.promo{
 		padding-top: 50px;
@@ -95,7 +131,7 @@
 	}
 	.promo.slide1 .picture:after{
 		left: -247px;
-		top: -215px;
+		bottom: -190px;
 		background-size: contain;
 		width: 1585px;
 		height: 771px;
@@ -112,7 +148,31 @@
 		margin-bottom: 15px;
 	}
 	.promo.slide1 .picture:after{
-		top: -360px;
+		bottom: -160px;
+	}
+	.promo.promo-cutted{
+		padding-left: 60px;
+		--widthA: calc(100vw - 160px);
+		width: calc(var(--widthA) / 12 * 8 + 80px);
+		padding-right: 80px;
+		padding-top: 40px;
+		&.slide1 .picture:after{
+			transform: rotateY(180deg);
+			width: 805px;
+			height: 461px;
+			background-size: contain;
+			left: 440px;
+			bottom: -500px;
+		}
+		.head span{
+			display: inline;
+		}
+	}
+	.homeseo.saleparts_page{
+		.left .head{
+			font-size: 30px;
+			margin-bottom: 25px;
+		}
 	}
 }
 
@@ -139,5 +199,35 @@
 		background-size: contain;
 		width: 845px;
 		height: 501px;
+	}
+	.homeseo.saleparts_page{
+		.rightside{
+			margin-left: -30px;
+			margin-right: -30px;
+		}
+	}
+	.promo.promo-cutted{
+		padding-left: 30px;
+		padding-right: 30px;
+		width: 100%;
+		position: relative;
+	}
+	.promo.promo-cutted.slide1 .picture{
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		&>*{
+			position: relative;
+		}
+		&:after{
+			transform: none;
+			left: 120px;
+			bottom: -92px;
+			top: auto;
+			width: 845px;
+			height: 501px;
+		}
 	}
 }

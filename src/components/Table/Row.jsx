@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 
-const Row = ({ data, addToCart }) => {
+const Row = ({ data, addToCart, wtClickHandler }) => {
   const isBrowser = () => typeof window !== "undefined";
   const [cartItems, setCartItems] = useContext(CartContext);
   const [isDesktop, setDesktop] = useState(
@@ -17,6 +17,13 @@ const Row = ({ data, addToCart }) => {
     return () =>
       isBrowser() && window.removeEventListener("resize", updateMedia);
   });
+
+  const cartDeleteItem = (id) => {
+    const exist = cartItems.find((x) => x.id === id);
+    if (exist) {
+      setCartItems(cartItems.filter((x) => x.id !== id));
+    }
+  };
 
   return (
     <>
@@ -72,6 +79,50 @@ const Row = ({ data, addToCart }) => {
           </td>
           <td>
             <div className="btn-w">
+              {data.price && data.price === "999 999₽" ? (
+                <button
+                  className={"btn-wt-green"}
+                  onClick={() => wtClickHandler()}
+                >
+                  <span className="ico ico-left ico-wt-white"></span>Подробнее
+                </button>
+              ) : cartItems.find((x) => x.id === data.id) ? (
+                <button
+                  onClick={() => cartDeleteItem(data.id)}
+                  className={"btn-classic active"}
+                >
+                  <span>Убрать</span>
+                </button>
+              ) : (
+                <button
+                  onClick={() =>
+                    addToCart({
+                      id: data.id,
+                      price: data.price,
+                      name: data.name,
+                      image: data.image.srcSet,
+                      stock: data.stockQuantity,
+                      year: data.productsKP.godVypuska
+                        ? data.productsKP.godVypuska
+                        : null,
+                      location: data.productsKP.mestonahozhdenie
+                        ? data.productsKP.mestonahozhdenie
+                        : null,
+                      telezhka: data.productsKP.telezhka
+                        ? data.productsKP.telezhka
+                        : null,
+                      tolshhinaOboda: data.productsKP.tolshhinaOboda
+                        ? data.productsKP.tolshhinaOboda
+                        : null,
+                    })
+                  }
+                  className={"btn-classic"}
+                >
+                  <span>Заказать</span>
+                </button>
+              )}
+            </div>
+            {/*<div className="btn-w">
               <button
                 onClick={() =>
                   addToCart({
@@ -106,7 +157,7 @@ const Row = ({ data, addToCart }) => {
                     : "Заказать"}
                 </span>
               </button>
-            </div>
+            </div>*/}
           </td>
         </tr>
       ) : (
@@ -164,40 +215,48 @@ const Row = ({ data, addToCart }) => {
             </div>
             <div className="width50">
               <div className="btn-w">
-                <button
-                  onClick={() =>
-                    addToCart({
-                      id: data.id,
-                      price: data.price,
-                      name: data.name,
-                      image: data.image.srcSet,
-                      stock: data.stockQuantity,
-                      year: data.productsKP.godVypuska
-                        ? data.productsKP.godVypuska
-                        : null,
-                      location: data.productsKP.mestonahozhdenie
-                        ? data.productsKP.mestonahozhdenie
-                        : null,
-                      telezhka: data.productsKP.telezhka
-                        ? data.productsKP.telezhka
-                        : null,
-                      tolshhinaOboda: data.productsKP.tolshhinaOboda
-                        ? data.productsKP.tolshhinaOboda
-                        : null,
-                    })
-                  }
-                  className={
-                    cartItems.find((x) => x.id === data.id)
-                      ? "btn-classic active"
-                      : "btn-classic"
-                  }
-                >
-                  <span>
-                    {cartItems.find((x) => x.id === data.id)
-                      ? "В корзине"
-                      : "Заказать"}
-                  </span>
-                </button>
+                {data.price && data.price === "999 999₽" ? (
+                  <button
+                    className={"btn-wt-green"}
+                    onClick={() => wtClickHandler()}
+                  >
+                    <span className="ico ico-left ico-wt-white"></span>Подробнее
+                  </button>
+                ) : cartItems.find((x) => x.id === data.id) ? (
+                  <button
+                    onClick={() => cartDeleteItem(data.id)}
+                    className={"btn-classic active"}
+                  >
+                    <span>Убрать</span>
+                  </button>
+                ) : (
+                  <button
+                    onClick={() =>
+                      addToCart({
+                        id: data.id,
+                        price: data.price,
+                        name: data.name,
+                        image: data.image.srcSet,
+                        stock: data.stockQuantity,
+                        year: data.productsKP.godVypuska
+                          ? data.productsKP.godVypuska
+                          : null,
+                        location: data.productsKP.mestonahozhdenie
+                          ? data.productsKP.mestonahozhdenie
+                          : null,
+                        telezhka: data.productsKP.telezhka
+                          ? data.productsKP.telezhka
+                          : null,
+                        tolshhinaOboda: data.productsKP.tolshhinaOboda
+                          ? data.productsKP.tolshhinaOboda
+                          : null,
+                      })
+                    }
+                    className={"btn-classic"}
+                  >
+                    <span>Заказать</span>
+                  </button>
+                )}
               </div>
             </div>
           </td>
