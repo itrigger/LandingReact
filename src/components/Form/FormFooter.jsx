@@ -155,7 +155,7 @@ const FormFooter = (props) => {
         >
           <span>Отправить запрос</span>
         </button>
-        <div className="disclaimer">
+        <div className="disclaimer black-bg">
           Нажимая на кнопку, я соглашаюсь с{" "}
           <Link to="/politic">политикой обработки</Link> персональных данных
         </div>

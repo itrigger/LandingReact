@@ -73,6 +73,7 @@ select{
 .form-horizontal{
 	select{
 		width: calc(100% - 23px);
+		padding-right: 40px;
 	}
 }
 
@@ -96,7 +97,7 @@ select{
 }
 
 .mini-filter{
-	width: 300px;
+	width: 240px;
 	display: flex;
 	flex-direction: column;
 	label{
@@ -213,6 +214,9 @@ input::-webkit-inner-spin-button {
 			transition: .3s all;
 			border: 1px solid #ffffff;
 		}
+	}
+	.disclaimer{
+
 	}
 }
 .form.bg-dark{

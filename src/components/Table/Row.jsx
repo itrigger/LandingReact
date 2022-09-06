@@ -30,7 +30,18 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
       {isDesktop ? (
         <tr className="result-row-2">
           <td className="name-w">
-            <div className="name">{data.name}</div>
+            <div className="name">
+              {data.name}{" "}
+              {data.productsKP.tolshhinaOboda && (
+                <>
+                  ТО{"-"}
+                  {data.productsKP.tolshhinaOboda}
+                </>
+              )}{" "}
+              {data.productsKP.telezhka && (
+                <>{data.productsKP.telezhka === "гайка" ? "ТУ1" : "ТУ1Ш"}</>
+              )}
+            </div>
           </td>
           {data.productsKP.godVypuska ? (
             <td className="">
@@ -39,20 +50,7 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
           ) : (
             <td></td>
           )}
-          {data.productsKP.tolshhinaOboda ? (
-            <td className="ta_c">
-              <div className="right">{data.productsKP.tolshhinaOboda}</div>
-            </td>
-          ) : (
-            <td></td>
-          )}
-          {data.productsKP.telezhka ? (
-            <td className="">
-              <div className="right">{data.productsKP.telezhka}</div>
-            </td>
-          ) : (
-            <td></td>
-          )}
+
           <td>
             <div
               dangerouslySetInnerHTML={{ __html: data.shortDescription }}
@@ -164,10 +162,19 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
         /*mobile*/
         <tr className="result-row-2 card-mobile">
           <td className="name-w">
-            <div className="card-title">Деталь</div>
-            <div className="name">{data.name}</div>
+            <div className="name">
+              {data.name}{" "}
+              {data.productsKP.telezhka ? (
+                <>
+                  {data.productsKP.telezhka === "гайка" ? <>РУ1</> : <>РУ1Ш</>}
+                </>
+              ) : null}{" "}
+              {data.productsKP.tolshhinaOboda && (
+                <>ТО-{data.productsKP.tolshhinaOboda}</>
+              )}
+            </div>
           </td>
-          {data.productsKP.godVypuska ? (
+          {/*data.productsKP.godVypuska && (
             <td className="twocol">
               <div className="width50">
                 <div className="card-title">Год выпуска</div>
@@ -180,34 +187,17 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
                 </div>
               ) : null}
             </td>
-          ) : null}
+          ) */}
 
-          {data.productsKP.tolshhinaOboda ? (
-            <td>
-              <div className="card-title">Толщина обода</div>
-              {data.productsKP.tolshhinaOboda}
-            </td>
-          ) : null}
-          {data.productsKP.telezhka ? (
-            <td className="">
-              <div className="card-title">Тип оси</div>
-              <div className="right">{data.productsKP.telezhka}</div>
-            </td>
-          ) : null}
-          <td>
-            <div className="card-title">Состояние</div>
-            <div
+          <td className="td_description">
+            <span
               dangerouslySetInnerHTML={{ __html: data.shortDescription }}
               className="description"
-            ></div>
+            ></span>
+            {data.productsKP.mestonahozhdenie && (
+              <>, {data.productsKP.mestonahozhdenie}</>
+            )}
           </td>
-
-          {data.productsKP.mestonahozhdenie ? (
-            <td className="">
-              <div className="card-title">Станция</div>
-              <div className="right">{data.productsKP.mestonahozhdenie}</div>
-            </td>
-          ) : null}
 
           <td className=" price_block twocol">
             <div className="width50">

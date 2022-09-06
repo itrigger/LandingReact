@@ -53,6 +53,18 @@
 .mini_filter_w{
 	align-items: center;
 	padding-bottom: 20px;
+	.mini-filter{
+		width: 300px;
+	}
+	.fh_r button{
+		height: auto;
+		padding: 22px 50px 19px;
+		margin-left: 0;
+	}
+	.head{
+		margin-top: 2px;
+		line-height: 1 !important;
+	}
 }
 .map{
 	margin-top: -240px;
@@ -413,6 +425,10 @@
 		flex-direction: column;
 		font-size: 45px;
 	}
+	.megamap .form .head{
+		white-space: nowrap;
+		font-size: 21px;
+	}
 }
 
 
@@ -468,6 +484,9 @@
 			font-size: inherit;
 		}
 	}
+	.mini_filter_w .mini-filter{
+		width: 235px;
+	}
 }
 
 @media (max-width: 1023px) {
@@ -507,7 +526,7 @@
 			margin-bottom: 20px;
 		}
 		.head{
-			font-size: 36px;
+			font-size: 30px;
 		}
 		.mini_filter_w{
 			&>div{
@@ -549,6 +568,7 @@
 			font-size: 12px;
 			p{
 				margin-bottom: 0;
+				display: inline;
 			}
 		}
 		.price_block{
@@ -585,11 +605,42 @@
 
 	.card-mobile .description p {
 		font-size: inherit;
-		margin-bottom:0
+		margin-bottom:0;
+		display: inline;
+	}
+	.card-mobile .name{
+		font-family: 'TTFirsNeue-DemiBold', sans-serif;
+		text-transform: uppercase;
+		padding-top: 10px;
+		margin-bottom: 0;
+	}
+	.card-mobile .td_description{
+		font-size: 10px;
+		text-transform: uppercase;
 	}
 
 	.result-table .card-mobile td {
-		border-right:1px solid #e6e6e6
+		border: none;
+		padding: 0 10px;
+		&.price_block{
+			padding-bottom: 10px;
+		}
+	}
+	.result-table .card-mobile.bt td {
+		border: 1px solid rgba(#000, .15);
+		border-bottom: none;
+		padding: 10px;
+		&.price_block{
+			padding-bottom: 10px;
+		}
+		.btn-classic{
+			height: 42px;
+			padding: 0 29px;
+		}
+		.btn-wt-green{
+			height: 42px;
+			padding: 0 15px;
+		}
 	}
 
 	.result-row-2 .price_block .price {
@@ -671,5 +722,11 @@
 	.card-result-row .card .btn-w .btn-classic, .card-result-row .card .btn-w .paginator.next_prev li button, .paginator.next_prev li .card-result-row .card .btn-w button {
 		font-size: 11px;
 		height:40px
+	}
+	.mr-title{
+		.btn-classic{
+			padding-left: 25px;
+			padding-right: 25px;
+		}
 	}
 }

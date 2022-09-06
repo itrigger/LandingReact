@@ -2,18 +2,12 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import Rows from "./Rows";
 import { useNotification } from "../ui/Notify/NotifyProvider";
 import { useLazyQuery } from "@apollo/client";
-import {
-  GET_ALL_PARTS,
-  GET_STATIONS_BY_SLUG,
-  GET_TAGS_BY_CAT_ID,
-} from "../../apollo/queries";
+import { GET_ALL_PARTS } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
 import Spinner from "../../assets/img/spinner.svg";
 import { CARRIAGES_IDS, JDS, PARTS_IDS } from "../../utility/constants";
 import { CartContext } from "../../context/CartContext";
 import RowSkeleton from "./RowSkeleton";
-import Lytebox from "../ui/Lytebox/Lytebox";
-import Form from "../Form/Form";
 
 const updateQuery = (previousResult, { fetchMoreResult }) => {
   return fetchMoreResult.products.edges.length
@@ -21,7 +15,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
     : previousResult;
 };
 
-const RowsWrapper = ({
+const RowsWrapperCarriage = ({
   type = 1,
   map = false,
   limit,
@@ -33,28 +27,21 @@ const RowsWrapper = ({
   actived = false,
   nofilter = false,
   mini = false,
-  fromMap = false,
 }) => {
   let text = "";
   let text2 = "";
   // type = 1 - PARTS, type = 2 - CARRIAGES
+  const [filterTypeCategory, setFilterTypeCategory] = useState(
+    type === 2 && initialCategory > 1 ? initialCategory : selectedDD
+  );
+  const [filterTypeArea, setFilterTypeArea] = useState(selectedDDJD);
+  const [count, setCount] = useState(initialCount);
+  const [cartItems, setCartItems] = useContext(CartContext);
+
   const isBrowser = () => typeof window !== "undefined";
   const [isDesktop, setDesktop] = useState(
     isBrowser() && window.innerWidth > 1023
   );
-  const [filterTypeCategory, setFilterTypeCategory] = useState(-1);
-  const [filterTypeArea, setFilterTypeArea] = useState(-1);
-  const [filterTypeStation, setFilterTypeStation] = useState(-1);
-  const [count, setCount] = useState(initialCount);
-  const [selectJdItems, setSelectJdItems] = useState(JDS);
-  const [selectStationItems, setSelectStationItems] = useState([]);
-  const [stationStatus, setStationStatus] = useState(true);
-  const [jdStatus, setJdStatus] = useState(true);
-  const [btnStatus, setBtnStatus] = useState(true);
-  const [showItems, setShowItems] = useState(false);
-  const [slide, setSlide] = useState(false);
-  const [cartItems, setCartItems] = useContext(CartContext);
-  const [isFromMap, setIsFromMap] = useState(fromMap);
 
   const updateMedia = () => {
     setDesktop(isBrowser() && window.innerWidth > 1023);
@@ -101,20 +88,9 @@ const RowsWrapper = ({
         ? setFilterTypeCategory(PARTS_IDS)
         : setFilterTypeCategory(CARRIAGES_IDS)
       : setFilterTypeCategory([parseInt(value)]);
-    setFilterTypeArea("-1");
-    setFilterTypeStation("-1");
-    setStationStatus(true);
-    setJdStatus(true);
-    setBtnStatus(true);
   };
   const selectAreaHandler = (value) => {
     value === "0" ? setFilterTypeArea("0") : setFilterTypeArea(value);
-    setFilterTypeStation("-1");
-    setStationStatus(true);
-  };
-  const selectStationHandler = (value) => {
-    value === "0" ? setFilterTypeStation("0") : setFilterTypeStation(value);
-    setBtnStatus(false);
   };
 
   const variables = {
@@ -133,147 +109,44 @@ const RowsWrapper = ({
         ? filterTypeArea.toString()
         : null,
   };
-
   const [getProducts, { data, error, loading, fetchMore }] = useLazyQuery(
     type === 1 ? GET_ALL_PARTS : GET_ALL_CARRIAGES,
     {
+      variables,
       notifyOnNetworkStatusChange: true,
-      fetchPolicy: "network-only",
     }
   );
 
-  const [
-    getTags,
-    { data: data2, error: error2, loading: loading2, fetchMore: fetchMore2 },
-  ] = useLazyQuery(GET_TAGS_BY_CAT_ID, {
-    notifyOnNetworkStatusChange: true,
-    fetchPolicy: "network-only",
-  });
-
-  const [
-    getStations,
-    { data: data3, error: error3, loading: loading3, fetchMore: fetchMore3 },
-  ] = useLazyQuery(GET_STATIONS_BY_SLUG, {
-    notifyOnNetworkStatusChange: true,
-    fetchPolicy: "network-only",
-  });
-
   const filterClickHandler = (target) => {
     target.classList.add("btn-loading");
-    setIsFromMap(false);
     getProducts({
-      variables: {
-        first: count,
-        last: null,
-        after: null,
-        before: null,
-        categoryIdIn: filterTypeCategory,
-        tagIn: filterTypeArea,
-      },
+      variables,
     }).then((r) => {
       target.classList.remove("btn-loading");
-      setShowItems(true);
       executeScroll();
       handleNewNotification("SUCCESS", "Данные получены", "Успешно");
     });
   };
 
-  let array = [];
-  let array2 = [];
+  console.log(selectedDDJD);
+  console.log(selectedDD);
 
   useEffect(() => {
-    if (filterTypeCategory !== -1) {
-      setJdStatus(true);
-      setStationStatus(true);
-      setBtnStatus(true);
-      setShowItems(false);
-      setIsFromMap(false);
-      getTags({
-        variables: {
-          categoryIdIn: filterTypeCategory,
-        },
-      })
-        .then((r) => {
-          r.data.products.edges.forEach((item) => {
-            item.node.productTags.edges.forEach((item2) => {
-              const index = array.findIndex((in1) => in1 === item2.node.name);
-              if (index === -1) {
-                array.push(item2.node.name);
-              }
-            });
-          });
-          let temp = [];
-          JDS.forEach((item, i) => {
-            if (array.includes(item.slug)) {
-              temp.push(item);
-            }
-          });
-          setSelectJdItems(temp);
-          setJdStatus(false);
-          setStationStatus(true);
-        })
-        .catch(function (error) {
-          handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
-          console.warn(error);
-        });
-    }
-  }, [filterTypeCategory]);
-
-  useEffect(() => {
-    if (filterTypeArea !== -1) {
-      setStationStatus(true);
-      setBtnStatus(true);
-      setShowItems(false);
-      getStations({
-        variables: {
-          categoryIdIn: filterTypeCategory,
-          tagIn: filterTypeArea,
-        },
-      })
-        .then((r) => {
-          r.data.products.edges.forEach((item) => {
-            const index = array2.findIndex(
-              (in1) => in1 === item.node.productsKP.mestonahozhdenie
-            );
-            if (index === -1) {
-              array2.push(item.node.productsKP.mestonahozhdenie);
-            }
-          });
-          if (r.data.products && r.data.products.edges.length > 0) {
-            setSelectStationItems(array2);
-            setStationStatus(false);
-            setBtnStatus(true);
-          }
-        })
-        .catch(function (error) {
-          handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
-          console.warn(error);
-        });
-    }
-  }, [filterTypeArea]);
-
-  useEffect(() => {
-    if (isDesktop) {
-      setStationStatus(true);
+    if (selectedDD[0] !== 0) {
       getProducts({
-        variables: {
-          first: count,
-          last: null,
-          after: null,
-          before: null,
-          categoryIdIn: type === 1 ? PARTS_IDS : CARRIAGES_IDS,
-          tagIn: null,
-        },
+        ...variables,
+        categoryIdIn: filterTypeCategory,
+        tagIn: null,
       })
         .then((r) => {})
         .catch(function (error) {
           handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
         });
     }
-  }, [isDesktop]);
+  }, [selectedDD]);
 
   useEffect(() => {
-    if (selectedDDJD !== null) {
+    if (selectedDDJD !== "0") {
       getProducts({
         ...variables,
         categoryIdIn: PARTS_IDS,
@@ -285,25 +158,6 @@ const RowsWrapper = ({
         });
     }
   }, [selectedDDJD]);
-
-  useEffect(() => {
-    if (fromMap) {
-      getProducts({
-        variables: {
-          first: count,
-          last: null,
-          after: null,
-          before: null,
-          categoryIdIn: PARTS_IDS,
-          tagIn: selectedDDJD.toString(),
-        },
-      }).then((r) => {
-        setShowItems(true);
-        executeScroll();
-        handleNewNotification("SUCCESS", "Данные получены", "Успешно");
-      });
-    }
-  }, [fromMap]);
 
   if (error) {
     handleNewNotification("ERROR", "Что-то пошло не так", "Ошибка");
@@ -328,9 +182,7 @@ const RowsWrapper = ({
     }
     handleNewNotification("SUCCESS", "Товар добавлен в корзину!", "Успешно");
   };
-  const slideClickHandler = () => {
-    setSlide(true);
-  };
+
   return (
     <div className="megamap rowswrapper">
       {!nofilter ? (
@@ -349,16 +201,13 @@ const RowsWrapper = ({
                 <select
                   id={"sort3"}
                   className="form-control"
-                  value={
-                    filterTypeCategory !== null
-                      ? filterTypeCategory.toString()
-                      : "-1"
-                  }
+                  value={filterTypeCategory.toString()}
                   onChange={(e) => selectCategoryHandler(e.target.value)}
                 >
                   <option hidden disabled value="-1">
                     Выберите категорию
                   </option>
+                  <option value="0">Все категории</option>
                   {dropdown
                     ? dropdown.map((item) => (
                         <option value={item.id} key={item.id}>
@@ -376,52 +225,31 @@ const RowsWrapper = ({
                   value={
                     filterTypeArea !== null ? filterTypeArea.toString() : "-1"
                   }
-                  disabled={jdStatus}
                   onChange={(e) => selectAreaHandler(e.target.value)}
                 >
                   <option value={"-1"} hidden disabled>
                     Выберите железную дорогу
                   </option>
-
-                  {selectJdItems.map((item) => (
+                  <option value="0">Все железные дороги</option>
+                  {JDS.map((item) => (
                     <option value={item.slug} key={item.slug}>
-                      {item.name}
+                      {" "}
+                      {item.name}{" "}
                     </option>
                   ))}
                 </select>
               </div>
 
-              <div className={"mini-filter"}>
-                <select
-                  className="form-control"
-                  id={"sort2"}
-                  value={filterTypeStation.toString()}
-                  disabled={stationStatus}
-                  onChange={(e) => selectStationHandler(e.target.value)}
-                >
-                  <option value={"-1"} hidden disabled>
-                    Выберите станцию
-                  </option>
-
-                  {selectStationItems.map((item) => (
-                    <option value={item} key={item}>
-                      {item}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="col-4 m-col-4 xs-col-4 | fh_r">
-                <button
-                  className={`btn-classic black form-control ld-ext-right ${
-                    loading || loading2 || loading3 ? "btn-loading" : ""
-                  }`}
-                  onClick={(e) => filterClickHandler(e.target)}
-                  disabled={btnStatus}
-                >
-                  <span dangerouslySetInnerHTML={{ __html: text2 }}></span>
-                </button>
-              </div>
+              {!isDesktop && (
+                <div className="col-4 m-col-4 xs-col-4 | fh_r">
+                  <button
+                    className="btn-classic black form-control ld-ext-right"
+                    onClick={(e) => filterClickHandler(e.target)}
+                  >
+                    <span dangerouslySetInnerHTML={{ __html: text2 }}></span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -430,30 +258,16 @@ const RowsWrapper = ({
       )}
 
       <div className="map_result ">
-        {!showItems ? (
-          <div className="row">
+        {!data && !loading ? (
+          <div className="row br bl middle-border-12">
             <div className="col-12 m-col-12 xs-col-4">
               <div className="ta_c | mr-title">
-                <div className="desc">чтобы найти запчасти</div>
-                <div className="head">
-                  <span className="italic">Воспользуйтесь </span>фильтром
-                </div>
-                <div className="desc">
-                  Если Вы не нашли, что искали, то, возможно, мы просто не
-                  успели добавить запчасти на сайт
-                  <div>свяжитесь с нами и мы постараемся вам помочь</div>
-                </div>
-                <button
-                  className="btn-classic"
-                  onClick={() => slideClickHandler()}
-                >
-                  <span>Обратиться к менеджеру</span>
-                </button>
+                <img src={Spinner} alt="loader" />
               </div>
             </div>
           </div>
         ) : null}
-        {showItems && data && data.products ? (
+        {data && data.products ? (
           <Rows
             error={error}
             loading={loading}
@@ -461,10 +275,8 @@ const RowsWrapper = ({
             fetchMore={fetchMore}
             filterTypeArea={filterTypeArea}
             filterTypeCategory={filterTypeCategory}
-            filterTypeStation={filterTypeStation}
             updateQuery={updateQuery}
             executeScroll={executeScroll}
-            fromMap={isFromMap}
             type={type}
             count={count}
             addToCart={addToCart}
@@ -472,7 +284,7 @@ const RowsWrapper = ({
         ) : (
           ""
         )}
-        {loading && showItems ? (
+        {loading ? (
           <>
             <div>
               <div className="row br bl middle-border-12">
@@ -504,16 +316,9 @@ const RowsWrapper = ({
         ) : (
           ""
         )}
-        <Lytebox trigger={slide} setTrigger={setSlide}>
-          <div className="head3">
-            <span className="italic">Быстрый</span> подбор{" "}
-            {type === 1 ? "запчастей" : "вагона"}
-          </div>
-          <Form setTrigger={setSlide} />
-        </Lytebox>
       </div>
     </div>
   );
 };
 
-export default RowsWrapper;
+export default RowsWrapperCarriage;

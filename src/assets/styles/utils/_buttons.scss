@@ -142,6 +142,7 @@ button{
 	line-height: 0;
 	align-items: center;
 	justify-content: center;
+	pointer-events: auto;
 	span{
 		position: relative;
 		z-index: 1;
@@ -183,6 +184,10 @@ button{
 		&:before{
 			background: #2f2f2f;
 		}
+	}
+	&:disabled{
+		opacity: 0.5;
+		pointer-events: none;
 	}
 }
 

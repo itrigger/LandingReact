@@ -95,6 +95,38 @@ export const GET_ALL_PARTS = gql`
   }
 `;
 
+export const GET_TAGS_BY_CAT_ID = gql`
+  query getTagsByCatId($categoryIdIn: [Int]) {
+    products(where: { categoryIdIn: $categoryIdIn }, first: 100) {
+      edges {
+        node {
+          productTags {
+            edges {
+              node {
+                name
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_STATIONS_BY_SLUG = gql`
+  query getContentQuery($categoryIdIn: [Int], $tagIn: [String]) {
+    products(where: { categoryIdIn: $categoryIdIn, tagIn: $tagIn }) {
+      edges {
+        node {
+          productsKP {
+            mestonahozhdenie
+          }
+        }
+      }
+    }
+  }
+`;
+
 export const GET_ALL_PARTS_COUNTS = gql`
   query GetAllPartsCount($tagIn: [String]) {
     products(where: { categoryIdIn: [29, 32, 33], tagIn: $tagIn }) {

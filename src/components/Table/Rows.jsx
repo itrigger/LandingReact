@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Row from "./Row";
 import Card from "./Card";
 import RowSkeleton from "./RowSkeleton";
@@ -14,21 +14,21 @@ const Rows = ({
   fetchMore,
   filterTypeCategory,
   filterTypeArea,
+  filterTypeStation,
   updateQuery,
   executeScroll,
   type,
   count,
   addToCart,
+  fromMap,
 }) => {
   const [slide, setSlide] = useState(false);
   const [telWt, setTelWt] = useState("");
-
   const wtClickHandler = () => {
     window.open("https://wa.me/" + telWt);
   };
-
   const { data: data2 } = useQuery(GET_CONTENT);
-
+  console.log(fromMap);
   useEffect(() => {
     if (data2) {
       setTelWt(data2.posts.nodes[0].acfcontent.telWt);
@@ -55,10 +55,13 @@ const Rows = ({
             </div>
           </div>
         </div>
-
-        {Array.apply(0, Array(count)).map(function (x, i) {
-          return <RowSkeleton key={i} />;
-        })}
+        <table>
+          <tbody>
+            {Array.apply(0, Array(count)).map(function (x, i) {
+              return <RowSkeleton key={i} />;
+            })}
+          </tbody>
+        </table>
       </div>
     );
 
@@ -91,8 +94,6 @@ const Rows = ({
                     <tr>
                       <th>Наименование</th>
                       <th className={"ta_c"}>Г.в.</th>
-                      <th className={"ta_c"}>Толщ. обода</th>
-                      <th className={"ta_c"}>Тип оси</th>
                       <th className={"ta_c"}>Состояние</th>
                       <th className={"ta_c"}>Станция</th>
                       <th className={"ta_c"}>Дорога</th>
@@ -116,14 +117,31 @@ const Rows = ({
                   {type === 1
                     ? data.edges.map((edge) => {
                         const { node } = edge;
-                        return (
-                          <Row
-                            key={node.id}
-                            data={node}
-                            addToCart={addToCart}
-                            wtClickHandler={wtClickHandler}
-                          />
-                        );
+                        if (fromMap) {
+                          return (
+                            <Row
+                              key={node.id}
+                              data={node}
+                              addToCart={addToCart}
+                              wtClickHandler={wtClickHandler}
+                            />
+                          );
+                        } else {
+                          if (
+                            filterTypeStation !== null &&
+                            node.productsKP.mestonahozhdenie ===
+                              filterTypeStation
+                          ) {
+                            return (
+                              <Row
+                                key={node.id}
+                                data={node}
+                                addToCart={addToCart}
+                                wtClickHandler={wtClickHandler}
+                              />
+                            );
+                          }
+                        }
                       })
                     : data.edges.map((edge) => {
                         const { node } = edge;

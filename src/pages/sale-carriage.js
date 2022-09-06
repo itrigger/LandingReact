@@ -15,6 +15,7 @@ import StickyBox from "react-sticky-box";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
 import PremsParts from "../components/home/Inner/PremsParts";
+import RowsWrapperCarriage from "../components/Table/Rows-wrapper-carriage";
 
 const SaleCarriage = () => {
   const [initialCategory, setInitialCategory] = useState(1);
@@ -206,7 +207,7 @@ const SaleCarriage = () => {
           </div>
         </div>*/}
         <div className="anchor" ref={myRef2}>
-          <RowsWrapper
+          <RowsWrapperCarriage
             type={2}
             initialCount={12}
             initialCategory={initialCategory}

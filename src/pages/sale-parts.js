@@ -12,15 +12,18 @@ const SaleParts = ({ location }) => {
   let selectedDD = [0];
   let selectedDDJD = null;
   let actived = false;
+  let fromMap = false;
   const [slide, setSlide] = useState(false);
   const slideClickHandler = () => {
     setSlide(true);
   };
+  console.log(location.state);
   if (location.state && location.state.chooseCatById !== undefined) {
     selectedDD = [location.state.chooseCatById];
   }
   if (location.state && location.state.jd !== undefined) {
     selectedDDJD = [location.state.jd];
+    fromMap = true;
   }
 
   if (location && location.pathname === "/sale-parts") {
@@ -81,6 +84,7 @@ const SaleParts = ({ location }) => {
           actived={actived}
           nofilter={false}
           mini={true}
+          fromMap={fromMap}
         />
         <Lytebox trigger={slide} setTrigger={setSlide}>
           <div className="head3">

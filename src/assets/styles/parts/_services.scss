@@ -433,7 +433,10 @@
 
 @media (max-width: 600px){
   .service-home{
-    margin-top: 40px;
+    margin-top: 0;
     padding-top: 0;
+  }
+  #ocenka .btn-classic{
+    font-size: 14px;
   }
 }
