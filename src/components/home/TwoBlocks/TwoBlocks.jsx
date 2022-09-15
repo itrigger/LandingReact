@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import img1 from "../../../assets/img/tb_top_img.png";
 import img2 from "../../../assets/img/promo1reverse.png";
-import img3 from "../../../assets/img/cat1.png";
+import img4 from "../../../assets/img/parts2.png";
 
 const TwoBlocks = () => {
   return (
@@ -71,7 +71,7 @@ const TwoBlocks = () => {
                 <span className="italic">Продаём</span> зап.части
               </div>
               <div className="mobile_img_wrapper">
-                <img src={img3} alt="image 3" />
+                <img src={img4} alt="image 3" />
               </div>
               <div className="desc">
                 Поставляем запасные части к вагонам.{" "}

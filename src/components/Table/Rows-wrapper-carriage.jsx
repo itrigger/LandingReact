@@ -75,7 +75,7 @@ const RowsWrapperCarriage = ({
   };
 
   if (type === 1) {
-    text = "<span class='italic'>выберите дорогу</span>";
+    text = "<span class='italic'>поиск</span> запчастей";
     text2 = "Найти запчасть";
   } else {
     text = "<span class='italic'>Продажа</span> вагонов";

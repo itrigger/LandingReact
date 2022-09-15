@@ -54,7 +54,7 @@
 	align-items: center;
 	padding-bottom: 20px;
 	.mini-filter{
-		width: 300px;
+		width: 290px;
 	}
 	.fh_r button{
 		height: auto;
@@ -82,10 +82,16 @@
 			fill: #1D64B7;
 			transition: .2s all;
 		}
-		&:hover{
+		&:hover, &.hover{
 			fill: #63a1e8;
 			transition: .2s all;
 		}
+	}
+	.path{
+		pointer-events: none;
+	}
+	.path.area{
+		pointer-events: auto;
 	}
 	.path.back{
 		&.active{
@@ -102,6 +108,8 @@
 		margin-bottom: 20px;
 		font-family: "TTNorms-Regular", sans-serif;
 		color: rgba(0, 0, 0, 0.6);
+		text-transform: none;
+
 	}
 }
 
@@ -485,7 +493,7 @@
 		}
 	}
 	.mini_filter_w .mini-filter{
-		width: 235px;
+		width: 215px;
 	}
 }
 
@@ -728,5 +736,8 @@
 			padding-left: 25px;
 			padding-right: 25px;
 		}
+	}
+	.mr-title .head + .desc{
+		font-size: 14px;
 	}
 }

@@ -93,6 +93,22 @@ const Slider = () => {
           >
             <SwiperSlide>
               <div className="head big-head">
+                <span className="italic">Скупаем</span> вагоны &nbsp;
+                <i className="smaller">в любом состоянии</i>
+              </div>
+              <div className="desc">На 10% выше рыночной стоимости</div>
+              <button
+                className="btn yellow mobile"
+                onClick={() => slideClickHandler2()}
+              >
+                <span>Получить консультацию</span>
+              </button>
+              <Link to="/buy-carriage" className="btn swiper-slide-btn">
+                <span>Перейти в раздел</span>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="head big-head">
                 <span className="italic">Продаем</span> вагоны
               </div>
               <div className="desc">
@@ -122,22 +138,6 @@ const Slider = () => {
                 <span>Получить консультацию</span>
               </button>
               <Link to="/sale-parts" className="btn swiper-slide-btn">
-                <span>Перейти в раздел</span>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className="head big-head">
-                <span className="italic">Скупаем</span> вагоны &nbsp;
-                <i className="smaller">в любом состоянии</i>
-              </div>
-              <div className="desc">На 10% выше рыночной стоимости</div>
-              <button
-                className="btn yellow mobile"
-                onClick={() => slideClickHandler2()}
-              >
-                <span>Получить консультацию</span>
-              </button>
-              <Link to="/buy-carriage" className="btn swiper-slide-btn">
                 <span>Перейти в раздел</span>
               </Link>
             </SwiperSlide>

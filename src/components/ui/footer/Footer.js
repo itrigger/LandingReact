@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="foot-btn">
               <button onClick={() => clickHandler()} className="btn-wt">
                 <span className="ico ico-left ico-wt"></span>
-                Написать в WhatsApp
+                WhatsApp
               </button>
             </div>
             <div className="foot-address">{address}</div>
@@ -96,7 +96,7 @@ const Footer = () => {
           </div>
           <div className="col-4 m-col-4 xs-col-4 | col3">
             {" "}
-            <div className="foot-version">Версия 1.16</div>
+            <div className="foot-version">Версия 1.18</div>
           </div>
         </div>
       </div>

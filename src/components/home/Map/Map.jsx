@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { JDS } from "../../../utility/constants";
 import { navigate } from "gatsby";
 import PopupItem from "./PopupItem";
+import { element } from "prop-types";
 
 const Map = () => {
   const [currentJD, setCurrentJD] = useState("");
@@ -19,8 +20,48 @@ const Map = () => {
         mapRef.current.removeEventListener("click", clickHandler);
       };
     }
+
     temp();
   }, [popupActive]);
+
+  /*  useEffect(() => {
+    function temp2() {
+      mapRef.current.addEventListener("mouseover", hoverOnHandler);
+      return () => {
+        mapRef.current.removeEventListener("mouseover", hoverOffHandler);
+      };
+    }
+
+    temp2();
+  }, []);*/
+
+  /*const hoverOnHandler = (event) => {
+    const element2 = document.querySelectorAll(".path");
+    element2.forEach((item) => {
+      item.classList.remove("hover");
+    });
+    if (event.target.classList) {
+      if (
+        event.target.classList[1] !== "path" &&
+        event.target.classList[1] !== "area"
+      ) {
+        const element = mapRef.current.querySelectorAll(
+          "." + `${event.target.classList[1]}`
+        );
+        element.forEach((item) => {
+          item.classList.add("hover");
+        });
+      }
+    }
+  };
+
+  const hoverOffHandler = () => {
+    const element2 = document.querySelectorAll(".path");
+    console.log(element2);
+    element2.forEach((item) => {
+      item.classList.remove("hover");
+    });
+  };*/
 
   const clickHandler = (event) => {
     if (event.target.dataset.road !== undefined) {

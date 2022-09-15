@@ -7,6 +7,7 @@ import { PARTS } from "../utility/constants";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
 import PremsParts from "../components/home/Inner/PremsParts";
+import { MemoizedMap } from "../components/home/Map/Map";
 
 const SaleParts = ({ location }) => {
   let selectedDD = [0];

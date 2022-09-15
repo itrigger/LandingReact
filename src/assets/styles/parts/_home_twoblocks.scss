@@ -129,13 +129,13 @@
 			content: '';
 			display: block;
 			position: absolute;
-			left: 480px;
-			bottom: 10px;
-			background: url("../img/cat1.png") 0 bottom no-repeat;
+			left: 540px;
+			bottom: 50px;
+			background: url("../img/parts.png") 0 bottom no-repeat;
 			background-position-x: 0;
 			background-size: contain !important;
-			width: 422px;
-			height: 278px;
+			width: 307px;
+			height: 417px;
 			transition: .3s all;
 		}
 		& > div{
@@ -154,7 +154,7 @@
 		}
 		&:hover{
 			&:after{
-				left: 510px;
+				left: 580px;
 				transition: .3s all;
 			}
 		}
@@ -171,13 +171,15 @@
 		}
 	}
 	.twoblocks .tb-right:after{
-		background-size: 742px 609px;
-		left: 420px;
+		left: 440px;
+		width: 240px;
+		height: 340px;
 	}
 	.twoblocks .tb-right{
+
 		&:hover{
 			&:after{
-				left: 440px;
+				left: 460px;
 				transition: .3s all;
 			}
 		}
@@ -381,7 +383,11 @@
 @media (max-width: 600px) {
 	.twoblocks .tb-right .mobile_img_wrapper
 	{
-		margin-bottom: 0;}
+		margin-bottom: 20px;
+		img{
+			max-width: 380px;
+		}
+	}
 	.twoblocks .tb-left .mobile_img_wrapper{
 		margin-bottom: 10px;
 	}

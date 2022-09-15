@@ -88,7 +88,7 @@ const RowsWrapper = ({
   };
 
   if (type === 1) {
-    text = "<span class='italic'>выберите дорогу</span>";
+    text = "<span class='italic'>поиск</span> запчастей";
     text2 = "Найти запчасть";
   } else {
     text = "<span class='italic'>Продажа</span> вагонов";
@@ -333,6 +333,31 @@ const RowsWrapper = ({
   };
   return (
     <div className="megamap rowswrapper">
+      <div className="map_result">
+        {!showItems ? (
+          <div className="row">
+            <div className="col-12 m-col-12 xs-col-4">
+              <div className="ta_c | mr-title">
+                <div className="desc">чтобы найти запчасти</div>
+                <div className="head">
+                  <span className="italic">Воспользуйтесь </span>фильтром
+                </div>
+                <div className="desc">
+                  Если Вы не нашли, что искали, то, возможно, мы просто не
+                  успели добавить запчасти на сайт
+                  <div>свяжитесь с нами и мы постараемся вам помочь</div>
+                </div>
+                <button
+                  className="btn-classic"
+                  onClick={() => slideClickHandler()}
+                >
+                  <span>Обратиться к менеджеру</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
       {!nofilter ? (
         <div className={mini ? "form form-horizontal" : "form form-horizontal"}>
           <div
@@ -430,29 +455,6 @@ const RowsWrapper = ({
       )}
 
       <div className="map_result ">
-        {!showItems ? (
-          <div className="row">
-            <div className="col-12 m-col-12 xs-col-4">
-              <div className="ta_c | mr-title">
-                <div className="desc">чтобы найти запчасти</div>
-                <div className="head">
-                  <span className="italic">Воспользуйтесь </span>фильтром
-                </div>
-                <div className="desc">
-                  Если Вы не нашли, что искали, то, возможно, мы просто не
-                  успели добавить запчасти на сайт
-                  <div>свяжитесь с нами и мы постараемся вам помочь</div>
-                </div>
-                <button
-                  className="btn-classic"
-                  onClick={() => slideClickHandler()}
-                >
-                  <span>Обратиться к менеджеру</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        ) : null}
         {showItems && data && data.products ? (
           <Rows
             error={error}
