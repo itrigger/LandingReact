@@ -19,14 +19,16 @@ const TwoBlocks = () => {
                   <img src={img1} alt="image 1" />
                 </div>
                 <div className="hint">
-                  <span className="italic">Уже куплено</span> 3260 вагонов
+                  {/*<span className="italic">Уже куплено</span> 3260 вагонов*/}
                 </div>
               </div>
               <div className="d_f fd_c tb_top_right">
                 <div className="desc">
-                  Приобретаем все виды вагонов в любом{" "}
-                  <span>состоянии: в рабочем парке, с истекшим</span> сроком
-                  службы, после схода
+                  Приобретаем все виды вагонов <b>в любом</b>{" "}
+                  <span>
+                    <b>состоянии:</b> в рабочем парке, с истекшим
+                  </span>{" "}
+                  сроком службы, после схода
                 </div>
                 <Link to="/buy-carriage">
                   <button className="btn black">
@@ -34,7 +36,7 @@ const TwoBlocks = () => {
                   </button>
                 </Link>
                 <div className="hint hint22">
-                  <span className="italic">Уже куплено</span> 3260 вагонов
+                  {/*<span className="italic">Уже куплено</span> 3260 вагонов*/}
                 </div>
               </div>
             </div>
@@ -61,14 +63,14 @@ const TwoBlocks = () => {
                 </button>
               </Link>
               <div className="hint">
-                <span className="italic">Уже продано</span> 2520 вагонов
+                {/*<span className="italic">Уже продано</span> 2520 вагонов*/}
               </div>
             </div>
           </div>
           <div className="tb-right">
             <div>
               <div className="head">
-                <span className="italic">Продаём</span> зап.части
+                <span className="italic">Продаём</span> запчасти
               </div>
               <div className="mobile_img_wrapper">
                 <img src={img4} alt="image 3" />
@@ -83,7 +85,7 @@ const TwoBlocks = () => {
                 </button>
               </Link>
               <div className="hint">
-                <span className="italic">Уже продано</span> 12030 зап.частей
+                {/*<span className="italic">Уже продано</span> 12030 зап.частей*/}
               </div>
             </div>
           </div>

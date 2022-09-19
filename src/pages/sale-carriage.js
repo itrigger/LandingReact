@@ -31,7 +31,7 @@ const SaleCarriage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Продажа б/у вагонов | Вагон Трейд - Покупка и продажа вагонов. Аренда.
+          Продажа вагонов | Вагон Трейд - Покупка и продажа вагонов. Аренда.
           Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
@@ -219,13 +219,16 @@ const SaleCarriage = () => {
         <div className="promo slide1">
           <div className="row">
             <div className="col-6 m-col-8 xs-col-4 zi-2">
-              <div className="head">
-                <span className="italic">Выкуп</span> вагонов дороже рынка на
-                10-20%
+              <div className="head" style={{ position: "relative" }}>
+                <span className="italic">Выкуп</span> вагонов{" "}
+                <span className="only-desktop">дорого</span>
+                <span className="only-mobile">дороже рынка на 10-20%</span>
+                <div className="sticker">
+                  <b>дороже рынка</b> на 10-20%
+                </div>
               </div>
               <ul>
                 <li>В любом состоянии</li>
-                <li>Выкуп по договору</li>
                 <li>по всей территории России и странам СНГ</li>
                 <li>по 100% предоплате</li>
               </ul>
@@ -236,7 +239,7 @@ const SaleCarriage = () => {
                 <span>Продать вагон</span>
               </button>
               <div className="hint">
-                <span className="italic">Уже продано</span> 1310 вагонов
+                {/*<span className="italic">Уже продано</span> 1310 вагонов*/}
               </div>
             </div>
             <div className="col-6 m-col-4 picture"></div>

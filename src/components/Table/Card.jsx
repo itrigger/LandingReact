@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import Lytebox from "../ui/Lytebox/Lytebox";
+import Form from "../Form/Form";
 
 const Card = ({ data, addToCart, wtClickHandler }) => {
   const isBrowser = () => typeof window !== "undefined";
@@ -24,9 +26,22 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
       setCartItems(cartItems.filter((x) => x.id !== id));
     }
   };
-
+  const [slide, setSlide] = useState(false);
+  const slideClickHandler = () => {
+    setSlide(true);
+  };
   return (
     <>
+      <Lytebox trigger={slide} setTrigger={setSlide}>
+        <div className="head3">
+          <span className="italic">Запрос</span> коммерческого
+          <br /> предложения
+        </div>
+        <Form
+          setTrigger={setSlide}
+          msg={`${data.productCategories.nodes[0].name} - ${data.name}`}
+        />
+      </Lytebox>
       {isDesktop ? (
         <tr className="card bt">
           <td className="">
@@ -84,33 +99,12 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
                 >
                   <span className="ico ico-left ico-wt-white"></span>Подробнее
                 </button>
-              ) : cartItems.find((x) => x.id === data.id) ? (
-                <button
-                  onClick={() => cartDeleteItem(data.id)}
-                  className={"btn-classic active"}
-                >
-                  <span>Убрать</span>
-                </button>
               ) : (
                 <button
-                  onClick={() =>
-                    addToCart({
-                      id: data.id,
-                      price: data.price,
-                      name: data.name,
-                      image: data.image.srcSet,
-                      stock: data.stockQuantity,
-                      year: data.productsKP.godVypuska
-                        ? data.productsKP.godVypuska
-                        : null,
-                      location: data.productsKP.mestonahozhdenie
-                        ? data.productsKP.mestonahozhdenie
-                        : null,
-                    })
-                  }
+                  onClick={() => slideClickHandler()}
                   className={"btn-classic"}
                 >
-                  <span>Заказать</span>
+                  <span>Запросить ком.пред</span>
                 </button>
               )}
             </div>
@@ -189,32 +183,10 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
                   </button>
                 ) : (
                   <button
-                    onClick={() =>
-                      addToCart({
-                        id: data.id,
-                        price: data.price,
-                        name: data.name,
-                        image: data.image.srcSet,
-                        stock: data.stockQuantity,
-                        year: data.productsKP.godVypuska
-                          ? data.productsKP.godVypuska
-                          : null,
-                        location: data.productsKP.mestonahozhdenie
-                          ? data.productsKP.mestonahozhdenie
-                          : null,
-                      })
-                    }
-                    className={
-                      cartItems.find((x) => x.id === data.id)
-                        ? "btn-classic active"
-                        : "btn-classic"
-                    }
+                    onClick={() => slideClickHandler()}
+                    className={"btn-classic"}
                   >
-                    <span>
-                      {cartItems.find((x) => x.id === data.id)
-                        ? "Уже в заказе"
-                        : "Заказать"}
-                    </span>
+                    <span>Запросить</span>
                   </button>
                 )}
               </div>

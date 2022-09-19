@@ -6,7 +6,11 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import { Link } from "gatsby";
 
 const Form = (props) => {
-  const [type, setType] = useState("");
+  const [type, setType] = useState(
+    props.msg
+      ? "Здравствуйте, хочу получить коммерческое предложение на " + props.msg
+      : ""
+  );
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
   const [typeError, setTypeError] = useState(false);

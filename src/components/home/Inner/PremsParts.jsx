@@ -28,9 +28,9 @@ const PremsParts = (props) => {
                 <img src={Ico4} alt="" />
               </div>
               <div className="d_f fd_c">
-                <div className="title">Продажа</div>
+                <div className="title">Выгода</div>
                 <div className="desc">
-                  Продажа только собственных вагонов и зап.частей
+                  Продажа только собственных вагонов и запчастей
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@ const PremsParts = (props) => {
               </div>
               <div className="d_f fd_c">
                 <div className="title">Доставка</div>
-                <div className="desc">Доставка зап.частей на любую станцию</div>
+                <div className="desc">Доставка запчастей на любую станцию</div>
               </div>
             </div>
             <div className="ico-wrapper">
@@ -48,10 +48,8 @@ const PremsParts = (props) => {
                 <img src={Ico10} alt="" />
               </div>
               <div className="d_f fd_c">
-                <div className="title">Наличие</div>
-                <div className="desc">
-                  Наличие зап.частей по всей сети «РЖД»
-                </div>
+                <div className="title">Удобство</div>
+                <div className="desc">Наличие запчастей по всей сети «РЖД»</div>
               </div>
             </div>
             <div className="ico-wrapper">
@@ -60,7 +58,9 @@ const PremsParts = (props) => {
               </div>
               <div className="d_f fd_c">
                 <div className="title">Гарантия</div>
-                <div className="desc">Гарантийные обязательства</div>
+                <div className="desc">
+                  Гарантийные обязательства по договору поставки
+                </div>
               </div>
             </div>
           </div>

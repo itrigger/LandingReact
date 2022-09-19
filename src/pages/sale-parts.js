@@ -93,6 +93,7 @@ const SaleParts = ({ location }) => {
           </div>
           <Form setTrigger={setSlide} />
         </Lytebox>
+
         <PremsParts />
         <div className="homeseo saleparts_page">
           <div className="row">
@@ -105,14 +106,17 @@ const SaleParts = ({ location }) => {
 
             <div className="col-8 m-col-8 xs-col-4 | rightside">
               <div className="promo promo-cutted slide1">
+                <div className="sticker">
+                  <b>дороже рынка</b> на 10-20%
+                </div>
                 <div className="picture"></div>
                 <div className="head">
-                  <span className="italic">Выкуп</span> вагонов дороже рынка на
-                  10-20%
+                  <span className="italic">Выкуп</span> вагонов{" "}
+                  <span className="only-desktop">дорого</span>
+                  <span className="only-mobile">дороже рынка на 10-20%</span>
                 </div>
                 <ul>
                   <li>В любом состоянии</li>
-                  <li>Выкуп по договору</li>
                   <li>по всей территории России и странам СНГ</li>
                   <li>по 100% предоплате</li>
                 </ul>
@@ -123,7 +127,7 @@ const SaleParts = ({ location }) => {
                   <span>Продать вагон</span>
                 </button>
                 <div className="hint">
-                  <span className="italic">Уже продано</span> 3260 вагонов
+                  {/*<span className="italic">Уже продано</span> 3260 вагонов*/}
                 </div>
               </div>
             </div>

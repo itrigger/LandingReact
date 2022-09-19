@@ -94,9 +94,10 @@ const Slider = () => {
             <SwiperSlide>
               <div className="head big-head">
                 <span className="italic">Скупаем</span> вагоны &nbsp;
-                <i className="smaller">в любом состоянии</i>
               </div>
-              <div className="desc">На 10% выше рыночной стоимости</div>
+              <div className="desc">
+                В любом состоянии на 10% выше рыночной стоимости
+              </div>
               <button
                 className="btn yellow mobile"
                 onClick={() => slideClickHandler2()}

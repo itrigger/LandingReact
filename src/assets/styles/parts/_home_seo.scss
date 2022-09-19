@@ -10,6 +10,7 @@
 	margin-bottom: 40px;
 	margin-left: 0 !important;
 	justify-content: center;
+	padding: 0 100px;
 	li{
 		margin-right: 2%;
 		margin-left: 2%;
@@ -94,6 +95,10 @@
 			margin-bottom: 30px;
 		}
 	}
+	.btn-wt-green{
+		padding: 10px 20px;
+		font-size: 14px;
+	}
 }
 
 @media (min-width: 1024px) and (max-width: 1399px) {
@@ -157,9 +162,9 @@
 		font-size: 21px;
 		margin-top: 5px;
 	}
-	.btn-wt-green{
-		padding: 15px 28px;
-		font-size: 16px;
+	.homeseo .btn-wt-green{
+		padding: 10px 20px;
+		font-size: 14px;
 	}
 }
 
@@ -179,6 +184,9 @@
 			margin-bottom: 50px;
 		}
 	}
+	.testimonials-ul{
+		padding: 0;
+	}
 }
 
 @media (max-width: 600px){
@@ -191,6 +199,6 @@
 		border-left: 1px solid rgba(230, 230, 230, 0.5);
 	}
 	.testimonials-ul{
-
+		padding: 0;
 	}
 }

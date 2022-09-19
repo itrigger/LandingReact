@@ -342,17 +342,21 @@ const RowsWrapper = ({
                 <div className="head">
                   <span className="italic">Воспользуйтесь </span>фильтром
                 </div>
-                <div className="desc">
-                  Если Вы не нашли, что искали, то, возможно, мы просто не
-                  успели добавить запчасти на сайт
-                  <div>свяжитесь с нами и мы постараемся вам помочь</div>
+                <div className="d_f jc_c ai_c | desc2">
+                  <div className="desc">
+                    Если Вы не нашли, что искали, то
+                    <div>свяжитесь с нами и мы постараемся вам помочь</div>
+                  </div>
+                  <div>
+                    <button
+                      className="btn-wt-green"
+                      onClick={() => slideClickHandler()}
+                    >
+                      <span className="ico ico-left ico-wt-white"></span>
+                      <span>Написать в WhatsApp</span>
+                    </button>
+                  </div>
                 </div>
-                <button
-                  className="btn-classic"
-                  onClick={() => slideClickHandler()}
-                >
-                  <span>Обратиться к менеджеру</span>
-                </button>
               </div>
             </div>
           </div>
