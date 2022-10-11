@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useNotification } from "../components/ui/Notify/NotifyProvider";
 import { Helmet } from "react-helmet";
 import Layout from "../components/ui/layout/Layout";
-import BossImg from "../assets/img/boss3.png";
+import BossImg from "../assets/img/boss2.png";
 import { CartContext } from "../context/CartContext";
 import CartRow from "../components/Table/CartRow";
 import FormCart from "../components/Form/FormCart";
@@ -202,8 +202,10 @@ const Cart = () => {
               <div className="col-4 m-col-4 xs-col-4 bg-dark bl-light">
                 <div className="d_f fd_c ai_c jc_c | boss">
                   <img src={BossImg} width="262" height="262" alt="директор" />
-                  <div className="title">Руководитель</div>
-                  <div className="name">Омаров Азамат</div>
+                  <div className="title">
+                    Руководитель отдела продаж запчастей
+                  </div>
+                  <div className="name">Овчинников Михаил</div>
                   <div className="text">
                     Мы вам перезвоним через 15 минут{" "}
                     <span>для подтверждения заказа</span>

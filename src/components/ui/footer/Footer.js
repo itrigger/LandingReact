@@ -35,6 +35,14 @@ const Footer = () => {
         <div className="row">
           <div className="col-4 m-col-4 xs-col-4 | col1">
             <div className="foot-logo"></div>
+
+            <div className="foot-text">
+              Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
+              железнодорожных вагонов.
+              <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
+            </div>
+          </div>
+          <div className="col-4 m-col-4 xs-col-4 | col2">
             <ul>
               <li>
                 <AnchorLink to="/buy-carriage" title="Скупка вагонов">
@@ -48,16 +56,8 @@ const Footer = () => {
                 <Link to="/sale-parts">Продажа запчастей</Link>
               </li>
             </ul>
-            <div className="foot-text">
-              Продажа грузовых вагонов б/у, поставка новых и б/у запчастей для
-              железнодорожных вагонов.
-              <div className="copy">©2012 -2022 ООО «Вагон Трейд»</div>
-            </div>
           </div>
-          <div className="col-4 m-col-4 xs-col-4 | col2">
-            <div className="head ">
-              <div className="italic"> Контакты</div>
-            </div>
+          <div className="col-4 m-col-4 xs-col-4 | col3">
             <a href={"tel:" + telCall} className="phone">
               {tel}
             </a>
@@ -68,14 +68,6 @@ const Footer = () => {
               </button>
             </div>
             <div className="foot-address">{address}</div>
-          </div>
-          <div className="col-4 m-col-4 xs-col-4 | col3">
-            <div className="form">
-              <div className="head">
-                <span className="italic">Свяжитесь</span> с нами
-              </div>
-              <FormFooter />
-            </div>
           </div>
         </div>
       </div>
@@ -96,7 +88,7 @@ const Footer = () => {
           </div>
           <div className="col-4 m-col-4 xs-col-4 | col3">
             {" "}
-            <div className="foot-version">Версия 1.18</div>
+            <div className="foot-version">Версия 1.25</div>
           </div>
         </div>
       </div>

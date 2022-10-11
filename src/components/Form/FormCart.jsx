@@ -199,7 +199,7 @@ const FormCart = (props) => {
         <div className="col-6 m-col-6 xs-col-8">
           <input
             type="text"
-            placeholder="Адрес депо доставки"
+            placeholder="Адрес доставки"
             value={depo}
             className={depoError ? "error" : ""}
             onChange={(e) => setDepo(e.target.value)}

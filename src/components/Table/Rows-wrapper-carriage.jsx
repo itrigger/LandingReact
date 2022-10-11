@@ -124,7 +124,7 @@ const RowsWrapperCarriage = ({
     }).then((r) => {
       target.classList.remove("btn-loading");
       executeScroll();
-      handleNewNotification("SUCCESS", "Данные получены", "Успешно");
+      //handleNewNotification("SUCCESS", "Данные получены", "Успешно");
     });
   };
 

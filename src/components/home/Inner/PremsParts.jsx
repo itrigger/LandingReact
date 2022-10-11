@@ -8,7 +8,7 @@ import Ico10 from "../../../assets/img/step10.svg";
 const PremsParts = (props) => {
   return (
     <div>
-      <div className="row service3  middle-border-12 premparts">
+      <div className="row service3 premparts">
         <div className="col-12 m-col-12 xs-col-4">
           <div className="head2 ta_c">
             <span className="italic">Наши</span> преимущества

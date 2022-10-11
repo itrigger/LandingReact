@@ -62,7 +62,11 @@ const BuyCarriage = () => {
         <div className="row service3 middle-border-12 br bl">
           <div className="col-4 m-col-4 xs-col-4">
             <div className="head2">
-              <span className="italic">Выкуп вагонов</span> по ценам выше рынка!
+              <span className="italic">Выкуп </span>вагонов
+            </div>
+
+            <div className="hint">
+              <span className="italic">по ценам</span> выше рынка!
             </div>
 
             <ul className="content">

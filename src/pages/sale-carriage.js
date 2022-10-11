@@ -221,8 +221,8 @@ const SaleCarriage = () => {
             <div className="col-6 m-col-8 xs-col-4 zi-2">
               <div className="head" style={{ position: "relative" }}>
                 <span className="italic">Выкуп</span> вагонов{" "}
-                <span className="only-desktop">дорого</span>
-                <span className="only-mobile">дороже рынка на 10-20%</span>
+                <i className="only-desktop">дорого</i>
+                <i className="only-mobile">дороже рынка на 10-20%</i>
                 <div className="sticker">
                   <b>дороже рынка</b> на 10-20%
                 </div>

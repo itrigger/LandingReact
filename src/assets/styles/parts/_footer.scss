@@ -17,21 +17,20 @@
 			border-left: 1px solid rgba(#fff, .1);
 			padding-left: 30px;
 			padding-right: 30px;
-			ul{
-				margin-top: 60px;
-				li{
-					margin-bottom: 15px;
-					a, button{
-						color: #fff;
-						text-decoration: none;
-						font-size: 18px;
-						font-family: "TTFirsNeue-Medium", sans-serif;
-					}
+			.foot-text {
+				margin-top: 30px;
+				font-size: 16px;
+				line-height: 1.5;
+				opacity: .5;
+				padding-right: 10px;
+				font-family: "TTNorms-Regular", sans-serif;
+				.copy{
+					margin-top: 60px;
 				}
 			}
 		}
 		.col2{
-			padding-top: 60px;
+			padding-top: 64px;
 			font-family: "TTFirsNeue-Medium",sans-serif;
 			font-style: normal;
 			font-size: 30px;
@@ -40,25 +39,32 @@
 			border-left: 1px solid rgba(#fff, .1);
 			padding-left: 60px;
 			padding-right: 60px;
-			.head{
-				opacity: .5;
-				font-size: 30px;
-				line-height: 1.5;
-				color: #fff;
-				font-family: "TTFirsNeue-Medium",sans-serif;
-				font-style: normal;
-				text-transform: uppercase;
-				margin-bottom: 57px;
+			ul{
+				li{
+					line-height: 1;
+					margin-bottom: 15px;
+					a, button{
+						color: #fff;
+						text-decoration: none;
+						font-size: 16px;
+
+						font-family: "TTFirsNeue-Medium", sans-serif;
+					}
+				}
 			}
-			a{
-				color: #ffffff;
-				text-decoration: none;
-			}
+
+
+		}
+		.col3{
+			border-right: 1px solid rgba(#fff, .1);
+			padding: 64px 75px 35px;
+
 			.phone{
 				text-transform: uppercase;
 				font-size: 30px;
 				line-height: 1.5;
 				font-family: "TTFirsNeue-Medium",sans-serif;
+				color: #FFF;
 			}
 			.btn-wt{
 				margin-top: 20px;
@@ -71,33 +77,10 @@
 			.foot-address{
 				color: rgba(#fff, 1);
 				font-size: 18px;
-				margin-top: 82px;
+				margin-top: 25px;
 				font-family: "TTNorms-Regular",sans-serif;
 				line-height: 1.5;
 				opacity: .5;
-			}
-		}
-		.col3{
-			border-right: 1px solid rgba(#fff, .1);
-			padding: 61px 75px 35px;
-			.disclaimer{
-				margin-top: 15px;
-				font-size: 14px;
-				line-height: 1.4;
-				color: rgba(#fff, .5);
-				a{
-					color: inherit;
-				}
-			}
-			.head{
-				opacity: .5;
-				font-size: 30px;
-				line-height: 1.5;
-				color: #fff;
-				font-family: "TTFirsNeue-Medium",sans-serif;
-				font-style: normal;
-				text-transform: uppercase;
-				margin-bottom: 20px;
 			}
 		}
 	}
@@ -140,23 +123,12 @@
 	background-size: contain;
 	display: block;
 }
-.footer .line2 .col1 .foot-text .copy{
-	margin-top: 14px;
-}
-.footer .line1 .col1 .foot-text {
-	margin-top: 85px;
-	font-size: 18px;
-	line-height: 1.5;
-	opacity: .5;
-	padding-right: 10px;
-	font-family: "TTNorms-Regular", sans-serif;
-}
+
+
 
 
 @media (min-width: 1400px) and (max-width: 1660px) {
-	.footer .line2 .col3 .phone{
-		font-size: 30px;
-	}
+
 	.footer .line1 .col1 ul li a, .footer .line1 .col1 ul li button{
 		font-size: 16px;
 	}
@@ -164,7 +136,7 @@
 		padding-left: 60px;
 		padding-right: 60px;
 		//font-size: 26px;
-		padding-top: 55px;
+		padding-top: 64px;
 	}
 	.footer .line2 .col1{
 		padding-left: 20px;
@@ -182,7 +154,7 @@
 		padding-right: 10px;
 	}
 	.footer .line1 .col3{
-		padding: 55px 68px 35px;
+		padding: 64px 68px 35px;
 	}
 	.footer .line2 .col2{
 		padding-left: 76px;
@@ -194,14 +166,8 @@
 	.footer .line2 .col2 ul li a, .footer .line2 .col2 ul li button{
 		font-size: 24px;
 	}
-	.footer .line1 .col2 .head{
-		margin-top: 10px;
-		font-size: 18px;
-		margin-bottom: 60px;
-	}
-	.footer .line1 .col3 .head{
-		margin-top: 10px;
-	}
+
+
 	.footer .line2 .col2 ul li{
 		margin-bottom: 15px;
 	}
@@ -216,24 +182,14 @@
 	.footer .line1 .col1{
 		padding-top: 55px;
 	}
-	.footer .line1 .col2 .phone{
+	.footer .line1 .col3 .phone{
 		font-size: 24px;
 	}
-	.footer .line1 .col3 .head{
-		font-size: 18px;
-		margin-bottom: 9px;
-	}
+
 	.footer .line2 .col3{
 		padding-left: 65px;
 	}
-	.footer .form{
-		input[type=text]{
-			margin-bottom: 15px;
-		}
-		textarea{
-			height: 80px;
-		}
-	}
+
 	.btn-wt{
 		font-size: 20px;
 		padding: 14px 23px;
@@ -252,8 +208,8 @@
 		padding-right: 10px;
 		font-size: 16px;
 	}
-	.footer .line1 .col2 .foot-address{
-		margin-top: 49px;
+	.footer .line1 .col3 .foot-address{
+
 		font-size: 16px;
 	}
 	.footer .line1 .col1 ul li{
@@ -264,19 +220,17 @@
 		height: 53px;
 	}
 	.footer .line1 .col1 .foot-text .copy{
-		margin-top: 14px
+
 	}
 }
 
 @media (min-width: 1024px) and (max-width: 1399px){
-	.footer .line2 .col3 .phone{
-		font-size: 25px;
-	}
+
 	.footer .line1 .col2{
 		padding-left: 30px;
 		padding-right: 30px;
 		font-size: 26px;
-		padding-top: 55px;
+		padding-top: 63px;
 	}
 	.footer .line2 .col1{
 		padding-left: 20px;
@@ -287,14 +241,14 @@
 		height: 66px;
 	}
 	.footer .line2 .col1 .foot-text .copy{
-		margin-top: 14px;
+
 	}
 	.footer .line2 .col1 .foot-text{
 		font-size: 14px;
 		padding-right: 10px;
 	}
 	.footer .line1 .col3{
-		padding: 55px 30px 35px;
+		padding: 63px 30px 35px;
 	}
 	.footer .line2 .col2{
 		padding-left: 30px;
@@ -319,44 +273,29 @@
 		padding-top: 44px;
 		font-size: initial;
 	}
-	.footer .line1 .col2 .head{
+
+	.footer .line1 .col3 .phone{
 		font-size: 24px;
 	}
-	.footer .line1 .col2 .phone{
-		font-size: 24px;
+
+	.footer .line1 .col2 ul li a, .footer .line1 .col2 ul li button{
+
 	}
-	.footer .line1 .col2 .head{
-		margin-bottom: 70px;
-	}
-	.footer .line1 .col1 ul li a, .footer .line1 .col1 ul li button{
-		font-size: 20px;
-	}
-	.footer .line1 .col2 .foot-address{
+	.footer .line1 .col3 .foot-address{
 		font-size: 16px;
 	}
-	.footer .line1 .col3 .head{
-		font-size: 24px;
-		margin-bottom: 20px;
-		height: 72px;
-	}
+
 	.footer .line2 .col3{
 		padding-left: 30px;
 	}
-	.footer .line1 .col2 .btn-wt{
+	.footer .line1 .col3 .btn-wt{
 		font-size: 14px;
 		width: 224px;
 	}
 	.footer .line1 .col1 .foot-text{
 		font-size: 16px;
 	}
-	.footer .form{
-		input[type=text]{
-			margin-bottom: 15px;
-		}
-		textarea{
-			height: 80px;
-		}
-	}
+
 	.btn-wt{
 		font-size: 14px;
 		padding: 14px 15px;
@@ -375,52 +314,29 @@
 }
 
 @media (max-width: 1023px) {
-	.footer .line1 .col2 .foot-address{
+	.footer .line1 .col3 .foot-address{
 		margin-top: 30px;
 	}
-	.footer .line1 .col2 .head{
-		margin-bottom: 30px;
-	}
+
 	.footer .line1 .col1{
 		padding-top:55px;
-
 		border-right: 1px solid rgba(#fff, .1);
 		padding-bottom: 35px;
 	}
 	.footer .line1 .col2{
 		border-top: 1px solid rgba(#fff, .1);
-		padding: 40px 30px 60px;
+		padding: 40px 30px 25px;
 		font-size: 22px;
 	}
 	.footer .line1 .col3{
 		padding: 40px 30px 35px;
 		border: 1px solid #35363e;
-		margin-bottom: 70px;
-	}
-	.footer .line1 .col3 .head{
-		font-size: 22px;
+		margin-bottom: 0px;
 	}
 
-	.footer{
-		input[type=text], input[type=email], input[type=tel], input[type=password], textarea{
-			height: 40px;
-			font-size: 14px;
-			padding: 0 9px;
-			margin-bottom: 15px;
-		}
-		textarea{
-			padding-top: 9px;
-			padding-bottom: 9px;
-			height: 58px;
-		}
-	}
-	.footer .line2 .col1 .foot-policy{
-		margin-top: 22px;
-		font-size: 16px;
-		font-family: 'TTFirsNeue-Medium', sans-serif;
-	}
+
 	.footer .line2 .col2{
-		padding: 30px 30px 10px;
+		padding: 30px 30px 30px;
 	}
 
 	.footer .line1 .col1 ul li a,
@@ -428,13 +344,11 @@
 	{
 		font-size: 18px;
 	}
-	.footer .line2 .col3{
 
-	}
-	.footer .line1 .col2 .phone{
+	.footer .line1 .col3 .phone{
 		font-size: 21px;
 	}
-	.footer .line1 .col2 .btn-wt{
+	.footer .line1 .col3 .btn-wt{
 		font-size: 16px;
 		padding-left: 20px;
 		padding-right: 10px;
@@ -448,12 +362,11 @@
 			margin-right: 5px;
 		}
 	}
-	.footer .line2 .col3 .foot-address{
-		font-size: 18px;
-	}
+
 	.footer .line2 .col1{
-		padding-bottom: 50px;
+		padding-bottom: 30px;
 		border: none;
+		height: 100px;
 	}
 	.foot-logo{
 		width: 190px;
@@ -464,8 +377,11 @@
 		font-size: 14px;
 		line-height: 1.5;
 		margin-top: 27px;
+		.copy{
+			margin-top: 20px;
+		}
 	}
-	.footer .line1 .col2 .foot-address {
+	.footer .line1 .col3 .foot-address {
 		font-size: 14px;
 	}
 }

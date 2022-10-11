@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import img1 from "../../../assets/img/tb_top_img.png";
 import img2 from "../../../assets/img/promo1reverse.png";
-import img4 from "../../../assets/img/parts2.png";
+import img4 from "../../../assets/img/parts.png";
 
 const TwoBlocks = () => {
   return (
@@ -81,7 +81,7 @@ const TwoBlocks = () => {
               </div>
               <Link to="/sale-parts">
                 <button className="btn">
-                  <span>Купить зап.части</span>
+                  <span>Купить запчасти</span>
                 </button>
               </Link>
               <div className="hint">

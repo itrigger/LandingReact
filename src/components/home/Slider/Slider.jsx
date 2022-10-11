@@ -96,7 +96,7 @@ const Slider = () => {
                 <span className="italic">Скупаем</span> вагоны &nbsp;
               </div>
               <div className="desc">
-                В любом состоянии на 10% выше рыночной стоимости
+                В любом состоянии. На 10% выше рыночной стоимости
               </div>
               <button
                 className="btn yellow mobile"

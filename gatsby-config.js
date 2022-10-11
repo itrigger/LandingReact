@@ -45,5 +45,22 @@ module.exports = {
         uri: "https://api.vagontrade.ru/graphql",
       },
     },
+    {
+      resolve: `gatsby-plugin-yandex-metrika`,
+      options: {
+        // The ID of yandex metrika.
+        trackingId: 90680646,
+        // Enabled a webvisor. The default value is `false`.
+        webvisor: true,
+        // Enables tracking a hash in URL. The default value is `false`.
+        trackHash: false,
+        // Defines where to place the tracking script - `false` means before body (slower loading, more hits)
+        // and `true` means after the body (faster loading, less hits). The default value is `false`.
+        afterBody: false,
+        // Use `defer` attribute of metrika script. If set to `false` - script will be loaded with `async` attribute.
+        // Async enables earlier loading of the metrika but it can negatively affect page loading speed. The default value is `false`.
+        defer: false,
+      },
+    },
   ],
 };

@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import Rows from "./Rows";
 import { useNotification } from "../ui/Notify/NotifyProvider";
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery, useQuery } from "@apollo/client";
 import {
   GET_ALL_PARTS,
+  GET_CONTENT,
   GET_STATIONS_BY_SLUG,
   GET_TAGS_BY_CAT_ID,
 } from "../../apollo/queries";
@@ -55,6 +56,18 @@ const RowsWrapper = ({
   const [slide, setSlide] = useState(false);
   const [cartItems, setCartItems] = useContext(CartContext);
   const [isFromMap, setIsFromMap] = useState(fromMap);
+  const [man3, setMan3] = useState();
+
+  const clickHandler = () => {
+    window.open(`https://wa.me/${man3 && man3.tel}`);
+  };
+  const { data: datacontent } = useQuery(GET_CONTENT);
+
+  useEffect(() => {
+    if (datacontent) {
+      setMan3(JSON.parse(datacontent.posts.nodes[0].acfcontent.man3));
+    }
+  }, [datacontent]);
 
   const updateMedia = () => {
     setDesktop(isBrowser() && window.innerWidth > 1023);
@@ -174,7 +187,7 @@ const RowsWrapper = ({
       target.classList.remove("btn-loading");
       setShowItems(true);
       executeScroll();
-      handleNewNotification("SUCCESS", "Данные получены", "Успешно");
+      //handleNewNotification("SUCCESS", "Данные получены", "Успешно");
     });
   };
 
@@ -300,7 +313,7 @@ const RowsWrapper = ({
       }).then((r) => {
         setShowItems(true);
         executeScroll();
-        handleNewNotification("SUCCESS", "Данные получены", "Успешно");
+        //handleNewNotification("SUCCESS", "Данные получены", "Успешно");
       });
     }
   }, [fromMap]);
@@ -342,7 +355,7 @@ const RowsWrapper = ({
                 <div className="head">
                   <span className="italic">Воспользуйтесь </span>фильтром
                 </div>
-                <div className="d_f jc_c ai_c | desc2">
+                {/*<div className="d_f jc_c ai_c | desc2">
                   <div className="desc">
                     Если Вы не нашли, что искали, то
                     <div>свяжитесь с нами и мы постараемся вам помочь</div>
@@ -350,13 +363,13 @@ const RowsWrapper = ({
                   <div>
                     <button
                       className="btn-wt-green"
-                      onClick={() => slideClickHandler()}
+                      onClick={() => clickHandler()}
                     >
                       <span className="ico ico-left ico-wt-white"></span>
                       <span>Написать в WhatsApp</span>
                     </button>
                   </div>
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>

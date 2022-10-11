@@ -18,7 +18,6 @@ const SaleParts = ({ location }) => {
   const slideClickHandler = () => {
     setSlide(true);
   };
-  console.log(location.state);
   if (location.state && location.state.chooseCatById !== undefined) {
     selectedDD = [location.state.chooseCatById];
   }
@@ -26,7 +25,6 @@ const SaleParts = ({ location }) => {
     selectedDDJD = [location.state.jd];
     fromMap = true;
   }
-
   if (location && location.pathname === "/sale-parts") {
     actived = true;
   }
@@ -112,8 +110,8 @@ const SaleParts = ({ location }) => {
                 <div className="picture"></div>
                 <div className="head">
                   <span className="italic">Выкуп</span> вагонов{" "}
-                  <span className="only-desktop">дорого</span>
-                  <span className="only-mobile">дороже рынка на 10-20%</span>
+                  <i className="only-desktop">дорого</i>
+                  <i className="only-mobile">дороже рынка на 10-20%</i>
                 </div>
                 <ul>
                   <li>В любом состоянии</li>

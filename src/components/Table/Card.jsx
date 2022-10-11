@@ -102,9 +102,9 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
               ) : (
                 <button
                   onClick={() => slideClickHandler()}
-                  className={"btn-classic"}
+                  className={"btn-classic btn-2-lines"}
                 >
-                  <span>Запросить ком.пред</span>
+                  <span>Запросить коммерческое предложение</span>
                 </button>
               )}
             </div>

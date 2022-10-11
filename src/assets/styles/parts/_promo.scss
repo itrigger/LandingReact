@@ -187,17 +187,17 @@
 	}
 }
 .only-mobile{
-	display: none !important;
+	display: none;
 }
 .only-desktop{
-	display: block !important;
+	display: inline;
 }
 @media (max-width: 1023px) {
 	.sticker{
 		display: none;
 	}
 	.only-mobile{
-		display: block !important;
+		display: initial;
 	}
 	.only-desktop{
 		display: none !important;

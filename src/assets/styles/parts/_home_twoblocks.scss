@@ -72,7 +72,8 @@
 			background-position: 0 0;
 			background-size: contain !important;
 			width: 694px;
-			height: 322px;
+			height: 292px;
+			max-height: calc(100% - 20px);
 			transition: .3s all;
 		}
 		&:hover{
@@ -91,7 +92,7 @@
 		height: 100%;
 		width: 50%;
 		transition: .3s all;
-		padding-top: 100px;
+		padding-top: 90px;
 		padding-bottom: 45px;
 		background: url("../img/promo1reverse.png") 0 bottom no-repeat;
 		background-position-x: 370px;
@@ -122,20 +123,20 @@
 		height: 100%;
 		width: 50%;
 		transition: .3s all;
-		padding-top: 100px;
+		padding-top: 90px;
 		padding-left: 80px;
 		padding-bottom: 45px;
 		&:after{
 			content: '';
 			display: block;
 			position: absolute;
-			left: 540px;
-			bottom: 50px;
+			left: 470px;
+			bottom: 70px;
 			background: url("../img/parts.png") 0 bottom no-repeat;
 			background-position-x: 0;
 			background-size: contain !important;
-			width: 307px;
-			height: 417px;
+			width: 448px;
+			height: 305px;
 			transition: .3s all;
 		}
 		& > div{
@@ -154,7 +155,7 @@
 		}
 		&:hover{
 			&:after{
-				left: 580px;
+				left: 510px;
 				transition: .3s all;
 			}
 		}
@@ -171,15 +172,15 @@
 		}
 	}
 	.twoblocks .tb-right:after{
-		left: 440px;
-		width: 240px;
-		height: 340px;
+		left: 390px;
+		width: 320px;
+		height: 220px;
 	}
 	.twoblocks .tb-right{
 
 		&:hover{
 			&:after{
-				left: 460px;
+				left: 410px;
 				transition: .3s all;
 			}
 		}
@@ -240,6 +241,8 @@
 	}
 	.twoblocks .tb-right:after{
 		left: 360px;
+		width: 400px;
+		height: 290px;
 		z-index: -1;
 	}
 	.twoblocks .tb-right{
@@ -385,7 +388,7 @@
 	{
 		margin-bottom: 20px;
 		img{
-			max-width: 380px;
+			max-width: 260px;
 		}
 	}
 	.twoblocks .tb-left .mobile_img_wrapper{
