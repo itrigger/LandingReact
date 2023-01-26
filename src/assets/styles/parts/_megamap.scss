@@ -7,7 +7,7 @@
 		z-index: 3;
 
 		.head{
-			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 			font-style: normal;
 			//color: #fff;
 			color: #000;
@@ -36,14 +36,14 @@
 		pointer-events: none;
 	}
 	.head{
-		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		font-style: normal;
 		text-transform: uppercase;
 		font-size: 60px;
 		line-height: 1.4;
 	}
 	.desc{
-		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		font-style: normal;
 		text-transform: uppercase;
 		font-size: 30px;
@@ -106,7 +106,7 @@
 	.desc2 .desc{
 		margin-top: 10px;
 		margin-bottom: 10px;
-		font-family: "TTNorms-Regular", sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 400;
 		color: rgba(0, 0, 0, 0.6);
 		text-transform: none;
 		margin-right: 20px;
@@ -142,7 +142,7 @@
 		padding: 30px 30px 30px 0;
 	}
 	.name{
-		font-family: "TTFirsNeue-Medium",sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		font-style: normal;
 		text-transform: uppercase;
 		font-size: 24px;
@@ -177,7 +177,7 @@
 		padding-right: 30px;
 		padding-bottom: 32px;
 		.price{
-			font-family: "TTFirsNeue-Medium",sans-serif;
+			font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 			font-style: normal;
 			text-transform: uppercase;
 			font-size: 24px;
@@ -202,7 +202,7 @@
 		padding-left: 10px;
 	}
 	.name{
-		font-family: "TTNorms-Regular", sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 400;
 		font-style: normal;
 		line-height: 1.4;
 		margin-bottom: 5px;
@@ -217,7 +217,7 @@
 
 	.price_block{
 		.price{
-			font-family: "TTNorms-Medium", sans-serif;
+			font-family: 'Roboto', sans-serif; font-weight: 500;
 			font-style: normal;
 			text-transform: uppercase;
 			font-size: 18px;
@@ -247,7 +247,7 @@
 		}
 	}
 	th{
-		font-family: "TTFirsNeue-Medium", sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		font-style: normal;
 		text-transform: uppercase;
 		font-size: 12px;
@@ -281,7 +281,7 @@
 		}
 	}
 	.price{
-		font-family: "TTNorms-Medium", sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 500;
 		white-space: nowrap;
 	}
 }
@@ -313,7 +313,7 @@
 	.name{
 		font-size: 16px;
 		text-transform: uppercase;
-		font-family: 'TTFirsNeue-DemiBold',sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 600;
 		margin-bottom: 25px;
 		padding-right: 10px;
 		white-space: nowrap;
@@ -337,14 +337,14 @@
 		}
 	}
 	.description{
-		font-family: 'TTNorms-Bold', sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 700;
 		font-size: 16px;
 		margin-bottom: 25px;
 		ul{
 			margin-top: 10px;
 		}
 		li{
-			font-family: 'TTNorms-Regular', sans-serif;
+			font-family: 'Roboto', sans-serif; font-weight: 400;
 			font-size: 16px;
 			margin-top: 5px;
 		}
@@ -357,13 +357,13 @@
 .res_head{
 	font-size: 16px;
 	line-height: 1.5;
-	font-family: "TTNorms-Bold", sans-serif;
+	font-family: 'Roboto', sans-serif; font-weight: 700;
 }
 .catItem{
 	font-size: 16px;
 	line-height: 1.5;
 	span{
-		font-family: "TTNorms-Bold", sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 700;
 		&.green{
 			color: #1CB82C;
 		}
@@ -505,7 +505,7 @@
 		.desc2 .desc{
 			margin-top: 10px;
 			margin-bottom: 10px;
-			font-family: "TTNorms-Regular", sans-serif;
+			font-family: 'Roboto', sans-serif; font-weight: 400;
 			color: rgba(0, 0, 0, 0.6);
 			text-transform: none;
 			margin-right: 20px;
@@ -643,7 +643,7 @@
 		display: inline;
 	}
 	.card-mobile .name{
-		font-family: 'TTFirsNeue-DemiBold', sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 600;
 		text-transform: uppercase;
 		padding-top: 10px;
 		margin-bottom: 0;
@@ -671,13 +671,13 @@
 			height: 42px;
 			padding: 0 20px;
 			font-size: 14px;
-			font-family: "TTFirsNeue-Medium", sans-serif;
+			font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		}
 		.btn-wt-green{
 			height: 42px;
 			padding: 0 15px;
 			font-size: 14px;
-			font-family: "TTFirsNeue-Medium", sans-serif;
+			font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 			text-transform: uppercase;
 		}
 	}
@@ -690,7 +690,7 @@
 		border-bottom: none;
 		border-right: none;
 		color: rgba(0, 0, 0, .5);
-		font-family: TTFirsNeue-Medium, sans-serif;
+		font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 		font-size: 12px;
 		font-style: normal;
 		line-height: 1.4;

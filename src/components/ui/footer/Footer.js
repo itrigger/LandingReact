@@ -88,7 +88,7 @@ const Footer = () => {
           </div>
           <div className="col-4 m-col-4 xs-col-4 | col3">
             {" "}
-            <div className="foot-version">Версия 1.25</div>
+            <div className="foot-version">Версия 1.26</div>
           </div>
         </div>
       </div>

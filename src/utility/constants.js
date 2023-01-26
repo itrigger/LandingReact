@@ -128,7 +128,7 @@ export const JDS = [
 ];
 
 export const CARRIAGES = [
-  { name: "Полувагоны", id: 25 },
+  { name: "Полувагоны", id: 35 },
   { name: "Крытые вагоны", id: 39 },
   { name: "Думпкары", id: 41 },
   { name: "Грузовые вагоны", id: 36 },
@@ -138,7 +138,7 @@ export const CARRIAGES = [
   { name: "Вагоны сопровождения", id: 63 },
 ];
 
-export const CARRIAGES_IDS = [25, 36, 37, 38, 39, 40, 41, 63];
+export const CARRIAGES_IDS = [35, 36, 37, 38, 39, 40, 41, 63];
 
 export const PARTS = [
   { name: "Колесные пары", id: 29 },

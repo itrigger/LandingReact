@@ -35,7 +35,6 @@ const SaleParts = ({ location }) => {
         <meta charSet="utf-8" />
         <title>
           Продажа запасных частей | Вагон Трейд - Покупка и продажа вагонов.
-          Аренда.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />

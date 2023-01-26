@@ -63,8 +63,7 @@ const Testimonials = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Отзывы | Вагон Трейд - Покупка и продажа вагонов. Аренда. Запасные
-          части.
+          Отзывы | Вагон Трейд - Покупка и продажа вагонов. Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />

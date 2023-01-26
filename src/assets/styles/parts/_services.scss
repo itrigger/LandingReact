@@ -1,7 +1,7 @@
 .vagon-sale {
   .head {
     margin-top: 90px;
-    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-family: 'Sofia Sans', sans-serif; font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
     font-size: 60px;
@@ -37,7 +37,7 @@
     flex: 0 0 50%;
 
     .name {
-      font-family: "TTFirsNeue-Medium", sans-serif;
+      font-family: 'Sofia Sans', sans-serif; font-weight: 500;
       font-style: normal;
       text-transform: uppercase;
       font-size: 30px;
@@ -84,7 +84,7 @@
   }
   .hint {
     font-size: 24px;
-    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-family: 'Sofia Sans', sans-serif; font-weight: 500;
     font-style: normal;
     text-transform: uppercase;
     margin-top: 30px;
@@ -97,7 +97,7 @@
 
   .bold {
     font-size: 24px;
-    font-family: "TTFirsNeue-Medium", sans-serif;
+    font-family: 'Roboto', sans-serif; font-weight: 500;
     font-style: normal;
     line-height: 1.4;
     margin-bottom: 16px;
@@ -164,7 +164,7 @@
   }
   .title {
     font-size: 24px;
-    font-family: "TTFirsNeue-DemiBold", sans-serif;
+    font-family: 'Sofia Sans', sans-serif; font-weight: 600;
     font-style: normal;
     line-height: 1.4;
     text-transform: uppercase;

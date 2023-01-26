@@ -31,9 +31,7 @@ const IndexPage = () => {
     <div>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>
-          Вагон Трейд - Покупка и продажа вагонов. Аренда. Запасные части.
-        </title>
+        <title>Вагон Трейд - Покупка и продажа вагонов. Запасные части.</title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />

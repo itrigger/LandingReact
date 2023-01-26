@@ -3,13 +3,13 @@ html {
 }
 
 body{
-	font-family: "TTNorms-Regular",sans-serif;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 	padding-top: 90px;
 	//background: url("../img/temp/cart.jpg") center top no-repeat;
 	background-size: contain;
 }
 b{
-	font-family: "TTNorms-Medium",sans-serif;
+	font-family: 'Roboto', sans-serif; font-weight: 500;
 }
 
 *{
@@ -21,7 +21,7 @@ a{
 }
 
 h1, h2, h3, h4, h5, h6{
-	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 	font-style: normal;
 	line-height: 1.4;
 }
@@ -32,21 +32,21 @@ h1{
 }
 
 .head2{
-	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: 60px;
 	line-height: 1.4;
 }
 .head3{
-	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: 36px;
 	line-height: 1.4;
 }
 h2{
-	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 	font-style: normal;
 	text-transform: uppercase;
 	font-size: 36px;
@@ -55,7 +55,7 @@ h2{
 }
 
 h3{
-	font-family: "TTFirsNeue-Medium",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 500;
 	font-style: normal;
 	font-size: 24px;
 	line-height: 1.4;
@@ -93,9 +93,8 @@ ul.content{
 }
 
 .italic{
-	font-family: "TTFirsNeue-LightItalic",sans-serif;
+	font-family: 'Sofia Sans', sans-serif; font-weight: 300;
 	font-style: italic;
-	font-weight: 300;
 }
 
 .paginator{
@@ -115,7 +114,7 @@ ul.content{
 				width: 100%;
 				height: 50px;
 				@extend .btn-classic;
-				font-family: 'TTNorms-Regular', sans-serif;
+				font-family: 'Roboto', sans-serif; font-weight: 400;
 				text-transform: capitalize;
 			}
 		}
@@ -164,10 +163,10 @@ ul.content{
 
 .sticker{
 	position: absolute;
-	font-size: 28px;
-	font-family: "TTFirsNeue-Regular", sans-serif;
+	font-size: 26px;
+	font-family: 'Roboto', sans-serif; font-weight: 400;
 	b{
-		font-family: "TTFirsNeue-DemiBold", sans-serif;
+		font-family: 'Roboto', sans-serif; font-weight: 500;
 	}
 	background: $yellow;
 	border: 12px solid #fff;

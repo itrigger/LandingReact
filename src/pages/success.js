@@ -11,7 +11,7 @@ const Success = () => {
         <meta charSet="utf-8" />
         <title>
           Спасибо за Ваш заказ | Вагон Трейд - Покупка и продажа вагонов.
-          Аренда. Запасные части.
+          Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />

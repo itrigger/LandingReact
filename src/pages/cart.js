@@ -115,8 +115,7 @@ const Cart = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Корзина | Вагон Трейд - Покупка и продажа вагонов. Аренда. Запасные
-          части.
+          Корзина | Вагон Трейд - Покупка и продажа вагонов. Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />

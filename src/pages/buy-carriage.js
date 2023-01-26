@@ -17,8 +17,8 @@ const BuyCarriage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Скупка вагонов | Вагон Трейд - Покупка и продажа вагонов. Аренда.
-          Запасные части.
+          Скупка вагонов | Вагон Трейд - Покупка и продажа вагонов. Запасные
+          части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />

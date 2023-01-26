@@ -11,7 +11,7 @@ const NotFoundPage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Страница не найдена | Вагон Трейд - Покупка и продажа вагонов. Аренда.
+          Страница не найдена | Вагон Трейд - Покупка и продажа вагонов.
           Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
