@@ -11,6 +11,7 @@ import { MemoizedMap } from "../components/home/Map/Map";
 import Prems3 from "../components/home/Inner/Prems3";
 import ReviewHome from "../components/home/Inner/ReviewHome";
 import PremsParts from "../components/home/Inner/PremsParts";
+import RowsWrapperHome from "../components/Table/Rows-wrapper-home";
 
 const IndexPage = () => {
   const [isDesktop, setDesktop] = useState(
@@ -42,10 +43,9 @@ const IndexPage = () => {
         <Slider />
         <TwoBlocks />
         {/*<Cats />*/}
-
         <div className="homemap">
           <MemoizedMap />
-          <RowsWrapper type={1} limit={10} dropdown={PARTS} />
+          <RowsWrapperHome type={1} limit={10} dropdown={PARTS} />
         </div>
         <div className="service-home">
           <PremsParts />

@@ -4,11 +4,10 @@ import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../../apollo/queries";
 import { Link } from "gatsby";
 import { CartContext } from "../../../context/CartContext";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
 import Form from "../../Form/Form";
 import Lytebox from "../Lytebox/Lytebox";
 
-export default function Header() {
+export default function Header({ location }) {
   const [tel, setTel] = useState("");
   const [telCall, setTelCall] = useState("");
   const [telega, setTelega] = useState("");
@@ -18,6 +17,7 @@ export default function Header() {
   const [telWt, setTelWt] = useState("");
 
   const [scrollPosition, setScrollPosition] = useState("");
+
   const handleScroll = () => {
     const position = window.scrollY;
     position > 90 ? setScrollPosition("scrolled") : setScrollPosition("");
@@ -108,10 +108,42 @@ export default function Header() {
                   Продажа вагонов
                 </Link>
               </li>
-              <li>
-                <Link to="/sale-parts" activeClassName="active">
-                  Продажа запчастей
-                </Link>
+              <li className="double">
+                <a href="javascript:;">Продажа запчастей</a>
+                <div className="dd">
+                  <div>
+                    <Link
+                      to="/sale-parts"
+                      state={{ chooseCatById: 29 }}
+                      activeClassName="active"
+                    >
+                      Колесные пары
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to="/sale-parts"
+                      state={{ chooseCatById: 32 }}
+                      activeClassName="active"
+                    >
+                      Надрессорные балки
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to="/sale-parts"
+                      state={{ chooseCatById: 33 }}
+                      activeClassName="active"
+                    >
+                      Боковые опоры
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/sale-special" activeClassName="active">
+                      Кассетные подшипники
+                    </Link>
+                  </div>
+                </div>
               </li>
             </ul>
           </div>
@@ -157,10 +189,42 @@ export default function Header() {
                   Продажа вагонов
                 </Link>
               </li>
-              <li>
-                <Link to="/sale-parts" activeClassName="active">
-                  Продажа запчастей
-                </Link>
+              <li className="double">
+                <a href="javascript:;">Продажа запчастей</a>
+                <div className="dd">
+                  <div>
+                    <Link
+                      to="/sale-parts?s=1"
+                      state={{ chooseCatById: 29 }}
+                      activeClassName="active"
+                    >
+                      Колесные пары
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to="/sale-parts?s=2"
+                      state={{ chooseCatById: 32 }}
+                      activeClassName="active"
+                    >
+                      Надрессорные балки
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to="/sale-parts?s=3"
+                      state={{ chooseCatById: 33 }}
+                      activeClassName="active"
+                    >
+                      Боковые опоры
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to="/sale-special" activeClassName="active">
+                      Кассетные подшипники
+                    </Link>
+                  </div>
+                </div>
               </li>
             </ul>
             <div className="d_f mobile-menu-minicart">

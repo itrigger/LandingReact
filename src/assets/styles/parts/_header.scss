@@ -125,12 +125,12 @@
 			}
 		}
 		&:hover{
-			div{
+			/*div{
 				transition: .3s all;
 				opacity: 1;
 				pointer-events: all;
 				transform: translateX(-50%) scale(1);
-			}
+			}*/
 			&:after{
 				transform: rotate(180deg);
 				transition: .2s all;
@@ -140,10 +140,61 @@
 		a.active, button.active{
 			color: $yellow;
 		}
-
+		li{
+			position: relative;
+		}
+		&.double{
+			position: relative;
+			a{
+				position: relative;
+				z-index: 2;
+			}
+			&:hover{
+				.dd{
+					display: block;
+				}
+			}
+		}
+		.dd{
+			position: absolute;
+			color: #fff;
+			display: none;
+			background: #36373d;
+			padding: 37px 10px 3px;
+			top: -10px;
+			left: -10px;
+			right: -35px;
+			div{
+				margin-bottom: 7px;
+			}
+			a{
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 12px;
+				&:hover{
+					color: #F5DF4D;
+				}
+			}
+		}
 	}
 }
+.mobile-menu li.double{
+	display: block;
+	.dd{
+		div{
+			margin-top: 7px;
+		}
+		a{
+			color: #fff;
+			text-transform: uppercase;
+			font-size: 12px;
+			&:hover{
+				color: #F5DF4D;
+			}
+		}
+	}
 
+}
 .top-cart-link-w{
 	position: relative;
 }

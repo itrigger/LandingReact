@@ -82,6 +82,40 @@
 			}
 		}
 	}
+	.tb_bottom{
+		position: relative;
+		padding-top: 68px;
+		padding-bottom: 51px;
+		width: 100%;
+		.head, .desc, .hint{
+			color: #000;
+		}
+		.desc{
+			margin-bottom: 38px;
+		}
+		.hint{
+			margin-top: 0;
+		}
+		&:after{
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0;
+			bottom: 5px;
+			background: url("../img/banner.png") 0 bottom no-repeat;
+			background-position: 0 0;
+			background-size: contain !important;
+			width: 352px;
+			height: 353px;
+			max-height: calc(100% - 20px);
+			transition: .3s all;
+		}
+		&:hover{
+			&:after{
+				right: -30px;
+			}
+		}
+	}
 	.tb_top_right{
 		max-width: 430px;
 		margin-left: 70px;
@@ -160,6 +194,9 @@
 			}
 		}
 	}
+}
+.twoblocks_info{
+	background: #c0c7d5;
 }
 
 @media (min-width: 1400px) and (max-width: 1660px) {
@@ -272,7 +309,7 @@
 	display: none;
 }
 @media (max-width: 1023px) {
-	.twoblocks .tb_top{
+	.twoblocks .tb_top, .twoblocks .tb_bottom{
 		flex-direction: column;
 		.hint{
 			display: none;
@@ -404,6 +441,9 @@
 		max-width: 100%;
 	}
 	.twoblocks .tb_top:after{
+		display: none;
+	}
+	.twoblocks .tb_bottom:after{
 		display: none;
 	}
 	.twoblocks .tb-left:after{

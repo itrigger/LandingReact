@@ -23,7 +23,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
     : previousResult;
 };
 
-const RowsWrapper = ({
+const RowsWrapperHome = ({
   type = 1,
   map = false,
   limit,
@@ -63,13 +63,6 @@ const RowsWrapper = ({
     window.open(`https://wa.me/${man3 && man3.tel}`);
   };
   const { data: datacontent } = useQuery(GET_CONTENT);
-
-  useEffect(() => {
-    if (selectedDD !== [0]) {
-      setFilterTypeCategory(selectedDD[0]);
-      //selectCategoryHandler(selectedDD[0]);
-    }
-  }, [selectedDD]);
 
   useEffect(() => {
     if (datacontent) {
@@ -547,4 +540,4 @@ const RowsWrapper = ({
   );
 };
 
-export default RowsWrapper;
+export default RowsWrapperHome;

@@ -144,9 +144,10 @@ export const PARTS = [
   { name: "Колесные пары", id: 29 },
   { name: "Надрессорная балка", id: 32 },
   { name: "Боковая опора", id: 33 },
+  { name: "Кассетный подшипник", id: 65 },
 ];
 
-export const PARTS_IDS = [29, 32, 33];
+export const PARTS_IDS = [29, 32, 33, 65];
 
 /****/
 /* ToDO

@@ -95,6 +95,56 @@ export const GET_ALL_PARTS = gql`
   }
 `;
 
+export const GET_ALL_PARTS_PRE = gql`
+  query GetAllParts($after: String, $before: String, $first: Int, $last: Int) {
+    products(
+      where: { categoryIdIn: [65] }
+      after: $after
+      before: $before
+      first: $first
+      last: $last
+    ) {
+      edges {
+        cursor
+        node {
+          ... on SimpleProduct {
+            id
+            name
+            image {
+              srcSet(size: THUMBNAIL)
+            }
+            price(format: FORMATTED)
+            productsKP {
+              godVypuska
+              mestonahozhdenie
+              telezhka
+              tolshhinaOboda
+            }
+            stockQuantity
+            shortDescription(format: RENDERED)
+            productTags {
+              nodes {
+                name
+              }
+            }
+            productCategories {
+              nodes {
+                name
+              }
+            }
+          }
+        }
+      }
+      pageInfo {
+        endCursor
+        hasNextPage
+        hasPreviousPage
+        startCursor
+      }
+    }
+  }
+`;
+
 export const GET_TAGS_BY_CAT_ID = gql`
   query getTagsByCatId($categoryIdIn: [Int]) {
     products(where: { categoryIdIn: $categoryIdIn }, first: 100) {

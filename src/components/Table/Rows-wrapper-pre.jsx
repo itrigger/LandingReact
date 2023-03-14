@@ -4,18 +4,19 @@ import { useNotification } from "../ui/Notify/NotifyProvider";
 import { useLazyQuery, useQuery } from "@apollo/client";
 import {
   GET_ALL_PARTS,
+  GET_ALL_PARTS_PRE,
   GET_CONTENT,
   GET_STATIONS_BY_SLUG,
   GET_TAGS_BY_CAT_ID,
 } from "../../apollo/queries";
 import { GET_ALL_CARRIAGES } from "../../apollo/queries";
-import Spinner from "../../assets/img/spinner.svg";
 import { CARRIAGES_IDS, JDS, PARTS_IDS } from "../../utility/constants";
 import { CartContext } from "../../context/CartContext";
 import RowSkeleton from "./RowSkeleton";
 import Lytebox from "../ui/Lytebox/Lytebox";
 import Form from "../Form/Form";
 import { navigate } from "gatsby";
+import Rows_pre from "./Rows_pre";
 
 const updateQuery = (previousResult, { fetchMoreResult }) => {
   return fetchMoreResult.products.edges.length
@@ -23,7 +24,7 @@ const updateQuery = (previousResult, { fetchMoreResult }) => {
     : previousResult;
 };
 
-const RowsWrapper = ({
+const RowsWrapperPre = ({
   type = 1,
   map = false,
   limit,
@@ -33,7 +34,7 @@ const RowsWrapper = ({
   selectedDD = [0],
   selectedDDJD = null,
   actived = false,
-  nofilter = false,
+  nofilter = true,
   mini = false,
   fromMap = false,
 }) => {
@@ -63,13 +64,6 @@ const RowsWrapper = ({
     window.open(`https://wa.me/${man3 && man3.tel}`);
   };
   const { data: datacontent } = useQuery(GET_CONTENT);
-
-  useEffect(() => {
-    if (selectedDD !== [0]) {
-      setFilterTypeCategory(selectedDD[0]);
-      //selectCategoryHandler(selectedDD[0]);
-    }
-  }, [selectedDD]);
 
   useEffect(() => {
     if (datacontent) {
@@ -143,25 +137,17 @@ const RowsWrapper = ({
     last: null,
     after: null,
     before: null,
-    categoryIdIn:
-      filterTypeCategory[0] !== 0
-        ? filterTypeCategory
-        : type === 1
-        ? PARTS_IDS
-        : CARRIAGES_IDS,
-    tagIn:
-      filterTypeArea !== "" && filterTypeArea !== "0" && filterTypeArea !== null
-        ? filterTypeArea.toString()
-        : null,
   };
 
   const [getProducts, { data, error, loading, fetchMore }] = useLazyQuery(
-    type === 1 ? GET_ALL_PARTS : GET_ALL_CARRIAGES,
+    GET_ALL_PARTS_PRE,
     {
       notifyOnNetworkStatusChange: true,
       fetchPolicy: "network-only",
     }
   );
+
+  // const [{ data: data4 }] = useQuery(GET_ALL_PARTS_PRE);
 
   const [
     getTags,
@@ -203,7 +189,23 @@ const RowsWrapper = ({
   let array2 = [];
 
   useEffect(() => {
+    setIsFromMap(false);
+    getProducts({
+      variables: {
+        first: count,
+        last: null,
+        after: null,
+        before: null,
+      },
+    }).then((r) => {
+      setShowItems(true);
+      //handleNewNotification("SUCCESS", "Данные получены", "Успешно");
+    });
+  }, []);
+
+  useEffect(() => {
     if (filterTypeCategory !== -1 && filterTypeCategory[0] !== 65) {
+      console.log(filterTypeCategory[0]);
       setJdStatus(true);
       setStationStatus(true);
       setBtnStatus(true);
@@ -363,25 +365,9 @@ const RowsWrapper = ({
           <div className="row">
             <div className="col-12 m-col-12 xs-col-4">
               <div className="ta_c | mr-title">
-                <div className="desc">чтобы найти запчасти</div>
                 <div className="head">
-                  <span className="italic">Воспользуйтесь </span>фильтром
+                  <span className="italic">Кассетные </span>подшипники
                 </div>
-                {/*<div className="d_f jc_c ai_c | desc2">
-                  <div className="desc">
-                    Если Вы не нашли, что искали, то
-                    <div>свяжитесь с нами и мы постараемся вам помочь</div>
-                  </div>
-                  <div>
-                    <button
-                      className="btn-wt-green"
-                      onClick={() => clickHandler()}
-                    >
-                      <span className="ico ico-left ico-wt-white"></span>
-                      <span>Написать в WhatsApp</span>
-                    </button>
-                  </div>
-                </div>*/}
               </div>
             </div>
           </div>
@@ -484,19 +470,16 @@ const RowsWrapper = ({
       )}
 
       <div className="map_result ">
-        {showItems && data && data.products ? (
-          <Rows
+        {data && data.products ? (
+          <Rows_pre
             error={error}
             loading={loading}
             data={data.products}
             fetchMore={fetchMore}
-            filterTypeArea={filterTypeArea}
-            filterTypeCategory={filterTypeCategory}
-            filterTypeStation={filterTypeStation}
             updateQuery={updateQuery}
             executeScroll={executeScroll}
             fromMap={isFromMap}
-            type={type}
+            type={1}
             count={count}
             addToCart={addToCart}
           />
@@ -547,4 +530,4 @@ const RowsWrapper = ({
   );
 };
 
-export default RowsWrapper;
+export default RowsWrapperPre;

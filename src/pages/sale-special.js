@@ -1,41 +1,31 @@
-import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import * as React from "react";
 import Layout from "../components/ui/layout/Layout";
+import { Helmet } from "react-helmet";
 import Seo from "../components/home/Seo/Seo";
-import RowsWrapper from "../components/Table/Rows-wrapper";
-import { PARTS } from "../utility/constants";
+import { CARRIAGES, PARTS } from "../utility/constants";
+import { useRef, useState } from "react";
 import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
+import RowsWrapperCarriage from "../components/Table/Rows-wrapper-carriage";
+import RowsWrapperPre from "../components/Table/Rows-wrapper-pre";
 import PremsParts from "../components/home/Inner/PremsParts";
-import { MemoizedMap } from "../components/home/Map/Map";
 
-const SaleParts = ({ location }) => {
-  let selectedDD = [0];
-  let selectedDDJD = null;
-  let actived = false;
-  let fromMap = false;
+const SaleCarriage = ({ location }) => {
+  const [initialCategory, setInitialCategory] = useState(1);
+  const myRef = useRef(null);
+  const myRef2 = useRef(null);
   const [slide, setSlide] = useState(false);
   const slideClickHandler = () => {
     setSlide(true);
   };
-
-  if (location.state && location.state.chooseCatById !== undefined) {
-    selectedDD = [location.state.chooseCatById];
-  }
-  if (location.state && location.state.jd !== undefined) {
-    selectedDDJD = [location.state.jd];
-    fromMap = true;
-  }
-  if (location && location.pathname === "/sale-parts") {
-    actived = true;
-  }
 
   return (
     <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>
-          Продажа запасных частей | Вагон Трейд - Покупка и продажа вагонов.
+          Продажа кассетных подшипников | Вагон Трейд - Покупка и продажа
+          вагонов. Запасные части.
         </title>
         <link rel="canonical" href="https://vagontrade.ru" />
         <link rel="icon" href="/icons/icon.svg" />
@@ -45,14 +35,14 @@ const SaleParts = ({ location }) => {
       </Helmet>
       <Layout>
         <div className="header-bg hbg1">
-          <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg">
             <div className="col-12 m-col-12 xs-col-4">
               <div className="breadcrumb">
                 <ul>
                   <li>
                     <a href="/">Главная</a>
                   </li>
-                  <li>Продажа запасный частей</li>
+                  <li>Продажа кассетных подшипников</li>
                 </ul>
               </div>
             </div>
@@ -60,37 +50,17 @@ const SaleParts = ({ location }) => {
           <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 m-col-8 xs-col-4">
               <h1>
-                <span className="italic">Продажа</span> запчастей
+                <span className="italic">Продажа</span> кассетных{" "}
+                <span>подшипников</span>
               </h1>
             </div>
-            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
-              <a
-                href="/static/price.xlsx"
-                target="_blank"
-                className="btn yellow"
-              >
-                <span>Скачать прайс-лист</span>
-              </a>
-            </div>
+            <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn"></div>
           </div>
         </div>
 
-        <RowsWrapper
-          type={1}
-          dropdown={PARTS}
-          selectedDD={selectedDD}
-          selectedDDJD={selectedDDJD}
-          actived={actived}
-          nofilter={false}
-          mini={true}
-          fromMap={fromMap}
-        />
-        <Lytebox trigger={slide} setTrigger={setSlide}>
-          <div className="head3">
-            <span className="italic">Выкуп</span> вагонов
-          </div>
-          <Form setTrigger={setSlide} />
-        </Lytebox>
+        <div className="anchor" ref={myRef2}>
+          <RowsWrapperPre type={1} limit={10} dropdown={PARTS} />
+        </div>
 
         <PremsParts />
         <div className="homeseo saleparts_page">
@@ -136,4 +106,4 @@ const SaleParts = ({ location }) => {
   );
 };
 
-export default SaleParts;
+export default SaleCarriage;

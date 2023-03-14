@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import img1 from "../../../assets/img/tb_top_img.png";
 import img2 from "../../../assets/img/promo1reverse.png";
 import img4 from "../../../assets/img/parts.png";
+import img5 from "../../../assets/img/banner.png";
 
 const TwoBlocks = () => {
   return (
@@ -86,6 +87,42 @@ const TwoBlocks = () => {
               </Link>
               <div className="hint">
                 {/*<span className="italic">Уже продано</span> 12030 зап.частей*/}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="twoblocks_info">
+        <div className="row">
+          <div className="d_f col-12 m-col-12 xs-col-4 | twoblocks_w">
+            <div className="d_f tb_bottom">
+              <div className="d_f fd_c">
+                <div className="head">
+                  <span className="italic">Продаем</span> <span>кассетные</span>{" "}
+                  подшипники
+                </div>
+                <div className="mobile_img_wrapper">
+                  <img src={img5} alt="image 5" />
+                </div>
+                <div className="hint">
+                  {/*<span className="italic">Уже куплено</span> 3260 вагонов*/}
+                </div>
+              </div>
+              <div className="d_f fd_c tb_top_right">
+                <div className="desc">
+                  Всегда в наличии новые и отремонтированные кассетные
+                  подшипники типа TBU (SKF, BRENCO, Timken) следующих
+                  типоразмеров 130х250х160, 150х250х160 для грузовых и
+                  пассажирских вагонов.
+                </div>
+                <Link to="/sale-special">
+                  <button className="btn black">
+                    <span>Купить</span>
+                  </button>
+                </Link>
+                <div className="hint hint22">
+                  {/*<span className="italic">Уже куплено</span> 3260 вагонов*/}
+                </div>
               </div>
             </div>
           </div>
