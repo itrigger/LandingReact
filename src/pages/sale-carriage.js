@@ -16,6 +16,7 @@ import Form from "../components/Form/Form";
 import Lytebox from "../components/ui/Lytebox/Lytebox";
 import PremsParts from "../components/home/Inner/PremsParts";
 import RowsWrapperCarriage from "../components/Table/Rows-wrapper-carriage";
+import FormRequest from "../components/Form/FormRequest";
 
 const SaleCarriage = () => {
   const [initialCategory, setInitialCategory] = useState(1);
@@ -24,6 +25,10 @@ const SaleCarriage = () => {
   const [slide, setSlide] = useState(false);
   const slideClickHandler = () => {
     setSlide(true);
+  };
+  const [slide2, setSlide2] = useState(false);
+  const slideClickHandler2 = () => {
+    setSlide2(true);
   };
 
   return (
@@ -54,11 +59,17 @@ const SaleCarriage = () => {
               </div>
             </div>
           </div>
-          <div className="row  bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
+          <div className="row bl-light br-light middle-border-12-light middle-border-12-over-bg line2">
             <div className="col-8 m-col-8 xs-col-4">
               <h1>
                 <span className="italic">Продажа</span> вагонов
               </h1>
+              <div className="sale-carriages-desc">
+                Подберем любые вагоны по вашим параметрам
+                <a className="btn yellow mini" onClick={() => setSlide2(true)}>
+                  <span>Оставить заявку</span>
+                </a>
+              </div>
             </div>
             <div className="col-4 m-col-4 xs-col-4 pos_r zi-2 d_f jc_end page_header_btn">
               {/* <a href="/price" className="btn yellow">
@@ -206,6 +217,18 @@ const SaleCarriage = () => {
             </div>
           </div>
         </div>*/}
+        <div className="row">
+          <div className="col-12 m-col-12 xs-col-4">
+            <div className="podbor_block ta_c">
+              <Lytebox trigger={slide2} setTrigger={setSlide2}>
+                <div className="head3">
+                  <span className="italic">Быстрый</span> подбор
+                </div>
+                <Form setTrigger={setSlide2} />
+              </Lytebox>
+            </div>
+          </div>
+        </div>
         <div className="anchor" ref={myRef2}>
           <RowsWrapperCarriage
             type={2}

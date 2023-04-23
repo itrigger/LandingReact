@@ -135,7 +135,7 @@ export default function Header({ location }) {
                       state={{ chooseCatById: 33 }}
                       activeClassName="active"
                     >
-                      Боковые опоры
+                      Боковые рамы
                     </Link>
                   </div>
                   <div>
@@ -216,7 +216,7 @@ export default function Header({ location }) {
                       state={{ chooseCatById: 33 }}
                       activeClassName="active"
                     >
-                      Боковые опоры
+                      Боковые рамы
                     </Link>
                   </div>
                   <div>
