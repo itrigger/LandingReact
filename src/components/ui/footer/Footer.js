@@ -87,7 +87,7 @@ const Footer = () => {
             {/*<div className="head italic">Услуги</div>*/}
           </div>
           <div className="col-4 m-col-4 xs-col-4 | col3">
-            <div className="foot-version">Версия 1.270523</div>
+            <div className="foot-version">Версия 1.050623</div>
           </div>
         </div>
       </div>
@@ -101,5 +101,292 @@ const Footer = () => {
     </div>
   );
 };
+
+const array = [
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE3OTA=",
+    node: {
+      id: "cHJvZHVjdDoxNzkw",
+      name: "12-1303-01",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c.png 432w",
+        __typename: "MediaItem",
+      },
+      price: "6 500 000₽",
+      productsKP: {
+        godVypuska: "2018-2019",
+        mestonahozhdenie: "В работе.",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 27,
+      shortDescription: "<p>Рабочий парк.</p>\n",
+      productTags: {
+        nodes: [],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Полувагоны",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE3ODg=",
+    node: {
+      id: "cHJvZHVjdDoxNzg4",
+      name: "23-925",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-450x450.png 450w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1.png 455w",
+        __typename: "MediaItem",
+      },
+      price: "1 500 000₽",
+      productsKP: {
+        godVypuska: "1997",
+        mestonahozhdenie: "В работе.",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 5,
+      shortDescription: "<p>Рабочий парк.</p>\n",
+      productTags: {
+        nodes: [],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Лесовозы",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE3ODc=",
+    node: {
+      id: "cHJvZHVjdDoxNzg3",
+      name: "13-198",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-450x450.png 450w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1.png 455w",
+        __typename: "MediaItem",
+      },
+      price: "3 300 000₽",
+      productsKP: {
+        godVypuska: "2012",
+        mestonahozhdenie: "ОКТ, СЕВ",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 50,
+      shortDescription: "<p>Рабочий парк.</p>\n",
+      productTags: {
+        nodes: [
+          {
+            name: "ОКТЖД",
+            __typename: "ProductTag",
+          },
+          {
+            name: "СЕВЖД",
+            __typename: "ProductTag",
+          },
+        ],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Лесовозы",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE3NDE=",
+    node: {
+      id: "cHJvZHVjdDoxNzQx",
+      name: "12-132",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c.png 432w",
+        __typename: "MediaItem",
+      },
+      price: "1 250 000₽",
+      productsKP: {
+        godVypuska: "2001",
+        mestonahozhdenie: "Ю-УР",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 10,
+      shortDescription: "<p>Истек срок службы.</p>\n",
+      productTags: {
+        nodes: [
+          {
+            name: "ЮУРЖД",
+            __typename: "ProductTag",
+          },
+        ],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Полувагоны",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE2NTk=",
+    node: {
+      id: "cHJvZHVjdDoxNjU5",
+      name: "11-270",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-krytyi-592e32387ac49785cf1f8a3acd45576c.png 432w",
+        __typename: "MediaItem",
+      },
+      price: "2 500 000₽",
+      productsKP: {
+        godVypuska: "1993",
+        mestonahozhdenie: "В работе.",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 2,
+      shortDescription: "<p>Рабочий парк.</p>\n",
+      productTags: {
+        nodes: [],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Крытые вагоны",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE2NTc=",
+    node: {
+      id: "cHJvZHVjdDoxNjU3",
+      name: "16-3001",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/depositphotos_118944964-stock-illustration-cargo-wagon-sketch-icon-150x150.webp 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/depositphotos_118944964-stock-illustration-cargo-wagon-sketch-icon-300x300.webp 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/depositphotos_118944964-stock-illustration-cargo-wagon-sketch-icon-450x450.webp 450w, https://api.vagontrade.ru/wp-content/uploads/2022/07/depositphotos_118944964-stock-illustration-cargo-wagon-sketch-icon-100x100.webp 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/depositphotos_118944964-stock-illustration-cargo-wagon-sketch-icon.webp 600w",
+        __typename: "MediaItem",
+      },
+      price: "1 500 000₽",
+      productsKP: {
+        godVypuska: "1988",
+        mestonahozhdenie: "З-СИБ",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 1,
+      shortDescription:
+        "<p>Разоборудован. Отсутствуют аккумуляторные батареи и дизельная установка.</p>\n",
+      productTags: {
+        nodes: [
+          {
+            name: "ЗСБЖД",
+            __typename: "ProductTag",
+          },
+        ],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Вагон сопровождения",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+  {
+    cursor: "YXJyYXljb25uZWN0aW9uOjE2NTM=",
+    node: {
+      id: "cHJvZHVjdDoxNjUz",
+      name: "31-673",
+      image: {
+        srcSet:
+          "https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-150x150.png 150w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-300x300.png 300w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-450x450.png 450w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1-100x100.png 100w, https://api.vagontrade.ru/wp-content/uploads/2022/07/vag-dumpcar-8b4ee57e79756ccb773a4f901c864dbd-1.png 455w",
+        __typename: "MediaItem",
+      },
+      price: "1 700 000₽",
+      productsKP: {
+        godVypuska: "1989-1991",
+        mestonahozhdenie: "З-СИБ",
+        telezhka: null,
+        tolshhinaOboda: null,
+        __typename: "Product_Productskp",
+      },
+      stockQuantity: 7,
+      shortDescription: "<p>Рабочий парк.</p>\n",
+      productTags: {
+        nodes: [
+          {
+            name: "ЗСБЖД",
+            __typename: "ProductTag",
+          },
+        ],
+        __typename: "ProductToProductTagConnection",
+      },
+      productCategories: {
+        nodes: [
+          {
+            name: "Думпкары",
+            __typename: "ProductCategory",
+          },
+        ],
+        __typename: "ProductToProductCategoryConnection",
+      },
+      __typename: "SimpleProduct",
+    },
+    __typename: "RootQueryToProductConnectionEdge",
+  },
+];
 
 export default Footer;

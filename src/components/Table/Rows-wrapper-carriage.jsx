@@ -117,6 +117,18 @@ const RowsWrapperCarriage = ({
     }
   );
 
+  let filteredData = {};
+
+  if (data && data.products) {
+    filteredData = data.products.edges.reduce((acc, obj) => {
+      if (!acc[obj.node.productCategories.nodes[0].name]) {
+        acc[obj.node.productCategories.nodes[0].name] = [];
+      }
+      acc[obj.node.productCategories.nodes[0].name].push(obj);
+      return acc;
+    }, {});
+  }
+
   const filterClickHandler = (target) => {
     target.classList.add("btn-loading");
     getProducts({
@@ -128,8 +140,8 @@ const RowsWrapperCarriage = ({
     });
   };
 
-  console.log(selectedDDJD);
-  console.log(selectedDD);
+  //console.log(selectedDDJD);
+  //console.log(selectedDD);
 
   useEffect(() => {
     if (selectedDD[0] !== 0) {
@@ -272,6 +284,7 @@ const RowsWrapperCarriage = ({
             error={error}
             loading={loading}
             data={data.products}
+            filteredData={filteredData}
             fetchMore={fetchMore}
             filterTypeArea={filterTypeArea}
             filterTypeCategory={filterTypeCategory}

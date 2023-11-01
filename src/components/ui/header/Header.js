@@ -109,7 +109,7 @@ export default function Header({ location }) {
                 </Link>
               </li>
               <li className="double">
-                <a href="javascript:;">Продажа запчастей</a>
+                <a>Продажа запчастей</a>
                 <div className="dd">
                   <div>
                     <Link
@@ -190,7 +190,7 @@ export default function Header({ location }) {
                 </Link>
               </li>
               <li className="double">
-                <a href="javascript:;">Продажа запчастей</a>
+                <a>Продажа запчастей</a>
                 <div className="dd">
                   <div>
                     <Link

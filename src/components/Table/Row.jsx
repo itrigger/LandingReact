@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../context/CartContext";
+import { JDS } from "../../utility/constants";
 
 const Row = ({ data, addToCart, wtClickHandler }) => {
   const isBrowser = () => typeof window !== "undefined";
@@ -35,11 +36,11 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
               {data.productsKP.tolshhinaOboda && (
                 <>
                   ТО{"-"}
-                  {data.productsKP.tolshhinaOboda}
+                  {data.productsKP.tolshhinaOboda}мм
                 </>
               )}{" "}
               {data.productsKP.telezhka && (
-                <>{data.productsKP.telezhka === "гайка" ? "ТУ1" : "ТУ1Ш"}</>
+                <>{data.productsKP.telezhka === "гайка" ? "ТУ1" : "РУ-1Ш"}</>
               )}
             </div>
           </td>
@@ -67,7 +68,13 @@ const Row = ({ data, addToCart, wtClickHandler }) => {
           )}
           {data.productTags ? (
             <td className="">
-              <div className="right">{data.productTags.nodes[0].name}</div>
+              <div className="right">
+                {
+                  JDS.filter(function (val) {
+                    return val.slug === data.productTags.nodes[0].name;
+                  })[0].slugRu
+                }
+              </div>
             </td>
           ) : (
             <td></td>

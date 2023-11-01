@@ -99,7 +99,7 @@ const Rows = ({
                       <th>Тип</th>
                       <th className={"ta_c"}>Модель</th>
                       <th className={"ta_c"}>Кол-во</th>
-                      <th className={"ta_c"}>Г. изг.</th>
+                      <th className={"ta_c"}>Изг. (г.)</th>
                       <th className={"ta_c"}>Местонахождение</th>
                       <th className={"ta_c"}>Состояние</th>
                       <th className={"ta_c"}>Цена с НДС</th>

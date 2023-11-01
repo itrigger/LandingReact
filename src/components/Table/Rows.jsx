@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Row from "./Row";
-import Card from "./Card";
 import RowSkeleton from "./RowSkeleton";
 import Form from "../Form/Form";
 import Lytebox from "../ui/Lytebox/Lytebox";
 import { useQuery } from "@apollo/client";
 import { GET_CONTENT } from "../../apollo/queries";
+import Card from "./Card";
 
 const Rows = ({
   data,
+  filteredData,
   error,
   loading,
   fetchMore,
@@ -24,11 +25,11 @@ const Rows = ({
 }) => {
   const [slide, setSlide] = useState(false);
   const [telWt, setTelWt] = useState("");
+  const [groupedArray, setGroupedArray] = useState({});
   const wtClickHandler = () => {
     window.open("https://wa.me/" + telWt);
   };
   const { data: data2 } = useQuery(GET_CONTENT);
-  console.log(fromMap);
   useEffect(() => {
     if (data2) {
       setTelWt(data2.posts.nodes[0].acfcontent.telWt);
@@ -105,7 +106,7 @@ const Rows = ({
                       <th>Тип</th>
                       <th className={"ta_c"}>Модель</th>
                       <th className={"ta_c"}>Кол-во</th>
-                      <th className={"ta_c"}>Г. изг.</th>
+                      <th className={"ta_c"}>Изг. (г.)</th>
                       <th className={"ta_c"}>Местонахождение</th>
                       <th className={"ta_c"}>Состояние</th>
                       <th className={"ta_c"}>Цена с НДС</th>
@@ -143,16 +144,19 @@ const Rows = ({
                           }
                         }
                       })
-                    : data.edges.map((edge) => {
-                        const { node } = edge;
-                        return (
-                          <Card
-                            key={node.id}
-                            data={node}
-                            addToCart={addToCart}
-                            wtClickHandler={wtClickHandler}
-                          />
-                        );
+                    : Object.entries(filteredData).map((edge) => {
+                        return edge[1].map((edge2, index) => {
+                          return (
+                            <Card
+                              key={edge2.node.id}
+                              count={edge[1].length}
+                              index={index}
+                              data={edge2.node}
+                              addToCart={addToCart}
+                              wtClickHandler={wtClickHandler}
+                            />
+                          );
+                        });
                       })}
                 </tbody>
               </table>

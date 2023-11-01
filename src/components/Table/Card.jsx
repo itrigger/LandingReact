@@ -3,7 +3,7 @@ import { CartContext } from "../../context/CartContext";
 import Lytebox from "../ui/Lytebox/Lytebox";
 import Form from "../Form/Form";
 
-const Card = ({ data, addToCart, wtClickHandler }) => {
+const Card = ({ count, index, data, addToCart, wtClickHandler }) => {
   const isBrowser = () => typeof window !== "undefined";
   const [cartItems, setCartItems] = useContext(CartContext);
   const [isDesktop, setDesktop] = useState(
@@ -30,6 +30,13 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
   const slideClickHandler = () => {
     setSlide(true);
   };
+
+  if (data) {
+    console.log("CARD");
+    console.log(index);
+    console.log(count);
+  }
+
   return (
     <>
       <Lytebox trigger={slide} setTrigger={setSlide}>
@@ -44,12 +51,21 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
       </Lytebox>
       {isDesktop ? (
         <tr className="card bt">
-          <td className="">
-            <div className="name-w">
-              <div className="name">{data.productCategories.nodes[0].name}</div>
-            </div>
-          </td>
-
+          {index > 0 ? (
+            <></>
+          ) : (
+            <td
+              className=""
+              rowSpan={count}
+              style={{ verticalAlign: "middle" }}
+            >
+              <div className="name-w">
+                <div className="name">
+                  {data.productCategories.nodes[0].name}
+                </div>
+              </div>
+            </td>
+          )}
           <td>
             <div className="model">{data.name}</div>
           </td>
@@ -91,22 +107,26 @@ const Card = ({ data, addToCart, wtClickHandler }) => {
             </div>
           </td>
           <td>
-            <div className="btn-w">
-              {data.price && data.price === "999 999₽" ? (
-                <button
-                  className={"btn-wt-green"}
-                  onClick={() => wtClickHandler()}
-                >
-                  <span className="ico ico-left ico-wt-white"></span>Подробнее
-                </button>
-              ) : (
+            <div className="btn-w vagon-btns">
+              {
+                //) : (
                 <button
                   onClick={() => slideClickHandler()}
                   className={"btn-classic btn-2-lines"}
                 >
                   <span>Запросить коммерческое предложение</span>
                 </button>
-              )}
+                //)
+              }
+              {
+                //data.price && data.price === "999 999₽" ? (
+                <button
+                  className={"btn-wt-green"}
+                  onClick={() => wtClickHandler()}
+                >
+                  <span className="ico ico-left ico-wt2"></span>
+                </button>
+              }
             </div>
           </td>
         </tr>
